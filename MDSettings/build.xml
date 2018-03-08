@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project basedir="." default="default" name="MD Settings">
+
+    <!-- Look for user-override properties file first -->
+    <property file="override.properties"/>
+    <!-- set global properties for this build -->
+    <property file="build.properties"/>
+
+    <!-- Import the common_build.xml file which contains all the default tasks -->
+    <import file="build-res/subfloor.xml"/>
+
+
+    <target name="default" depends="" description="Builds mdSettings">
+        <property name="mdMod" value="MDSettings_Test(trunk)"/> <!-- default value if set by a calling script this is ignored-->
+        <property name="update.dir" value="${mdSettings.Dir}"/>
+        <antcall target="check-classpath"/>
+        <antcall target="package"/>
+    </target>
+
+</project>
+

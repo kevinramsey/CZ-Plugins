@@ -1,0 +1,653 @@
+package com.melissadata.kettle.MDSettings;
+
+import org.eclipse.jface.fieldassist.ControlDecoration;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.FocusAdapter;
+import org.eclipse.swt.events.FocusEvent;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.FormAttachment;
+import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.DirectoryDialog;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Spinner;
+import org.eclipse.swt.widgets.Text;
+import org.pentaho.di.core.Const;
+import org.pentaho.di.core.variables.VariableSpace;
+import org.pentaho.di.i18n.BaseMessages;
+import org.pentaho.di.ui.core.PropsUI;
+import org.pentaho.di.ui.core.widget.TextVar;
+import org.pentaho.di.ui.util.ImageUtil;
+
+public class SettingsHelper {
+
+	private static Class<?> PKG = AdvancedConfigurationDialog.class;
+	private AdvancedConfigurationDialog dialog;
+	public  int                         margin;
+	public  int[]                       colWidth;
+	public  int[]                       colHeight;
+	public  PropsUI                     props;
+	private ModifyListener              lsPropertyChange;
+	private VariableSpace               space;
+
+	public SettingsHelper(AdvancedConfigurationDialog dialog) {
+
+		this.dialog = dialog;
+		this.space = dialog.getSpace();
+		props = PropsUI.getInstance();
+		margin = Const.MARGIN;
+		colWidth = new int[3];
+		colWidth[0] = dialog.getProps().getMiddlePct();
+		colWidth[1] = colWidth[0] / 2 + 50;
+		colWidth[2] = 100;
+		colHeight = new int[4];
+		colHeight[0] = 25;
+		colHeight[1] = 50;
+		colHeight[2] = 75;
+		colHeight[3] = 100;
+		// Create a listener for changes to global properties
+		lsPropertyChange = new ModifyListener() {
+			public void modifyText(ModifyEvent e) {
+
+				setPropChange();
+			}
+		};
+	}
+
+	private void setPropChange() {
+
+		dialog.setPropertyChanged();
+	}
+
+	/**
+	 * Configures the look of a control
+	 *
+	 * @param control
+	 */
+	public void setLook(Control control) {
+
+		props.setLook(control);
+	}
+
+	/**
+	 * Configures the look of a control to a specific style
+	 *
+	 * @param control
+	 * @param style
+	 */
+	public void setLook(Control control, int style) {
+
+		props.setLook(control, style);
+	}
+
+	/**
+	 * Called to add multiple text boxes with a label
+	 *
+	 * @param parent    The parent control that will hold this control
+	 * @param wLastLine the control below which this control should be placed
+	 * @param name      The text identifier for this control
+	 */
+	public Text[] addTextBoxes(Composite parent, Control wLastLine, String name) {
+
+		return addTextBoxes(parent, wLastLine, margin, name, false);
+	}
+
+	/**
+	 * Called to add multiple text boxes with a label
+	 *
+	 * @param parent         The parent control that will hold this control
+	 * @param wLastLine      the control below which this control should be placed
+	 * @param lastLineMargin
+	 * @param name           The text identifier for this control
+	 */
+	public Text[] addTextBoxes(Composite parent, Control wLastLine, int lastLineMargin, String name) {
+
+		return addTextBoxes(parent, wLastLine, lastLineMargin, name, false);
+	}
+
+	/**
+	 * Called to add a single text boxes with a label
+	 *
+	 * @param parent    The parent control that will hold this control
+	 * @param wLastLine the control below which this control should be placed
+	 * @param name      The text identifier for this control
+	 */
+	public Text addTextBox(Composite parent, Control wLastLine, String name) {
+
+		return addTextBoxes(parent, wLastLine, margin, name, true)[0];
+	}
+
+	public Text addPasswordTextBox(Composite parent, Control wLastLine, String name) {
+
+		return addPasswordTextBoxes(parent, wLastLine, margin, name, true)[0];
+	}
+
+	/**
+	 * Called to add a single text boxes with a label
+	 *
+	 * @param parent         The parent control that will hold this control
+	 * @param wLastLine      the control below which this control should be placed
+	 * @param lastLineMargin
+	 * @param name           The text identifier for this control
+	 */
+	public Text addTextBox(Composite parent, Control wLastLine, int lastLineMargin, String name) {
+
+		return addTextBoxes(parent, wLastLine, lastLineMargin, name, true)[0];
+	}
+
+	public Text[] addPasswordTextBoxes(Composite parent, Control wLastLine, int lastLineMargin, String name, boolean createOnlyOne) {
+		// Don't create label if name is not supplied
+		if (name != null) {
+			// Create a label
+			Label label = new Label(parent, SWT.RIGHT);
+			label.setText(getLabelString(name)); //$NON-NLS-1$
+			props.setLook(label);
+			// Place label in first column
+			FormData fd = new FormData();
+			fd.left = new FormAttachment(0, margin);
+			fd.top = new FormAttachment(wLastLine, lastLineMargin);
+			fd.right = new FormAttachment(colWidth[0], -margin);
+			label.setLayoutData(fd);
+		}
+		// Create one or two text boxes
+		Text wBoxes[] = new Text[createOnlyOne ? 1 : 2];
+		for (int i = 0; i < wBoxes.length; i++) {
+			wBoxes[i] = new Text(parent, SWT.SINGLE | SWT.PASSWORD | SWT.LEFT | SWT.BORDER);
+			// Inform dialog when something changes
+			wBoxes[i].addModifyListener(new ModifyListener() {
+				public void modifyText(ModifyEvent arg0) {
+
+					dialog.setChanged();
+				}
+			});
+			// Handle CR
+			wBoxes[i].addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetDefaultSelected(SelectionEvent event) {
+
+					dialog.ok();
+				}
+			});
+			// Select all text when focus gained
+			final Text wBox = wBoxes[i];
+			wBoxes[i].addFocusListener(new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent arg0) {
+
+					wBox.selectAll();
+				}
+			});
+			FormData fd = new FormData();
+			fd.left = new FormAttachment(colWidth[i], margin);
+			fd.top = new FormAttachment(wLastLine, lastLineMargin);
+			fd.right = new FormAttachment(createOnlyOne ? colWidth[2] : colWidth[i + 1], -margin);
+			wBoxes[i].setLayoutData(fd);
+		}
+		// Return created controls
+		return wBoxes;
+	}
+
+	/**
+	 * Called to add one or more text boxes with a label
+	 *
+	 * @param parent         The parent control that will hold this control
+	 * @param wLastLine      the control below which this control should be placed
+	 * @param lastLineMargin
+	 * @param name           The text identifier for this control
+	 * @param createOnlyOne
+	 */
+	public Text[] addTextBoxes(Composite parent, Control wLastLine, int lastLineMargin, String name, boolean createOnlyOne) {
+		// Don't create label if name is not supplied
+		if (name != null) {
+			// Create a label
+			Label label = new Label(parent, SWT.RIGHT);
+			label.setText(getLabelString(name)); //$NON-NLS-1$
+			props.setLook(label);
+			// Place label in first column
+			FormData fd = new FormData();
+			fd.left = new FormAttachment(0, margin);
+			fd.top = new FormAttachment(wLastLine, lastLineMargin);
+			fd.right = new FormAttachment(colWidth[0], -margin);
+			label.setLayoutData(fd);
+		}
+		// Create one or two text boxes
+		Text wBoxes[] = new Text[createOnlyOne ? 1 : 2];
+		for (int i = 0; i < wBoxes.length; i++) {
+			wBoxes[i] = new Text(parent, SWT.SINGLE | SWT.LEFT | SWT.BORDER);
+			// Inform dialog when something changes
+			wBoxes[i].addModifyListener(new ModifyListener() {
+				public void modifyText(ModifyEvent arg0) {
+
+					dialog.setChanged();
+				}
+			});
+			// Handle CR
+			wBoxes[i].addSelectionListener(new SelectionAdapter() {
+				@Override
+				public void widgetDefaultSelected(SelectionEvent event) {
+
+					dialog.ok();
+				}
+			});
+			// Select all text when focus gained
+			final Text wBox = wBoxes[i];
+			wBoxes[i].addFocusListener(new FocusAdapter() {
+				@Override
+				public void focusGained(FocusEvent arg0) {
+
+					wBox.selectAll();
+				}
+			});
+			FormData fd = new FormData();
+			fd.left = new FormAttachment(colWidth[i], margin);
+			fd.top = new FormAttachment(wLastLine, lastLineMargin);
+			fd.right = new FormAttachment(createOnlyOne ? colWidth[2] : colWidth[i + 1], -margin);
+			wBoxes[i].setLayoutData(fd);
+		}
+		// Return created controls
+		return wBoxes;
+	}
+
+	/**
+	 * Called to create a text box that can take environment variables
+	 *
+	 * @param parent
+	 * @param wLastLine
+	 * @param name
+	 * @return
+	 */
+	public TextVar addTextVarBox(Composite parent, Control wLastLine, String name) {
+		// Don't create label if name is not supplied
+		if (name != null) {
+			// Create a label
+			Label label = new Label(parent, SWT.RIGHT);
+			label.setText(getLabelString(name)); //$NON-NLS-1$
+			props.setLook(label);
+			// Place label in first column
+			FormData fd = new FormData();
+			fd.left = new FormAttachment(0, margin);
+			fd.top = new FormAttachment(wLastLine, margin);
+			fd.right = new FormAttachment(colWidth[0], -margin);
+			label.setLayoutData(fd);
+		}
+		// Create one or two text boxes
+		final TextVar wBox;
+		wBox = new TextVar(dialog.getSpace(), parent, SWT.SINGLE | SWT.LEFT | SWT.BORDER);
+		// Inform dialog when something changes
+		wBox.addModifyListener(new ModifyListener() {
+			public void modifyText(ModifyEvent arg0) {
+
+				dialog.setChanged();
+			}
+		});
+		// Handle CR
+		wBox.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetDefaultSelected(SelectionEvent event) {
+
+				dialog.ok();
+			}
+		});
+		// Select all text when focus gained
+		wBox.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent arg0) {
+
+				wBox.selectAll();
+			}
+		});
+		FormData fd = new FormData();
+		fd.left = new FormAttachment(colWidth[0], margin);
+		fd.top = new FormAttachment(wLastLine, margin);
+		fd.right = new FormAttachment(100, -margin);
+		wBox.setLayoutData(fd);
+		// Return created controls
+		return wBox;
+	}
+
+	/**
+	 * Called to create a single label line
+	 *
+	 * @param parent
+	 * @param wLastLine
+	 * @param name
+	 * @return
+	 */
+	public Label addLabel(Composite parent, Control wLastLine, String name) {
+		// Create a label
+		Label label = new Label(parent, SWT.LEFT | SWT.WRAP);
+		label.setText(getLabelString(name));
+		props.setLook(label);
+		FormData fd = new FormData();
+		fd.left = new FormAttachment(0, margin);
+		fd.top = new FormAttachment(wLastLine, margin);
+		fd.right = new FormAttachment(100, -margin);
+		label.setLayoutData(fd);
+		return label;
+	}
+
+	/**
+	 * Create a spacer line
+	 *
+	 * @param parent
+	 * @param wLastLine
+	 * @return
+	 */
+	public Label addSpacer(Composite parent, Control wLastLine) {
+		// Create a label
+		Label label = new Label(parent, SWT.LEFT | SWT.WRAP);
+		props.setLook(label);
+		FormData fd = new FormData();
+		fd.left = new FormAttachment(0, margin);
+		fd.top = new FormAttachment(wLastLine, margin);
+		fd.right = new FormAttachment(100, -margin);
+		label.setLayoutData(fd);
+		return label;
+	}
+
+	/**
+	 * Called to create a single push button
+	 *
+	 * @param parent
+	 * @param wLastLine
+	 * @param name
+	 * @param selectionListener
+	 * @return
+	 */
+	public Button addPushButton(Composite parent, Control wLastLine, String name, SelectionListener selectionListener) {
+		// Create the button
+		Button button = addButton(parent, wLastLine, name, SWT.PUSH);
+		// Add listener
+		button.addSelectionListener(selectionListener);
+		// return
+		return button;
+	}
+
+	/**
+	 * Called to add a checkbox to the parent composite. It will be placed after the last line.
+	 *
+	 * @param parent
+	 * @param wLastLine
+	 * @param name
+	 * @return
+	 */
+	protected Button addCheckBox(Composite parent, Control wLastLine, String name) {
+		// Create the checkbox with a descriptive label
+		Button wCheckBox = addDataButton(parent, wLastLine, name, SWT.CHECK);
+		// Handle carriage return
+		wCheckBox.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetDefaultSelected(SelectionEvent arg0) {
+
+				dialog.ok();
+			}
+		});
+		return wCheckBox;
+	}
+
+	/**
+	 * Called to create a single radio button
+	 *
+	 * @param parent
+	 * @param wLastLine
+	 * @param name
+	 * @return
+	 */
+	public Button addRadioButton(Composite parent, Control wLastLine, String name) {
+		// Create the button
+		Button button = addDataButton(parent, wLastLine, name, SWT.RADIO);
+		// Update dialog when radio selection changes
+		button.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetDefaultSelected(SelectionEvent event) {
+
+				dialog.ok();
+			}
+
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+
+				dialog.setChanged();
+			}
+		});
+		// Return
+		return button;
+	}
+
+	/**
+	 * Called to create a button that contains data
+	 *
+	 * @param parent
+	 * @param wLastLine
+	 * @param name
+	 * @param style
+	 * @return
+	 */
+	private Button addDataButton(Composite parent, Control wLastLine, String name, int style) {
+		// Create the button
+		Button button = addButton(parent, wLastLine, name, style);
+		// Update dialog when radio selection changes
+		button.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetDefaultSelected(SelectionEvent event) {
+
+				dialog.ok();
+			}
+
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+
+				dialog.setChanged();
+			}
+		});
+		return button;
+	}
+
+	/**
+	 * Called to create a single button of a given type
+	 *
+	 * @param parent
+	 * @param wLastLine
+	 * @param name
+	 * @param style
+	 * @return
+	 */
+	private Button addButton(Composite parent, Control wLastLine, String name, int style) {
+		// Create the button
+		Button button = new Button(parent, style);
+		if (name != null) {
+			button.setText(getLabelString(name));
+		}
+		setLook(button);
+		// Lay it out
+		FormData fd = new FormData();
+		fd.left = new FormAttachment(0, margin);
+		fd.top = new FormAttachment(wLastLine, margin);
+		button.setLayoutData(fd);
+		return button;
+	}
+
+	/**
+	 * Called to create a single spinner
+	 *
+	 * @param parent
+	 * @param wLastLine
+	 * @param name
+	 * @param description
+	 * @return
+	 */
+	public Spinner addSpinner(Group parent, Control wLastLine, String name, String description) {
+		// Create a label (if there is a name)
+		if (name != null) {
+			Label label = new Label(parent, SWT.RIGHT);
+			label.setText(getLabelString(name)); //$NON-NLS-1$
+			props.setLook(label);
+			// Place label in first column
+			FormData fd = new FormData();
+			fd.left = new FormAttachment(0, margin);
+			fd.top = new FormAttachment(wLastLine, margin);
+			fd.right = new FormAttachment(colWidth[0], -margin);
+			label.setLayoutData(fd);
+		}
+		// Create the spinner
+		Spinner spinner = new Spinner(parent, SWT.BORDER);
+		setLook(spinner);
+		// Lay it out
+		FormData fd = new FormData();
+		fd.left = new FormAttachment(colWidth[0], margin);
+		fd.top = new FormAttachment(wLastLine, margin);
+		spinner.setLayoutData(fd);
+		// Update dialog when radio selection changes
+		spinner.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetDefaultSelected(SelectionEvent event) {
+
+				dialog.ok();
+			}
+
+			@Override
+			public void widgetSelected(SelectionEvent event) {
+
+				dialog.setChanged();
+			}
+		});
+		// Create a description (if there is one)
+		if (description != null) {
+			Label label = new Label(parent, SWT.LEFT);
+			label.setText(getLabelString(description)); //$NON-NLS-1$
+			props.setLook(label);
+			// Place label in first column
+			fd = new FormData();
+			fd.left = new FormAttachment(spinner, margin);
+			fd.top = new FormAttachment(wLastLine, margin);
+			fd.right = new FormAttachment(100, -margin);
+			label.setLayoutData(fd);
+		}
+		// Return
+		return spinner;
+	}
+
+	/**
+	 * Called to create the controls for a data path
+	 *
+	 * @param parent
+	 * @param wLastLine
+	 * @param name
+	 * @param readOnly
+	 */
+	public Text createPathControl(Composite parent, Control wLastLine, final String name, boolean readOnly) {
+		// Data path
+		final Text wDataPath = addTextBox(parent, wLastLine, name);
+		wDataPath.setEnabled(!readOnly);
+		// Add extra controls if not read-only
+		if (!readOnly) {
+			// Special tracking for global properties
+			wDataPath.addModifyListener(lsPropertyChange);
+			// Add a directory browse button
+			Button wbBrowse = dialog.addPushButton(parent, wLastLine, null);
+			wbBrowse.setImage(ImageUtil.getImage(dialog.getDisplay(), PKG, "com/melissadata/kettle/MDSettings/images/OpenFolder.gif"));
+			// Add decorations to indicate special functionality
+			ControlDecoration controlDecoration = new ControlDecoration(wDataPath, SWT.TOP | SWT.RIGHT);
+			controlDecoration.setImage(ImageUtil.getImage(dialog.getDisplay(), this.getClass(), "com/melissadata/kettle/MDSettings/images/question-mark-small.png"));
+			controlDecoration.setDescriptionText(" give Hint");// getString("EditPersistentPropertyHint")
+			// Adjust layout for extra controls
+			((FormData) wDataPath.getLayoutData()).right = new FormAttachment(wbBrowse, -margin);
+			((FormData) wDataPath.getLayoutData()).right.offset -= 20; // for the control decoration
+			((FormData) wbBrowse.getLayoutData()).left = null;
+			((FormData) wbBrowse.getLayoutData()).right = new FormAttachment(100, -margin);
+			// Listen to the button, load directory dialog
+			wbBrowse.addSelectionListener(new SelectionAdapter() {
+				public void widgetSelected(SelectionEvent e) {
+
+					DirectoryDialog dialog   = new DirectoryDialog(getShell(), SWT.OPEN);
+					String          dataPath = getPathContents(wDataPath, name);
+					String          fpath    = space.environmentSubstitute(dataPath);
+					dialog.setFilterPath(fpath);
+					if (dialog.open() != null) {
+						String str = dialog.getFilterPath();
+						setPathContents(wDataPath, str, name);
+					}
+				}
+			});
+		}
+		return wDataPath;
+	}
+
+	/**
+	 * Called to return the contents of a path control. Does special translation for needed value.
+	 *
+	 * @return
+	 */
+	private String getPathContents(Text wDataPath, String name) {
+
+		String pathNeededMsg = BaseMessages.getString(PKG, "MDSettings.InputData." + name + "Needed");
+		String dataPath      = wDataPath.getText();
+		if (!Const.isEmpty(dataPath) && dataPath.trim().equalsIgnoreCase(pathNeededMsg)) {
+			dataPath = "";
+		}
+		return dataPath;
+	}
+
+	/**
+	 * Called to set the contents of a path control. Does special translation for needed value.
+	 *
+	 * @param path
+	 */
+	private void setPathContents(Text wPath, String path, String name) {
+
+		if (Const.isEmpty(path)) {
+			path = BaseMessages.getString(PKG, "MDSettings.InputData." + name + "Needed");
+		}
+		wPath.setText(path);
+	}
+
+	/**
+	 * @param name
+	 * @return
+	 */
+	private String getLabelString(String name) {
+
+		if (name == null) {
+			return "";
+		}
+		return BaseMessages.getString(PKG, dialog.getNamingPrefix() + "." + name + ".Label");
+	}
+
+	/**
+	 * @return Current ui shell
+	 */
+	public Shell getShell() {
+
+		return dialog.getShell();
+	}
+
+	/**
+	 * @return The dialog we are helping with
+	 */
+	public AdvancedConfigurationDialog getDialog() {
+
+		return dialog;
+	}
+
+	/**
+	 * @return Display for this helper
+	 */
+	public Display getDisplay() {
+
+		return getShell().getDisplay();
+	}
+
+	public ModifyListener getChangedListener() {
+
+		return lsPropertyChange;
+	}
+}

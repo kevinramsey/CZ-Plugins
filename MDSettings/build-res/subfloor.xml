@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project basedir="." default="default" name="md-subfloor">
+
+    <tstamp prefix="start"/>
+
+    <tstamp>
+        <format property="compile.timestamp" pattern="yyyy-MM-dd HH.mm.ss"/>
+    </tstamp>
+
+
+    <!-- Look for user-override properties file first -->
+    <property file="override.properties"/>
+    <!-- set global properties for this build -->
+    <property file="build.properties"/>
+
+    <!--
+    # File sets
+    -->
+
+    <fileset id="data-integration-6.1" dir="${data-integration-6.1}">
+        <include name="*.jar"/>
+        <include name="lib/*.jar"/>
+        <include name="libswt/linux/x86_64/swt.jar"/>
+    </fileset>
+
+    <fileset id="MD-libs" dir="lib-md">
+        <include name="**/*.jar*"/>
+    </fileset>
+
+    <!--
+    #	Classpaths
+    -->
+
+    <path id="svnant.classpath">
+        <fileset dir="${svnAnt.dir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+    <typedef resource="${svnAnt.resource}" classpath="${svnAnt.dir}/svnant.jar"/>
+    <svnSetting javahl="false" id="svn.settings"/>
+
+    <path id="classpath">
+        <fileset refid="data-integration-6.1"/>
+        <fileset refid="MD-libs"/>
+    </path>
+
+    <pathconvert pathsep="${line.separator}|   |-- "
+                 property="echo.path.compile"
+                 refid="classpath">
+    </pathconvert>
+    <pathconvert pathsep="${line.separator}|   |-- "
+                 property="echo.path.ant"
+                 refid="svnant.classpath">
+    </pathconvert>
+
+    <target name="check-classpath" depends="install-antcontrib" >
+        <if>
+            <equals arg1="${md.cz.check.classpath}" arg2="true"/>
+            <then>
+                <echo message="|- svn ant classpath"/>
+                <echo message="|   |"/>
+                <echo message="|   |-- ${echo.path.ant}"/>
+                <echo message="|- compile classpath"/>
+                <echo message="|   |"/>
+                <echo message="|   |-- ${echo.path.compile}"/>
+            </then>
+            <else>
+                <echo message="Check classpath set to  ${md.cz.check.classpath}"/>
+            </else>
+        </if>
+    </target>
+
+    <target name="update-from-svn" depends="install-antcontrib">
+        <if>
+            <equals arg1="${md.cz.do.update}" arg2="true"/>
+            <then>
+                <echo>Updating : ${update.dir}</echo>
+                <svn refid="svn.settings">
+                    <update revision="HEAD" dir="${update.dir}"/>
+                    <info target="${update.dir}"/>
+                </svn>
+                <echo>-> Update version = ${svn.info.rev}</echo>
+            </then>
+            <else>
+                <echo message="Update set to ${md.cz.do.update}"/>
+                <echo message="Skipping SVN update for ${update.dir}"/>
+            </else>
+        </if>
+    </target>
+
+    <!-- Third party Ant tasks and tools properties -->
+    <property name="subfloor.resources.dir"
+              value="${user.home}/.subfloor"
+              description="Base dir for runtime jars that are required exclusively by the build process"/>
+
+    <property name="antcontrib.build.cache.dir"
+              value="${subfloor.resources.dir}/ant-contrib"
+              description="Directory where the Ant-Contrib jar (and dependencies) is placed after it is auto-downloaded by the build"/>
+
+
+    <target name="install-antcontrib" depends="">
+        <taskdef resource="net/sf/antcontrib/antlib.xml">
+            <classpath>
+                <fileset dir="${antcontrib.build.cache.dir}">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </taskdef>
+    </target>
+
+    <!--
+    #	Clean
+    -->
+    <target name="clean" depends="update-from-svn">
+        <delete dir="bin"/>
+    </target>
+
+    <!--
+    #	Init
+    -->
+    <target name="init" depends="clean">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <!--
+    #	Build
+    -->
+    <target name="build" depends="init">
+        <echo message="Building ${mdMod}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="classpath"/>
+        </javac>
+
+    </target>
+
+    <!--
+    #	Package
+    -->
+    <target name="package" depends="build">
+
+        <svn refid="svn.settings">
+            <info target="${update.dir}"/>
+        </svn>
+
+        <echo>Package ${mdMod}: ${md.cz.version} - ${svn.info.rev}</echo>
+
+        <substring text="${mdMod}" property="subtext"/>
+        <echo message="subtext = ${subtext}"/>
+
+        <property name="jarfile" value="${subtext}-${md.cz.version}_${svn.info.rev}.jar"/>
+
+        <manifest file="MANIFEST.MF">
+            <attribute name="Implementation-Version" value="${md.cz.version}_${svn.info.rev}"/>
+        </manifest>
+
+        <jar destfile="bin/${jarfile}" basedir="bin" manifest="MANIFEST.MF"/>
+    </target>
+
+    <!--
+         Place holder for market place builds.  Override in build.xml for modules that get
+         marketplace builds.
+     -->
+    <target name="build-marketplace" depends=""/>
+
+
+    <!-- helper function -->
+    <scriptdef name="substring" language="javascript">
+        <attribute name="text"/>
+        <attribute name="start"/>
+        <attribute name="end"/>
+        <attribute name="property"/>
+        <![CDATA[
+       var text = attributes.get("text");
+       var start = 0;
+       var end = text.length() - (text.substring(text.indexOf("("), text.length()).length());
+       if(end < 5){
+         end = text.length() - 6;
+       }
+       project.setProperty(attributes.get("property"), text.substring(start, end));
+     ]]>
+
+
+    </scriptdef>
+
+
+    <!--
+    DEFAULT TARGET
+    -->
+
+    <target name="default" depends="" description="Builds md jars">
+        <!--
+        #   default needs to be overriden in build.xml
+        #   so that "mdMod" and "update.dir can be set accordingly
+        #
+        <property name="mdMod" value=""/>
+        <property name="update.dir" value=""/>
+        <antcall target="check-classpath"/>
+        <antcall target="package"/>
+        -->
+    </target>
+
+</project>
+
