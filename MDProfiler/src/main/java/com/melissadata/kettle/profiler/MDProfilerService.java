@@ -59,7 +59,7 @@ public abstract class MDProfilerService {
 	 */
 	protected IRequestManager createRequestManager() {
 		// FIXME add multi threading
-		int maxThreads = 1;// Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_MAX_THREADS, ""));
+		int maxThreads = 1;// Integer.parseInt(MDProps.getProperty(MDProfilerTags.TAG_MAX_THREADS, ""));
 		return new RequestManager(maxThreads);
 	}
 

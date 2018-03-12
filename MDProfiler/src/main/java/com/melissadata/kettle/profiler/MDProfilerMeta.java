@@ -2,13 +2,13 @@ package com.melissadata.kettle.profiler;
 
 import com.melissadata.cz.DQTObjectFactory;
 import com.melissadata.cz.MDProps;
-import com.melissadata.kettle.MDSettings.SettingsTags;
+import com.melissadata.cz.support.MDPropTags;
 import com.melissadata.kettle.profiler.data.OutputFilterFields;
 import com.melissadata.kettle.profiler.data.ProfilerEnum.AppendMode;
 import com.melissadata.kettle.profiler.data.ProfilerEnum.ColumnType;
 import com.melissadata.kettle.profiler.data.ProfilerEnum.ExpectedContent;
 import com.melissadata.kettle.profiler.data.ProfilerFields;
-import com.melissadata.kettle.profiler.support.MDPropTags;
+import com.melissadata.kettle.profiler.support.MDProfilerTags;
 import com.melissadata.kettle.profiler.support.PluginInstaller;
 import com.melissadata.kettle.profiler.ui.ProfileRecord;
 import com.melissadata.mdProfiler;
@@ -114,7 +114,7 @@ public class MDProfilerMeta extends BaseStepMeta implements StepMetaInterface {
 	}
 
 	public static boolean isEnterprise() {
-		return MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT, "").contains(SettingsTags.MDLICENSE_PRODUCT_Profiler) || MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT, "").contains(SettingsTags.MDLICENSE_PRODUCT_Any);
+		return MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT, "").contains(MDPropTags.MDLICENSE_PRODUCT_Profiler) || MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT, "").contains(MDPropTags.MDLICENSE_PRODUCT_Any);
 	}
 
 	/**
@@ -491,31 +491,31 @@ public class MDProfilerMeta extends BaseStepMeta implements StepMetaInterface {
 			retval.append(tab).append("  ").append(addTagValue(key, profilerFields.optionFields.get(key).metaValue));
 		}
 		retval.append(tab).append(XMLHandler.closeTag(ProfilerFields.TAG_PROFILER_OPTIONS)).append(Const.CR);
-		retval.append(tab).append(XMLHandler.openTag(MDPropTags.TAG_PROFILER_INPUT)).append(Const.CR);
+		retval.append(tab).append(XMLHandler.openTag(MDProfilerTags.TAG_PROFILER_INPUT)).append(Const.CR);
 		for (String key : profileRecords.keySet()) {
-			retval.append(tab).append(XMLHandler.openTag(MDPropTags.TAG_PROFILER_INPUT_FIELD)).append(Const.CR);
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_DO_PROFILE, String.valueOf(profileRecords.get(key).isDoProfile())));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_DO_PASSTHROUGH, String.valueOf(profileRecords.get(key).isDoPassThrough())));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_DO_RESULTS, String.valueOf(profileRecords.get(key).isDoResults())));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_COLUMN_NAME, profileRecords.get(key).getColumnName()));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_EXPECTED_CONTENT, profileRecords.get(key).getExpectedContent().encode()));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_DATA_TYPE, profileRecords.get(key).getColumnType().encode()));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_SET_LENGTH, String.valueOf(profileRecords.get(key).isSetLength())));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_LENGTH, profileRecords.get(key).getLength()));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_SET_PERSICION, String.valueOf(profileRecords.get(key).isSetPrecision())));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_PERCISION, profileRecords.get(key).getPrecision()));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_SET_SCALE, String.valueOf(profileRecords.get(key).isSetScale())));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_SCALE, profileRecords.get(key).getScale()));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_SET_DEFAULT, String.valueOf(profileRecords.get(key).isSetDefaultValue())));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_DEFAULT_VALUE, profileRecords.get(key).getDefaultValue()));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_SET_BOUNDS, String.valueOf(profileRecords.get(key).isSetBounds())));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_UPPER_BOUNDS, profileRecords.get(key).getUpperBound()));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_LOWER_BOUNDS, profileRecords.get(key).getLowerBound()));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_SET_CUSTOM, String.valueOf(profileRecords.get(key).isSetCustomPattern())));
-			retval.append(tab).append("  ").append(addTagValue(MDPropTags.TAG_INPUT_CUSTOM_PATTERN, profileRecords.get(key).getCustomPattern()));
-			retval.append(tab).append(XMLHandler.closeTag(MDPropTags.TAG_PROFILER_INPUT_FIELD)).append(Const.CR);
+			retval.append(tab).append(XMLHandler.openTag(MDProfilerTags.TAG_PROFILER_INPUT_FIELD)).append(Const.CR);
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_DO_PROFILE, String.valueOf(profileRecords.get(key).isDoProfile())));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_DO_PASSTHROUGH, String.valueOf(profileRecords.get(key).isDoPassThrough())));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_DO_RESULTS, String.valueOf(profileRecords.get(key).isDoResults())));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_COLUMN_NAME, profileRecords.get(key).getColumnName()));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_EXPECTED_CONTENT, profileRecords.get(key).getExpectedContent().encode()));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_DATA_TYPE, profileRecords.get(key).getColumnType().encode()));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_SET_LENGTH, String.valueOf(profileRecords.get(key).isSetLength())));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_LENGTH, profileRecords.get(key).getLength()));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_SET_PERSICION, String.valueOf(profileRecords.get(key).isSetPrecision())));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_PERCISION, profileRecords.get(key).getPrecision()));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_SET_SCALE, String.valueOf(profileRecords.get(key).isSetScale())));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_SCALE, profileRecords.get(key).getScale()));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_SET_DEFAULT, String.valueOf(profileRecords.get(key).isSetDefaultValue())));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_DEFAULT_VALUE, profileRecords.get(key).getDefaultValue()));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_SET_BOUNDS, String.valueOf(profileRecords.get(key).isSetBounds())));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_UPPER_BOUNDS, profileRecords.get(key).getUpperBound()));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_LOWER_BOUNDS, profileRecords.get(key).getLowerBound()));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_SET_CUSTOM, String.valueOf(profileRecords.get(key).isSetCustomPattern())));
+			retval.append(tab).append("  ").append(addTagValue(MDProfilerTags.TAG_INPUT_CUSTOM_PATTERN, profileRecords.get(key).getCustomPattern()));
+			retval.append(tab).append(XMLHandler.closeTag(MDProfilerTags.TAG_PROFILER_INPUT_FIELD)).append(Const.CR);
 		}
-		retval.append(tab).append(XMLHandler.closeTag(MDPropTags.TAG_PROFILER_INPUT)).append(Const.CR);
+		retval.append(tab).append(XMLHandler.closeTag(MDProfilerTags.TAG_PROFILER_INPUT)).append(Const.CR);
 		retval.append(tab).append(XMLHandler.openTag(OutputFilterFields.TAG_OUTPUT_FILTER)).append(Const.CR);
 		retval.append(tab).append("  ").append(XMLHandler.openTag(OutputFilterFields.TAG_FILTERS));
 		if ((oFilterFields != null) && (oFilterFields.filterTargets != null)) {
@@ -731,31 +731,31 @@ public class MDProfilerMeta extends BaseStepMeta implements StepMetaInterface {
 				appendMode = AppendMode.OVERWRITE;
 			}
 		}
-		nodes = XMLHandler.getNodes(stepnode, MDPropTags.TAG_PROFILER_INPUT);
+		nodes = XMLHandler.getNodes(stepnode, MDProfilerTags.TAG_PROFILER_INPUT);
 		if ((nodes != null) && (nodes.size() > 0)) {
 			Node tempNode   = nodes.get(0);
-			int  nrMappings = XMLHandler.countNodes(tempNode, MDPropTags.TAG_PROFILER_INPUT_FIELD);
+			int  nrMappings = XMLHandler.countNodes(tempNode, MDProfilerTags.TAG_PROFILER_INPUT_FIELD);
 			for (int i = 0; i < nrMappings; i++) {
-				Node            sourceNode   = XMLHandler.getSubNodeByNr(tempNode, MDPropTags.TAG_PROFILER_INPUT_FIELD, i);
-				String          colName      = getTagValue(sourceNode, MDPropTags.TAG_INPUT_COLUMN_NAME);
-				boolean         prof         = Boolean.valueOf(getTagValue(sourceNode, MDPropTags.TAG_INPUT_DO_PROFILE));
-				boolean         pass         = Boolean.valueOf(getTagValue(sourceNode, MDPropTags.TAG_INPUT_DO_PASSTHROUGH));
-				boolean         result       = Boolean.valueOf(getTagValue(sourceNode, MDPropTags.TAG_INPUT_DO_RESULTS));
-				boolean         setDefault   = Boolean.valueOf(getTagValue(sourceNode, MDPropTags.TAG_INPUT_SET_DEFAULT));
-				String          defaultVal   = getTagValue(sourceNode, MDPropTags.TAG_INPUT_DEFAULT_VALUE);
-				boolean         setBounds    = Boolean.valueOf(getTagValue(sourceNode, MDPropTags.TAG_INPUT_SET_BOUNDS));
-				String          uBounds      = getTagValue(sourceNode, MDPropTags.TAG_INPUT_UPPER_BOUNDS);
-				String          lBounds      = getTagValue(sourceNode, MDPropTags.TAG_INPUT_LOWER_BOUNDS);
-				boolean         setCustom    = Boolean.valueOf(getTagValue(sourceNode, MDPropTags.TAG_INPUT_SET_CUSTOM));
-				String          customVal    = getTagValue(sourceNode, MDPropTags.TAG_INPUT_CUSTOM_PATTERN);
-				ExpectedContent content      = ExpectedContent.decode(getTagValue(sourceNode, MDPropTags.TAG_INPUT_EXPECTED_CONTENT));
-				ColumnType      type         = ColumnType.decode(getTagValue(sourceNode, MDPropTags.TAG_INPUT_DATA_TYPE));
-				boolean         setLength    = Boolean.valueOf(getTagValue(sourceNode, MDPropTags.TAG_INPUT_SET_LENGTH));
-				String          len          = getTagValue(sourceNode, MDPropTags.TAG_INPUT_LENGTH);
-				boolean         setPrecision = Boolean.valueOf(getTagValue(sourceNode, MDPropTags.TAG_INPUT_SET_PERSICION));
-				String          precision    = getTagValue(sourceNode, MDPropTags.TAG_INPUT_PERCISION);
-				boolean         setScale     = Boolean.valueOf(getTagValue(sourceNode, MDPropTags.TAG_INPUT_SET_SCALE));
-				String          scale        = getTagValue(sourceNode, MDPropTags.TAG_INPUT_SCALE);
+				Node            sourceNode   = XMLHandler.getSubNodeByNr(tempNode, MDProfilerTags.TAG_PROFILER_INPUT_FIELD, i);
+				String          colName      = getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_COLUMN_NAME);
+				boolean         prof         = Boolean.valueOf(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_DO_PROFILE));
+				boolean         pass         = Boolean.valueOf(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_DO_PASSTHROUGH));
+				boolean         result       = Boolean.valueOf(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_DO_RESULTS));
+				boolean         setDefault   = Boolean.valueOf(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_SET_DEFAULT));
+				String          defaultVal   = getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_DEFAULT_VALUE);
+				boolean         setBounds    = Boolean.valueOf(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_SET_BOUNDS));
+				String          uBounds      = getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_UPPER_BOUNDS);
+				String          lBounds      = getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_LOWER_BOUNDS);
+				boolean         setCustom    = Boolean.valueOf(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_SET_CUSTOM));
+				String          customVal    = getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_CUSTOM_PATTERN);
+				ExpectedContent content      = ExpectedContent.decode(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_EXPECTED_CONTENT));
+				ColumnType      type         = ColumnType.decode(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_DATA_TYPE));
+				boolean         setLength    = Boolean.valueOf(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_SET_LENGTH));
+				String          len          = getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_LENGTH);
+				boolean         setPrecision = Boolean.valueOf(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_SET_PERSICION));
+				String          precision    = getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_PERCISION);
+				boolean         setScale     = Boolean.valueOf(getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_SET_SCALE));
+				String          scale        = getTagValue(sourceNode, MDProfilerTags.TAG_INPUT_SCALE);
 				ProfileRecord   pr           = new ProfileRecord(null, prof, pass, result, setDefault, defaultVal, setBounds, uBounds, lBounds, setCustom, customVal, colName, content, type, setLength, len, setPrecision, precision, setScale, scale);
 				profileRecords.put(colName, pr);
 			}
@@ -884,28 +884,28 @@ public class MDProfilerMeta extends BaseStepMeta implements StepMetaInterface {
 			log.logBasic("Setting to : " + AppendMode.OVERWRITE);
 			appendMode = AppendMode.OVERWRITE;
 		}
-		prefix = MDPropTags.TAG_PROFILER_INPUT + "." + MDPropTags.TAG_PROFILER_INPUT_FIELD + ".";
-		int nrMappings = rep.countNrStepAttributes(idStep, prefix + MDPropTags.TAG_INPUT_COLUMN_NAME);
+		prefix = MDProfilerTags.TAG_PROFILER_INPUT + "." + MDProfilerTags.TAG_PROFILER_INPUT_FIELD + ".";
+		int nrMappings = rep.countNrStepAttributes(idStep, prefix + MDProfilerTags.TAG_INPUT_COLUMN_NAME);
 		for (int i = 0; i < nrMappings; i++) {
-			String          colName      = rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_COLUMN_NAME);
-			boolean         prof         = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_DO_PROFILE));
-			boolean         pass         = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_DO_PASSTHROUGH));
-			boolean         result       = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_DO_RESULTS));
-			boolean         setDefault   = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_SET_DEFAULT));
-			String          defaultVal   = rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_DEFAULT_VALUE);
-			boolean         setBounds    = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_SET_BOUNDS));
-			String          uBounds      = rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_UPPER_BOUNDS);
-			String          lBounds      = rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_LOWER_BOUNDS);
-			boolean         setCustom    = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_SET_CUSTOM));
-			String          customVal    = rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_CUSTOM_PATTERN);
-			ExpectedContent content      = ExpectedContent.decode(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_EXPECTED_CONTENT));
-			ColumnType      type         = ColumnType.decode(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_DATA_TYPE));
-			boolean         setLength    = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_SET_LENGTH));
-			String          len          = rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_LENGTH);
-			boolean         setPrecision = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_SET_PERSICION));
-			String          precision    = rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_PERCISION);
-			boolean         setScale     = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_SET_SCALE));
-			String          scale        = rep.getStepAttributeString(idStep, i, prefix + MDPropTags.TAG_INPUT_SCALE);
+			String          colName      = rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_COLUMN_NAME);
+			boolean         prof         = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_DO_PROFILE));
+			boolean         pass         = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_DO_PASSTHROUGH));
+			boolean         result       = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_DO_RESULTS));
+			boolean         setDefault   = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_DEFAULT));
+			String          defaultVal   = rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_DEFAULT_VALUE);
+			boolean         setBounds    = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_BOUNDS));
+			String          uBounds      = rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_UPPER_BOUNDS);
+			String          lBounds      = rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_LOWER_BOUNDS);
+			boolean         setCustom    = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_CUSTOM));
+			String          customVal    = rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_CUSTOM_PATTERN);
+			ExpectedContent content      = ExpectedContent.decode(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_EXPECTED_CONTENT));
+			ColumnType      type         = ColumnType.decode(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_DATA_TYPE));
+			boolean         setLength    = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_LENGTH));
+			String          len          = rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_LENGTH);
+			boolean         setPrecision = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_PERSICION));
+			String          precision    = rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_PERCISION);
+			boolean         setScale     = Boolean.valueOf(rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_SCALE));
+			String          scale        = rep.getStepAttributeString(idStep, i, prefix + MDProfilerTags.TAG_INPUT_SCALE);
 			ProfileRecord   pr           = new ProfileRecord(null, prof, pass, result, setDefault, defaultVal, setBounds, uBounds, lBounds, setCustom, customVal, colName, content, type, setLength, len, setPrecision, precision, setScale, scale);
 			profileRecords.put(colName, pr);
 		}
@@ -935,28 +935,28 @@ public class MDProfilerMeta extends BaseStepMeta implements StepMetaInterface {
 		for (String key : profilerFields.optionFields.keySet()) {
 			rep.saveStepAttribute(idTransformation, idStep, ProfilerFields.TAG_PROFILER_OPTIONS + "." + key, profilerFields.optionFields.get(key).metaValue);
 		}
-		String prefix = MDPropTags.TAG_PROFILER_INPUT + "." + MDPropTags.TAG_PROFILER_INPUT_FIELD + ".";
+		String prefix = MDProfilerTags.TAG_PROFILER_INPUT + "." + MDProfilerTags.TAG_PROFILER_INPUT_FIELD + ".";
 		int    i      = 0;
 		for (ProfileRecord profileRecord : profileRecords.values()) {
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_DO_PROFILE, String.valueOf(profileRecord.isDoProfile()));
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_DO_PASSTHROUGH, String.valueOf(profileRecord.isDoPassThrough()));
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_DO_RESULTS, String.valueOf(profileRecord.isDoResults()));
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_COLUMN_NAME, profileRecord.getColumnName());
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_EXPECTED_CONTENT, profileRecord.getExpectedContent().encode());
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_DATA_TYPE, profileRecord.getColumnType().encode());
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_SET_LENGTH, String.valueOf(profileRecord.isSetLength()));
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_LENGTH, profileRecord.getLength());
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_SET_PERSICION, String.valueOf(profileRecord.isSetPrecision()));
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_PERCISION, profileRecord.getPrecision());
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_SET_SCALE, String.valueOf(profileRecord.isSetScale()));
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_SCALE, profileRecord.getScale());
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_SET_DEFAULT, String.valueOf(profileRecord.isSetDefaultValue()));
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_DEFAULT_VALUE, profileRecord.getDefaultValue());
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_SET_BOUNDS, String.valueOf(profileRecord.isSetBounds()));
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_UPPER_BOUNDS, profileRecord.getUpperBound());
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_LOWER_BOUNDS, profileRecord.getLowerBound());
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_SET_CUSTOM, String.valueOf(profileRecord.isSetCustomPattern()));
-			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDPropTags.TAG_INPUT_CUSTOM_PATTERN, profileRecord.getCustomPattern());
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_DO_PROFILE, String.valueOf(profileRecord.isDoProfile()));
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_DO_PASSTHROUGH, String.valueOf(profileRecord.isDoPassThrough()));
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_DO_RESULTS, String.valueOf(profileRecord.isDoResults()));
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_COLUMN_NAME, profileRecord.getColumnName());
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_EXPECTED_CONTENT, profileRecord.getExpectedContent().encode());
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_DATA_TYPE, profileRecord.getColumnType().encode());
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_LENGTH, String.valueOf(profileRecord.isSetLength()));
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_LENGTH, profileRecord.getLength());
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_PERSICION, String.valueOf(profileRecord.isSetPrecision()));
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_PERCISION, profileRecord.getPrecision());
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_SCALE, String.valueOf(profileRecord.isSetScale()));
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_SCALE, profileRecord.getScale());
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_DEFAULT, String.valueOf(profileRecord.isSetDefaultValue()));
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_DEFAULT_VALUE, profileRecord.getDefaultValue());
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_BOUNDS, String.valueOf(profileRecord.isSetBounds()));
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_UPPER_BOUNDS, profileRecord.getUpperBound());
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_LOWER_BOUNDS, profileRecord.getLowerBound());
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_SET_CUSTOM, String.valueOf(profileRecord.isSetCustomPattern()));
+			rep.saveStepAttribute(idTransformation, idStep, i, prefix + MDProfilerTags.TAG_INPUT_CUSTOM_PATTERN, profileRecord.getCustomPattern());
 			i++;
 		}
 		prefix = OutputFilterFields.TAG_OUTPUT_FILTER + "." + OutputFilterFields.TAG_FILTER + ".";

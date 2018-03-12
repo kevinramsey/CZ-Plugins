@@ -2,7 +2,6 @@ package com.melissadata.kettle.profiler;
 
 import java.util.List;
 
-import com.melissadata.kettle.MDSettings.SettingsTags;
 import org.pentaho.di.core.Const;
 import org.pentaho.di.core.row.RowMetaInterface;
 import org.pentaho.di.core.xml.XMLHandler;
@@ -11,7 +10,7 @@ import org.pentaho.di.trans.step.StepDataInterface;
 import org.w3c.dom.Node;
 
 import com.melissadata.cz.MDProps;
-import com.melissadata.kettle.profiler.support.MDPropTags;
+import com.melissadata.cz.support.MDPropTags;
 
 public class MDProfilerData extends BaseStepData implements StepDataInterface {
 	/**
@@ -82,11 +81,11 @@ public class MDProfilerData extends BaseStepData implements StepDataInterface {
 //			return realLicense;
 
 		String lic = "";
-		int retVal = Integer.parseInt(MDProps.getProperty(SettingsTags.TAG_PRIMARY_RET_VAL, String.valueOf(SettingsTags.MDLICENSE_None)));
-		if((retVal & SettingsTags.MDLICENSE_Profiler) != 0){
+		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, String.valueOf(MDPropTags.MDLICENSE_None)));
+		if((retVal & MDPropTags.MDLICENSE_Profiler) != 0){
 			lic = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "");
-		} else if ((retVal & SettingsTags.MDLICENSE_Community) != 0){
-			lic = SettingsTags.MD_COMMUNITY_LICENSE;
+		} else if ((retVal & MDPropTags.MDLICENSE_Community) != 0){
+			lic = MDPropTags.MD_COMMUNITY_LICENSE;
 		}
 
 		if (Const.isEmpty(lic)) {

@@ -15,7 +15,7 @@ import java.util.TreeMap;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
-import com.melissadata.kettle.MDSettings.SettingsTags;
+import com.melissadata.kettle.profiler.support.*;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
@@ -56,13 +56,10 @@ import com.melissadata.cz.DQTObjectFactory;
 import com.melissadata.cz.MDProps;
 import com.melissadata.cz.SourceFieldInfo;
 import com.melissadata.cz.ui.MDDialogParent;
+import com.melissadata.cz.support.MDPropTags;
 import com.melissadata.kettle.MDSettings.AdvancedConfigInterface;
 import com.melissadata.kettle.MDSettings.AdvancedConfigurationDialog;
-import com.melissadata.kettle.profiler.support.InstallRedistrib;
-import com.melissadata.kettle.profiler.support.MDProfilerHelper;
-import com.melissadata.kettle.profiler.support.MDPropTags;
-import com.melissadata.kettle.profiler.support.MDTab;
-import com.melissadata.kettle.profiler.support.PluginInstaller;
+//import com.melissadata.kettle.profiler.support.MDProfilerTags;
 import com.melissadata.kettle.profiler.ui.AnalysisOptionsTab;
 import com.melissadata.kettle.profiler.ui.InputFieldsTab;
 import com.melissadata.kettle.profiler.ui.OutputOptionsTab;
@@ -347,8 +344,8 @@ public class MDProfilerDialog extends BaseStepDialog implements StepDialogInterf
 	}
 
 	private String getTestResult() {
-		int nLicensedProduct = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RETVAL, "0"));
-		int nTrialLicensedProduct = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RETVAL, "0"));
+		int nLicensedProduct = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
+		int nTrialLicensedProduct = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
 		if ((nLicensedProduct & MDPropTags.MDLICENSE_Profiler) != 0)
 			return MDProps.getProperty(MDPropTags.TAG_PRIMARY_TEST_RESULT, "");
 		else if ((nTrialLicensedProduct & MDPropTags.MDLICENSE_Profiler) != 0)
@@ -690,7 +687,7 @@ public class MDProfilerDialog extends BaseStepDialog implements StepDialogInterf
 		}
 
 		if(!MDProfilerMeta.isEnterprise()){
-			if(MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT,"").contains(SettingsTags.MDLICENSE_PRODUCT_Community) ){
+			if(MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT,"").contains(MDPropTags.MDLICENSE_PRODUCT_Community) ){
 				MessageBox box = new MessageBox(shell, SWT.OK | SWT.APPLICATION_MODAL | SWT.ICON_WARNING);
 				box.setText(BaseMessages.getString(PKG, "MDProfilerDialog.Community.Title"));
 				box.setMessage(BaseMessages.getString(PKG,"MDProfilerDialog.Community.PopupMessage"));

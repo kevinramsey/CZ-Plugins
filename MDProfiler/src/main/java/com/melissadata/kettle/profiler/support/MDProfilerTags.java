@@ -1,23 +1,7 @@
 package com.melissadata.kettle.profiler.support;
 
-public class MDPropTags {
-	// License string and customer id
-	public static final String	TAG_PRIMARY_LICENSE			= "license";
-	public static final String	TAG_PRIMARY_ID				= "primary_customerID";
-	public static final String	TAG_PRIMARY_RETVAL			= "license_retVal";
-	public static final String	TAG_PRIMARY_EXPIRATION		= "license_expiration";
-	public static final String	TAG_PRIMARY_TEST_RESULT		= "primary_TestResult";
-	public static final String	TAG_TRIAL_LICENSE			= "trial_license";
-	public static final String	TAG_TRIAL_ID				= "trial_customerID";
-	public static final String	TAG_TRIAL_RETVAL			= "trial_retVal";
-	public static final String	TAG_TRIAL_EXPIRATION		= "trial_license_expiration";
-	public static final String	TAG_TRIAL_TEST_RESULT		= "trial_TestResult";
-	public static final int		MDLICENSE_Profiler			= 0x02000;
-	public static final String	TAG_LOCAL_DATA_PATH			= "data_path";
-	// Common web/appliance tags
-	public static final String	TAG_MAX_THREADS				= "max_threads";
-	public static final String	TAG_MAX_REQUESTS			= "max_requests";
-	public static final String	TAG_PROFILER_OUTPUT			= "profiler_output";
+public class MDProfilerTags {
+
 	// COLUMN SETTINGS
 	public static final String	TAG_PROFILER_INPUT			= "profiler_input";
 	public static final String	TAG_PROFILER_INPUT_FIELD	= "profiler_input_field";

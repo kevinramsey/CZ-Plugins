@@ -25,7 +25,7 @@
 
     <properties>
         <jna.version>4.4.0</jna.version>
-        <pentaho.version>8.1.0.0-SNAPSHOT</pentaho.version>
+        <pentaho.version>8.0.0.4-CZ.0</pentaho.version>
         <cz.version>1.1-SNAPSHOT</cz.version>
     </properties>
 
