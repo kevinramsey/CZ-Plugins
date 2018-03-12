@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<project basedir="." default="default" name="MD Profiler">
+
+    <!-- Look for user-override properties file first -->
+    <property file="override.properties"/>
+    <!-- set global properties for this build -->
+    <property file="build.properties"/>
+
+    <!-- Import the common_build.xml file which contains all the default tasks -->
+    <import file="build-res/subfloor.xml"/>
+    <!--
+         #	Clean
+    -->
+    <target name="marketplace-clean">
+
+        <delete dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin" failonerror="false"/>
+        <delete failonerror="false">
+             <fileset dir="${md.cz.marketplace.dir}/ZippedFiles" includes="MDProfiler*.zip"  />
+        </delete>
+
+    </target>
+
+    <!--
+        # marketplace init
+    -->
+    <target name="marketplace-init" depends="marketplace-clean">
+
+        <mkdir dir="${md.cz.marketplace.dir}/ZippedFiles" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MDdata" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MD" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MD/32_bit" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MD/64_bit" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MD/mac" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MD/mac/64_bit" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MD/libext" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/kettle" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/mdSamples" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/VCredist" />
+        <mkdir dir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/tools" />
+
+    </target>
+
+    <!--
+        # Build marketplace zip
+    -->
+    <target name="build-marketplace-test" depends="default">
+        <antcall target="build-marketplace" />
+
+    </target>
+
+
+    <target name="build-marketplace" depends="install-antcontrib, marketplace-init">
+
+
+        <copy todir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MD/32_bit">
+            <fileset dir="${md.cz.dll.dir}/32_bit" includes="mdLicense*.dll mdProfiler*.dll"/>
+            <fileset dir="${md.cz.so.dir}/32_bit" includes="libmdLicense*.so libmdProfiler*.so"/>
+        </copy>
+
+        <copy todir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MD/64_bit">
+            <fileset dir="${md.cz.dll.dir}/64_bit" includes="mdLicense*.dll mdProfiler*.dll"/>
+            <fileset dir="${md.cz.so.dir}/64_bit" includes="libmdLicense*.so libmdProfiler*.so"/>
+        </copy>
+
+        <copy todir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MD/mac/64_bit">
+            <fileset dir="${md.cz.macos.dir}" includes="libmdLicense*.so libmdLicense*.jnilib"/>
+        </copy>
+
+
+        <copy todir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MDdata">
+            <fileset dir="${md.cz.data.dir}/Profiler" includes="*.dat *.cfg *.mc"/>
+        </copy>
+
+        <copy todir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/MD/libext">
+            <fileset dir="${czLib.Dir}/bin" includes="*.jar"/>
+            <fileset dir="${mdSettings.Dir}/bin" includes="*.jar"/>
+            <fileset dir="${czLib.Dir}/lib-md" includes="jna.jar platform.jar"/>
+        </copy>
+
+        <copy todir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/kettle">
+            <fileset dir="${md.cz.property.files.dir}" includes="mdProps.prop"/>
+        </copy>
+
+        <copy todir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/tools">
+            <fileset dir="${md.cz.tools.dir}" includes="*.*"/>
+        </copy>
+
+        <copy todir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/mdSamples">
+            <fileset dir="${md.cz.samples.dir}" includes="**/*.*"/>
+
+        </copy>
+
+        <copy todir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/VCredist">
+            <fileset dir="${md.cz.resourses.dir}/VCppRuntime" includes="*.exe"/>
+        </copy>
+
+        <copy todir="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin">
+            <fileset dir="${mdProfiler.Dir}/bin" includes="*.jar"/>
+            <fileset dir="${md.cz.version.proto.file}" includes="*ReadMe.txt"/>
+
+        </copy>
+
+         <svn refid="svn.settings">
+            <info target="${mdProfiler.Dir}" />
+        </svn>
+
+        <copy file="${md.cz.version.proto.file}/version.prototype" tofile="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/version.xml">
+        </copy>
+        <replace file="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/version.xml" token="MDCBUILD" value="${svn.info.rev}"/>
+        <replace file="${md.cz.marketplace.dir}/MDProfiler/MDProfilerPlugin/version.xml" token="MDCVERSION" value="${md.cz.version}"/>
+
+
+        <zip destfile="${md.cz.marketplace.dir}/ZippedFiles/MDProfiler-market-${md.cz.version}_${md.cz.build-id}.zip" basedir="${md.cz.marketplace.dir}/MDProfiler" update="true"/>
+    </target>
+
+
+    <target name="default" depends="" description="Builds MDProfiler">
+        <property name="mdMod" value="MD_Profiler_Test(trunk)"/> <!-- default value if set by a calling script this is ignored-->
+        <property name="update.dir" value="${mdProfiler.Dir}"/>
+        <antcall target="check-classpath"/><antcall target="check-classpath"/>
+        <antcall target="package"/>
+    </target>
+
+</project>
+
