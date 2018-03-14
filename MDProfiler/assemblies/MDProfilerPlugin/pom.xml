@@ -12,6 +12,7 @@
 
     <properties>
         <common.resourcesDir>${basedir}\..\..\..\common-resources</common.resourcesDir>
+        <local.resourcesDir>src\main\resources</local.resourcesDir>
 
     </properties>
 
@@ -40,22 +41,65 @@
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <artifactItems>
+                        <artifactItem>
+                            <groupId>com.melissadata.kettle</groupId>
+                            <artifactId>mdLicense</artifactId>
+                            <version>1.0</version>
+                            <type>dll</type>
+                            <overWrite>true</overWrite>
+                            <outputDirectory>${local.resourcesDir}\MD\64_bit </outputDirectory>
+                            <destFileName>mdLicense.dll</destFileName>
+                        </artifactItem>
+                    </artifactItems>
+                   <!-- <outputDirectory>${project.build.directory}/wars</outputDirectory>
+                    <overWriteReleases>false</overWriteReleases>
+                    <overWriteSnapshots>true</overWriteSnapshots>
+                    -->
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
                     <descriptor>src/assembly/assembly.xml</descriptor>
+                    <finalName>MDProfiler-market-${project.version}</finalName>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>create-archive</id>
+                        <id>make-assembly</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
                         </goals>
+
                     </execution>
                 </executions>
             </plugin>
+
+
+
+
+
         </plugins>
+
+
+
     </build>
 
 

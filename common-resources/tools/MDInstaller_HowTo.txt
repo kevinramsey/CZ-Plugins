@@ -1,0 +1,30 @@
+Using the MD Installer
+
+Thought the installer was designed for use in a headless install
+it can still be used on systems with a GUI.
+
+******************************************************************
+ 
+Copy the MDInstaller.jar to your MDCheckPlugin directory where 
+MDCheck-x.x.x_Buildxxxxx.jar resides.
+
+Using a standard text editor create a file named 
+md_headless.config
+
+In the file add 2 lines: 
+
+license=<your license string>
+data_path=<your data path>
+
+
+open a command prompt and enter
+
+java -jar MDInstaller.jar
+
+Optionally if you .kettle dir is not in the normal location i.e C:\Users\<USER_NAME>>\.kettle
+you can pass it as a param to the MDInstaller.jar
+
+i.e 
+java -jar MDInstaller.jar "<Path To kettle>\.kettle"
+
+then follow the screen prompts.
