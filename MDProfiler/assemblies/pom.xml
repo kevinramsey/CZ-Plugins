@@ -11,6 +11,7 @@
 
     <name>MDProfiler Assemblies</name>
 
+
     <modules>
         <!--  <module>../../MDProfiler</module> -->
         <module>MDProfilerPlugin</module>

@@ -11,8 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jna.version>4.4.0</jna.version>
-        <!--  Set pentaho version to a standard version no a CZ build to avoid circular dependencies  -->
+        <!--  Set pentaho version to a standard version not a CZ build to avoid circular dependencies  -->
         <pentaho.version>8.0.0.4-207</pentaho.version>
     </properties>
 
@@ -31,6 +30,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.0.0</version>
                 <executions>
                     <execution>
                         <phase>generate-sources</phase>
