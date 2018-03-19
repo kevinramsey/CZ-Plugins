@@ -11,17 +11,30 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <pentaho.version>8.0.0.4-207</pentaho.version>
+        <pentaho.version>8.0.0.4-237</pentaho.version>
         <cz.version>1.1-SNAPSHOT</cz.version>
         <mdsettings.version>1.1-SNAPSHOT</mdsettings.version>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-ui-swt</artifactId>
             <version>${pentaho.version}</version>
             <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-engine</artifactId>
+            <version>${pentaho.version}</version>
         </dependency>
 
        <dependency>
@@ -30,10 +43,19 @@
            <version>${pentaho.version}</version>
        </dependency>
 
+
         <dependency>
             <groupId>com.melissadata</groupId>
             <artifactId>cz.library</artifactId>
             <version>${cz.version}</version>
+            <exclusions>
+                <!--
+                <exclusion>
+                    <groupId>pentaho-kettle</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                -->
+            </exclusions>
             <type>jar</type>
         </dependency>
 
@@ -41,8 +63,27 @@
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>MDSettings</artifactId>
             <version>${mdsettings.version}</version>
+            <exclusions>
+                <!--
+                <exclusion>
+                    <groupId>com.melissadata</groupId>
+                    <artifactId>cz.library</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>pentaho-kettle</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                -->
+            </exclusions>
             <type>jar</type>
         </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.swt</groupId>
+            <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+            <version>4.3</version>
+        </dependency>
+
 
 
         <dependency>
@@ -51,6 +92,7 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
 
     </dependencies>
 

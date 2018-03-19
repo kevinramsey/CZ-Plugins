@@ -1,0 +1,151 @@
+Company|Address|City|State|Zip|Plus4|Name Full|Phone
+Sherwood Investments|PO Box 16420|Philadelphia|PA|19122|120|Sherwood Tom|2156340568
+Family Services|933 N Charlotte St # 1A|Pottstown|PA|19464|3974||6103261610
+SHIPMEYOURPC.COM|2100 Byberry Rd|Philadelphia|PA|19116|3026||2158213997
+Usi Towing Transport & Rcvry|2033 S Chadwick St|Philadelphia|PA|19145|3018|Di Lemmo Pat|2154626232
+Pommerer's Collision Ctr|648 Old Lincoln Hwy|Coatesville|PA|19320|2649|Pommerer Fred|6103835390
+Santander Bank ATM|863 Baltimore Pike|Glen Mills|PA|19342|1057||6100001111
+Atm|6400 Bustleton Ave|Philadelphia|PA|19149|||2150001111
+Arslan Salon & Spa|4801 S 48th St|Philadelphia|PA|19143|||2159216723
+Service King Collision Repair|51 E Lancaster Ave|Malvern|PA|19355|3002|Strohecker Bill|6107222668
+Sun Gard|225 Washington St # 300|Conshohocken|PA|19428|4122|Dennelly Jim|4845304400
+Pennsylvania Open MRI|1619 Grant Ave # 4|Philadelphia|PA|19115|3161||2156770830
+Discovery Toys|612 Valley Rd|Blue Bell|PA|19422|2051|Ober Helen|2156460296
+Pepper School Playground|84th & Lyons|Philadelphia|PA|19153|||2156854195
+Atm|1 Branson Landing Blvd|Branson|MO|65616|||4170001111
+Stein's Generator & Starter|10069 Sandmeyer Ln|Philadelphia|PA|19116|3592|Herman Scott|2159696900
+Recklau Salon|9951 Bustleton Ave|Philadelphia|PA|19115|||2676863752
+United Check Cashing|2508 E Cumberland St|Philadelphia|PA|19125|3107|Patel K|2152712776
+Younger & Sons|Lansdale Avenue|Lansdale|PA|19446|||2153622828
+Quilts & Quilts|3500 N Gretna Rd|Branson|MO|65616|7358|Colbert Lacey|4173343243
+St Francis De Sales Church|4325 Springfield Ave|Philadelphia|PA|19143||Bier Louis C|2152225819
+Thousand Hills Altic|288 Oakridge Dr|Branson|MO|65616|||4173375118
+New Concept Inc|906 E Main St|Norristown|PA|19401|4106|Razavian Abdalhamid|6103131866
+Huf Landscaping|257 Bethel Rd|Oxford|PA|19363|1164|Huf Mark|6109323426
+Westtown Twp Office|1015 Sage Rd|Westtown|PA|19395|||6106920499
+Philadelphia Housing Authority|5920 N 20th St|Philadelphia|PA|19138|||2156845896
+Atm|423 W Olney Ave|Philadelphia|PA|19120|2362||2150001111
+Nephrology Associates|1330 Powell St # 601|Norristown|PA|19401|3353|Mc Cusker Francis X MD|6102759770
+John M Archer Accounting & Tax|PO Box 208|Lederach|PA|19450|208|Archer John M|2152568581
+Urologic Consultants|2705 Dekalb Pike # 302|Norristown|PA|19401|1852|Manfrey Samuel J DO|6102770313
+Chud Air Conditioning & Htg Co|1570 Old York Rd|Philadelphia|PA|19116||Chud Sheldon|2156718182
+Redbox|5843 Rising Sun Ave|Philadelphia|PA|19120|1144||8667332693
+Lake Taneycomo Woods Assn|1118 Taneycomo Rd|Branson|MO|65616||Jackson David|4173358481
+Shanaaz Auto Body|2159 Kinsey St|Philadelphia|PA|19124|4044||2157440400
+Eagle Tool & Die Co Inc|PO Box 592|Downingtown|PA|19335|592|Reiteleach Eric|6106471238
+Rick's Lawn & Tree Svc|1018 Middletown Rd|Glen Mills|PA|19342|||6105257155
+Suzy Q's Hair Care|9 Route H|Greenfield|MO|65661||Jankins Suzanne|4176372973
+Prager Mircosystems LLC|3819 Germantown Pike # A|Collegeville|PA|19426|4500|Prager Stephen|6104091605
+Starbucks|28 E Germantown Pike|East Norriton|PA|19401|1512|Caldwell Sarah|6102758828
+Fitzpatrick Playground|12501 Torrey Rd|Philadelphia|PA|19154||Albertelli Lisa|2156859395
+Art of Exotic Dancing|222 W Lancaster Ave # 201|Paoli|PA|19301|1742||6100001111
+Alianza Express|1028 S 9th St|Philadelphia|PA|19147|4723|Lucero Sylvester|2159222211
+City Hall|116 W Commercial St|Everton|MO|65646|7149|Wilson Norman|4175356025
+Operation Ava|858 N 3rd St|Philadelphia|PA|19123|2204||2675190376
+Philadelphia City Commissioner|130 City Hall|Philadelphia|PA|19107|3213|Tartaglione Margaret|2156863460
+Hyundai Pacifico|6715 Essington Ave|Philadelphia|PA|19153|3407|Pacifico Kerry|2153650300
+Pure Sound Music Group|2457 N 27th St|Philadelphia|PA|19132|3503||2676395812
+T P Auto Sales|175 W Wingohocking St|Philadelphia|PA|19140|||2154553464
+Marmi Shoes|344 Mall Blvd|King of Prussia|PA|19406|||6109921666
+Atm|5901 Belden St|Philadelphia|PA|19149|3704||2150001111
+Rob Lynch Flooring|W Kings Hwy|Coatesville|PA|19320||Lynch Robert|6103845538
+Carol Habig's Flora|910 Sunset Hollow Rd|West Chester|PA|19380|1850||6104319987
+Albert Einstein Emergency Dept|5501 Old York Rd # B9|Philadelphia|PA|19141|3018|Yazdanfar Shahriar MD|2154566336
+Food Source Intl Inc|734 N Chester Rd|West Chester|PA|19380|||4846312005
+Borough of Phoenixville|865 Main St|Phoenixville|PA|19460|4420||6109335936
+Cambridge Beauty Supply|2313 E Venango St # 1|Philadelphia|PA|19134|4621||2157447040
+Willey's Quick Stop|5190 Highway 5|Hartville|MO|65667||Willey Kaye|4177417155
+Pilots Inc|7 Hog Island Rd|Philadelphia|PA|19153|3809|Mattie James|2153899479
+Sun East Federal Credit Union|831 Baltimore Pike|Glen Mills|PA|19342|||6105581395
+Creative Minds Child Care|418 W 1st Ave|Parkesburg|PA|19365|||4847183140
+Sedgwick Gardens Inc|6907 Mccallum St|Philadelphia|PA|19119|||2158868030
+JBD Contractors|2024 W Lippincott St|Philadelphia|PA|19132|1531|Jackson Alen|2152236860
+Stanford Appraisal & Adjusting|2936 Cambridge Rd|Honey Brook|PA|19344|9292|Stanford Robert|6102732674
+Transamerican Tool Co Inc|305 S Main St|Spring City|PA|19475|2016|Vespaziani Robert|6109484411
+Murray-Schluck Joann M|8200 Henry Ave # G1|Philadelphia|PA|19128|2984|Murray-Schluck Joann M|2154822336
+US Post Office|25736 US Highway 160|Hardenville|MO|65666|||4176794706
+Lower Gwynedd Twp Police|PO Box 625|Spring House|PA|19477|625|Scholly John|2156465303
+LEGO Store|160 N Gulph Rd # 1083|King of Prussia|PA|19406|2937||6103373203
+Shazam Atm|National Bk Plz|Crane|MO|65633|||4170001111
+Vetri Family|1113 Admiral Peary Way # N|Philadelphia|PA|19112|1400|Vetri Marc|2156002631
+Kane Justin M MD|1015 Walnut St # 801|Philadelphia|PA|19107|5005|Kane Justin M MD|2159556748
+Atm|705 S New St|West Chester|PA|19383|1011||6100001111
+Bello Auto Repair Inc|58 N Franklin St|Pottstown|PA|19464|||6103233880
+Wine & Spirits Stores|1301 Skippack Pike # 100|Blue Bell|PA|19422|1254|Christian Kim|6102929061
+Midlantic Ltd|217 Wstte S|Kennett Square|PA|19348|||6100001111
+Deja Vu Collectibles Inc|PO Box 12328|Philadelphia|PA|19119|328|Kindler Carol|2159919895
+Universal Alcore Middle Years|1319 S 26th St|Philadelphia|PA|19146|||2152187275
+2115 South St|2113 South St|Philadelphia|PA|19146|||2157320171
+Lindie's Furniture Shop|122 Mill Road # 940|Oaks|PA|19456||Smith Linda|6102778727
+Chester County Timber Inc|RR 162|Unionville|PA|19375|||6103472330
+Berwyn Collision Inc|991 Lancaster Ave|Berwyn|PA|19312|1710|Zackavich Rich|6106444510
+Perera Charles A MD|Kendal St & Longwood St|Kennett Square|PA|19348||Perera Charles A MD|6103882168
+M A Storage Inc|5386 N 6th St|Philadelphia|PA|19120|||2674285120
+Crowley Foods Warehouse|2840 Comly Rd|Philadelphia|PA|19154||Fletcher Joe|2156762527
+Hagemeyer|Schuylkill & Lanier Ave|Philadelphia|PA|19145|||2153395815
+Salix Pharmaceuticals Ltd|1436 Lancaster Ave|Berwyn|PA|19312|1200||9198621000
+Graco Children's Products|710 Stockton Dr|Exton|PA|19341|1171|Gibbs Rich|7704073987
+Crusader Rail Svc|5920 Houghton St|Philadelphia|PA|19128|1638||2154827530
+Arvest Bank|510 Veterans Blvd|Branson|MO|65616|||4173366363
+Gentryville Garage|Highway 14 & Highway 95|Drury|MO|65638||Berry Bob|4176835191
+K S I Crafts|203 E State St|Kennett Square|PA|19348|3111||6109252526
+Church of Christ of West Grove|RR 796|Kelton|PA|19346|||6108698093
+Mt Ephraim Baptist Church|22nd & Tioga St|Philadelphia|PA|19132|||2152262720
+Sqa Pharmacy Svc Inc|4700 Wissahickon Ave # 108|Philadelphia|PA|19144|4252|Oneil Jean|2154383308
+Right Hand Man Svc|115 Gable Rd|Paoli|PA|19301|1806|Kennedy Ross|6107251721
+Fossil Apparel|160 N Gulph Rd # 3223|King of Prussia|PA|19406|2941|Bauer Ashley|6102658677
+Acupuncture For Life|2121 School Rd|Hatfield|PA|19440|1928|Leidy Janet|2675750592
+Arbour Square|Arbour Square 695 Main Street|Harleysville|PA|19438|||2150001111
+Cash Converters|223 Shoemaker Rd # 131|Pottstown|PA|19464|6447|Tutt Bryan|6107053101
+Mercy Eastwick Wellness Ctr|2821 Island Ave # C|Philadelphia|PA|19153|2300|Duffy Thomas N DO|2158636155
+Inns|330 Brintons Bridge Rd|West Chester|PA|19382|8304||6105854606
+North-West Pharmacy Inc|2026 N 22nd St|Philadelphia|PA|19121||Lee Henry|2152329222
+11808 Bustleton Inc|11808 Bustleton Ave|Philadelphia|PA|19116|||2156778133
+Second Alarmers Assn & Rescue|Wilson Blvd & Ridge Pike|Trooper|PA|19403|||2156742541
+Aum Physical Therapy|1065 Andrew Dr # B3|West Chester|PA|19380|4293|Hatti Vrinda|6103447374
+Rite Aid|6401 Oxford Ave|Philadelphia|PA|19111|5400|George Anny|2157452557
+Beulah Baptist Christian Day|5021 Spruce St|Philadelphia|PA|19139||Barksdale Judith|2157478002
+Minute Clinic|312 S Henderson Rd|King of Prussia|PA|19406|2408||6102051264
+Gamestop|505 South St|Philadelphia|PA|19147|2209|Brown Matthew|2156250795
+Wonder Pay Lakes|7465 Highway Tt|Grovespring|MO|65662|8424|Allen Mary|4177411028
+Framing Philadelphia|PO Box 37427|Philadelphia|PA|19148|7427||2159239310
+Court Square Medical Svc|PO Box 326|Gainesville|MO|65655|326||4176790174
+One Stop Auto Body Inc|1445 N 62nd St|Philadelphia|PA|19151|4212|Mastriana Ethel|2154745662
+Glenside Tape & Label|641 Lancaster Ave # 1001|Malvern|PA|19355|1831|Ross Jerry|6106477288
+Shelly Moving & Storage Inc|191 S Keim St # 101|Pottstown|PA|19464|6046|Lavin Tom|6109339320
+Mundo De Fiesta Inc|340 W Marshall St|Norristown|PA|19401|4639||6102781929
+Spring Air Aviation|3474 Conestoga Rd|Glenmoore|PA|19343|2605||6100001111
+Atm|80 N York St|Pottstown|PA|19464|5475||6100001111
+Daniel Mezick Photography|5947 Jannette St|Philadelphia|PA|19128|1616||2153274058
+Frankford Community Devmnt|4900 Griscom St|Philadelphia|PA|19124|2622|Washington Kimberly|2157436580
+Tommy's Laundromat|2847 Tyson Ave|Philadelphia|PA|19149|||2153388838
+American Vision At the Court|690 W Dekalb Pike # 2011|King of Prussia|PA|19406|5026|Kirshner Gary|6102653800
+Globe Research & Edu Fndtn|406 S 22nd St|Philadelphia|PA|19146|1101|House Robert|2155454750
+Robertson Bonnie M NP|239 Thompson Building Tjuh|Philadelphia|PA|19107||Robertson Bonnie M NP|2152922662
+Specialty Medical Products|191 Pennsylvania Ave|Malvern|PA|19355|2418|Harris Bud|6106441370
+Paul Brothers Autobody|PO Box 24166|Philadelphia|PA|19139|166|Nygard Charles|2154746121
+Valley Township Police Dept|890 W Lincoln Hwy|Coatesville|PA|19320|1943|Friel Joseph|6103848133
+P S G Multiservice|300 E Tioga St|Philadelphia|PA|19134|1001||2157392900
+Today's Video|9255 Roosevelt Blvd|Philadelphia|PA|19114|2205||2159411582
+Electric Charging Station|4400 Island Ave|Philadelphia|PA|19153|||8887584389
+Mary Kay Cosmetics|106 Heather Hill Dr|Downingtown|PA|19335|1826|Sutherland Nancy|6104580329
+Hardware Center|3101 Lone Oak Rd|Paoli|PA|19301|||2705544001
+Nova Care|131 Nutt Rd|Phoenixville|PA|19460|3905|Sofia Antonio|6109839300
+Wren Brendan|522 S 2nd St|Philadelphia|PA|19147|2409|Wren Brendan|2156259840
+Il Giardino Pizza Cafe Inc|907 N Bethlehem Pike|Spring House|PA|19477||Zito Tom|2156468034
+Wrights Automotive Group|614 Westtown Rd # C|West Chester|PA|19382|4981|Perl Coleen|6104299950
+Buzby Rebecc|969 Valley Ct|Pottstown|PA|19464|2433|Buzby Rebecc|4846147816
+Merion Investment Partners|700 S Henderson Rd # 202|King of Prussia|PA|19406|3530|Rodgers Edward J|6109925880
+Apex Physical Therapy|676 Dekalb Pike # 105|Blue Bell|PA|19422|1223|Warenius Brian|6102700300
+Olive Branch Finance Co LLC|628 E Lincoln Hwy|Coatesville|PA|19320|3532||6104660700
+J & B Importers Inc|823 Lincoln Ave # 13|West Chester|PA|19380|4433|Green Bill|6107016320
+Taney County Health Dept|15479 US Highway 160|Forsyth|MO|65653||Blount Chyrelle L DDS|4175464725
+R K Strong & Assoc|722 E Lincoln Hwy|Exton|PA|19341||Strong Richard K|6105240140
+Rite Aid|1395 E Boot Rd|West Chester|PA|19380|5934|Grear Melinda|6107388870
+Roofscapes Inc|7114 Mccallum St|Philadelphia|PA|19119|2935||2152478784
+1 Water Heater Plus|215 E Chestnut St|Coatesville|PA|19320|3232|Crabb Bruce|6108122506
+Atm|400 S Commercial|Branson|MO|65615|||4170001111
+1TRUEFITNESS.COM Personal|77th Ave|Philadelphia|PA|19150||Simmons Keith|2673035447
+Payless Shoe Source|2385 W Cheltenham Ave # 52|Philadelphia|PA|19150|1506|Gladden April|2158855104
+Nedap NVUSA|500 W Main St # 301|Branson|MO|65616|2788|Tuxen Gorm|4173391090
+Health Solutions Advanced|1306 Old Wilmington Pike|West Chester|PA|19382|||6103991901

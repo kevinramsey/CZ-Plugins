@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jna.version>4.4.0</jna.version>
         <!--  Set pentaho version to a standard version not a CZ build to avoid circular dependencies  -->
-        <pentaho.version>8.0.0.4-207</pentaho.version>
+        <pentaho.version>8.0.0.4-237</pentaho.version>
         <cz.version>1.1-SNAPSHOT</cz.version>
     </properties>
 
@@ -27,6 +27,16 @@
             <groupId>com.melissadata</groupId>
             <artifactId>cz.library</artifactId>
             <version>${cz.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>pentaho-kettle</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.eclipse.swt</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -34,6 +44,35 @@
             <artifactId>jna-platform</artifactId>
             <version>${jna.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.core</groupId>
+            <artifactId>org.eclipse.core.runtime</artifactId>
+            <version>3.7.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.swt</groupId>
+            <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-core</artifactId>
+            <version>6.1-MD</version>
+        </dependency>
+
     </dependencies>
 
     <build>

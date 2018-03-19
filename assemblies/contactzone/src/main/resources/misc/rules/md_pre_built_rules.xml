@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <pre_built_rules>
+    <rule>
+    <name>Full Address Matches</name>
+
+    <expression>[AS01]</expression>
+
+    </rule>
+    <rule>
+    <name>Street Address Matches</name>
+
+    <expression>[AS01] or [AS02]</expression>
+
+    </rule>
+    <rule>
+    <name>Full Address Match and Deliverable by All Carriers</name>
+
+    <expression>[AS01] and not [AS20]</expression>
+
+    </rule>
+    <rule>
+    <name>Non-Questionable Names</name>
+
+    <expression>[NS01]</expression>
+
+    </rule>
+    <rule>
+    <name>Valid Email Domains</name>
+
+    <expression>[ES01] or [ES03]</expression>
+
+    </rule>
+    <rule>
+    <name>Valid and Allowable Email Domains</name>
+
+    <expression>([ES01] or [ES03]) and not [ES04]</expression>
+
+    </rule>
+    <rule>
+    <name>Full Phone Matches</name>
+
+    <expression>[PS01]</expression>
+
+    </rule>
+    <rule>
+    <name>Full and Partial Phone Matches</name>
+
+    <expression>[PS01] or [PS02]</expression>
+
+    </rule>
+  </pre_built_rules>

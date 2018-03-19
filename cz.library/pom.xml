@@ -12,7 +12,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--  Set pentaho version to a standard version not a CZ build to avoid circular dependencies  -->
-        <pentaho.version>8.0.0.4-207</pentaho.version>
+        <pentaho.version>8.0.0.4-237</pentaho.version>
+        <jface.version>3.3.0-I20070606-0010</jface.version>
     </properties>
 
     <dependencies>
@@ -22,7 +23,39 @@
             <version>${pentaho.version}</version>
             <type>jar</type>
         </dependency>
+
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-core</artifactId>
+            <version>${pentaho.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-engine</artifactId>
+            <version>${pentaho.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.swt</groupId>
+            <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+            <version>4.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>jface</artifactId>
+            <version>${jface.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>*</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
     </dependencies>
+
 
     <build>
         <plugins>

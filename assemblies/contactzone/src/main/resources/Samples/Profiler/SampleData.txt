@@ -1,0 +1,164 @@
+md_FullName	md_Address1	md_City	md_State	md_ZipCode	md_Phone	md_Email
+Jack Hill Jr.	5807 Gullstrand St	San Diego	CA	A2122-3817	(619) 857-7262	sbsb@sbsb.com
+Eman Alvaben	11614 Parkhurst Sq	San Diego	CA	92130-8669	(858) 525-3182	xiaoyu.chen@umassmed.edu
+Sharon Wuest	3930 San Gregorio Way	San Diego	CA	92130-2262	(858) 259-5437	techservice@wilde.com
+Meredeth Edwards	7405 Los Brazos	San Diego	CA	92127-3852	(858) 759-5104	jon@inscribe.com
+Jeralyn Johns	13011 Caminito Mar Villa	Del Mar	CA	92014-3607	(858) 481-1828	david@alignstar.com
+Mr. J. O. Roberts	13111 Kellam Ct Apt 11	San Diego	CA	92130-1251	(831) 682-5055	aboerman@benow.com
+Genivive Hansen	4301 Talcott Dr	Durham	NC	27705-6124	(858) 523-1456	bradstark@peoplesmith.com
+Primary Contact	3377 Carmel Mountain Rd	San Diego	CA	92121-1041	(858) 523-7511	hplinc@yahoo.com
+Bob Plunkett	17135 Coyote Bush Dr Lot 62	San Diego	CA	92127-2624	(858) 756-3776	mike.sewell@natconline.com
+Max Metz	10887 Cloverhurst Way	San Diego	CA	92130-4815	(858) 793-1091	compmail@aol.com
+Jean Massard	4842 Coronado Ave	San Diego	CA	92107-3316	(858) 792-7446	mike@uscoins.com
+Sal Ausonio	10174 Spring Manor Ct	San Diego	CA	92126-3708	(858) 271-4873	mark.koon@c1m.net
+Kristy Sparks	PO Box 1950	Escondido	CA	92033-1950	(858) 748-6579	karicketts@chefkatherine.com
+Jennifer Arevalo	3963 Via Holgura	San Diego	CA	92130-2154	(858) 847-1472	podept@hallogram.com
+Kathy Seay	13341 Via Stephen	Poway	CA	92064-4840	(858) 748-1456	neighborhoodgreeting@comcast.net
+Vicki Mealer	10721 Oakbend Dr	San Diego	CA	92131-2610	(858) 449-5379	mgardner@cpsdirect.com
+Perry DeLong	15257 Skyridge Rd	Poway	CA	92064-2330	(858) 243-7705	keith@mmpress.org
+Rachel Zahn	807 N Rios Ave	Solana Beach	CA	92075-1251	(858) 259-6535	rroth@alertcom.com
+Patti Metz	13668 Winstanley Way	San Diego	CA	92130-1411	(858) 205-6060	plarson@pmai.org
+Bruce Warden	6211 Mimulus	Rancho Santa Fe	CA	92091 	(858) 756-1728	tschriever@catdir.com
+Julie Edwards	5007 Manor Ridge Ln	San Diego	CA	92130-2895	(858) 755-8850	kmsmith@urbanscience.com
+Matthew Lavorde	239 S Helix Ave Unit 40	Solana Beach	CA	92075-1868	(858) 481-5242	david.mcmahon@kbm1.com
+Vid Upasani	9290 Towne Centre Dr Unit 90	San Diego	CA	92121-3044	(858) 677-6757	jcummins@innotrac.com
+Hilary Broyles	5534 Avenida Maravillas	Rancho Santa Fe	CA	92091 	(858) 759-1724	don_wobig@msn.com
+Elizabeth Morelli	8483 Sunrise Ave	La Mesa	CA	91941-5523	(858) 674-1156	harry@voterlist.com
+Vince Diangilis	5004 Crying Heart St	North Las Vegas	NV	89031-2584	(423) 726-2248	kimitc@acxiom.com
+Patsy Loo	5860 Calle Camposeco # 173	Rancho Santa Fe	CA	92067 	(858) 756-8400	bpechacek@cmdi.net
+Lisa Yegin	9330 Scranton Rd	San Diego	CA	92121-7704	(858) 202-3501	johnott@gte.net
+Ms. Johnson	15481 Artesian Spring Rd	San Diego	CA	92127-5736	(858) 756-6856	kkshls@icontech.com
+Maren Grazzini	10680 Vista Del Agua Way	San Diego	CA	92121-4232	(201) 307-8772	jp.dewhirst@harmonsolutionsgroup.com
+Matt Brand	8279 Camino Del Oro	La Jolla	CA	92037-3113	(858) 875-2688	608-845-7880  
+Shelley Edwards	12230 World Trade Dr	San Diego	CA	92128-3798	(480) 998-9070	jbalajee@hhcc.com
+Virgina Smith	12642 Camino Emparrado	San Diego	CA	92128-1404	(858) 675-1530	david-d@dfdi.com
+Romie Martin	4259 Calle Mar De Ballenas	San Diego	CA	92130-2646	(858) 794-2636	adastdevelopment@jesuits-mis.org
+Lorraine Witucky	12713 Via Nasca	San Diego	CA	92128-1572	(858) 451-9599	sonja.s.townsend@usps.gov
+Giurgiu Miranda	5460 Thoroughbred Pl	San Diego	CA	92130-3744	(858) 523-0321	fielding@wccnet.edu
+Kelly Welch	1322 Camino Teresa	Solana Beach	CA	92075-1635	(509) 435-6823	bbidsmith@aol.com
+Larry Binderow	16775 Via De Los Rosales	Rancho Santa Fe	CA	92067 	(858) 395-4466	data@vanru.com
+Julie Birchell	12637 El Camino Real Apt 5202	San Diego	CA	92130-5006	(858) 350-6707	tjsindldr@pop.prodegy.net
+Vid Upasani	9290 Towne Centre Dr Unit 90	San Diego	CA	92121-3044	(949) 310-4362	mbarney@ix.netcom.com
+Palacio Ceci	12601 El Camino Real Unit B	San Diego	CA	92130-4069	(858) 602-6154	mandy@micromarketing.com
+Dennie Smith	7480 Collins Ranch Ter	San Diego	CA	92130-5573	(858) 538-9338	bevans@dm2lists.com
+George Sifuentes	10276 Lone Dove St	San Diego	CA	92127-3482	(858) 676-0815	mresponse@aol.com
+Metz	10887 Cloverhurst Way	San Diego	CA	92130-4815	(858) 793-1091	robby@knoxcomp.com
+Ruey Keller	2861 Birch Ct	Camino	CA	95709-9690	(858) 549-3757	gadamson@marshallswift.com
+Laverne Altshuler	PO Box 2194	Rancho Santa Fe	CA	92067-2194	(858) 756-1251	pyledrvr@pitt.edu
+Evelyn Tecoma	1327 San Lucas Ct	Solana Beach	CA	92075-2111	(858) 792-0443	yap@facterdirect.com
+Wilfred Kearse	4074 Via Cangrejo	San Diego	CA	92130-2685	(858) 847-9316	mcs1lk@cs.com
+Dennis Buck	788 Crestview Ct	San Marcos	CA	92078-1374	(619) 339-1719	spinware@bridge.net
+Wenda Alvarez	8910 University Center Ln	San Diego	CA	92122-1029	(858) 875-6780	jdeong@cnmnetwork.com
+Jeffrey Waddell	401 E 75th St Apt 3B	New York	NY	10021-3128	(858) 829-1964	bfk@gte.net
+Ambili Ramabhadran	9346 Twin Trails Dr Unit 102	San Diego	CA	92129-2682	(858) 484-1748	takamitsia@aol.com
+Sam Liu	10922 Cloverhurst Way	San Diego	CA	92130-4819	(858) 793-5348	bew@websware.net
+Colleen Hull	4039 NW Devoto Ln	Portland	OR	97229-8097	(858) 678-8815	ossie@digital.net
+Danny Calcetas	13858 Kerry Ln	San Diego	CA	92130-5606	(858) 538-5624	data@360group.com
+John Wislar	6350 Calle Del Campanario	Rancho Santa Fe	CA	92067 	(858) 756-9637	noscarson@westernwats.com
+Richard Reichner	30 Ridge Crest Ct	Crossville	TN	38558-6480	(858) 451-8356	jim@1-800-cruise.com
+Gena Christenson	14004 Waterford Ln	San Diego	CA	92129-4462	(858) 538-8466	vargasr@dnb.com
+Antoinette Nguyen	17136 Silver Pine Rd	San Diego	CA	92127-7822	(858) 578-9646	nk@leadtrack.com
+Zinetta Nassif	2532 Calle Del Oro	La Jolla	CA	92037-2004	(858) 456-1970	andrea.freeman@vmmc.org
+Aria Nikmo	12813 Corbett Ct	San Diego	CA	92130-2440	(858) 350-5889	joanne.dickinson@ccmail.census.gov
+Bill Denton	15539 Walton Heath Row	San Diego	CA	92128-4475	(858) 673-8551	monica@datashark.net
+Raj Khosla	10853 La Alberca Ave	San Diego	CA	92127-3318	(858) 674-4054	matt.stibal@ingrammicro.com
+Rajesh Chabra	125 N Lindsay St	Visalia	CA	93291-9661	(619) 602-6280	rbrodka@kraftmaid.com
+Kem Crowder	32165 Corte Utnehmer	Temecula	CA	92592-6803	(858) 271-1844	preale@mcimail.com
+Georgia Afendoules	13489 Ridley Rd	San Diego	CA	92129-2853	(858) 538-5734	lkatz@myrealbox.com
+Saeid Yazdani	12790 Seabreeze Farms Dr	San Diego	CA	92130-3733	(760) 845-2692	blm@comco-inc.com
+Lauri Din	8929 Donaker St	San Diego	CA	92129-3333	(858) 538-0539	kmorgan1@woh.rr.com
+Kristi Gonzalez	9093 Gemini Ave	San Diego	CA	92126-2441	(858) 566-2073	dataproc@bsnc.com
+Valerie Orsini	6879 Cartwright St	San Diego	CA	92120-1024	(619) 871-6000	albywein@aol.com
+Sandra Remmer	749 Santa Olivia	Solana Beach	CA	92075-1524	(858) 259-9726	michael.angle@bellsouth.com
+Ellen Dowd	11754 Carmel Creek Rd Apt 108	San Diego	CA	92130-6611	(858) 755-6347	davidlinke@linkephoto.com
+Suzan Yeager	7966 Entrada De Luz W	San Diego	CA	92127-2508	(858) 668-8694	dgeer@decisionanalyst.com
+Carolyn Wagner	9750 Mesa Springs Way Unit 50	San Diego	CA	92126-4175	(858) 547-5932	kristin@erescuemission.com
+Sheila Masterson	15567 Paseo Jenghiz	San Diego	CA	92129-1124	(858) 672-2161	spinar@cox.net
+Mary Quest	300 W Beech St Unit 609	San Diego	CA	92101-8447	(858) 942-7823	nancyb@support.ucla.edu
+Jess Hanson	4139 Blackton Dr	La Mesa	CA	91941-7508	(858) 752-1250	itg@directmail.com
+Terry Paul	128 9th St	Del Mar	CA	92014-2715	(858) 481-3216	mullenmccaffrey@aol.com
+Peter Flynn	5266 Birch Hill Pt	San Diego	CA	92130-6934	(858) 587-1896	jgaddis@aausports.org
+Quinn Wilson	8	Solana Beach	CA	92075 	(858) 794-3222	rkane33@pacbell.net
+Stewart Stanger	14694 S Camino Tierra Alegra	Sahuarita	AZ	85629-8567	(520) 579-0855	jhall@hobbico.com
+Robert Gillmore	350 Sutton Dr	San Antonio	TX	78228-3168	(858) 755-7844	smtpharry@proaxis.com
+Hebert Frey	8650 Belmor Crossing Cv	Olive Branch	MS	38654-6362	(858) 481-9605	azajic@wsgc.com
+Noreen Sanft	3926 Caminito Cassis	San Diego	CA	92122-1992	(858) 457-3727	atan@frk.com
+Linda Musengo	655 Ida Ave	Solana Beach	CA	92075-2416	(858) 259-1229	bwarren@shamrock1.com
+Carol Hamilton	12530 Carmel Creek Rd Unit 125	San Diego	CA	92130-2375	(858) 755-2020	debra.johnston@toro.com
+Susan Drake	13664 Boquita Dr	Del Mar	CA	92014-3408	(858) 755-7391	pgramblin@shrinenet.org
+Rick Hamilton	7995 Goleta Rd	San Diego	CA	92126-2628	(858) 530-1422	tim@ameriplususa.com
+Roy Sudepto	6540 Windward Ridge Way	San Diego	CA	92121-4139	(858) 552-8230	andyj92@compuserve.com
+Allen Tomlinson	3943 San Martine Way	San Diego	CA	92130-2267	(858) 204-2123	fwatson@wnec.edu
+Judith Fullerton	7717 Canyon Point Ln	San Diego	CA	92126-2049	(858) 693-7585	roadtel@juno.com
+Tito Beltran	11737 Caminito Vantana	San Diego	CA	92131-2109	(858) 549-0609	gjohnson@chick.com
+Kathey McLaren	PO Box 1508	Rcho Santa Fe	CA	92067-1508	(858) 756-4661	marvin@listware.com
+Denise Clarke	605 W Walnut Ave # B	San Diego	CA	92103-3987	(619) 692-9444	wcds@aol.com
+Susan Jones	7885 Rancho Fanita Dr Apt B	Santee	CA	92071-3368	(619) 749-1272	abr@abrservices.com
+Grace Groot	13482 Chelan Ct	San Diego	CA	92129-4434	(858) 232-9031	tpontious@alldata.net
+Na Shean	4744 Keswick Ct	San Diego	CA	92130-1337	(858) 847-0981	mike@ncsdirect.com
+Donald L. Drake	42283 Wild Mustang Rd	Murrieta	CA	92562-6153	(858) 689-2235	paulcoles@juno.com
+Robert Enns	673 Santa Rosita	Solana Beach	CA	92075-1530	(858) 481-9203	gilpaprocki@comcast.net
+Janie Munce	4569 Tarantella Ln	San Diego	CA	92130-2463	(858) 382-8871	bob_perry@armstrong.com
+Beverly Steele	3759 Carmel View Rd Unit 2	San Diego	CA	92130-3577	(619) 549-2335	mvanwie@emsinet.com
+Ralph Hughes	PO Box 8018	Rcho Santa Fe	CA	92067-8018	(858) 546-2426	martin@ruf.com
+Randy Wilkins	14617 Acton Ct	Poway	CA	92064-5029	(858) 748-9267	n
+Gloria Lopez	13193 Sundance Ave	San Diego	CA	92129-2459	(858) 538-6942	virgil@auton.com
+Lynn Conger	927 S Lake St	Salt Lake Cty	UT	84105-1215	(858) 566-4668	tony@morsedata.com
+Kirsten Medeiros	12529 Carmel Canyon Rd	San Diego	CA	92130-3191	(858) 344-3842	wally@usexpress.net
+Lance Kurata	2838 Corte Papaya	Carlsbad	CA	92009-6945	(858) 232-4164	dmarkman@nai.net
+Kevin Hunter	16770 Saintsbury Gln	San Diego	CA	92127-2810	(858) 204-3404	whit@insurenetusa.com
+Anthony Durkin	17521 Matinal Dr	San Diego	CA	92127-1239	(760) 583-4802	jv@avn.net
+Jay Rembolt	4057 Riverton Pl	San Diego	CA	92130-1288	(858) 481-8931	lipiraj@citifinancial.com
+Helen	16102 Selva Dr	San Diego	CA	92128-3126	(858) 487-2146	wv2534@sbc.com
+Joanne Bradley	3738 Mykonos Ln Unit 127	San Diego	CA	92130-5543	(858) 552-8655	christopher.dewey@sigmamarketing.com
+Dolores Munsey	13541 Willow Run Rd	Poway	CA	92064-1733	(858) 487-7036	etacma@aol.com
+Phillip Babcock	335 Santa Barbara Shores Dr	Goleta	CA	93117-2407	(858) 720-0287	xoi.noc@xo.com
+Susan Allmon	11941 Adorno Pl	San Diego	CA	92128-2022	(858) 674-4933	sos@pulsenet.com
+Amy Wu	10265 Prairie Springs Rd	San Diego	CA	92127-3421	(858) 485-5396	wayne@impactdirect.net
+Della	 	San Diego	CA	92126 	 	bethb@accessmail.biz
+Lisa Hafey	9645 Alhambra Ave	Stockton	CA	95212-2616	(858) 454-0572	tonya.brown@ipacc.com
+Kristine Holt-Svare	4623 Torrey Cir Apt Q108	San Diego	CA	92130-6654	(858) 794-9198	kelly@huntsinger-jeffer.com
+Chantal Lambette	12523 Avenita Tieno	San Diego	CA	92128 	(858) 385-0962	cheryl@fbssystems.mail
+Myra Marshall	719 Sonrisa St	Solana Beach	CA	92075-2407	(858) 792-0394	kris_cunningham@infoworld.com
+Eileen Kolkey	12626 Crest Knolls Ct	San Diego	CA	92130-2411	(858) 481-5922	tim_bryant@gillette.com
+Bill Bonning	13331 Kibbings Rd	San Diego	CA	92130-1234	(858) 472-2194	71773.3127@compuserve.com
+Joe Burwell	320 El Viento St	Solana Beach	CA	92075-1300	(858) 755-8706	mike@wichmann.com
+Audra Flaherty	14 Paoli Ct	Paoli	PA	19301-1404	(858) 675-0488	jholmes@wt.net
+Charles Murphy	13519 Tiverton Rd	San Diego	CA	92130-1038	(858) 794-4677	jim@century-mailing.com
+Wendy Forrester	683 Glenmont Dr	Solana Beach	CA	92075-1314	(858) 414-2382	jeff@rma-inc.com
+Kamala Venkatesh	9014 Twin Trails Ct	San Diego	CA	92129-2523	(858) 484-0965	jphey@netdoor.com
+Mellisa Becerril	11097 Ice Skate Pl	San Diego	CA	92126-4852	(858) 204-6187	warren@print-mail.com
+Agnes Mortison	17867 Sun Walk Ct	San Diego	CA	92127-1370	(858) 675-0564	stacyr@gte.net
+Jeffrey Ressler	5736 La Jolla Corona Dr	La Jolla	CA	92037-7442	(858) 459-2273	brussum@aol.com
+Stefany Yellen	4366 Altamirano Way	San Diego	CA	92103-1004	(858) 481-5115	kstevenson@matchmail.com
+Mary Ann	13983 Mango Dr Ste 102	Del Mar	CA	92014-3146	(858) 523-0101	asmithers@collectech.com
+Gail	130 E Calle Primera	San Ysidro	CA	92173-2921	(619) 428-1881	davidp@nwlink.com
+Berner Mitchel	11646 Chippenham Way	San Diego	CA	92128-4280	(619) 981-0408	asnyder@members1st.org
+Mike Baxter	14226 Midland Rd	Poway	CA	92064-3406	(858) 748-6668	jsokolowski@isionline.org
+Annalee Pachecho	11575 Caminito La Bar Apt 25	San Diego	CA	92126-6014	(858) 547-9811	mcollins@idtc.com
+Cheryl Brooks	16436 Camelas Walk	San Diego	CA	92127-4401	(858) 312-1239	davide@castertech.com
+Mark Geyer	2284 Cordero Rd	Del Mar	CA	92014-3342	(858) 755-9591	walt@computerlists.com
+David Waggoner	5599 Willowmere Ln	San Diego	CA	92130-4803	(760) 889-4010	ckirk@colorprinter.net
+Lisa Geoghehan	12819 Rick St	Poway	CA	92064-5713	(858) 679-7187	lstanwood@relyonidea.com
+Karen Gower	5204 Caminito Exquisito	San Diego	CA	92130-2802	(858) 357-5799	phil@scwi.com
+Bill Bowmen	12031 Obispo Rd	San Diego	CA	92128-2625	(858) 618-1262	newlen@earthlink.net
+Janet Brechtel	10477 Cheviot Ct	San Diego	CA	92126-3062	(858) 566-0950	ingram@usa.net
+Sara S. Mankiewicz	17763 Azucar Way	San Diego	CA	92127-1051	(858) 451-6091	p-schwellenbach@govst.edu
+Glen Breed	17355 Caminito Canasto	San Diego	CA	92127-1103	(858) 485-1996	info@prototypeinc.com
+Joy Richey	3763 Cascade Ct	San Diego	CA	92122-2428	(858) 453-4346	sdmiller@smarthealth.com
+Jeff Schiering	12661 Via Colmenar	San Diego	CA	92129-2229	(619) 200-7612	dba@tbteam.com
+Freida Cyril	4572 Vista De La Patria	Del Mar	CA	92014-4150	(858) 481-3593	debbielorbecki@northwesternmutual.com
+Chuck Walker	17059 Broken Bow Ct	San Diego	CA	92127-2127	(619) 339-7500	apritchard@cix.co.uk
+Robert DeYoung	8860 Villa La Jolla Dr Unit 103	La Jolla	CA	92037-1936	(858) 558-3122	jbadar@xilinx.com
+May Troyk	12624 Oakbrook Ct	Poway	CA	92064-1522	(858) 487-9600	kevinl@iwebhost.net
+Linda Unrue	5163 Seagrove Cv	San Diego	CA	92130-3228	(858) 792-1232	larry_lavery@laveryinc.com
+Patrick Durkin	14270 Fox Run Row	Rancho Santa Fe	CA	92067 	(858) 481-1752	baer@gap.net
+Patricia Terry	14868 High Valley Rd	Poway	CA	92064-2714	(858) 486-2743	nhedge@newcorp.com
+Michelle	755 Macopin Rd	West Milford	NJ	07480-2608	(973) 657-9001	lind@shepherdservices.com
+Liz Cappos	6178 Rancho Diegueno Rd	Rancho Santa Fe	CA	92091-9710	(858) 759-0380	rnelson@martel-intl.com
+Diane Tettamble	12250 Corte Sabio Unit 2205	San Diego	CA	92128-4579	(858) 487-5971	willie.harris@osioutsourcing.com
+John Kuehn	6655 Neptune Pl	La Jolla	CA	92037-6027	(858) 729-0913	archie@worden.com
+Ann McCrory	7190 Shoreline Dr Unit 6210	San Diego	CA	92122-4926	(858) 449-7311	paul.weidner@ppmi.com
+Illingsworth	5585 Meadows Del Mar	San Diego	CA	92130-4865	(858) 353-5943	amica@ix.netcom.com
+Gina Mancuso	576 Samuel Ct	Encinitas	CA	92024-2382	(619) 757-6629	bsams@sirspeedysalemor.com
+Harold Buchanan II	PO Box 675460	Rancho Santa Fe	CA	92067-5460	(954) 961-2580	marks@cabscf.com

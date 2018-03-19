@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <pre_built_rules>
+    <rule>
+    <name>Deduped Records</name>
+
+    <expression>[MS01] or [MS02]</expression>
+
+    </rule>
+  </pre_built_rules>

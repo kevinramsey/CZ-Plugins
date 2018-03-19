@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <pre_built_rules>
+    <rule>
+    <name>Moved Address</name>
+
+    <expression>[CS01]</expression>
+
+    </rule>
+    <rule>
+    <name>Valid Address or Changed Address</name>
+
+    <expression>[CS01] or [CS02]</expression>
+
+    </rule>
+    <rule>
+    <name>Full Address Matches</name>
+
+    <expression>[AS01]</expression>
+
+    </rule>
+    <rule>
+    <name>Street Address Matches</name>
+
+    <expression>[AS01] or [AS02]</expression>
+
+    </rule>
+    <rule>
+    <name>Full Address Match and Deliverable by All Carriers</name>
+
+    <expression>[AS01] and not [AS20]</expression>
+
+    </rule>
+  </pre_built_rules>

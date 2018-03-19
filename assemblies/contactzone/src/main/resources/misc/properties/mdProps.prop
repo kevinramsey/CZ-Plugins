@@ -1,0 +1,62 @@
+
+#MDCheck properties
+#Thu Feb 02 10:09:55 PST 2012
+
+#Reports configuration
+NEW.basic_reporting=true
+NEW.ReportFileEmail=stats/EmailDetailMaster.prpt
+NEW.ReportPopupName=Provides a breakdown of the Name codes\n and what was modified
+NEW.ReportDescDetail=Address Details
+NEW.ReportPopupPhone=Provides a breakdown of the Phone codes\n and what was modified
+NEW.ReportFileGeo=stats/GeocoderDetailMaster.prpt
+NEW.ReportFileName=stats/NameDetailMaster.prpt
+NEW.ReportPopupDetail=Provides all the detail stats associated\n with the return codes on the\n various objects
+NEW.ReportDescGeo=Geocoder Details
+NEW.ReportDescPhone=Phone Details
+NEW.ReportPopupEmail=Provides a breadown of just the Email\n codes and what was modified. 
+NEW.ReportPopupGeo=Provides a breakdown of the Geo codes\n and what was modified
+NEW.ReportFilePhone=stats/PhoneDetailMaster.prpt
+NEW.ReportDescName=Name Details
+NEW.ReportFileDetail=stats/DetailMaster.prpt
+NEW.ReportDescEmail=Email Details
+NEW.GlobalReportFileGlobal=stats/GlobalDetailMaster.prpt
+NEW.GlobalReportPopupGlobal=Provides a breakdown of global verify lookups
+NEW.GlobalReportDescGlobal=Global Verify Details
+
+
+
+
+#Webservice URLs
+NEW.phone_verifier_url=https\://phonecheck.melissadata.net/v2/XML/Service.svc/doPhoneCheck
+RESET.ncoa_url=https\://smartmover.melissadata.net/V3/WEB/Smartmover/doSmartMover
+RESET.ccoa_url=https\://smartmovercanada.melissadata.net/V3/WEB/Smartmover/doSmartMover  
+# old service
+#NEW.ncoa_url=https\://smartmover.melissadata.net/V2b/Smartmover.asmx
+NEW.rbdi_url=https\://rbdi.melissadata.net/v2/XML/Service.svc/doRBDI
+NEW.geo_coder_url=https\://geocoder.melissadata.net/v2/XML/Service.svc/doGeoCode
+NEW.email_verifier_url=https\://email.melissadata.net/v2/XML/Service.svc/doEmailCheck
+NEW.address_verifier_url=https\://addresscheck.melissadata.net/v2/XML/Service.svc/doAddressCheck
+NEW.cvs_server_url=
+NEW.updates_url=WebUpdateURL
+RESET.ip_locator_url=https\://globalip.melissadata.net/v4/web/iplocation/doiplocation
+NEW.personator_url=https\://personator.melissadata.net/v3/WEB/ContactVerify/doContactVerify
+RESET.business_coder_url=https\://businesscoder.melissadata.net/WEB/BusinessCoder/doBusinessCoderUS
+RESET.propertywebservice_url=https\://property.melissadata.net/v4/WEB/LookupProperty
+
+NEW.retry_appliance=true
+NEW.failover_interval=600000
+
+# Gloabl Verify 
+NEW.global_verify_id=23329998
+NEW.global_name_url=https\://globalname.melissadata.net/V3/WEB/GlobalName/doGlobalName
+NEW.global_address_url=https\://address.melissadata.net/v3/WEB/GlobalAddress/doGlobalAddress
+RESET.global_phone_url=https\://globalphone.melissadata.net/v4/WEB/globalphone/doglobalphone
+NEW.global_email_url=https\://globalemail.melissadata.net/v3/WEB/GlobalEmail/doGlobalEmail
+#NEW.max_threads=5
+#NEW.max_requests=100
+#RESET.timeout=30
+#RESET.retries=200
+#RESET.personator_retries=200
+#RESET.personator_timeout=30
+NEW.opt_abort=false
+

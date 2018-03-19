@@ -194,7 +194,7 @@ public class PreBuiltRules {
 
 		File newLocation = new File(CZUtil.getCZWorkDirectory(), rulesPath);
 		FileUtils.moveFileToDirectory(oldFile, newLocation, true);
-		
+
 		return new File(newLocation, ruleFile);
 	}
 
