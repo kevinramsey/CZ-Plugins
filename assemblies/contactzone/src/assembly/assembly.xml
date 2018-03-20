@@ -8,15 +8,47 @@
 
     <baseDirectory>ContactZone</baseDirectory>
 
+    <!-- Include the resources dir -->
     <fileSets>
         <fileSet>
-
-            <!--<directory>${project.build.directory}\classes</directory>-->
             <directory>src\main\resources</directory>
             <useDefaultExcludes>false</useDefaultExcludes>
             <outputDirectory>.</outputDirectory>
-
         </fileSet>
     </fileSets>
+
+
+    <dependencySets>
+
+        <dependencySet>
+            <outputDirectory>misc\DLLs\</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdLicense</include>
+            </includes>
+        </dependencySet>
+
+        <dependencySet>
+            <outputDirectory>Windows\lib</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata:cz.library</include>
+                <include>com.melissadata.kettle:MDSettings</include>
+            </includes>
+        </dependencySet>
+
+        <dependencySet>
+            <outputDirectory>Windows\plugins</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDProfiler</include>
+               <!-- <include>com.melissadata.kettle:MDSettings</include> -->
+            </includes>
+
+        </dependencySet>
+
+    </dependencySets>
+
+
 
 </assembly>

@@ -9,14 +9,32 @@
     <packaging>pom</packaging>
 
     <name>ContactZone Assemblies</name>
+
+<parent>
+    <groupId>com.melissadata.kettle</groupId>
+    <artifactId>cz.plugins</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</parent>
+
+
+
     <!--
-      <parent>
-        <groupId>org.pentaho.di</groupId>
-        <artifactId>pdi</artifactId>
-        <version>8.0.0.4-CZ.0</version>
-      </parent>
+
+        <build>
+            <pluginManagement>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>src/assembly/assembly.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </pluginManagement>
+        </build>
     -->
-    <modules>
-        <!--  <module>pdi-ce</module> -->
-    </modules>
+
 </project>

@@ -1,30 +1,77 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.melissadata.kettle</groupId>
-  <artifactId>cz.plugins</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <groupId>com.melissadata.kettle</groupId>
+    <artifactId>cz.plugins</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-  <name>czplugins</name>
-  <url>http://maven.apache.org</url>
+    <name>czplugins</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+
+        <contactzone.build.dir>${project.build.directory}\ContactZone-${project.version}\ContactZone</contactzone.build.dir>
+        <module.parent.dir>${project.build.directory}..\..\..\</module.parent.dir>
+        <!-- md files -->
+        <cz.version>1.1-SNAPSHOT</cz.version>
+        <mdsettings.version>1.1-SNAPSHOT</mdsettings.version>
+        <mdprofiler.version>1.0-SNAPSHOT</mdprofiler.version>
+        <mdlicense.version>1.0</mdlicense.version>
+        <mdcommon.version>1.0</mdcommon.version>
+        <profiler.resource.version>1.0</profiler.resource.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- DATA PATHS -->
+        <address.data.path></address.data.path>
+        <cleanser.data.path></cleanser.data.path>
+        <email.data.path></email.data.path>
+        <geocode.data.path></geocode.data.path>
+        <iplocator.datapath></iplocator.datapath>
+        <name.data.path></name.data.path>
+        <phone.data.path></phone.data.path>
+        <profiler.data.path></profiler.data.path>
+        <matchup.data.path></matchup.data.path>
+        <matchupglobal.data.path></matchupglobal.data.path>
 
 
+    </properties>
 
-  <modules>
-    <module>cz.library</module>
-    <module>MDSettings</module>
-  </modules>
 
-<!--
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
--->
+    <modules>
+        <module>cz.library</module>
+        <module>MDSettings</module>
+        <module>assemblies/contactzone</module>
+    </modules>
+
+    <build>
+    <pluginManagement>
+    <plugins>
+        <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <!--  <version>2.5.3</version> -->
+            <version>3.1.0</version>
+            <configuration>
+                <appendAssemblyId>false</appendAssemblyId>
+                <!--  <descriptor>src/assembly/assembly.xml</descriptor> -->
+                <descriptors>
+                    <descriptor>assemblies\contactzone\src\assembly\assembly.xml</descriptor>
+                </descriptors>
+                <finalName>ContactZone-${project.version}</finalName>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>make-assembly</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>single</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+
+    </plugins>
+    </pluginManagement>
+    </build>
+
 </project>
