@@ -20,31 +20,96 @@
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>mdLicense</artifactId>
-            <version>${mdlicense.version}</version>
+            <version>${mdLicense.version}</version>
             <type>zip</type>
         </dependency>
         <dependency>
             <groupId>com.melissadata</groupId>
             <artifactId>cz.library</artifactId>
-            <version>${cz.version}</version>
+            <version>${cz.library.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>MDSettings</artifactId>
-            <version>${mdsettings.version}</version>
+            <version>${mdSettings.version}</version>
+            <type>jar</type>
+        </dependency>
+        <!--  ############  Profiler   ############ -->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDProfiler</artifactId>
+            <version>${mdProfiler.plugin.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
-            <artifactId>MDProfiler</artifactId>
-            <version>${mdprofiler.version}</version>
+            <artifactId>MDProfilerDll</artifactId>
+            <version>${mdProfiler.dll.version}</version>
+            <type>zip</type>
+        </dependency>
+        <!--  ############  BusinessCoder  ############  -->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDBusinessCoder</artifactId>
+            <version>${mdBusinessCoder.plugin.version}</version>
             <type>jar</type>
         </dependency>
+        <!-- ##########  MDCheck  ############ -->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDCheck</artifactId>
+            <version>${mdCheck.plugin.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdAddrDll</artifactId>
+            <version>${mdAddr.dll.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdEmailDll</artifactId>
+            <version>${mdEmail.dll.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdGeoDll</artifactId>
+            <version>${mdGeo.dll.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdNameDll</artifactId>
+            <version>${mdName.dll.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdPhoneDll</artifactId>
+            <version>${mdPhone.dll.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdIpLocatorDll</artifactId>
+            <version>${mdIpLocator.dll.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdMatchUpDll</artifactId>
+            <version>${mdMatchUp.dll.version}</version>
+            <type>zip</type>
+        </dependency>
+
 
     </dependencies>
 
     <build>
+        <finalName>ContactZone-${project.version}</finalName>
         <plugins>
             <!-- Add messages if nessassary -->
             <plugin>
@@ -73,7 +138,6 @@
                 <executions>
 
                     <!-- get and unpack data-integration from repository -->
-
                     <execution>
                         <id>unpack</id>
                         <phase>package</phase>
@@ -82,26 +146,20 @@
                         </goals>
                         <configuration>
                             <artifactItems>
-
-
                                 <artifactItem>
                                     <groupId>org.pentaho.di</groupId>
                                     <artifactId>pdi-ce</artifactId>
                                     <version>8.0.0.4-CZ.0</version>
                                     <type>zip</type>
+                                    <excludes>**\cz.library*.jar, **\MDSettings*.jar</excludes>
                                     <overWrite>false</overWrite>
                                     <outputDirectory>${contactzone.build.dir}\Windows</outputDirectory>
                                 </artifactItem>
-
-
                             </artifactItems>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
                         </configuration>
                     </execution>
-
-                    <!-- get dependencies from repository -->
-
                 </executions>
             </plugin>
 
@@ -131,18 +189,14 @@
             </plugin>
 -->
 
-
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <!--  <version>2.5.3</version> -->
                 <version>3.1.0</version>
                 <configuration>
                     <appendAssemblyId>false</appendAssemblyId>
-                    <!--  <descriptor>src/assembly/assembly.xml</descriptor> -->
                     <descriptors>
                         <descriptor>src/assembly/assembly.xml</descriptor>
                     </descriptors>
-                    <finalName>ContactZone-${project.version}</finalName>
                 </configuration>
                 <executions>
                     <execution>
@@ -154,12 +208,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
-
-
-    <modules>
-        <!-- <module>../../cz.library</module> -->
-    </modules>
 </project>

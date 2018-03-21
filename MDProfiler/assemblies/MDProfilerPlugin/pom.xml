@@ -11,16 +11,18 @@
     <name>MDProfilerPlugin</name>
 
     <properties>
-        <cz.version>1.1-SNAPSHOT</cz.version>
-        <mdsettings.version>1.1-SNAPSHOT</mdsettings.version>
-        <mdprofiler.version>1.0-SNAPSHOT</mdprofiler.version>
-        <mdlicense.version>1.0</mdlicense.version>
-        <mdcommon.version>1.0</mdcommon.version>
-        <profiler.resource.version>1.0</profiler.resource.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <cz.library.version>1.1-SNAPSHOT</cz.library.version>
+        <mdLicense.version>1.0</mdLicense.version>
+        <mdSettings.version>1.1-SNAPSHOT</mdSettings.version>
+        <mdProfiler.plugin.version>1.0-SNAPSHOT</mdProfiler.plugin.version>
+        <mdProfiler.dll.version>4.0.1.3036</mdProfiler.dll.version>
+        <profiler.resource.version>1.0</profiler.resource.version>
+        <mdcommon.version>1.0</mdcommon.version>
     </properties>
 
     <build>
+    <finalName>MDProfiler-market-${project.version}</finalName>
     <plugins>
         <!-- Add messages if nessassary -->
         <plugin>
@@ -59,15 +61,6 @@
 
                             <artifactItem>
                                 <groupId>com.melissadata.kettle</groupId>
-                                <artifactId>mdLicense</artifactId>
-                                <version>${mdlicense.version}</version>
-                                <type>zip</type>
-                                <overWrite>false</overWrite>
-                                <outputDirectory>${project.build.directory}\classes</outputDirectory>
-                            </artifactItem>
-
-                            <artifactItem>
-                                <groupId>com.melissadata.kettle</groupId>
                                 <artifactId>MD_Common</artifactId>
                                 <version>${mdcommon.version}</version>
                                 <type>zip</type>
@@ -77,11 +70,20 @@
 
                             <artifactItem>
                                 <groupId>com.melissadata.kettle</groupId>
-                                <artifactId>MDProfilerResources</artifactId>
-                                <version>${profiler.resource.version}</version>
+                                <artifactId>mdLicense</artifactId>
+                                <version>${mdLicense.version}</version>
                                 <type>zip</type>
-                                <overWrite>true</overWrite>
-                                <outputDirectory>${project.build.directory}\classes</outputDirectory>
+                                <overWrite>false</overWrite>
+                                <outputDirectory>${project.build.directory}\classes\MD\</outputDirectory>
+                            </artifactItem>
+
+                            <artifactItem>
+                                <groupId>com.melissadata.kettle</groupId>
+                                <artifactId>mdProfilerDll</artifactId>
+                                <version>${mdProfiler.dll.version}</version>
+                                <type>zip</type>
+                                <overWrite>false</overWrite>
+                                <outputDirectory>${project.build.directory}\classes\MD\64_bit</outputDirectory>
                             </artifactItem>
 
                         </artifactItems>
@@ -102,7 +104,7 @@
                             <artifactItem>
                                 <groupId>com.melissadata</groupId>
                                 <artifactId>cz.library</artifactId>
-                                <version>${cz.version}</version>
+                                <version>${cz.library.version}</version>
                                 <type>jar</type>
                                 <overWrite>false</overWrite>
                                 <outputDirectory>${project.build.directory}\classes\MD\libext</outputDirectory>
@@ -110,7 +112,7 @@
                             <artifactItem>
                                 <groupId>com.melissadata.kettle</groupId>
                                 <artifactId>MDSettings</artifactId>
-                                <version>${mdsettings.version}</version>
+                                <version>${mdSettings.version}</version>
                                 <type>jar</type>
                                 <overWrite>false</overWrite>
                                 <outputDirectory>${project.build.directory}\classes\MD\libext</outputDirectory>
@@ -118,7 +120,7 @@
                             <artifactItem>
                                 <groupId>com.melissadata.kettle</groupId>
                                 <artifactId>MDProfiler</artifactId>
-                                <version>${mdprofiler.version}</version>
+                                <version>${mdProfiler.plugin.version}</version>
                                 <type>jar</type>
                                 <overWrite>false</overWrite>
                                 <outputDirectory>${project.build.directory}\classes</outputDirectory>
@@ -156,11 +158,12 @@
 
         <plugin>
             <artifactId>maven-assembly-plugin</artifactId>
-            <version>2.5.3</version>
+            <version>3.1.0</version>
             <configuration>
                 <appendAssemblyId>false</appendAssemblyId>
-                <descriptor>src/assembly/assembly.xml</descriptor>
-                <finalName>MDProfiler-market-${project.version}</finalName>
+                <descriptors>
+                    <descriptor>src/assembly/assembly.xml</descriptor>
+                </descriptors>
             </configuration>
             <executions>
                 <execution>

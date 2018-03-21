@@ -15,19 +15,38 @@
             <useDefaultExcludes>false</useDefaultExcludes>
             <outputDirectory>.</outputDirectory>
         </fileSet>
+<!--
+        <fileSet>
+            <directory>${mddata.dir}</directory>
+            <useDefaultExcludes>false</useDefaultExcludes>
+            <outputDirectory>Data</outputDirectory>
+        </fileSet>
+-->
+
     </fileSets>
 
 
     <dependencySets>
 
+        <!-- md objects -->
         <dependencySet>
-            <outputDirectory>misc\DLLs\</outputDirectory>
+            <outputDirectory>misc\DLLs\64_bit</outputDirectory>
             <unpack>true</unpack>
             <includes>
                 <include>com.melissadata.kettle:mdLicense</include>
+                <include>com.melissadata.kettle:MDProfilerDll</include>
+                <include>com.melissadata.kettle:mdAddrDll</include>
+                <include>com.melissadata.kettle:mdEmailDll</include>
+                <include>com.melissadata.kettle:mdGeoDll</include>
+                <include>com.melissadata.kettle:mdNameDll</include>
+                <include>com.melissadata.kettle:mdPhoneDll</include>
+                <include>com.melissadata.kettle:mdIpLocatorDll</include>
+                <include>com.melissadata.kettle:mdMatchUpDll</include>
+
             </includes>
         </dependencySet>
 
+        <!-- MDsettings, cz.library -->
         <dependencySet>
             <outputDirectory>Windows\lib</outputDirectory>
             <unpack>false</unpack>
@@ -37,14 +56,27 @@
             </includes>
         </dependencySet>
 
+        <!-- PLUGINS -->
         <dependencySet>
-            <outputDirectory>Windows\plugins</outputDirectory>
+            <outputDirectory>Windows\plugins\MDProfiler</outputDirectory>
             <unpack>false</unpack>
             <includes>
                 <include>com.melissadata.kettle:MDProfiler</include>
-               <!-- <include>com.melissadata.kettle:MDSettings</include> -->
             </includes>
-
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDCheck</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDCheck</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDBusinessCoder</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDProfiler</include>
+            </includes>
         </dependencySet>
 
     </dependencySets>

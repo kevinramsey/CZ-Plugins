@@ -21,6 +21,12 @@
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-ui-swt</artifactId>
             <version>${pentaho.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.melissadata</groupId>
+                    <artifactId>cz.library</artifactId>
+                </exclusion>
+            </exclusions>
             <type>jar</type>
         </dependency>
         <dependency>

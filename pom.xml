@@ -14,13 +14,36 @@
 
         <contactzone.build.dir>${project.build.directory}\ContactZone-${project.version}\ContactZone</contactzone.build.dir>
         <module.parent.dir>${project.build.directory}..\..\..\</module.parent.dir>
+        <mddata.dir>${module.parent.dir}\Data</mddata.dir>
         <!-- md files -->
-        <cz.version>1.1-SNAPSHOT</cz.version>
-        <mdsettings.version>1.1-SNAPSHOT</mdsettings.version>
-        <mdprofiler.version>1.0-SNAPSHOT</mdprofiler.version>
-        <mdlicense.version>1.0</mdlicense.version>
-        <mdcommon.version>1.0</mdcommon.version>
-        <profiler.resource.version>1.0</profiler.resource.version>
+        <cz.library.version>1.1-SNAPSHOT</cz.library.version>
+        <mdLicense.version>1.0</mdLicense.version>
+        <mdSettings.version>1.1-SNAPSHOT</mdSettings.version>
+        <!-- MDBusinessCoder -->
+        <mdBusinessCoder.plugin.version>1.0-SNAPSHOT</mdBusinessCoder.plugin.version>
+        <!-- MDCheck -->
+        <mdCheck.plugin.version>1.0-SNAPSHOT</mdCheck.plugin.version>
+        <mdAddr.dll.version>4.0.1.3067</mdAddr.dll.version>
+        <mdEmail.dll.version>4.0.1.3067</mdEmail.dll.version>
+        <mdGeo.dll.version>4.0.1.3116</mdGeo.dll.version>
+        <mdName.dll.version>4.0.1.3067</mdName.dll.version>
+        <mdPhone.dll.version>4.0.1.3067</mdPhone.dll.version>
+        <mdIpLocator.dll.version>4.0.1.3036</mdIpLocator.dll.version>
+        <mdMatchUp.dll.version>5.0.0.5009</mdMatchUp.dll.version>
+        <!-- MDCleanser -->
+        <mdCleanser.plugin.version>1.0-SNAPSHOT</mdCleanser.plugin.version>
+        <mdCleanser.dll.version>1.0.0.2967</mdCleanser.dll.version>
+        <!-- MDGlobal Verify -->
+        <mdGlobalVerify.plugin.version>1.0-SNAPSHOT</mdGlobalVerify.plugin.version>
+        <mdGlobal.dll.version>1.0.0.3030</mdGlobal.dll.version>
+        <!-- MDPersonator -->
+        <mdPersonator.plugin.version>1.0-SNAPSHOT</mdPersonator.plugin.version>
+        <!-- MDProfiler -->
+        <mdProfiler.plugin.version>1.0-SNAPSHOT</mdProfiler.plugin.version>
+        <mdProfiler.dll.version>4.0.1.3036</mdProfiler.dll.version>
+        <!-- MDProperty -->
+        <mdProperty.plugin.version>1.0-SNAPSHOT</mdProperty.plugin.version>
+        <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- DATA PATHS -->
         <address.data.path></address.data.path>
@@ -34,7 +57,6 @@
         <matchup.data.path></matchup.data.path>
         <matchupglobal.data.path></matchupglobal.data.path>
 
-
     </properties>
 
 
@@ -45,33 +67,30 @@
     </modules>
 
     <build>
-    <pluginManagement>
-    <plugins>
-        <plugin>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <!--  <version>2.5.3</version> -->
-            <version>3.1.0</version>
-            <configuration>
-                <appendAssemblyId>false</appendAssemblyId>
-                <!--  <descriptor>src/assembly/assembly.xml</descriptor> -->
-                <descriptors>
-                    <descriptor>assemblies\contactzone\src\assembly\assembly.xml</descriptor>
-                </descriptors>
-                <finalName>ContactZone-${project.version}</finalName>
-            </configuration>
-            <executions>
-                <execution>
-                    <id>make-assembly</id>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>single</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-
-    </plugins>
-    </pluginManagement>
+        <finalName>ContactZone-${project.version}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>3.1.0</version>
+                    <configuration>
+                        <appendAssemblyId>false</appendAssemblyId>
+                        <descriptors>
+                            <descriptor>assemblies\contactzone\src\assembly\assembly.xml</descriptor>
+                        </descriptors>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>make-assembly</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 </project>

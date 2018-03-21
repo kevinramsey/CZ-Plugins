@@ -11,7 +11,8 @@
     <properties>
         <pentaho.version>8.0.0.4-237</pentaho.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cz.version>1.1-SNAPSHOT</cz.version>
+        <cz.library.version>1.1-SNAPSHOT</cz.library.version>
+        <mdSettings.version>1.1-SNAPSHOT</mdSettings.version>
     </properties>
 
     <!-- Requires CZ build of kettle as it contains the cz.library and MDSettings dependencies -->
@@ -20,13 +21,13 @@
         <dependency>
             <groupId>com.melissadata</groupId>
             <artifactId>cz.library</artifactId>
-            <version>${cz.version}</version>
+            <version>${cz.library.version}</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>MDSettings</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <version>${mdSettings.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.melissadata</groupId>
