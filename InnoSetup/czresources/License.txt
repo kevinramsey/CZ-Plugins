@@ -1,0 +1,149 @@
+Melissa DATA LICENSE AGREEMENT
+
+1. NOTICE. MELISSA DATA CORP IS WILLING TO LICENSE THE ENCLOSED
+    SOFTWARE TO YOU ONLY ON THE CONDITION THAT YOU ACCEPT ALL 
+    OF THE TERMS CONTAINED IN THIS LICENSE AGREEMENT. PLEASE 
+    READ THIS LICENSE AGREEMENT CAREFULLY BEFORE OPENING THE 
+    SEALED DISK PACKAGE. BY OPENING THIS PACKAGE (OR IN THE 
+    CASE OF DOWNLOADED SOFTWARE, YOU REQUEST UNLOCKING CODE 
+    FROM THE PUBLISHER) YOU AGREE TO BE BOUND BY THE TERMS OF 
+    THIS AGREEMENT. IF YOU DO NOT AGREE TO THESE TERMS WE ARE 
+    UNWILLING TO LICENSE THE SOFTWARE TO YOU, AND YOU SHOULD 
+    NOT OPEN THE DISK PACKAGE. IN SUCH CASE, PROMPTLY RETURN 
+    THE UNOPENED DISK PACKAGE AND ALL OTHER MATERIAL IN THIS 
+    PACKAGE ALONG WITH PROOF OF PAYMENT, TO THE AUTHORIZED 
+    DEALER FROM WHOM YOU OBTAINED IT FOR A FULL REFUND OF THE
+    PRICE YOU PAID.
+
+2. Ownership and License. This is a license agreement and NOT an agreement for
+    sale. We continue to own the copy of the Software (including, but not limited to,
+    object code, dynamic link libraries, and sample programs, together with the
+    accompanying documentation contained in this package and all other copies 
+    that you are authorized by this Agreement to make collectively known as
+    "Software"). Your rights to use the Software are specified in this Agreement, 
+    and we retain all rights not expressly granted to you in this Agreement. This
+    Software is protected by U.S. copyright laws and international treaties. 
+    Nothing in this Agreement constitutes a waiver of our rights under 
+    U.S. Copyright law or any other federal or state law or international treaty.
+
+3. Permitted Uses. You are granted the following rights to the Software:
+	
+    (a) Right to Install and Use. 
+		
+        (1) Standalone Computer - Single Installation You may install
+             and use the Software on the hard disk drive of any single 
+             compatible non-server computer that you own. However, you may
+             not under any circumstances have the Software installed onto 
+             the hard drives of two or more computers at the same time,
+             (nor may you install the Software onto the hard disk drive of
+             one computer and then use the original CD-ROM on another 
+             computer). If you wish to use the Software on more than one
+             computer, you must either erase the Software from the first
+             hard drive before you install it onto a second hard drive, 
+             or else license an additional copy of the Software for each
+             additional computer on which you want to use it.
+
+        (2) Network Use: If the single computer on which you install the
+             Software is a network or Internet server, you may use the
+             Software on any computer attached to the network, provided that
+             it is only installed on the server. You may install and use this
+             Software on a single file server regardless of the number of
+             workstations attached to the network.
+ 
+    (b) Right to Copy. You may copy the Software for backup and archival
+         purposes, provided that the original and each copy is kept in your
+         possession, and that your installation and use of the Software does
+         not exceed that allowed in part (a) above. 
+
+        (1) Solely with the respect to the manual and Help files, you may
+             make an unlimited number of copies (either in hard-copy or
+             electronic form), provided that such copies shall be used only
+             for internal purposes and are not republished or distributed
+             beyond the licensee's premises.
+        (2) Copy, bundle, or redistribute the DEMO software with any
+             commercial product (including books, CD- ROM, computer
+             hardware, or software products). Your promotional and/or
+             packaging materials must clearly disclose that the Software is
+             copyrighted software of Melissa DATA, that no charge is made
+             by Melissa DATA or you for it, and that it is not a fully
+             supported commercial version.
+
+    (c) Right to Modify. You may modify the Software and/or merge it into another
+         computer program to the extent necessary for your own use on (a single
+         computer or server as specified above); however, any portion of the
+         Software merged into another computer program will continue to be subject
+         to the terms of this Agreement. You may use and modify the source code
+         version of those Software portions that the documentation identifies as
+         sample code ("SAMPLE CODE"), provided you do not distribute the
+         SAMPLE CODE or any modified version of the SAMPLE CODE, in source
+         form. 
+
+    (d) Right to Transfer. You may not rent, lend, or lease this Software.
+         However, you may transfer this license to use the Software to another
+         party on a permanent basis by transferring this copy of the License
+         Agreement, at least one unaltered copy of the Software, and all
+         documentation. You must, at the same time, either transfer to the other
+         party or destroy all your other copies of the Software or destroy all of
+         your copies. Such transfer of possession terminates your license from us.
+         Such other party shall be licensed under the terms of this Agreement upon
+         its acceptance of this Agreement by its initial use of the Software. If
+         you transfer the Software, you must remove the Software from your hard disk
+         and you may not retain any copies of the Software for your own use.
+ 
+4. Prohibited Uses. You may not, without written permission from us:
+	 
+    (a) Use, copy, modify, merge, or transfer copies of the Software or
+         documentation except as provided in this Agreement;
+
+    (b) Use any backup or archival copies of the Software (or allow someone else
+         to use such copies) for any purpose other than to replace the original copy
+         in the event it is destroyed or becomes defective;
+
+    (c) Disassemble, decompile or reverse engineer, or in any manner decode the
+         Software for any reason; 
+
+    (d) Distribute, Sublicense, lease, or rent the Software, Data files and/or
+         Dynamic Link Libraries of the Software.
+
+    (e) Expose the interfaces of the Software through your application (e.g. an
+         OCX, DLL, class library, etc).
+
+5. Limited Warranty. We make the following limited warranties, for a period of
+    180 days from the date you acquired the Software from us.
+
+    (a) Media. The disks and documentation in this package will be free from
+         defects in materials and workmanship under normal use. If the disks or
+         documentation fail to conform to this warranty, you may, as your sole and
+         exclusive remedy, obtain a replacement free of charge if you return the
+         defective disk or documentation to us with a dated proof of purchase.
+ 
+    (b) Software. The Software in this package will materially conform to the
+         documentation that accompanies it. If the Software fails to operate in
+         accordance with this warranty, you may, as your sole and exclusive remedy,
+         return all of the Software and the documentation to the authorized dealer
+         from whom you acquired it, along with a dated proof of purchase, specifying
+         the problem, and we will provide you with a new version of the Software or
+         a full refund at our election.
+
+    (c) WARRANTY DISCLAIMER. WE DO NOT WARRANT THAT THIS
+         SOFTWARE WILL MEET YOUR REQUIREMENTS OR THAT ITS
+         OPERATION WILL BE UNINTERRUPTED OR ERROR-FREE. WE
+         EXCLUDE AND EXPRESSLY DISCLAIM ALL EXPRESS AND
+         IMPLIED WARRANTIES NOT STATED HEREIN, INCLUDING
+         THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+         FITNESS FOR A PARTICULAR PURPOSE.
+
+6. Termination. This license and your right to use this Software automatically 
+    terminate if you fail to comply with any provisions of this Agreement, destroy 
+    the copies of the Software in your possession, or voluntarily return the Software
+    to us. Upon termination you will destroy all copies of the Software and 
+    documentation. Otherwise, the restrictions on your rights to use the Software
+    will expire upon expiration of the copyright to the Software.
+ 
+7. Miscellaneous Provisions. This Agreement will be governed by and construed in
+    accordance with the substantive laws of California. This is the entire agreement
+    between us relating to the contents of this package, and supersedes any prior
+    purchase order, communications, advertising or representations concerning the
+    contents of this package. No change or modification of this Agreement will be
+    valid unless it is in writing, and is signed by us. 
+ 

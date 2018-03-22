@@ -6,7 +6,7 @@
         <format>dir</format>
     </formats>
 
-    <baseDirectory>ContactZone</baseDirectory>
+   <!-- <baseDirectory>ContactZone</baseDirectory>-->
 
     <!-- Include the resources dir -->
     <fileSets>
@@ -15,19 +15,10 @@
             <useDefaultExcludes>false</useDefaultExcludes>
             <outputDirectory>.</outputDirectory>
         </fileSet>
-<!--
-        <fileSet>
-            <directory>${mddata.dir}</directory>
-            <useDefaultExcludes>false</useDefaultExcludes>
-            <outputDirectory>Data</outputDirectory>
-        </fileSet>
--->
-
     </fileSets>
 
 
     <dependencySets>
-
         <!-- md objects -->
         <dependencySet>
             <outputDirectory>misc\DLLs\64_bit</outputDirectory>
@@ -42,9 +33,24 @@
                 <include>com.melissadata.kettle:mdPhoneDll</include>
                 <include>com.melissadata.kettle:mdIpLocatorDll</include>
                 <include>com.melissadata.kettle:mdMatchUpDll</include>
-
             </includes>
         </dependencySet>
+        <!-- MatchUP -->
+        <dependencySet>
+            <outputDirectory>Matchup</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdMatchupResources</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>Matchup\Global</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdMatchupGlobalResources</include>
+            </includes>
+        </dependencySet>
+
 
         <!-- MDsettings, cz.library -->
         <dependencySet>

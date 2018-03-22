@@ -104,12 +104,21 @@
             <version>${mdMatchUp.dll.version}</version>
             <type>zip</type>
         </dependency>
-
-
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdMatchupResources</artifactId>
+            <version>${mdMatchUp.resources.version}</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdMatchupGlobalResources</artifactId>
+            <version>${mdMatchUpGlobal.resources.version}</version>
+            <type>zip</type>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>ContactZone-${project.version}</finalName>
         <plugins>
             <!-- Add messages if nessassary -->
             <plugin>
@@ -136,7 +145,6 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>3.0.2</version>
                 <executions>
-
                     <!-- get and unpack data-integration from repository -->
                     <execution>
                         <id>unpack</id>
@@ -163,32 +171,6 @@
                 </executions>
             </plugin>
 
-            <!-- Get the data files -->
-            <!--
-            <plugin>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.0.2</version>
-                <executions>
-                    <execution>
-                        <id>copy-resources</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>copy-resources</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${contactzone.build.dir}\Data\Address</outputDirectory>
-                            <resources>
-                                <resource>
-                                    <directory>${address.data.path}</directory>
-                                    <filtering>true</filtering>
-                                </resource>
-                            </resources>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
--->
-
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.1.0</version>
@@ -208,6 +190,7 @@
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 </project>

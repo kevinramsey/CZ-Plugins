@@ -1,0 +1,9 @@
+ContactZone
+Melissa Data Corp. 2015
+
+*** POST INSTALL INFORMATION ***********************************
+
+If you did not provide a license string during installation, you
+will need to enter your license string in the form found under
+"Tools - Melissa Data Settings - License"
+

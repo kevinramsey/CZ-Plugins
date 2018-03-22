@@ -12,9 +12,10 @@
 
     <properties>
 
-        <contactzone.build.dir>${project.build.directory}\ContactZone-${project.version}\ContactZone</contactzone.build.dir>
-        <module.parent.dir>${project.build.directory}..\..\..\</module.parent.dir>
-        <mddata.dir>${module.parent.dir}\Data</mddata.dir>
+        <contactzone.build.dir>${project.build.directory}\ContactZone-${project.version}\ContactZone-${project.version}</contactzone.build.dir>
+        <module.parent.dir>${project.build.directory}\..\..\..\</module.parent.dir>
+        <!-- InnoSetup -->
+        <InnoSetup.dir>${module.parent.dir}InnoSetup</InnoSetup.dir>
         <!-- md files -->
         <cz.library.version>1.1-SNAPSHOT</cz.library.version>
         <mdLicense.version>1.0</mdLicense.version>
@@ -30,6 +31,8 @@
         <mdPhone.dll.version>4.0.1.3067</mdPhone.dll.version>
         <mdIpLocator.dll.version>4.0.1.3036</mdIpLocator.dll.version>
         <mdMatchUp.dll.version>5.0.0.5009</mdMatchUp.dll.version>
+        <mdMatchUp.resources.version>1.0</mdMatchUp.resources.version>
+        <mdMatchUpGlobal.resources.version>1.0</mdMatchUpGlobal.resources.version>
         <!-- MDCleanser -->
         <mdCleanser.plugin.version>1.0-SNAPSHOT</mdCleanser.plugin.version>
         <mdCleanser.dll.version>1.0.0.2967</mdCleanser.dll.version>
@@ -45,17 +48,6 @@
         <mdProperty.plugin.version>1.0-SNAPSHOT</mdProperty.plugin.version>
         <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- DATA PATHS -->
-        <address.data.path></address.data.path>
-        <cleanser.data.path></cleanser.data.path>
-        <email.data.path></email.data.path>
-        <geocode.data.path></geocode.data.path>
-        <iplocator.datapath></iplocator.datapath>
-        <name.data.path></name.data.path>
-        <phone.data.path></phone.data.path>
-        <profiler.data.path></profiler.data.path>
-        <matchup.data.path></matchup.data.path>
-        <matchupglobal.data.path></matchupglobal.data.path>
 
     </properties>
 
@@ -64,6 +56,7 @@
         <module>cz.library</module>
         <module>MDSettings</module>
         <module>assemblies/contactzone</module>
+        <module>InnoSetup\scripts</module>
     </modules>
 
     <build>

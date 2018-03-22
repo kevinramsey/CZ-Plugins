@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.melissadata.kettle</groupId>
+    <artifactId>InnoSetup</artifactId>
+    <version>8.0.0.4-CZ.0</version>
+    <packaging>pom</packaging>
+
+    <name>InnoSet</name>
+    <properties>
+        <InnoSetup.dir>.</InnoSetup.dir>
+        <output.dir>..\..\assemblies\contactzone\target\ContactZone-${project.version}</output.dir>
+
+        <resources.dir>czresources</resources.dir>
+    </properties>
+
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <executable>InnoSetup\ISCC.exe</executable>
+                    <arguments>
+                        <argument>/DVERSION_NUM=${project.version}</argument>
+                        <argument>/DMyAppVersion=${project.version}</argument>
+                        <argument>/DOUTPUT_DIR=${output.dir}</argument>
+                        <argument>/DRESOURCES_DIR=..\czresources</argument>
+                        <argument>/DISO_DIR=ContactZone-${project.version}</argument>
+                        <argument>CZ_AntOP_A.iss</argument>
+                    </arguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
