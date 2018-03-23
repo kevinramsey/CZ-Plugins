@@ -2,10 +2,9 @@ package com.melissadata.kettle.personator;
 
 import com.melissadata.cz.DQTObjectFactory;
 import com.melissadata.cz.MDProps;
-import com.melissadata.kettle.MDSettings.SettingsTags;
+import com.melissadata.cz.support.MDPropTags;
 import com.melissadata.kettle.personator.data.*;
 import com.melissadata.kettle.personator.mapping.FieldMapping;
-import com.melissadata.kettle.personator.support.MDPropTags;
 import com.melissadata.kettle.personator.support.MetaVal;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.LineIterator;
@@ -200,7 +199,7 @@ public class MDPersonatorMeta extends BaseStepMeta implements StepMetaInterface 
 	}
 
 	public static boolean isEnterprise() {
-		return MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT, "").contains(SettingsTags.MDLICENSE_PRODUCT_Personator) || MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT, "").contains(SettingsTags.MDLICENSE_PRODUCT_Any);
+		return MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT, "").contains(MDPropTags.MDLICENSE_PRODUCT_Personator) || MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT, "").contains(MDPropTags.MDLICENSE_PRODUCT_Any);
 	}
 
 	private boolean checkContactZone() {
@@ -580,9 +579,9 @@ public class MDPersonatorMeta extends BaseStepMeta implements StepMetaInterface 
 	}
 
 	public boolean isLicensed() {
-		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RETVAL, "0"));
+		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
 		//retVal |= Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RETVAL, "0"));
-		if ((retVal & SettingsTags.MDLICENSE_Personator) != 0 || (retVal & SettingsTags.MDLICENSE_Community) != 0)
+		if ((retVal & MDPropTags.MDLICENSE_Personator) != 0 || (retVal & MDPropTags.MDLICENSE_Community) != 0)
 			return true;
 		else
 			return false;

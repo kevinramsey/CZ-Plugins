@@ -15,7 +15,7 @@ import java.util.TreeMap;
 import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
-import com.melissadata.kettle.MDSettings.SettingsTags;
+import com.melissadata.cz.support.MDPropTags;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
@@ -61,7 +61,6 @@ import com.melissadata.kettle.MDSettings.AdvancedConfigInterface;
 import com.melissadata.kettle.MDSettings.AdvancedConfigurationDialog;
 import com.melissadata.kettle.personator.mapping.FieldMappingDialog;
 import com.melissadata.kettle.personator.support.MDPersonatorHelper;
-import com.melissadata.kettle.personator.support.MDPropTags;
 import com.melissadata.kettle.personator.support.MDTab;
 import com.melissadata.kettle.personator.ui.InputPersonatorTab;
 import com.melissadata.kettle.personator.ui.OutputFilterTab;
@@ -172,8 +171,8 @@ public class MDPersonatorDialog extends BaseStepDialog implements StepDialogInte
 
 	private String checkLicense() {
 		String nagMessage = null;
-		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RETVAL, "0"));
-		retVal |= Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RETVAL, "0"));
+		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
+		retVal |= Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
 		String lic = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "");
 		String trialLic = MDProps.getProperty(MDPropTags.TAG_TRIAL_LICENSE, "");
 		if (Const.isEmpty(lic) && Const.isEmpty(trialLic)) {
@@ -734,7 +733,7 @@ public class MDPersonatorDialog extends BaseStepDialog implements StepDialogInte
 		}
 
 		if(!MDPersonatorMeta.isEnterprise()){
-			if(MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT,"").contains(SettingsTags.MDLICENSE_PRODUCT_Community) ){
+			if(MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT,"").contains(MDPropTags.MDLICENSE_PRODUCT_Community) ){
 				MessageBox box = new MessageBox(shell, SWT.OK | SWT.APPLICATION_MODAL | SWT.ICON_WARNING);
 				box.setText(BaseMessages.getString(PKG, "MDPersonatorDialog.Community.Title"));
 				box.setMessage(BaseMessages.getString(PKG,"MDPersonatorDialog.Community.PopupMessage"));

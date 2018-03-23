@@ -1,7 +1,7 @@
 package com.melissadata.kettle.propertywebservice.web;
 
 import com.melissadata.cz.MDProps;
-import com.melissadata.kettle.MDSettings.SettingsTags;
+import com.melissadata.cz.support.MDPropTags;
 import com.melissadata.kettle.propertywebservice.MDPropertyWebServiceData;
 import org.apache.commons.httpclient.*;
 import org.apache.commons.httpclient.auth.AuthScope;
@@ -43,7 +43,7 @@ public class WebClient {
 	private String  webEncoding = "ISO-8859-1";// default
 
 	public WebClient(LogChannelInterface log) {
-		webEncoding = MDProps.getProperty(SettingsTags.TAG_WEB_ENCODING, "ISO-8859-1");
+		webEncoding = MDProps.getProperty(MDPropTags.TAG_WEB_ENCODING, "ISO-8859-1");
 		this.log = log;
 	}
 

@@ -399,8 +399,8 @@ public class MDGlobalDialog extends BaseStepDialog implements StepDialogInterfac
 	}
 
 	private String getTestResult() {
-		int nLicensedProduct = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RETVAL, "0"));
-		int nTrialLicensedProduct = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RETVAL, "0"));
+		int nLicensedProduct = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
+		int nTrialLicensedProduct = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
 		if ((nLicensedProduct & MDPropTags.MDLICENSE_GlobalVerify) != 0)
 			return MDProps.getProperty(MDPropTags.TAG_PRIMARY_TEST_RESULT, "");
 		else if ((nTrialLicensedProduct & MDPropTags.MDLICENSE_GlobalVerify) != 0)
@@ -763,7 +763,7 @@ public class MDGlobalDialog extends BaseStepDialog implements StepDialogInterfac
 		}
 
 		if(!MDGlobalMeta.isEnterprise()){
-			if(MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT,"").contains(SettingsTags.MDLICENSE_PRODUCT_Community) ){
+			if(MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT,"").contains(MDPropTags.MDLICENSE_PRODUCT_Community) ){
 				MessageBox box = new MessageBox(shell, SWT.OK | SWT.APPLICATION_MODAL | SWT.ICON_WARNING);
 				box.setText(BaseMessages.getString(PKG, "MDGlobalDialog.Community.Title"));
 				box.setMessage(BaseMessages.getString(PKG,"MDGlobalDialog.Community.PopupMessage"));

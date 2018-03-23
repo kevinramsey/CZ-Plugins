@@ -41,7 +41,7 @@ import com.melissadata.kettle.propertywebservice.request.MDPropertyWebServiceReq
 import com.melissadata.kettle.propertywebservice.request.MDPropertyWebServiceRequest.ProCoderResults;
 import com.melissadata.kettle.propertywebservice.request.RequestManager;
 import com.melissadata.cz.support.MDAbortException;
-import com.melissadata.kettle.propertywebservice.support.MDPropTags;
+import com.melissadata.cz.support.MDPropTags;
 
 public /*abstract*/ class MDPropertyWebService /* extends MDPropertyWebServiceService */ {
 
@@ -413,7 +413,7 @@ public /*abstract*/ class MDPropertyWebService /* extends MDPropertyWebServiceSe
 			}
 			// Get service URLs
 			try {
-				serviceData.realPropertyWebServiceURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_PROPERTYWEBSERVICE_URL, "")));
+				serviceData.realPropertyWebServiceURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_WEB_PROPERTY_URL, "")));
 			} catch (MalformedURLException mle) {
 				// Change the description
 				throw new KettleException("Problem getting server url property: ");
@@ -453,13 +453,13 @@ public /*abstract*/ class MDPropertyWebService /* extends MDPropertyWebServiceSe
 	private String getCustomerID() {
 
 		String id     = "";
-		int    retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RETVAL, "0"));
+		int    retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
 
-		if ((retVal & MDPropTags.MDLICENSE_PropertyWebService) != 0) {
+		if ((retVal & MDPropTags.MDLICENSE_Property) != 0) {
 			id = MDProps.getProperty(MDPropTags.TAG_PRIMARY_ID, "");
 		} else {
-			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RETVAL, "0"));
-			if ((retVal & MDPropTags.MDLICENSE_PropertyWebService) != 0) {
+			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
+			if ((retVal & MDPropTags.MDLICENSE_Property) != 0) {
 				id = MDProps.getProperty(MDPropTags.TAG_TRIAL_ID, "");
 			}
 		}

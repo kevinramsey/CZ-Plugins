@@ -6,7 +6,7 @@ import com.melissadata.cz.ui.MDDialogParent;
 import com.melissadata.kettle.globalverify.MDGlobalDialog;
 import com.melissadata.kettle.globalverify.MDGlobalMeta;
 import com.melissadata.kettle.globalverify.support.MDGlobalAddressHelper;
-import com.melissadata.kettle.globalverify.support.MDPropTags;
+import com.melissadata.cz.support.MDPropTags;
 import org.apache.commons.io.FileUtils;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -33,6 +33,7 @@ import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
 public class PluginInstaller {
+
 
 	private static Class<?> PKG     = MDGlobalMeta.class;
 	private        String   fileSep = Const.FILE_SEPARATOR;
@@ -210,7 +211,7 @@ public class PluginInstaller {
 	}
 
 	private void updateCZ() {
-		Props.getInstance().setProperty(MDPropTags.TAG_GLOBALVERIFY_VERSION, version);
+		Props.getInstance().setProperty(MDGlobalMeta.TAG_GLOBALVERIFY_VERSION, version);
 		Props.getInstance().saveProps();
 	}
 
@@ -255,7 +256,7 @@ public class PluginInstaller {
 				throw new KettleException("Failed to load external class files: " + e.getMessage());
 			}
 			copyRequiredFiles();
-			Props.getInstance().setProperty(MDPropTags.TAG_GLOBALVERIFY_VERSION, version);
+			Props.getInstance().setProperty(MDGlobalMeta.TAG_GLOBALVERIFY_VERSION, version);
 			Props.getInstance().saveProps();
 		} else if (update) {
 			log.logBasic("Updating MDGlobalVerify");
@@ -266,7 +267,7 @@ public class PluginInstaller {
 				throw new KettleException("Failed to load external class files: " + e.getMessage());
 			}
 			copyRequiredFiles();
-			Props.getInstance().setProperty(MDPropTags.TAG_GLOBALVERIFY_VERSION, version);
+			Props.getInstance().setProperty(MDGlobalMeta.TAG_GLOBALVERIFY_VERSION, version);
 			Props.getInstance().saveProps();
 		}
 		

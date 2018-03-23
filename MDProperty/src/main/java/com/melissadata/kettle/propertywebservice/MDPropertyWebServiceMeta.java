@@ -4,7 +4,7 @@ import com.melissadata.cz.MDProps;
 import com.melissadata.cz.support.FilterTarget;
 import com.melissadata.cz.support.IOMetaHandler;
 import com.melissadata.cz.support.MDStreamHandler;
-import com.melissadata.kettle.MDSettings.SettingsTags;
+import com.melissadata.cz.support.MDPropTags;
 import com.melissadata.kettle.propertywebservice.data.PropertyWebServiceFields;
 import com.melissadata.kettle.propertywebservice.request.MDPropertyWebServiceRequest;
 import com.melissadata.kettle.propertywebservice.support.OutputFilterFields;
@@ -124,7 +124,7 @@ public class MDPropertyWebServiceMeta extends BaseStepMeta implements StepMetaIn
 
 	public static boolean isEnterprise() {
 
-		return MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT, "").contains(SettingsTags.MDLICENSE_PRODUCT_Property) || MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT, "").contains(SettingsTags.MDLICENSE_PRODUCT_Any);
+		return MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT, "").contains(MDPropTags.MDLICENSE_PRODUCT_Property) || MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT, "").contains(MDPropTags.MDLICENSE_PRODUCT_Any);
 	}
 
 	public static final  String                   TAG_MELISSADATA_SPECIAL_USAGE    = "melissadata_special_usage";

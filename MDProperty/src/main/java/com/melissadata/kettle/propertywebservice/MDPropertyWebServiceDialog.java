@@ -15,7 +15,7 @@ import java.util.jar.Attributes;
 import java.util.jar.Manifest;
 
 import com.melissadata.cz.MDProps;
-import com.melissadata.kettle.MDSettings.SettingsTags;
+import com.melissadata.cz.support.MDPropTags;
 import com.melissadata.kettle.propertywebservice.ui.*;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CTabFolder;
@@ -531,7 +531,7 @@ public class MDPropertyWebServiceDialog extends BaseStepDialog implements StepDi
 		}
 
 		if(!MDPropertyWebServiceMeta.isEnterprise()){
-			if(MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT,"").contains(SettingsTags.MDLICENSE_PRODUCT_Community) ){
+			if(MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT,"").contains(MDPropTags.MDLICENSE_PRODUCT_Community) ){
 				MessageBox box = new MessageBox(shell, SWT.OK | SWT.APPLICATION_MODAL | SWT.ICON_WARNING);
 				box.setText(BaseMessages.getString(PKG, "MDPropertyWebServiceDialog.Community.Title"));
 				box.setMessage(BaseMessages.getString(PKG,"MDPropertyWebServiceDialog.Community.PopupMessage"));

@@ -8,15 +8,15 @@ import org.pentaho.di.core.logging.LogChannelInterface;
 import org.pentaho.di.core.variables.VariableSpace;
 
 import com.melissadata.cz.MDProps;
-import com.melissadata.kettle.personator.support.MDPropTags;
+import com.melissadata.cz.support.MDPropTags;
 import com.melissadata.kettle.personator.web.PersonatorWebService;
 
 public abstract class MDPersonatorService {
 	/**
 	 * Called to allocate the service handler based on the service type
 	 *
-	 * @param stepData
 	 * @param checkData
+	 * @param checkMeta
 	 * @param space
 	 * @param log
 	 * @return
@@ -56,8 +56,6 @@ public abstract class MDPersonatorService {
 	/**
 	 * Create a request manager for processing requests in an asynchronous manner
 	 *
-	 * @param stepData
-	 * @return
 	 */
 	protected IRequestManager createRequestManager() {
 		// If this is a local service then we only allow one thread in the thread pool.

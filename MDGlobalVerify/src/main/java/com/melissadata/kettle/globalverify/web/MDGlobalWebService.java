@@ -14,7 +14,7 @@ import com.melissadata.kettle.globalverify.requesthandler.EmailRequestHandler;
 import com.melissadata.kettle.globalverify.requesthandler.NameParseRequestHandler;
 import com.melissadata.kettle.globalverify.requesthandler.PhoneRequestHandler;
 import com.melissadata.kettle.globalverify.support.CountryUtil;
-import com.melissadata.kettle.globalverify.support.MDPropTags;
+import com.melissadata.cz.support.MDPropTags;
 import org.dom4j.DocumentException;
 import org.dom4j.dom.DOMElement;
 import org.dom4j.io.SAXReader;
@@ -373,11 +373,11 @@ public class MDGlobalWebService extends MDGlobalService {
 	private String getCustomerID() {
 
 		String id     = "";
-		int    retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RETVAL, "0"));
+		int    retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
 		if ((retVal & MDPropTags.MDLICENSE_GlobalVerify) != 0) {
 			id = MDProps.getProperty(MDPropTags.TAG_PRIMARY_ID, "");
 		} else {
-			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RETVAL, "0"));
+			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
 			if ((retVal & MDPropTags.MDLICENSE_GlobalVerify) != 0) {
 				id = MDProps.getProperty(MDPropTags.TAG_TRIAL_ID, "");
 			}
@@ -436,10 +436,10 @@ public class MDGlobalWebService extends MDGlobalService {
 			}
 			// Get service URLs
 			try {
-				checkData.realWebGlobalAddressVerifierURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_GLOBAL_ADDRESS_URL, "")));
-				checkData.realWebGlobalNameVerifierURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_GLOBAL_NAME_URL, "")));
-				checkData.realWebGlobalPhoneVerifierURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_GLOBAL_PHONE_URL, "")));
-				checkData.realWebGlobalEmailVerifierURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_GLOBAL_EMAIL_URL, "")));
+				checkData.realWebGlobalAddressVerifierURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_WEB_GLOBAL_ADDRESS_URL, "")));
+				checkData.realWebGlobalNameVerifierURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_WEB_GLOBAL_NAME_URL, "")));
+				checkData.realWebGlobalPhoneVerifierURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_WEB_GLOBAL_PHONE_URL, "")));
+				checkData.realWebGlobalEmailVerifierURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_WEB_GLOBAL_EMAIL_URL, "")));
 			} catch (MalformedURLException mle) {
 				// Change the description
 				throw new KettleException("Problem getting server url property");

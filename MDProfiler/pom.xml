@@ -8,34 +8,123 @@
     <artifactId>MDProfiler</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <properties>
-        <pentaho.version>8.0.0.4-237</pentaho.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cz.library.version>1.1-SNAPSHOT</cz.library.version>
-        <mdSettings.version>1.1-SNAPSHOT</mdSettings.version>
-    </properties>
+    <name>MDProfiler</name>
 
-    <!-- Requires CZ build of kettle as it contains the cz.library and MDSettings dependencies -->
-    <!-- optionally it can be set to a non-CZ build and cz.library and MDSettings added as separate dependencies -->
+    <parent>
+        <groupId>com.melissadata.kettle</groupId>
+        <artifactId>cz.plugins</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/org.dom4j/dom4j -->
+        <dependency>
+            <groupId>org.dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>${dom4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-ui-swt</artifactId>
+            <version>${external.pentaho.version}</version>
+            <exclusions>
+                <exclusion><!-- Only needed if  built with our version -->
+                    <groupId>com.melissadata</groupId>
+                    <artifactId>cz.library</artifactId>
+                </exclusion>
+                <exclusion><!-- Only needed if  built with our version -->
+                    <groupId>com.melissadata.kettle</groupId>
+                    <artifactId>MDSettings</artifactId>
+                </exclusion>
+            </exclusions>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-engine</artifactId>
+            <version>${external.pentaho.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-core</artifactId>
+            <version>${external.pentaho.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-engine</artifactId>
+            <version>${external.pentaho.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.eclipse/jface -->
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>jface</artifactId>
+            <version>${jface.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+
         <dependency>
             <groupId>com.melissadata</groupId>
             <artifactId>cz.library</artifactId>
             <version>${cz.library.version}</version>
+            <exclusions>
+
+                <exclusion>
+                    <groupId>pentaho-kettle</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+
+            </exclusions>
             <type>jar</type>
         </dependency>
+
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>MDSettings</artifactId>
             <version>${mdSettings.version}</version>
             <exclusions>
+
                 <exclusion>
                     <groupId>com.melissadata</groupId>
                     <artifactId>cz.library</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>pentaho-kettle</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+
             </exclusions>
             <type>jar</type>
         </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.swt</groupId>
+            <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -43,17 +132,17 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>${maven.compiler.version}</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>${java.compile.target}</source>
+                    <target>${java.compile.target}</target>
                 </configuration>
             </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
+                <version>${maven.jar.version}</version>
                 <configuration>
                     <archive>
                         <manifestEntries>
@@ -64,5 +153,8 @@
             </plugin>
         </plugins>
     </build>
+
+
+
 
 </project>

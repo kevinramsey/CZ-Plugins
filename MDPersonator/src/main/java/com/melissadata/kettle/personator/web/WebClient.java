@@ -1,7 +1,7 @@
 package com.melissadata.kettle.personator.web;
 
 import com.melissadata.cz.MDProps;
-import com.melissadata.kettle.MDSettings.SettingsTags;
+import com.melissadata.cz.support.MDPropTags;
 import com.melissadata.kettle.personator.MDPersonator;
 import com.melissadata.kettle.personator.MDPersonatorData;
 import org.apache.commons.httpclient.*;
@@ -52,7 +52,7 @@ public class WebClient {
 
 	public WebClient(LogChannelInterface log) {
 		this.log = log;
-		webEncoding = MDProps.getProperty(SettingsTags.TAG_WEB_ENCODING, "ISO-8859-1");
+		webEncoding = MDProps.getProperty(MDPropTags.TAG_WEB_ENCODING, "ISO-8859-1");
 	}
 
 	/**

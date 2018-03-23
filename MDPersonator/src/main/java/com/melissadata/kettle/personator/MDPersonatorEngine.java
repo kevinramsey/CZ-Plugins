@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.melissadata.kettle.MDSettings.SettingsTags;
+import com.melissadata.cz.support.MDPropTags;
 import org.pentaho.di.core.Const;
 import org.pentaho.di.core.row.RowDataUtil;
 
@@ -14,7 +14,7 @@ import com.melissadata.kettle.personator.MDPersonatorCVRequest.PersonatorResults
 import com.melissadata.kettle.personator.MDPersonatorMeta.OutputPhoneFormat;
 import com.melissadata.kettle.personator.MDPersonatorMeta.RowOutput;
 import com.melissadata.kettle.personator.data.PersonatorFields;
-import com.melissadata.kettle.personator.support.MDPropTags;
+import com.melissadata.cz.support.MDPropTags;
 
 public class MDPersonatorEngine {
 	PersonatorFields				personatorFields;
@@ -139,9 +139,9 @@ public class MDPersonatorEngine {
 	 */
 	public boolean isLicensed() {
 		// Check if product is licensed
-		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RETVAL, "0"));
+		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
 		//retVal |= Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RETVAL, "0"));
-		if ((retVal & SettingsTags.MDLICENSE_Personator) != 0 || (retVal & SettingsTags.MDLICENSE_Community) != 0)
+		if ((retVal & MDPropTags.MDLICENSE_Personator) != 0 || (retVal & MDPropTags.MDLICENSE_Community) != 0)
 			return true;
 		else
 			return false;

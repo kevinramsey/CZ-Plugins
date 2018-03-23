@@ -56,6 +56,7 @@ public class MDGlobalMeta extends BaseStepMeta implements StepMetaInterface {
 	public static final  String                   TAG_PRIMARY_LICENSE_ENTERPRISE = "license_enterprise";
 	private static final String                   TAG_CONTACT_ZONE_FILE          = "contact_zone.prp";
 	public static        String                   MDGLOBAL_ADDRESS_REPORT_ARRAY  = "MDGlobalAddressMeta.ReportData.";
+	public static final String	TAG_GLOBALVERIFY_VERSION	= "md_global_verify_version";
 	private static       Class<?>                 PKG                            = MDGlobalMeta.class;
 	public static final  String                   NOT_DEFINED                    = BaseMessages.getString(PKG, "MDGlobalAddressMeta.InputData.NotDefined");
 	private static       PluginInstaller          pluginInstaller                = null;
@@ -158,7 +159,7 @@ public class MDGlobalMeta extends BaseStepMeta implements StepMetaInterface {
 
 		String lic = MDProps.getProperty("licensed_products", "");
 		if (!Const.isEmpty(lic)) {
-			return lic.contains(SettingsTags.MDLICENSE_PRODUCT_GlobalVerify) || lic.contains(SettingsTags.MDLICENSE_PRODUCT_Any) || lic.contains(SettingsTags.MDLICENSE_PRODUCT_Community);
+			return lic.contains(MDPropTags.MDLICENSE_PRODUCT_GlobalVerify) || lic.contains(MDPropTags.MDLICENSE_PRODUCT_Any) || lic.contains(MDPropTags.MDLICENSE_PRODUCT_Community);
 		} else {
 			return false;
 		}
@@ -175,7 +176,7 @@ public class MDGlobalMeta extends BaseStepMeta implements StepMetaInterface {
 
 	public static boolean isEnterprise() {
 
-		return MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT, "").contains(SettingsTags.MDLICENSE_PRODUCT_GlobalVerify) || MDProps.getProperty(SettingsTags.TAG_PRIMARY_PRODUCT, "").contains(SettingsTags.MDLICENSE_PRODUCT_Any);
+		return MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT, "").contains(MDPropTags.MDLICENSE_PRODUCT_GlobalVerify) || MDProps.getProperty(MDPropTags.TAG_PRIMARY_PRODUCT, "").contains(MDPropTags.MDLICENSE_PRODUCT_Any);
 	}
 
 	/**
@@ -361,7 +362,7 @@ public class MDGlobalMeta extends BaseStepMeta implements StepMetaInterface {
 
 		String ver = "0";
 		if (Props.isInitialized()) {
-			ver = Props.getInstance().getProperty(MDPropTags.TAG_GLOBALVERIFY_VERSION);
+			ver = Props.getInstance().getProperty(TAG_GLOBALVERIFY_VERSION);
 			if (ver == null) {
 				ver = "0";
 			}

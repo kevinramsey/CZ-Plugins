@@ -14,7 +14,7 @@ import com.melissadata.kettle.globalverify.requesthandler.AddressVerifyRequestHa
 import com.melissadata.kettle.globalverify.requesthandler.EmailRequestHandler;
 import com.melissadata.kettle.globalverify.requesthandler.NameParseRequestHandler;
 import com.melissadata.kettle.globalverify.requesthandler.PhoneRequestHandler;
-import com.melissadata.kettle.globalverify.support.MDPropTags;
+import com.melissadata.cz.support.MDPropTags;
 import com.melissadata.kettle.globalverify.web.MDGlobalWebService;
 import com.melissadata.kettle.globalverify.web.WebClient;
 import com.melissadata.kettle.globalverify.web.WebRequestHandler;
@@ -219,11 +219,11 @@ public class MDGlobalLocalService extends MDGlobalService {
 	private String getCustomerID() {
 
 		String id     = "";
-		int    retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RETVAL, "0"));
+		int    retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
 		if ((retVal & MDPropTags.MDLICENSE_GlobalVerify) != 0) {
 			id = MDProps.getProperty(MDPropTags.TAG_PRIMARY_ID, "");
 		} else {
-			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RETVAL, "0"));
+			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
 			if ((retVal & MDPropTags.MDLICENSE_GlobalVerify) != 0) {
 				id = MDProps.getProperty(MDPropTags.TAG_TRIAL_ID, "");
 			}

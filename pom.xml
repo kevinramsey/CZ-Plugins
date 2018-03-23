@@ -58,6 +58,12 @@
         <json.simple.version>0.4</json.simple.version>
         <commons-httpclient.version>3.1</commons-httpclient.version>
 
+        <!-- Maven plugins -->
+        <maven.compiler.version>3.7.0</maven.compiler.version>
+        <maven.jar.version>3.0.2</maven.jar.version>
+
+        <java.compile.target>1.7</java.compile.target>
+
     </properties>
 
 

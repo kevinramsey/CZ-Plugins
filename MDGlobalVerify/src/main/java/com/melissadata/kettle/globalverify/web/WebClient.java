@@ -61,7 +61,7 @@ public class WebClient {
 
 	public WebClient(LogChannelInterface log) {
 		this.log = log;
-		webEncoding = MDProps.getProperty(SettingsTags.TAG_WEB_ENCODING, "ISO-8859-1");
+		webEncoding = MDProps.getProperty(MDPropTags.TAG_WEB_ENCODING, "ISO-8859-1");
 	}
 
 	/**

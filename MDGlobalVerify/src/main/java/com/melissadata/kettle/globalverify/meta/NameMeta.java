@@ -185,7 +185,7 @@ public class NameMeta {
 					MDGlobalMeta.getStringField(row, originName, space, nameFields.outputFields.get(key).metaValue, nameFields.outputFields.get(key).metaSize);
 				}
 			}
-			if (!org.pentaho.pms.util.Const.isEmpty(nameFields.inputFields.get(NameFields.TAG_INPUT_COMPANY_NAME).metaValue)) {
+			if (!Const.isEmpty(nameFields.inputFields.get(NameFields.TAG_INPUT_COMPANY_NAME).metaValue)) {
 				if (key.equals(NameFields.TAG_OUTPUT_COMPANY_NAME)) {
 					MDGlobalMeta.getStringField(row, originName, space, nameFields.outputFields.get(key).metaValue, nameFields.outputFields.get(key).metaSize);
 				}

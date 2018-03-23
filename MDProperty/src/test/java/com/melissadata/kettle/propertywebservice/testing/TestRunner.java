@@ -10,12 +10,12 @@ import org.junit.runner.notification.Failure;
 public class TestRunner {
 	public static void main(String[] args) {
 		//Result result = JUnitCore.runClasses(SmartMoverTest.class);
-		Result result = JUnitCore.runClasses(PropertyJunitTestSuite.class);
+		//Result result = JUnitCore.runClasses(PropertyJunitTestSuite.class);
 
-		for (Failure failure : result.getFailures()) {
-			System.out.println(failure.toString());
-		}
+//		for (Failure failure : result.getFailures()) {
+//			System.out.println(failure.toString());
+//		}
 
-		System.out.println(result.wasSuccessful());
+	//	System.out.println(result.wasSuccessful());
 	}
 }

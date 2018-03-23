@@ -38,7 +38,7 @@ import com.melissadata.kettle.personator.MDPersonatorMeta;
 import com.melissadata.kettle.personator.MDPersonatorRequest;
 import com.melissadata.kettle.personator.data.PersonatorFields;
 import com.melissadata.kettle.personator.error.MDAbortException;
-import com.melissadata.kettle.personator.support.MDPropTags;
+import com.melissadata.cz.support.MDPropTags;
 
 
 public class PersonatorWebService extends MDPersonatorCVService {
@@ -104,7 +104,7 @@ public class PersonatorWebService extends MDPersonatorCVService {
 			
 			// Get service URLs
 			try{
-				checkData.realWebPersonatorURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_PERSONATOR_URL, "")));
+				checkData.realWebPersonatorURL = new URL(space.environmentSubstitute(MDProps.getProperty(MDPropTags.TAG_WEB_PERSONATOR_URL, "")));
 			} catch (MalformedURLException mle) {
 				// Change the description
 				throw new KettleException("Problem getting server url property");
@@ -152,12 +152,12 @@ public class PersonatorWebService extends MDPersonatorCVService {
 
 	private String getCustomerID(){
 		String id = "";
-		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RETVAL, "0"));
+		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
 		
 		if((retVal & MDPropTags.MDLICENSE_Personator) != 0){
 			id = MDProps.getProperty(MDPropTags.TAG_PRIMARY_ID, "");
 		}else{
-			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RETVAL, "0"));
+			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
 			if((retVal & MDPropTags.MDLICENSE_Personator) != 0){
 				id = MDProps.getProperty(MDPropTags.TAG_TRIAL_ID, "");
 			}

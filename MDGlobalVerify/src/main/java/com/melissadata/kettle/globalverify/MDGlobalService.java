@@ -10,7 +10,7 @@ import org.pentaho.di.core.variables.VariableSpace;
 
 import com.melissadata.cz.MDProps;
 import com.melissadata.cz.support.IOMetaHandler;
-import com.melissadata.kettle.globalverify.support.MDPropTags;
+import com.melissadata.cz.support.MDPropTags;
 import com.melissadata.kettle.globalverify.web.MDGlobalWebService;
 
 public abstract class MDGlobalService {
