@@ -8,23 +8,27 @@
     <artifactId>MDSettings</artifactId>
     <version>1.1-SNAPSHOT</version>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jna.version>4.4.0</jna.version>
-        <!--  Set pentaho version to a standard version not a CZ build to avoid circular dependencies  -->
-        <pentaho.version>8.0.0.4-237</pentaho.version>
-        <cz.version>1.1-SNAPSHOT</cz.version>
-    </properties>
+    <parent>
+        <groupId>com.melissadata.kettle</groupId>
+        <artifactId>cz.plugins</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
 
     <dependencies>
+        <!-- kettle ui -->
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-ui-swt</artifactId>
-            <version>${pentaho.version}</version>
+            <version>${external.pentaho.version}</version>
             <exclusions>
-                <exclusion>
+                <exclusion><!-- Only needed if  built with our version -->
                     <groupId>com.melissadata</groupId>
                     <artifactId>cz.library</artifactId>
+                </exclusion>
+                <exclusion><!-- Only needed if  built with our version -->
+                    <groupId>com.melissadata.kettle</groupId>
+                    <artifactId>MDSettings</artifactId>
                 </exclusion>
             </exclusions>
             <type>jar</type>
@@ -32,19 +36,36 @@
         <dependency>
             <groupId>com.melissadata</groupId>
             <artifactId>cz.library</artifactId>
-            <version>${cz.version}</version>
+            <version>${cz.library.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>pentaho-kettle</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>org.eclipse.swt</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
             </exclusions>
             <type>jar</type>
         </dependency>
+
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-core</artifactId>
+            <version>${external.pentaho.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.eclipse/jface -->
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>jface</artifactId>
+            <version>${jface.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.swt</groupId>
+            <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
         <dependency>
             <groupId>net.java.dev.jna</groupId>
             <artifactId>jna-platform</artifactId>
@@ -52,31 +73,31 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.commons</groupId>
+            <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>1.3.2</version>
+            <version>${commons.io.version}</version>
         </dependency>
 
+
+        <!-- https://mvnrepository.com/artifact/org.dom4j/dom4j -->
         <dependency>
-            <groupId>org.eclipse.core</groupId>
-            <artifactId>org.eclipse.core.runtime</artifactId>
-            <version>3.7.0</version>
+            <groupId>org.dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>${dom4j.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.clerezza.ext/org.json.simple -->
+        <dependency>
+            <groupId>org.apache.clerezza.ext</groupId>
+            <artifactId>org.json.simple</artifactId>
+            <version>${json.simple.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
         <dependency>
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
-            <version>3.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.swt</groupId>
-            <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
-            <version>RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>pentaho-kettle</groupId>
-            <artifactId>kettle-core</artifactId>
-            <version>6.1-MD</version>
+            <version>${commons-httpclient.version}</version>
         </dependency>
 
     </dependencies>

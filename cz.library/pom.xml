@@ -9,49 +9,57 @@
 
     <name>cz.library</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!--  Set pentaho version to a standard version not a CZ build to avoid circular dependencies  -->
-        <pentaho.version>8.0.0.4-237</pentaho.version>
-        <jface.version>3.3.0-I20070606-0010</jface.version>
-    </properties>
+    <parent>
+        <groupId>com.melissadata.kettle</groupId>
+        <artifactId>cz.plugins</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
     <dependencies>
+
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-core</artifactId>
+            <version>${external.pentaho.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-ui-swt</artifactId>
-            <version>${pentaho.version}</version>
+            <version>${external.pentaho.version}</version>
+            <exclusions>
+                <exclusion><!-- only needed incase we use a version built by us -->
+                    <groupId>com.melissadata</groupId>
+                    <artifactId>cz.library</artifactId>
+                </exclusion>
+            </exclusions>
             <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>pentaho-kettle</groupId>
-            <artifactId>kettle-core</artifactId>
-            <version>${pentaho.version}</version>
+            <artifactId>kettle-engine</artifactId>
+            <version>${external.pentaho.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.eclipse/jface -->
         <dependency>
-            <groupId>pentaho-kettle</groupId>
-            <artifactId>kettle-engine</artifactId>
-            <version>${pentaho.version}</version>
+            <groupId>org.eclipse</groupId>
+            <artifactId>jface</artifactId>
+            <version>${jface.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.eclipse.swt</groupId>
             <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
-            <version>4.3</version>
+            <version>RELEASE</version>
         </dependency>
 
         <dependency>
-            <groupId>org.eclipse</groupId>
-            <artifactId>jface</artifactId>
-            <version>${jface.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>*</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons.io.version}</version>
         </dependency>
 
     </dependencies>

@@ -49,14 +49,33 @@
         <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <!-- third party -->
+        <commons.io.version>2.5</commons.io.version>
+        <jface.version>3.3.0-I20070606-0010</jface.version>
+        <external.pentaho.version>8.0.0.4-247</external.pentaho.version>
+        <jna.version>4.4.0</jna.version>
+        <dom4j.version>2.1.0</dom4j.version>
+        <json.simple.version>0.4</json.simple.version>
+        <commons-httpclient.version>3.1</commons-httpclient.version>
+
     </properties>
 
 
     <modules>
-        <module>cz.library</module>
-        <module>MDSettings</module>
-        <module>assemblies/contactzone</module>
-        <module>InnoSetup\scripts</module>
+     <module>cz.library</module>
+     <module>MDSettings</module>
+     <module>MDBusinessCoder</module>
+        <!--   <module>MDCheck</module> -->
+        <!--   <module>MDCleanser</module> -->
+        <!--   <module>GlobalVerify</module> -->
+        <!--   <module>MDPersonator</module> -->
+        <!--   <module>MDProfiler</module> -->
+        <!--   <module>MDProperty</module> -->
+
+
+
+     <!--   <module>assemblies/contactzone</module> -->
+     <!--   <module>InnoSetup\scripts</module> -->
     </modules>
 
     <build>

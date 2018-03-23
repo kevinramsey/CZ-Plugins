@@ -1,0 +1,130 @@
+﻿#
+#	Configuration file for Personator
+#
+#	Determines what fields are available for possible output.
+#	Add new outputs from web service Here.
+#	
+#	Format for added fields:
+#
+#	groupName;fieldName;groupDescription;fieldDescription
+#
+#	Group Name (must be the group name sent to web service per documentation)
+#	Field Name (must be the field name sent to web service per documentation)
+#	Group description (can be anything to describe basic contents of a given group)
+#	Field description (can be anything to describe what is returned for the given field)
+#
+#
+
+# Name output returned fields
+Basic;NameFull;Basic(Default);Returns the full name for the record.
+Basic;CompanyName;Basic(Default);Returns the company or business name for the record.
+NameDetails;Gender;Name Details;Returns a gender for the name in the FullName field.
+NameDetails;Gender2;Name Details;Only used if 2 names are in the FullName field. Returns a gender for the second name in the FullName field.
+NameDetails;NameFirst;Name Details;Returns the first name in the FullName field.
+NameDetails;NameFirst2;Name Details;Only used  if 2 Names in  The Full name Field. Returns the first name of  the second name in the Full Name field.
+NameDetails;NameLast;Name Details;Returns the last name in the FullName field.
+NameDetails;NameLast2;Name Details;Only used if 2 names are in the FullName field. Returns a last name for the second name in the FullName field.
+NameDetails;NameMiddle;Name Details;Returns a middle name for the name in the FullName field.
+NameDetails;NameMiddle2;Name Details;Only used if 2 names are in the FullName field. Returns a middle name for the second name in the FullName field.
+NameDetails;NamePrefix;Name Details;Returns a prefix for the name in the FullName field.
+NameDetails;NamePrefix2;Name Details;Only used if 2 names are in the FullName field. Returns a prefix for the second name in the FullName field.
+NameDetails;NameSuffix;Name Details;Returns a suffix for the name in the FullName field.
+NameDetails;NameSuffix2;Name Details;Only used if 2 names are in the FullName field. Returns a suffix for the second name in the FullName field.
+NameDetails;Salutation;Name Details;Returns a salutation for the name in the FullName field.
+
+# Basic output returned for address fields
+Basic;AddressLine1;Basic(Default);Returns the address entered in the AddressLine field. If two addresses were entered and only one is valid, the valid address is returned instead. This includes the suite and private mailbox.
+Basic;AddressLine2;Basic(Default);If two addresses are passed into the AddressLine field, the second address is returned here.If only one of two addresses is valid, the valid address will be returned in AddressLine1. Basic,City
+Basic;AddressExtras;Basic(Default);Returns any extra information that does not fit in the AddressLine fields.
+Basic;City;Basic(Default);Returns the city entered in the City field.
+Basic;State;Basic(Default);Returns the state for the record.
+Basic;PostalCode;Basic(Default);Returns the 9-digit postal code for U.S. addresses and 6-digit postal code for Canadian address.
+Basic;AddressKey;Basic(Default);Returns a unique identifier for an address. This key can be used with other current and future Melissa Data services.
+Basic;MelissaAddressKey;Basic(Default);Melissa Address Keys or MAKs are a persistent 64-bit numbers that never change. Much like a barcode or ISBN, this key identifies a discrete physical street address and aligns a multitude of additional information associated with each particular address such as detailed geographic information, deduplication, property shape, etc.
+Basic;MelissaAddressKeyBase;No default group;Melissa Address Keys or MAKs
+---;Plus4;No default group;Returns the 4-digit plus4 for the input address. If this column is requested, the PostalCode field will onlly contain the 5-digit ZIP for U.S. addresses.
+---;PrivateMailBox;No default group;Returns the private mail box number for the address in the AddressLine field, if any. Private mailboxes are private mail boxes in commercial mail receiving agencies, like a UPS Store. If requested, the Private mailbox will be populated in this field instead of the Address field.
+---;Suite;No default group;Returns the suite for the address in the AddressLine field, if any. If requested, the suite will be populated in this field instead of the Address field.
+
+# Detailed output returned for address fields
+AddressDetails;AddressTypeCode;Address Details;Returns a code for the address type in the AddressLine field.\n\nS: Standard Address, G: General Delivery Address, M: Military Address, P: PO Box address, R: Rural Route Address, U: Unique/LVR
+AddressDetails;CarrierRoute;Address Details;Returns a 4-character code defining the carrier route for this record.
+AddressDetails;CityAbbreviation;Address Details;Returns an abbreviation for the city entered in the City field, if any.
+AddressDetails;CountryCode;Address Details;Returns the country code for the country in the Country field.
+AddressDetails;CountryName;Address Details;Returns the country name for the record.
+AddressDetails;DeliveryIndicator;Address Details;Returns an indicator of whether an address is a business address or residential address.\nB Business\nR Residential\nU Unknown
+AddressDetails;DeliveryPointCheckDigit;Address Details;Returns a string value containing the 1-digit delivery point check digit.
+AddressDetails;DeliveryPointCode;Address Details;Returns a string value containing the 2-digit delivery point code.
+AddressDetails;StateName;Address Details;Returns the full name of the state entered in the State field.
+AddressDetails;UrbanizationName;Address Details;Returns the urbanization name for the address entered in the AddressLine field. Usually only used if the address is in Puerto Rico.
+AddressDetails;UTC;Address Details;Returns the time zone of the requested record.
+ParsedAddress;AddressDeliveryInstallation;Parsed Address (Canada Only);Returns the parsed delivery installation for the address entered in the AddressLine field.
+ParsedAddress;AddressHouseNumber;Parsed Address;Returns the parsed house number for the address entered in the AddressLine field.
+ParsedAddress;AddressLockBox;Parsed Address (Canada Only);Returns the parsed lock box number for the address entered in the AddressLine field.
+ParsedAddress;AddressPostDirection;Parsed Address;Returns the parsed post-direction for the address entered in the AddressLine field.
+ParsedAddress;AddressPreDirection;Parsed Address;Returns the parsed pre-direction for the address entered in the AddressLine field.
+ParsedAddress;AddressPrivateMailboxName;Parsed Address;Returns the parsed private mailbox name for the address entered in the AddressLine field.
+ParsedAddress;AddressPrivateMailboxRange;Parsed Address;Returns the parsed private mailbox range for the address entered in the AddressLine field.
+ParsedAddress;AddressRouteService;Parsed Address (Canada Only);Returns the parsed route service number for the address entered in the AddressLine field.
+ParsedAddress;AddressStreetName;Parsed Address;Returns the parsed street name for the address entered in the AddressLine field.
+ParsedAddress;AddressStreetSuffix;Parsed Address;Returns the parsed street suffix for the address entered in the AddressLine field.
+ParsedAddress;AddressSuiteName;Parsed Address;Returns the parsed suite name for the address entered in the AddressLine field.
+ParsedAddress;AddressSuiteNumber;Parsed Address;Returns the parsed suite number for the address entered in the AddressLine field.
+
+# Census output returned for address fields
+Census;CBSACode;Census Details;Census Bureau�s Core Based Statistical Area (CBSA).\nReturns the 5-digit code for the CBSA associated with the requested record.
+Census;CBSADivisionCode;Census Details;Returns the code for a division associated with the requested record, if any.
+Census;CBSADivisionLevel;Census Details;Returns whether the CBSA division, if any, is metropolitan or micropolitan.
+Census;CBSADivisionTitle;Census Details;Returns the title for the CBSA division, if any.
+Census;CBSALevel;Census Details;Returns whether the CBSA is metropolitan or micropolitan.
+Census;CBSATitle;Census Details;Returns the title for the CBSA.
+Census;CensusBlock;Census Details;Returns a 4-digit string containing the census block number associated with the requested record.\nCensus blocks are the smallest geographic area for which the Bureau of the Census collects and tabulates decennial census data.
+Census;CensusTract;Census Details;Returns a 4-to 6-digit string containing the census tract number associated with the requested record.\nCensus tracts are small subdivisions of a county.
+Census;CongressionalDistrict;Census Details;Returns the 2-digit congressional district that the requested record belongs to.
+Census;CountyFIPS;Census Details;Returns the FIPS code for the county in the County field.\nFIPS code is a 5-digit code. The first two digits are a state code and the last three indicate the county within the state.
+Census;CountyName;Census Details;Returns the county name.
+Census;PlaceCode;Census Details;When ZIP codes overlap, the City field will always return the city that covers most of the ZIP area. If the address is located outside of that city but within the ZIP Code, PlaceCode/PlaceName will refer to that area.
+Census;PlaceName;Census Details;When ZIP codes overlap, the City field will always return the city that covers most of the ZIP area. If the address is located outside of that city but within the ZIP Code, PlaceCode/PlaceName will refer to that area.
+
+# Census2 output returned for address fields
+Census2;CensusKey;Census Details;Returns a 15 digit string containing the concatenated County FIPS, Census Tract and Census Block. 
+Census2;CountySubdivisionCode;Census Details;Returns a 5 digit string representing the County Subdivision Code for the requested record.
+Census2;CountySubdivisionName;Census Details;Returns the County Subdivision Name for the requested record.
+Census2;ElementarySchoolDistrictCode;Census Details;Returns a 5 digit string representing the Elementary School District Code for the requested record.
+Census2;ElementarySchoolDistrictName;Census Details;Returns the Elementary School District Name for the requested record.
+Census2;SecondarySchoolDistrictCode;Census Details;Returns a 5 digit string representing the Secondary School District Code for the requested record.
+Census2;SecondarySchoolDistrictName;Census Details;Returns the Secondary School District Name for the requested record.
+Census2;UnifiedSchoolDistrictCode;Census Details;Returns a 5 digit string representing the Unified School District Code for the requested record.
+Census2;UnifiedSchoolDistrictName;Census Details;Returns the Secondary Unified District Name for the requested record.
+Census2;StateDistrictUpper;Census Details;Returns a 3 digit string representing the Upper State District Code for the requested record.
+Census2;StateDistrictLower;Census Details;Returns a 3 digit string representing the Lower State District Code for the requested record.
+
+# Geocode info returned for address fields
+Geocode;Latitude;Geocode Details;Returns the geocoded latitude for the address entered in the AddressLine field.
+Geocode;Longitude;Geocode Details;Returns the geocoded longitude for the address entered in the AddressLine field.
+
+# Basic output returned for phone field
+Basic;PhoneNumber;Basic(Default);Returns the standardized phone number for the record.
+ParsedPhone;AreaCode;Phone Details;Returns the parsed area code for the phone number entered in the Phone field.
+ParsedPhone;NewAreaCode;Phone Details;Returns the parsed new area code for the phone number entered in the Phone field.
+ParsedPhone;PhoneExtension;Phone Details;Returns the parsed extension for the phone number entered in the Phone field.
+ParsedPhone;PhonePrefix;Phone Details;Returns the parsed prefix for the phone number entered in the Phone field.
+ParsedPhone;PhoneSuffix;Phone Details;Returns the parsed suffix for the phone number entered in the Phone field.
+
+# Basic output returned for email field
+Basic;EmailAddress;Basic(Default);Returns the email address entered in the Email field.
+ParsedEmail;DomainName;Parsed Email Details;Returns the parsed domain name for the email entered in the Email field.
+ParsedEmail;MailboxName;Parsed Email Details;Returns the parsed mailbox name for the email entered in the Email field.
+ParsedEmail;TopLevelDomain;Parsed Email Details;Returns the parsed top-level domain name for the email entered in the Email field.
+
+# Demographics
+DemographicBasic;DateOfBirth;Demographics; The date of birth in the format YYYYMM. Accuracy is only to the month.
+DemographicBasic;DateOfDeath;Demographics;The full date of death in the format YYYYMMDD.
+DemographicBasic;DemographicsGender;Demographics;s gender based on demographics data (e.g.,"Male", "Female", "Neutral", "Unknown").
+DemographicBasic;HouseholdIncome;Demographics; The range of the household's income. (e.g. $0-$15,000)
+---;OwnRent;Demographics; The individual's status as owner or renter of the property (e.g., "Unknown", "Definite Renter", "Probable Renter", "Probable Owner", "Definite Owner").
+DemographicBasic;LengthOfResidence;Demographics; The range of the individual's length of residency in their current address.
+---;Occupation;Demographics;The category for the individual's occupation.
+DemographicBasic;MaritalStatus;Demographics;Marital Status.
+DemographicBasic;PresenceOfChildren;Demographics; The presence of children in the household (e.g., "Unknown", "No Children Present", "Children Present").
+DemographicBasic;DemographicsResults;Demographics;Demographic result codes. 

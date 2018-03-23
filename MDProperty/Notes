@@ -1,0 +1,77 @@
+
+-------  ----------------------Address Tab 4
+Parcel - 11                                             302 fields total
+
+Legal - 15
+
+Property Address - 9
+
+Parsed Property Address - 7
+
+------ -----------------------Owner Tab 4
+
+Primary Owner - 14
+
+Secondary Owner - 11
+
+Owner Address  - 7
+
+Last Deed Owner Info - 20
+
+-- -------------------------------PRoperty Value 4
+
+Current Deed - 10
+
+Tax - 23
+
+Estimated Value - 5
+
+Sales Info - 13
+
+-- ------------------------- Property output 7
+
+Property USe Info - 6
+
+Property Size - 19
+
+Pool - 3
+
+Utilities - 6
+
+Parking - 4
+
+Yard Garden Info - 14
+
+Shape  -1
+
+--  ---------------------------- Interior 3
+
+Interior structure Info - 7
+
+Interior room info - 27
+
+Interior Ammenities - 10
+
+-- ----------------------------- Exterior 3
+
+Exterior Structure Info - 6
+
+Exterior Amenities - 9
+
+Exterior Buildings - 45
+
+--
+
+//		ckInclude.setSelection(Boolean.valueOf(optionFields.get(PropertyWebServiceFields.TAG_OPTION_INCLUDE_).metaValue));
+
+//		w.setText(outputFields.get(PropertyWebServiceFields.TAG_OUTPUT_).metaValue);
+
+get Data
+//		optionFields.get(PropertyWebServiceFields.TAG_OPTION_INCLUDE_).metaValue = String.valueOf(ckInclude.getSelection());
+
+outputFields.get(PropertyWebServiceFields.TAG_OUTPUT_).metaValue	= w.getText();
+
+
+
+
+

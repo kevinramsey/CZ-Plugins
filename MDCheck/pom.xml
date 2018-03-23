@@ -9,52 +9,76 @@
 
     <name>MDCheck</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <pentaho.version>8.0.0.4-237</pentaho.version>
-        <cz.version>1.1-SNAPSHOT</cz.version>
-        <mdsettings.version>1.1-SNAPSHOT</mdsettings.version>
-    </properties>
+     <parent>
+        <groupId>com.melissadata.kettle</groupId>
+        <artifactId>cz.plugins</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
     <dependencies>
 
+        <!-- https://mvnrepository.com/artifact/org.dom4j/dom4j -->
         <dependency>
-            <groupId>dom4j</groupId>
+            <groupId>org.dom4j</groupId>
             <artifactId>dom4j</artifactId>
-            <version>1.6.1</version>
+            <version>${dom4j.version}</version>
         </dependency>
 
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-ui-swt</artifactId>
-            <version>${pentaho.version}</version>
+            <version>${external.pentaho.version}</version>
+            <exclusions>
+                <exclusion><!-- Only needed if  built with our version -->
+                    <groupId>com.melissadata</groupId>
+                    <artifactId>cz.library</artifactId>
+                </exclusion>
+                <exclusion><!-- Only needed if  built with our version -->
+                    <groupId>com.melissadata.kettle</groupId>
+                    <artifactId>MDSettings</artifactId>
+                </exclusion>
+            </exclusions>
             <type>jar</type>
         </dependency>
 
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-engine</artifactId>
-            <version>${pentaho.version}</version>
+            <version>${external.pentaho.version}</version>
         </dependency>
 
-       <dependency>
-           <groupId>pentaho-kettle</groupId>
-           <artifactId>kettle-core</artifactId>
-           <version>${pentaho.version}</version>
-       </dependency>
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-core</artifactId>
+            <version>${external.pentaho.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pentaho-kettle</groupId>
+            <artifactId>kettle-engine</artifactId>
+            <version>${external.pentaho.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.eclipse/jface -->
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>jface</artifactId>
+            <version>${jface.version}</version>
+            <scope>provided</scope>
+        </dependency>
 
 
         <dependency>
             <groupId>com.melissadata</groupId>
             <artifactId>cz.library</artifactId>
-            <version>${cz.version}</version>
+            <version>${cz.library.version}</version>
             <exclusions>
-                <!--
+
                 <exclusion>
                     <groupId>pentaho-kettle</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
-                -->
+
             </exclusions>
             <type>jar</type>
         </dependency>
@@ -62,9 +86,9 @@
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>MDSettings</artifactId>
-            <version>${mdsettings.version}</version>
+            <version>${mdSettings.version}</version>
             <exclusions>
-                <!--
+
                 <exclusion>
                     <groupId>com.melissadata</groupId>
                     <artifactId>cz.library</artifactId>
@@ -73,7 +97,7 @@
                     <groupId>pentaho-kettle</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
-                -->
+
             </exclusions>
             <type>jar</type>
         </dependency>
@@ -81,13 +105,13 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.5</version>
+            <version>${commons.io.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.eclipse.swt</groupId>
             <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
-            <version>4.3</version>
+            <version>RELEASE</version>
         </dependency>
 
 
