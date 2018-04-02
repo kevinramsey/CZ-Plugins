@@ -41,6 +41,7 @@
         <mdGlobal.dll.version>1.0.0.3030</mdGlobal.dll.version>
         <!-- MDPersonator -->
         <mdPersonator.plugin.version>1.0-SNAPSHOT</mdPersonator.plugin.version>
+        <mdPersonator.resources.version>1.0</mdPersonator.resources.version>
         <!-- MDProfiler -->
         <mdProfiler.plugin.version>1.0-SNAPSHOT</mdProfiler.plugin.version>
         <mdProfiler.dll.version>4.0.1.3036</mdProfiler.dll.version>
@@ -68,20 +69,18 @@
 
 
     <modules>
-     <module>cz.library</module>
-     <module>MDSettings</module>
-     <module>MDBusinessCoder</module>
-        <!--   <module>MDCheck</module> -->
-        <!--   <module>MDCleanser</module> -->
-        <!--   <module>GlobalVerify</module> -->
-        <!--   <module>MDPersonator</module> -->
-        <!--   <module>MDProfiler</module> -->
-        <!--   <module>MDProperty</module> -->
+        <module>cz.library</module>
+        <module>MDSettings</module>
+        <module>MDBusinessCoder</module>
+        <module>MDCheck</module>
+        <module>MDCleanser</module>
+        <module>MDGlobalVerify</module>
+        <module>MDPersonator</module>
+        <module>MDProfiler</module>
+        <module>MDProperty</module>
 
-
-
-     <!--   <module>assemblies/contactzone</module> -->
-     <!--   <module>InnoSetup\scripts</module> -->
+        <!--   <module>assemblies/contactzone</module> -->
+        <!--   <module>InnoSetup\scripts</module> -->
     </modules>
 
     <build>

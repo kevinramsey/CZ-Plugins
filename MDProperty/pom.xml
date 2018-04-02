@@ -127,6 +127,7 @@
     </dependencies>
 
     <build>
+        <finalName>MDProperty-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

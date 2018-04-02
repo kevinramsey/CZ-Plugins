@@ -66,6 +66,7 @@
 
 
     <build>
+        <finalName>cz.library-${project.version}</finalName>
         <plugins>
             <!-- We use this plugin to compile as we need to add an additional src directory -->
             <plugin>

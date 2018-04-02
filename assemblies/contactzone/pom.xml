@@ -116,7 +116,70 @@
             <version>${mdMatchUpGlobal.resources.version}</version>
             <type>zip</type>
         </dependency>
+        <!-- ############### MDCleanser  ###### -->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDCleanser</artifactId>
+            <version>${mdCleanser.plugin.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdCleanserDll</artifactId>
+            <version>${mdCleanser.dll.version}</version>
+            <type>zip</type>
+        </dependency>
+
+
+
+        <!-- ############### MDGlobalVerify  ###### -->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDGlobalVerify</artifactId>
+            <version>${mdGlobalVerify.plugin.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdGlobalAddrDll</artifactId>
+            <version>${mdGlobal.dll.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <!-- ############### MDPersonator  ###### -->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDPersonator</artifactId>
+            <version>${mdPersonator.plugin.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdPersonatorResources</artifactId>
+            <version>${mdPersonator.resources.version}</version>
+            <type>zip</type>
+        </dependency>
+
+        <!-- ############### MDProfiler  ###### -->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDProfiler</artifactId>
+            <version>${mdProfiler.plugin.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <!-- ############### MDProperty  ###### -->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDProperty</artifactId>
+            <version>${mdProperty.plugin.version}</version>
+            <type>jar</type>
+        </dependency>
+
+
     </dependencies>
+
+
 
     <build>
         <plugins>

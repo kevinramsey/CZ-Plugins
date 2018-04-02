@@ -25,7 +25,9 @@
             <unpack>true</unpack>
             <includes>
                 <include>com.melissadata.kettle:mdLicense</include>
+                <!-- profiler -->
                 <include>com.melissadata.kettle:MDProfilerDll</include>
+                <!-- MDCheck -->
                 <include>com.melissadata.kettle:mdAddrDll</include>
                 <include>com.melissadata.kettle:mdEmailDll</include>
                 <include>com.melissadata.kettle:mdGeoDll</include>
@@ -33,6 +35,12 @@
                 <include>com.melissadata.kettle:mdPhoneDll</include>
                 <include>com.melissadata.kettle:mdIpLocatorDll</include>
                 <include>com.melissadata.kettle:mdMatchUpDll</include>
+                <!-- MDCleanser -->
+                <include>com.melissadata.kettle:mdCleanserDll</include>
+
+                <!-- MDGlobal Verify -->
+                <include>com.melissadata.kettle:mdGlobalAddrDll</include>
+
             </includes>
         </dependencySet>
         <!-- MatchUP -->
@@ -63,13 +71,15 @@
         </dependencySet>
 
         <!-- PLUGINS -->
+        <!-- MDBusinessCoder -->
         <dependencySet>
-            <outputDirectory>Windows\plugins\MDProfiler</outputDirectory>
+            <outputDirectory>Windows\plugins\MDBusinessCoder</outputDirectory>
             <unpack>false</unpack>
             <includes>
-                <include>com.melissadata.kettle:MDProfiler</include>
+                <include>com.melissadata.kettle:MDBusinessCoder</include>
             </includes>
         </dependencySet>
+        <!-- MDCheck -->
         <dependencySet>
             <outputDirectory>Windows\plugins\MDCheck</outputDirectory>
             <unpack>false</unpack>
@@ -77,13 +87,64 @@
                 <include>com.melissadata.kettle:MDCheck</include>
             </includes>
         </dependencySet>
+
+        <!-- MDCleanser -->
         <dependencySet>
-            <outputDirectory>Windows\plugins\MDBusinessCoder</outputDirectory>
+            <outputDirectory>Windows\plugins\MDCleanser</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDCleanser</include>
+            </includes>
+        </dependencySet>
+
+        <!-- MDGlobal Verify -->
+         <dependencySet>
+            <outputDirectory>Windows\plugins\MDGlobalVerify</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDGlobalVerify</include>
+            </includes>
+        </dependencySet>
+
+        <!-- Personator -->
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDPersonator</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDPersonator</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDPersonator</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdPersonatorResources</include>
+            </includes>
+        </dependencySet>
+        <!-- Profiler -->
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDProfiler</outputDirectory>
             <unpack>false</unpack>
             <includes>
                 <include>com.melissadata.kettle:MDProfiler</include>
             </includes>
         </dependencySet>
+        <!-- Property -->
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDPropertyService</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDProperty</include>
+            </includes>
+        </dependencySet>
+
+
+
+
+
+
+
+
 
     </dependencySets>
 
