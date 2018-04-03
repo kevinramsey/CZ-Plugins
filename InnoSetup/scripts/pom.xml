@@ -10,40 +10,43 @@
 
     <name>InnoSet</name>
     <properties>
-        <InnoSetup.dir>.</InnoSetup.dir>
-        <output.dir>..\..\assemblies\contactzone\target\ContactZone-${project.version}</output.dir>
+        <InnoSetup.dir>..\</InnoSetup.dir>
+        <resources.dir>..\..\czresources</resources.dir>
+        <cz.target.dir>..\..\..\assemblies\contactzone\target\ContactZone-${project.version}\ContactZone-${project.version}</cz.target.dir>
 
-        <resources.dir>czresources</resources.dir>
+        <!--   -->
+        <md.cz.property.files.dir>${cz.target.dir}\misc\properties</md.cz.property.files.dir>
+        <md.cz.rules.dir>${cz.target.dir}\misc\rules</md.cz.rules.dir>
+
+
+        <md.cz.application.files>C:\Users\Kevin\workspace-kettle\CZplugins\assemblies\contactzone\target\ContactZone-${project.version}\ContactZone-${project.version}\Windows</md.cz.application.files>
+
+      <!--  <md.module.base.dir></md.module.base.dir> -->
+        <md.reports.dir>${cz.target.dir}\misc</md.reports.dir>
+        <md.cz.dll.dir>${cz.target.dir}\misc\DLLs</md.cz.dll.dir>
+        <md.cz.data.dir>${cz.target.dir}\Data</md.cz.data.dir>
+        <md.cz.matchup.files.dir>${cz.target.dir}\Matchup</md.cz.matchup.files.dir>
+        <md.cz.matchup.global.files.dir>${cz.target.dir}\Matchup\Global</md.cz.matchup.global.files.dir>
+
+       <!-- <md.cz.FNTBO.dir></md.cz.FNTBO.dir> -->
+        <md.cz.documentation.dir>${cz.target.dir}\Documentation</md.cz.documentation.dir>
+        <md.cz.samples.dir>${cz.target.dir}\Samples</md.cz.samples.dir>
+      <!--  <czLib.Dir></czLib.Dir>
+        <mdSettings.Dir></mdSettings.Dir>
+        <mdProfiler.Dir></mdProfiler.Dir>
+        <mdBussinessCoder.Dir></mdBussinessCoder.Dir>
+        <mdCheck.Dir></mdCheck.Dir>
+        <mdCleanser.Dir></mdCleanser.Dir>
+        <mdPresort.Dir></mdPresort.Dir>
+        <mdGlobalVerify.Dir></mdGlobalVerify.Dir>
+        <mdPersonator.Dir></mdPersonator.Dir>
+        <mdPropertyService.Dir></mdPropertyService.Dir>
+        -->
     </properties>
 
-    <build>
-        <plugins>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <executable>InnoSetup\ISCC.exe</executable>
-                    <arguments>
-                        <argument>/DVERSION_NUM=${project.version}</argument>
-                        <argument>/DMyAppVersion=${project.version}</argument>
-                        <argument>/DOUTPUT_DIR=${output.dir}</argument>
-                        <argument>/DRESOURCES_DIR=..\czresources</argument>
-                        <argument>/DISO_DIR=ContactZone-${project.version}</argument>
-                        <argument>CZ_AntOP_A.iss</argument>
-                    </arguments>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <modules>
+        <!-- <module>onPremises</module> -->
+        <module>cloud</module>
+    </modules>
 
 </project>

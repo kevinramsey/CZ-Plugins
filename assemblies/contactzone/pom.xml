@@ -23,6 +23,7 @@
             <version>${mdLicense.version}</version>
             <type>zip</type>
         </dependency>
+        <!-- ##   MDSettings   cz.library -->
         <dependency>
             <groupId>com.melissadata</groupId>
             <artifactId>cz.library</artifactId>
@@ -35,20 +36,7 @@
             <version>${mdSettings.version}</version>
             <type>jar</type>
         </dependency>
-        <!--  ############  Profiler   ############ -->
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>MDProfiler</artifactId>
-            <version>${mdProfiler.plugin.version}</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>MDProfilerDll</artifactId>
-            <version>${mdProfiler.dll.version}</version>
-            <type>zip</type>
-        </dependency>
-        <!--  ############  BusinessCoder  ############  -->
+         <!--  ############  BusinessCoder  ############  -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>MDBusinessCoder</artifactId>
@@ -129,9 +117,6 @@
             <version>${mdCleanser.dll.version}</version>
             <type>zip</type>
         </dependency>
-
-
-
         <!-- ############### MDGlobalVerify  ###### -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
@@ -145,7 +130,6 @@
             <version>${mdGlobal.dll.version}</version>
             <type>zip</type>
         </dependency>
-
         <!-- ############### MDPersonator  ###### -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
@@ -159,7 +143,6 @@
             <version>${mdPersonator.resources.version}</version>
             <type>zip</type>
         </dependency>
-
         <!-- ############### MDProfiler  ###### -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
@@ -167,7 +150,12 @@
             <version>${mdProfiler.plugin.version}</version>
             <type>jar</type>
         </dependency>
-
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDProfilerDll</artifactId>
+            <version>${mdProfiler.dll.version}</version>
+            <type>zip</type>
+        </dependency>
         <!-- ############### MDProperty  ###### -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
@@ -175,11 +163,7 @@
             <version>${mdProperty.plugin.version}</version>
             <type>jar</type>
         </dependency>
-
-
     </dependencies>
-
-
 
     <build>
         <plugins>
