@@ -9,28 +9,42 @@
     <packaging>pom</packaging>
 
     <name>InnoSet</name>
+
+    <parent>
+        <groupId>com.melissadata.kettle</groupId>
+        <artifactId>cz.plugins</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <properties>
-        <InnoSetup.dir>..\</InnoSetup.dir>
-        <resources.dir>..\..\czresources</resources.dir>
-        <cz.target.dir>..\..\..\assemblies\contactzone\target\ContactZone-${project.version}\ContactZone-${project.version}</cz.target.dir>
+      <!--  <InnoSetup.dir>..\</InnoSetup.dir> -->
+
+        <module.parent.dir>C:\Users\Kevin\workspace_kettle\CZ-Plugins</module.parent.dir>
+        <output.dir>${module.parent.dir}\assemblies\contactzone\target\CZ</output.dir>
+        <output.cloud.dir>${module.parent.dir}\assemblies\contactzone\target\CZ\Cloud</output.cloud.dir>
+
+        <contactzone.build.dir>${module.parent.dir}\assemblies\contactzone\target\CZ\CZ</contactzone.build.dir>
+
+        <resources.dir>${module.parent.dir}\InnoSetup\czresources</resources.dir>
+    <!--    <cz.target.dir>..\..\..\assemblies\contactzone\target\ContactZone-${project.version}\ContactZone-${project.version}</cz.target.dir> -->
 
         <!--   -->
-        <md.cz.property.files.dir>${cz.target.dir}\misc\properties</md.cz.property.files.dir>
-        <md.cz.rules.dir>${cz.target.dir}\misc\rules</md.cz.rules.dir>
+        <md.cz.property.files.dir>${contactzone.build.dir}\misc\properties</md.cz.property.files.dir>
+        <md.cz.rules.dir>${contactzone.build.dir}\misc\rules</md.cz.rules.dir>
 
 
-        <md.cz.application.files>C:\Users\Kevin\workspace-kettle\CZplugins\assemblies\contactzone\target\ContactZone-${project.version}\ContactZone-${project.version}\Windows</md.cz.application.files>
+        <md.cz.application.files>${contactzone.build.dir}\Windows</md.cz.application.files>
 
       <!--  <md.module.base.dir></md.module.base.dir> -->
-        <md.reports.dir>${cz.target.dir}\misc</md.reports.dir>
-        <md.cz.dll.dir>${cz.target.dir}\misc\DLLs</md.cz.dll.dir>
-        <md.cz.data.dir>${cz.target.dir}\Data</md.cz.data.dir>
-        <md.cz.matchup.files.dir>${cz.target.dir}\Matchup</md.cz.matchup.files.dir>
-        <md.cz.matchup.global.files.dir>${cz.target.dir}\Matchup\Global</md.cz.matchup.global.files.dir>
+        <md.reports.dir>${contactzone.build.dir}\misc</md.reports.dir>
+        <md.cz.dll.dir>${contactzone.build.dir}\misc\DLLs</md.cz.dll.dir>
+        <md.cz.data.dir>${contactzone.build.dir}\Data</md.cz.data.dir>
+        <md.cz.matchup.files.dir>${contactzone.build.dir}\Matchup</md.cz.matchup.files.dir>
+        <md.cz.matchup.global.files.dir>${contactzone.build.dir}\Matchup\Global</md.cz.matchup.global.files.dir>
 
        <!-- <md.cz.FNTBO.dir></md.cz.FNTBO.dir> -->
-        <md.cz.documentation.dir>${cz.target.dir}\Documentation</md.cz.documentation.dir>
-        <md.cz.samples.dir>${cz.target.dir}\Samples</md.cz.samples.dir>
+        <md.cz.documentation.dir>${contactzone.build.dir}\Documentation</md.cz.documentation.dir>
+        <md.cz.samples.dir>${contactzone.build.dir}\Samples</md.cz.samples.dir>
       <!--  <czLib.Dir></czLib.Dir>
         <mdSettings.Dir></mdSettings.Dir>
         <mdProfiler.Dir></mdProfiler.Dir>
@@ -45,8 +59,8 @@
     </properties>
 
     <modules>
-        <!-- <module>onPremises</module> -->
+        <!-- <module>onPremises</module>-->
         <module>cloud</module>
-    </modules>
+            </modules>
 
-</project>
+        </project>

@@ -19,6 +19,38 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDCommon</artifactId>
+            <version>1.0</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdLicense</artifactId>
+            <version>1.0</version>
+            <type>zip</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDBusinessCoder</artifactId>
+            <version>${mdbusinesscoder.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.melissadata</groupId>
+                    <artifactId>cz.library</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.melissadata.kettle</groupId>
+                    <artifactId>MDSettings</artifactId>
+                </exclusion>
+            </exclusions>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <!-- Add messages if nessassary -->
@@ -58,20 +90,20 @@
 
                                 <artifactItem>
                                     <groupId>com.melissadata.kettle</groupId>
-                                    <artifactId>mdLicense</artifactId>
-                                    <version>${mdlicense.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>false</overWrite>
-                                    <outputDirectory>${project.build.directory}\classes\MD</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>com.melissadata.kettle</groupId>
-                                    <artifactId>MD_Common</artifactId>
+                                    <artifactId>MDCommon</artifactId>
                                     <version>${mdcommon.version}</version>
                                     <type>zip</type>
                                     <overWrite>false</overWrite>
                                     <outputDirectory>${project.build.directory}\classes</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>com.melissadata.kettle</groupId>
+                                    <artifactId>mdLicense</artifactId>
+                                    <version>${mdlicense.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}\classes\MD\64_bit</outputDirectory>
                                 </artifactItem>
 
                             </artifactItems>
@@ -104,6 +136,15 @@
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
                                     <outputDirectory>${project.build.directory}\classes\MD\libext</outputDirectory>
+                                </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>com.melissadata.kettle</groupId>
+                                    <artifactId>MDBusinessCoder</artifactId>
+                                    <version>${mdBusinessCoder.plugin.version}</version>
+                                    <type>jar</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}\classes</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
                             <overWriteReleases>false</overWriteReleases>

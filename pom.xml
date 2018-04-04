@@ -12,10 +12,12 @@
 
     <properties>
 
-        <contactzone.build.dir>${project.build.directory}\ContactZone-${project.version}\ContactZone-${project.version}</contactzone.build.dir>
-        <module.parent.dir>${project.build.directory}\..\..\..\</module.parent.dir>
+
+        <module.parent.dir>C:\Users\Kevin\workspace_kettle\CZ-Plugins</module.parent.dir>
+
+
         <!-- InnoSetup -->
-        <InnoSetup.dir>${module.parent.dir}InnoSetup</InnoSetup.dir>
+
         <!-- md files -->
         <cz.library.version>1.1-SNAPSHOT</cz.library.version>
         <mdLicense.version>1.0</mdLicense.version>
@@ -84,7 +86,8 @@
     </modules>
 
     <build>
-        <finalName>ContactZone-${project.version}</finalName>
+        <!--<finalName>ContactZone-${project.version}</finalName> -->
+        <!--
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -108,6 +111,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        -->
     </build>
-
 </project>

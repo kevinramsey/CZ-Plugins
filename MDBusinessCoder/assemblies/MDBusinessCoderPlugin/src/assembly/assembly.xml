@@ -4,6 +4,7 @@
     <id>bin</id>
     <formats>
         <format>zip</format>
+        <format>dir</format>
     </formats>
 
     <baseDirectory>MDBusinessCoderPlugin</baseDirectory>
@@ -15,5 +16,41 @@
             <outputDirectory>.</outputDirectory>
         </fileSet>
     </fileSets>
+<!--
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>classes</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDCommon</include>
+            </includes>
+        </dependencySet>
 
+        <dependencySet>
+            <outputDirectory>classes\MD\64_bit</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdLicense</include>
+            </includes>
+        </dependencySet>
+
+        <dependencySet>
+            <outputDirectory>classes\MD\libext</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata:cz.library</include>
+                <include>com.melissadata.kettle:MDSettings</include>
+            </includes>
+        </dependencySet>
+
+        <dependencySet>
+            <outputDirectory>classes</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDBusinessCoder</include>
+            </includes>
+        </dependencySet>
+
+    </dependencySets>
+-->
 </assembly>

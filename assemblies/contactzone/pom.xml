@@ -15,6 +15,11 @@
         <version>8.0.0.4-CZ.0</version>
     </parent>
 
+    <properties>
+        <contactzone.build.dir>${project.build.directory}\CZ</contactzone.build.dir>
+    </properties>
+
+
     <!-- Include the dependencies we will want in the final packaging -->
     <dependencies>
         <dependency>
@@ -166,6 +171,7 @@
     </dependencies>
 
     <build>
+       <!-- <finalName>CZ</finalName> -->
         <plugins>
             <!-- Add messages if nessassary -->
             <plugin>
@@ -180,7 +186,7 @@
                         </goals>
                         <configuration>
                             <source>
-                                log.info('Test message: {}', 'hhh')
+                                log.info('dd')
                             </source>
                         </configuration>
                     </execution>

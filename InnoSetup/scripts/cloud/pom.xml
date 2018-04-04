@@ -16,7 +16,7 @@
     </parent>
 
     <properties>
-        <output.dir>${cz.target.dir}\..\Cloud</output.dir>
+      <!--  <output.dir>${cz.target.dir}\..\Cloud</output.dir> -->
     </properties>
 
     <build>
@@ -35,11 +35,11 @@
                 </execution>
             </executions>
             <configuration>
-                <executable>..\ISCC.exe</executable>
+                <executable>${module.parent.dir}\InnoSetup\ISCC.exe</executable>
                 <arguments>
                     <argument>/DVERSION_NUM=${project.version}</argument>
                     <argument>/DMyAppVersion=${project.version}</argument>
-                    <argument>/DOUTPUT_DIR=${output.dir}</argument>
+                    <argument>/DOUTPUT_DIR=${output.cloud.dir}</argument>
 
                     <argument>/DRESOURCES_DIR=${resources.dir}</argument>
                     <argument>/DPROPERTIES_DIR=${md.cz.property.files.dir}</argument>
