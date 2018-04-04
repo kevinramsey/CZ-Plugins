@@ -42,12 +42,6 @@ SetupLogging=yes
 
 UpdateUninstallLogAppName=yes
 
-;LicenseFile=C:\InstallFiles\Installer_Files_3.1.0\Resources\CZ_Specific\License.txt
-;InfoAfterFile=C:\InstallFiles\Installer_Files_3.1.0\Resources\CZ_Specific\PostInstallMessage.txt
-;WizardImageFile=C:\InstallFiles\Installer_Files_3.1.0\Resources\CZ_Specific\updated_images\welcome-CZ-32bit.bmp
-;WizardSmallImageFile=C:\InstallFiles\Installer_Files_3.1.0\Resources\CZ_Specific\updated_images\logo-contact-zone-studio-update.bmp
-;SetupIconFile=C:\InstallFiles\Installer_Files_3.1.0\Resources\CZ_Specific\updated_images\contact-zone-icon.ico
-
 LicenseFile={#RESOURCES_DIR}\License.txt
 InfoAfterFile={#RESOURCES_DIR}\PostInstallMessage.txt
 WizardImageFile={#RESOURCES_DIR}\welcome-CZ-2017.bmp
@@ -141,7 +135,7 @@ Source: "{src}\Documentation\*"; DestDir: "{app}\ContactZone\Documentation"; Fla
 ;
 ;May need to move these from the installer source to the external source {src} location
 ;Source: "{src}\Samples\*"; DestDir: "{userdocs}\Melissa Data\Contact Zone\samples"; Flags: external onlyifdoesntexist ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
-Source: "{src}\Samples\*"; DestDir: "{app}\ContactZone\samples\MDSamples"; Flags: external recursesubdirs createallsubdirs ignoreversion; Permissions: users-modify
+;Source: "{src}\Samples\*"; DestDir: "{app}\ContactZone\samples\MDSamples"; Flags: external recursesubdirs createallsubdirs ignoreversion; Permissions: users-modify
 
 ;VC++ runtime files
 Source: "{src}\misc\VCppRuntime\vcredist_x86.exe"; DestDir: {tmp};  Flags: external

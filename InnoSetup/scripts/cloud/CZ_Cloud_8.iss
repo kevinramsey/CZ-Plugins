@@ -4,7 +4,6 @@
 ;   Date: 03-2-2012
 
 #define MyAppName "ContactZone"
-;#define MyAppVersion "6.1.2"
 #define revision "1"
 #define MyAppPublisher "Melissa Data Corp"
 #define MyAppURL "http://www.melissadata.com"
@@ -19,7 +18,6 @@
 AppId=mdCZ
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
@@ -90,74 +88,38 @@ Source: "{#PROPERTIES_DIR}\contact_zone.prp"; DestDir:"{app}\ContactZone\ui"; Fl
 ; data-integration
 Source: "{#APP_FILES}\*"; Excludes: ".svn"; DestDir: "{app}\ContactZone"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; Dlls
-;-------  Source: "{#DLL_DIR}\*"; DestDir: "{app}\ContactZone\mdKettle\MD"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#DLL_DIR}\*"; DestDir: "{app}\ContactZone\mdKettle\MD"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; master Reports
-;-------  Source: "{#REPORTS_DIR}\reports\*.*"; DestDir: "{app}\ContactZone\mdKettle\MD\libext\reporting"; Flags: ignoreversion recursesubdirs createallsubdirs 
+Source: "{#REPORTS_DIR}\reports\*.*"; DestDir: "{app}\ContactZone\mdKettle\MD\libext\reporting"; Flags: ignoreversion recursesubdirs createallsubdirs 
 ; JNDI property files
-;-------  Source: "{#REPORTS_DIR}\JNDI\cz.properties"; DestDir: "{app}\ContactZone\simple-jndi"; Flags: ignoreversion
-;-------  Source: "{#REPORTS_DIR}\JNDI\ga.properties"; DestDir: "{app}\ContactZone\simple-jndi"; Flags: ignoreversion
-
-; cz.lib and MDSettings
-;Source: "{#CZ_LIB_DIR}\bin\*.jar"; DestDir: "{app}\ContactZone\lib"; Flags: ignoreversion
-;Source: "{#CZ_LIB_DIR}\lib-md\*.jar"; DestDir: "{app}\ContactZone\lib"; Flags: ignoreversion
-;Source: "{#MDSETTINGS_DIR}\bin\*.jar"; DestDir: "{app}\ContactZone\lib"; Flags: ignoreversion
-
-; MDCheck 
-;Source: "{#MDCHECK_DIR}\bin\*.jar"; DestDir: "{app}\ContactZone\plugins\MDCheck"; Flags: ignoreversion
-; MDGlobal Verify
-;Source: "{#GLOBAL_VERIFY_DIR}\bin\*.jar"; DestDir: "{app}\ContactZone\plugins\MDGlobalVerify"; Flags: ignoreversion
-; MDPersonator 
-;Source: "{#PERSONATOR_DIR}\bin\*.jar"; DestDir: "{app}\ContactZone\plugins\MDPersonator"; Flags: ignoreversion
-;Source: "{#PERSONATOR_DIR}\outGrp.txt"; DestDir: "{app}\ContactZone\plugins\MDPersonator"; Flags: ignoreversion 
-;MDBusinessCoder
-;Source: "{#BUS_CODER_DIR}\bin\*.jar"; DestDir: "{app}\ContactZone\plugins\MDBusinessCoder"; Flags: ignoreversion 
-;MDProfiler
-;Source: "{#PROFILER_DIR}\bin\*.jar"; DestDir: "{app}\ContactZone\plugins\MDProfiler"; Flags: ignoreversion
-
-;MDPresort
-;Source: "{#PRESORT_DIR}\bin\*.jar"; DestDir: "{app}\ContactZone\plugins\MDPresort"; Flags: ignoreversion
-;Source: "{#PRESORT_DIR}\presortExec\*.*"; DestDir:"{%USERPROFILE}\.kettle\presort"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
-
-;MDCleanser
-;Source: "{#CLEANSER_DIR}\bin\*.jar"; DestDir: "{app}\ContactZone\plugins\MDCleanser"; Flags: ignoreversion
-;MDPropertyService
-;Source: "{#PROPERTY_SERVICE_DIR}\bin\*.jar"; DestDir: "{app}\ContactZone\plugins\MDPropertyService"; Flags: ignoreversion
+Source: "{#REPORTS_DIR}\JNDI\cz.properties"; DestDir: "{app}\ContactZone\simple-jndi"; Flags: ignoreversion
+Source: "{#REPORTS_DIR}\JNDI\ga.properties"; DestDir: "{app}\ContactZone\simple-jndi"; Flags: ignoreversion
 
 ; Name Object Files
 ; (Name object is local only starting in version 2.4.0 of the MDCheck plugin)
-;-------  Source: "{#DATA_DIR}\Name\*.*"; Excludes:"*.cfg "; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
+Source: "{#DATA_DIR}\Name\*.*"; Excludes:"*.cfg "; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
 
 ; Address
-;-------  Source: "{#DATA_DIR}\Address\*.*"; Excludes:" *.dbf, dph*, ews.txt, mdAddr.lic, lcd*, mdCanada*, mdLACS*, mdS* , month*, mdRBDI.dat, mdAddrKey.db"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
-
-
+Source: "{#DATA_DIR}\Address\*.*"; Excludes:" *.dbf, dph*, ews.txt, mdAddr.lic, lcd*, mdCanada*, mdLACS*, mdS* , month*, mdRBDI.dat, mdAddrKey.db"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
+ 
 ; phone
-;-------  Source: "{#DATA_DIR}\Phone\*.*"; Excludes:"mdGlobalPhone.dat, mdAddr.dat"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
+Source: "{#DATA_DIR}\Phone\*.*"; Excludes:"mdGlobalPhone.dat, mdAddr.dat"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
 
 ; email
-;-------  Source: "{#DATA_DIR}\Email\*.*"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
+Source: "{#DATA_DIR}\Email\*.*"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
 
 ; cleanser
-;-------  Source: "{#DATA_DIR}\Cleanser\*.*"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
+Source: "{#DATA_DIR}\Cleanser\*.*"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
 ; profiler
-;-------  Source: "{#DATA_DIR}\Profiler\*.*"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
+Source: "{#DATA_DIR}\Profiler\*.*"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
 ; presort
 ;Source: "{#DATA_DIR}\Presort\*.*"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
 
 ; MatchUp Files
-;-------  Source: "{#MU_FILES_DIR}\*.*"; Excludes:"*.mc, *.cfg "; DestDir:"{app}\ContactZone\mdKettle\matchup"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
-;-------  Source: "{#MUGLOBAL_FILES_DIR}\*.*"; Excludes:"*.mc, *.cfg "; DestDir:"{app}\ContactZone\mdKettle\matchup.global"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
-;-------  Source: "{#DLL_DIR}\64_bit\mdMatchUp.dll"; DestDir:"{app}\ContactZone\mdKettle\matchup"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
-;-------  Source: "{#DLL_DIR}\64_bit\mdMatchUp.dll"; DestDir:"{app}\ContactZone\mdKettle\matchup.global"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
-
-
-; Presort files
-;Source: "MDPresort2.4.0\bin\*.jar"; DestDir: "{app}\ContactZone\plugins\steps\MDPresort"; Flags: ignoreversion
-;Source: "mdPresortFiles\mdPresort.dll"; DestDir: "{app}\ContactZone\plugins\steps\MDPresort"; Flags: ignoreversion
-;Source: "mdPresortFiles\mdPresort.lib"; DestDir: "{app}\ContactZone\plugins\steps\MDPresort"; Flags: ignoreversion
-;Source: "mdPresortFiles\mdPresortExec.exe"; DestDir: "{app}\ContactZone\plugins\steps\MDPresort"; Flags: ignoreversion
-;Source: "Data\presort\*.*"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
-
+Source: "{#MU_FILES_DIR}\*.*"; Excludes:"*.mc, *.cfg "; DestDir:"{app}\ContactZone\mdKettle\matchup"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
+Source: "{#MUGLOBAL_FILES_DIR}\*.*"; Excludes:"*.mc, *.cfg "; DestDir:"{app}\ContactZone\mdKettle\matchup.global"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
+Source: "{#DLL_DIR}\64_bit\mdMatchUp.dll"; DestDir:"{app}\ContactZone\mdKettle\matchup"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
+Source: "{#DLL_DIR}\64_bit\mdMatchUp.dll"; DestDir:"{app}\ContactZone\mdKettle\matchup.global"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
 
 ; Files for writing paths
 Source: "{#RESOURCES_DIR}\internal_installer_executables\*"; Excludes: ".svn"; DestDir: "{app}\ContactZone"; Flags: ignoreversion 
@@ -176,7 +138,7 @@ Source: "{#DOCUMENTATION_DIR}\*"; DestDir: "{app}\ContactZone\Documentation"; Fl
 
 ; Sample files
 ;Source: "Production_Samples\*"; Excludes: ".svn"; DestDir: "{userdocs}\Melissa Data\Contact Zone\samples"; Flags: onlyifdoesntexist ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
-;Source: "{#SAMPLES_DIR}\*"; Excludes: ".svn"; DestDir: "{app}\ContactZone\samples\MDSamples\"; Flags: onlyifdoesntexist ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
+Source: "{#SAMPLES_DIR}\*"; Excludes: ".svn"; DestDir: "{app}\ContactZone\samples\MDSamples\"; Flags: onlyifdoesntexist ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
 
 ;VC++ runtime files
 Source: "{#RESOURCES_DIR}\VCppRuntime\vcredist_x86.exe"; DestDir: {tmp};
