@@ -19,8 +19,8 @@
     <properties>
       <!--  <InnoSetup.dir>..\</InnoSetup.dir> -->
 
-        <module.parent.dir>C:\Users\Kevin\workspace_kettle\CZ-Plugins</module.parent.dir>
-        <output.dir>${module.parent.dir}\assemblies\contactzone\target\CZ</output.dir>
+        <module.parent.dir>C:\Users\Kevin\workspace-kettle\CZPlugins</module.parent.dir>
+        <output.dir>${module.parent.dir}\assemblies\contactzone\target\CZ\CZ</output.dir>
         <output.cloud.dir>${module.parent.dir}\assemblies\contactzone\target\CZ\Cloud</output.cloud.dir>
 
         <contactzone.build.dir>${module.parent.dir}\assemblies\contactzone\target\CZ\CZ</contactzone.build.dir>
@@ -59,8 +59,8 @@
     </properties>
 
     <modules>
-        <!-- <module>onPremises</module>-->
+        <!--            <module>onPremises</module> -->
         <module>cloud</module>
-            </modules>
+               </modules>
 
-        </project>
+           </project>

@@ -5,14 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.melissadata.kettle</groupId>
-    <artifactId>MDCheck-assemblies</artifactId>
+    <artifactId>MDCleanser-assemblies</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>MDCheck Assemblies</name>
+    <name>MDCleanser Assemblies</name>
 
     <modules>
-        
-        <module>MDCheckPlugin</module>
+        <module>MDCleanserPlugin</module>
     </modules>
 </project>
