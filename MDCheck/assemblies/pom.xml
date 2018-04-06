@@ -12,7 +12,7 @@
     <name>MDCheck Assemblies</name>
 
     <modules>
-        
+
         <module>MDCheckPlugin</module>
     </modules>
 </project>

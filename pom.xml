@@ -13,7 +13,7 @@
     <properties>
 
 
-        <module.parent.dir>C:\Users\Kevin\workspace-kettle\CZ-Plugins</module.parent.dir>
+        <module.parent.dir>C:\workspace-cz</module.parent.dir>
 
 
         <!-- InnoSetup -->

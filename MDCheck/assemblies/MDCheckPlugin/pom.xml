@@ -58,21 +58,23 @@
 
                                 <artifactItem>
                                     <groupId>com.melissadata.kettle</groupId>
-                                    <artifactId>mdLicense</artifactId>
-                                    <version>${mdlicense.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>false</overWrite>
-                                    <outputDirectory>${project.build.directory}\classes\MD</outputDirectory>
-                                </artifactItem>
-
-                                <artifactItem>
-                                    <groupId>com.melissadata.kettle</groupId>
                                     <artifactId>MD_Common</artifactId>
                                     <version>${mdcommon.version}</version>
                                     <type>zip</type>
                                     <overWrite>false</overWrite>
                                     <outputDirectory>${project.build.directory}\classes</outputDirectory>
                                 </artifactItem>
+
+                                <artifactItem>
+                                    <groupId>com.melissadata.kettle</groupId>
+                                    <artifactId>mdLicense</artifactId>
+                                    <version>${mdlicense.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}\classes\MD\64_bit</outputDirectory>
+                                </artifactItem>
+
+
 
                             </artifactItems>
                             <overWriteReleases>false</overWriteReleases>
