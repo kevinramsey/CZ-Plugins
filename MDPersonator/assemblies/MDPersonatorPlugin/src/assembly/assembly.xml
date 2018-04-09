@@ -1,0 +1,57 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>bin</id>
+    <formats>
+        <format>zip</format>
+        <format>dir</format>
+    </formats>
+
+    <baseDirectory>MDPersonatorPlugin</baseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>${project.build.directory}\classes</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
+    </fileSets>
+    <dependencySets>
+        <!-- md objects -->
+        <dependencySet>
+            <outputDirectory>MD\64_bit</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdLicense</include>
+            </includes>
+        </dependencySet>
+        <!-- MDsettings, cz.library -->
+        <dependencySet>
+            <outputDirectory>MD\libext\</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata:cz.library</include>
+                <include>com.melissadata.kettle:MDSettings</include>
+            </includes>
+        </dependencySet>
+
+        <!-- PLUGINS -->
+        <!-- MDPersonator -->
+        <dependencySet>
+            <outputDirectory>.</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDPersonator</include>
+            </includes>
+        </dependencySet>
+
+        <dependencySet>
+            <outputDirectory>.</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDCommon</include>
+            </includes>
+        </dependencySet>
+
+    </dependencySets>
+</assembly>

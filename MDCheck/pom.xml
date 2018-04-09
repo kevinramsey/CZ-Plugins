@@ -37,6 +37,10 @@
                     <groupId>com.melissadata.kettle</groupId>
                     <artifactId>MDSettings</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>pentaho-kettle</groupId>
+                    <artifactId>kettle-engine</artifactId>
+                </exclusion>
             </exclusions>
             <type>jar</type>
         </dependency>
@@ -53,11 +57,6 @@
             <version>${external.pentaho.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>pentaho-kettle</groupId>
-            <artifactId>kettle-engine</artifactId>
-            <version>${external.pentaho.version}</version>
-        </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.eclipse/jface -->
         <dependency>

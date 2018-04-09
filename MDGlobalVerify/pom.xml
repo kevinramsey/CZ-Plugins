@@ -52,13 +52,6 @@
             <artifactId>kettle-core</artifactId>
             <version>${external.pentaho.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>pentaho-kettle</groupId>
-            <artifactId>kettle-engine</artifactId>
-            <version>${external.pentaho.version}</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.eclipse/jface -->
         <dependency>
             <groupId>org.eclipse</groupId>
@@ -66,23 +59,19 @@
             <version>${jface.version}</version>
             <scope>provided</scope>
         </dependency>
-
-
+        <!-- cz.library, MDSettings   -->
         <dependency>
             <groupId>com.melissadata</groupId>
             <artifactId>cz.library</artifactId>
             <version>${cz.library.version}</version>
             <exclusions>
-
                 <exclusion>
                     <groupId>pentaho-kettle</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
-
             </exclusions>
             <type>jar</type>
         </dependency>
-
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>MDSettings</artifactId>
@@ -101,21 +90,19 @@
             </exclusions>
             <type>jar</type>
         </dependency>
-
+        <!-- commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons.io.version}</version>
         </dependency>
-
+        <!-- eclipse-swt -->
         <dependency>
             <groupId>org.eclipse.swt</groupId>
             <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
             <version>RELEASE</version>
         </dependency>
-
-
-
+        <!-- junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

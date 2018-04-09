@@ -15,12 +15,51 @@
             <useDefaultExcludes>true</useDefaultExcludes>
             <outputDirectory>.</outputDirectory>
         </fileSet>
-
+        <!--  Address data -->
         <fileSet>
-            <directory>C:\workspace-cz\</directory>
-            <useDefaultExcludes>true</useDefaultExcludes>
-            <outputDirectory>.</outputDirectory>
+            <directory>${md.data.dir}\Address\</directory>
+                 <useDefaultExcludes>true</useDefaultExcludes>
+                 <includes>
+                     <include>mdAddr.dat</include>
+                     <include>mdAddr.nat</include>
+                     <include>mdAddr.str</include>
+                     <include>ps3553_T.pdf</include>
+                 </includes>
+            <outputDirectory>MDdata</outputDirectory>
         </fileSet>
+        <!-- Phone Data -->
+        <fileSet>
+            <directory>${md.data.dir}\Phone\</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <includes>
+                <include>mdGlobalPhone.dat</include>
+                <include>mdPhone.dat</include>
+                <include>mdPhone.idx</include>
+                <include>ZIPNPA.TXT</include>
+            </includes>
+            <outputDirectory>MDdata</outputDirectory>
+        </fileSet>
+        <!--    Email Data -->
+        <fileSet>
+            <directory>${md.data.dir}\Email\</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <includes>
+                <include>mdEmail.cfg</include>
+                <include>mdEmail.dat</include>
+            </includes>
+            <outputDirectory>MDdata</outputDirectory>
+        </fileSet>
+        <!--    Name Data -->
+        <fileSet>
+            <directory>${md.data.dir}\Name\</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <includes>
+                <include>mdName.dat</include>
+                <include>mdName.cfg</include>
+            </includes>
+            <outputDirectory>MDdata</outputDirectory>
+        </fileSet>
+
     </fileSets>
 
     <dependencySets>

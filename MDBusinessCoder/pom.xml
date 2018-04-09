@@ -64,6 +64,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- kettle-core -->
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-core</artifactId>

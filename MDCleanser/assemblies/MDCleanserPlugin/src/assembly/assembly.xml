@@ -15,27 +15,30 @@
             <useDefaultExcludes>true</useDefaultExcludes>
             <outputDirectory>.</outputDirectory>
         </fileSet>
-    </fileSets>
-<!--
-    <dependencySets>
-        <dependencySet>
-            <outputDirectory>classes</outputDirectory>
-            <unpack>true</unpack>
+        <!--  Cleanser Data  -->
+        <fileSet>
+            <directory>${md.data.dir}\Cleanser\</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
             <includes>
-                <include>com.melissadata.kettle:MDCommon</include>
+                <include>mdCleanser.dat</include>
             </includes>
-        </dependencySet>
-
+            <outputDirectory>MDdata</outputDirectory>
+        </fileSet>
+    </fileSets>
+    <dependencySets>
+        <!-- md objects -->
         <dependencySet>
-            <outputDirectory>classes\MD\64_bit</outputDirectory>
+            <outputDirectory>MD\64_bit</outputDirectory>
             <unpack>true</unpack>
             <includes>
                 <include>com.melissadata.kettle:mdLicense</include>
+                <!-- MDCleanser -->
+                <include>com.melissadata.kettle:mdCleanserDll</include>
             </includes>
         </dependencySet>
-
+        <!-- MDsettings, cz.library -->
         <dependencySet>
-            <outputDirectory>classes\MD\libext</outputDirectory>
+            <outputDirectory>MD\libext\</outputDirectory>
             <unpack>false</unpack>
             <includes>
                 <include>com.melissadata:cz.library</include>
@@ -43,14 +46,23 @@
             </includes>
         </dependencySet>
 
+        <!-- PLUGINS -->
+        <!-- MDCleanser -->
         <dependencySet>
-            <outputDirectory>classes</outputDirectory>
+            <outputDirectory>.</outputDirectory>
             <unpack>false</unpack>
             <includes>
                 <include>com.melissadata.kettle:MDCleanser</include>
             </includes>
         </dependencySet>
 
+        <dependencySet>
+            <outputDirectory>.</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDCommon</include>
+            </includes>
+        </dependencySet>
+
     </dependencySets>
--->
 </assembly>

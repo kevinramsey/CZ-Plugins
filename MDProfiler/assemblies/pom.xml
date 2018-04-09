@@ -13,7 +13,6 @@
 
 
     <modules>
-        <!--  <module>../../MDProfiler</module> -->
         <module>MDProfilerPlugin</module>
     </modules>
 </project>

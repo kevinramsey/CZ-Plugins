@@ -14,6 +14,57 @@
             <useDefaultExcludes>true</useDefaultExcludes>
             <outputDirectory>.</outputDirectory>
         </fileSet>
+        <!--  Profiler Data  -->
+        <fileSet>
+            <directory>${md.data.dir}\Profiler\</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <includes>
+                <include>mdProfiler.cfg</include>
+                <include>mdProfiler.mc</include>
+            </includes>
+            <outputDirectory>MDdata</outputDirectory>
+        </fileSet>
     </fileSets>
+
+    <dependencySets>
+        <!-- md objects -->
+        <dependencySet>
+            <outputDirectory>MD\64_bit</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdLicense</include>
+                <!-- MDCleanser -->
+                <include>com.melissadata.kettle:mdProfilerDll</include>
+            </includes>
+        </dependencySet>
+        <!-- MDsettings, cz.library -->
+        <dependencySet>
+            <outputDirectory>MD\libext\</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata:cz.library</include>
+                <include>com.melissadata.kettle:MDSettings</include>
+            </includes>
+        </dependencySet>
+
+        <!-- PLUGINS -->
+        <!-- MDCleanser -->
+        <dependencySet>
+            <outputDirectory>.</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDProfiler</include>
+            </includes>
+        </dependencySet>
+
+        <dependencySet>
+            <outputDirectory>.</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDCommon</include>
+            </includes>
+        </dependencySet>
+
+    </dependencySets>
 
 </assembly>

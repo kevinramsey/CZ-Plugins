@@ -10,21 +10,17 @@
 
     <name>MDProfilerPlugin</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cz.library.version>1.1-SNAPSHOT</cz.library.version>
-        <mdLicense.version>1.0</mdLicense.version>
-        <mdSettings.version>1.1-SNAPSHOT</mdSettings.version>
-        <mdProfiler.plugin.version>1.0-SNAPSHOT</mdProfiler.plugin.version>
-        <mdProfiler.dll.version>4.0.1.3036</mdProfiler.dll.version>
-        <profiler.resource.version>1.0</profiler.resource.version>
-        <mdcommon.version>1.0</mdcommon.version>
-    </properties>
+    <parent>
+        <groupId>com.melissadata.kettle</groupId>
+        <artifactId>MDProfiler-assemblies</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
     <build>
     <finalName>MDProfiler-market-${project.version}</finalName>
     <plugins>
         <!-- Add messages if nessassary -->
+        <!--
         <plugin>
             <groupId>org.codehaus.gmaven</groupId>
             <artifactId>groovy-maven-plugin</artifactId>
@@ -43,96 +39,7 @@
                 </execution>
             </executions>
         </plugin>
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>3.0.2</version>
-            <executions>
-                <!-- get and unpack resources from repository -->
-                <execution>
-                    <id>unpack</id>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>unpack</goal>
-                    </goals>
-                    <configuration>
-                        <artifactItems>
-
-                            <artifactItem>
-                                <groupId>com.melissadata.kettle</groupId>
-                                <artifactId>MD_Common</artifactId>
-                                <version>${mdcommon.version}</version>
-                                <type>zip</type>
-                                <overWrite>false</overWrite>
-                                <outputDirectory>${project.build.directory}\classes</outputDirectory>
-                            </artifactItem>
-
-                            <artifactItem>
-                                <groupId>com.melissadata.kettle</groupId>
-                                <artifactId>mdLicense</artifactId>
-                                <version>${mdLicense.version}</version>
-                                <type>zip</type>
-                                <overWrite>false</overWrite>
-                                <outputDirectory>${project.build.directory}\classes\MD\</outputDirectory>
-                            </artifactItem>
-
-                            <artifactItem>
-                                <groupId>com.melissadata.kettle</groupId>
-                                <artifactId>mdProfilerDll</artifactId>
-                                <version>${mdProfiler.dll.version}</version>
-                                <type>zip</type>
-                                <overWrite>false</overWrite>
-                                <outputDirectory>${project.build.directory}\classes\MD\64_bit</outputDirectory>
-                            </artifactItem>
-
-                        </artifactItems>
-                        <overWriteReleases>false</overWriteReleases>
-                        <overWriteSnapshots>true</overWriteSnapshots>
-                    </configuration>
-                </execution>
-
-                <!-- get dependencies from repository -->
-                <execution>
-                    <id>copy</id>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>copy</goal>
-                    </goals>
-                    <configuration>
-                        <artifactItems>
-                            <artifactItem>
-                                <groupId>com.melissadata</groupId>
-                                <artifactId>cz.library</artifactId>
-                                <version>${cz.library.version}</version>
-                                <type>jar</type>
-                                <overWrite>false</overWrite>
-                                <outputDirectory>${project.build.directory}\classes\MD\libext</outputDirectory>
-                            </artifactItem>
-                            <artifactItem>
-                                <groupId>com.melissadata.kettle</groupId>
-                                <artifactId>MDSettings</artifactId>
-                                <version>${mdSettings.version}</version>
-                                <type>jar</type>
-                                <overWrite>false</overWrite>
-                                <outputDirectory>${project.build.directory}\classes\MD\libext</outputDirectory>
-                            </artifactItem>
-                            <artifactItem>
-                                <groupId>com.melissadata.kettle</groupId>
-                                <artifactId>MDProfiler</artifactId>
-                                <version>${mdProfiler.plugin.version}</version>
-                                <type>jar</type>
-                                <overWrite>false</overWrite>
-                                <outputDirectory>${project.build.directory}\classes</outputDirectory>
-                            </artifactItem>
-                        </artifactItems>
-                        <overWriteReleases>false</overWriteReleases>
-                        <overWriteSnapshots>true</overWriteSnapshots>
-                    </configuration>
-                </execution>
-            </executions>
-        </plugin>
-
+        -->
         <!-- Update the version.xml with current build number -->
         <plugin>
             <groupId>com.google.code.maven-replacer-plugin</groupId>

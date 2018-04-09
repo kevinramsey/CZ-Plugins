@@ -15,14 +15,13 @@
     </parent>
 
     <dependencies>
-
         <!-- https://mvnrepository.com/artifact/org.dom4j/dom4j -->
         <dependency>
             <groupId>org.dom4j</groupId>
             <artifactId>dom4j</artifactId>
             <version>${dom4j.version}</version>
         </dependency>
-
+        <!-- kettle-ui-swt -->
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-ui-swt</artifactId>
@@ -39,25 +38,18 @@
             </exclusions>
             <type>jar</type>
         </dependency>
-
+        <!-- kettle-engine -->
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-engine</artifactId>
             <version>${external.pentaho.version}</version>
         </dependency>
-
+        <!-- kettle-core -->
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-core</artifactId>
             <version>${external.pentaho.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>pentaho-kettle</groupId>
-            <artifactId>kettle-engine</artifactId>
-            <version>${external.pentaho.version}</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/org.eclipse/jface -->
         <dependency>
             <groupId>org.eclipse</groupId>
@@ -65,29 +57,24 @@
             <version>${jface.version}</version>
             <scope>provided</scope>
         </dependency>
-
-
+        <!-- cz.library , MDSettings -->
         <dependency>
             <groupId>com.melissadata</groupId>
             <artifactId>cz.library</artifactId>
             <version>${cz.library.version}</version>
             <exclusions>
-
                 <exclusion>
                     <groupId>pentaho-kettle</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
-
             </exclusions>
             <type>jar</type>
         </dependency>
-
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>MDSettings</artifactId>
             <version>${mdSettings.version}</version>
             <exclusions>
-
                 <exclusion>
                     <groupId>com.melissadata</groupId>
                     <artifactId>cz.library</artifactId>
@@ -96,33 +83,28 @@
                     <groupId>pentaho-kettle</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
-
             </exclusions>
             <type>jar</type>
         </dependency>
-
+        <!-- commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>${commons.io.version}</version>
         </dependency>
-
+        <!-- eclipse swt -->
         <dependency>
             <groupId>org.eclipse.swt</groupId>
             <artifactId>org.eclipse.swt.gtk.linux.x86_64</artifactId>
             <version>RELEASE</version>
         </dependency>
-
-
-
+        <!-- junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
 
     <build>

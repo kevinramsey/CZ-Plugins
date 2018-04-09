@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.melissadata.kettle</groupId>
+    <artifactId>MDPersonatorPlugin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <name>MDPersonatorPlugin</name>
+
+    <parent>
+        <groupId>com.melissadata.kettle</groupId>
+        <artifactId>MDPersonator-assemblies</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+
+    <!-- Include the dependencies we will want in the final packaging -->
+    <dependencies>
+        <!--###    mdLicense ###-->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>mdLicense</artifactId>
+            <version>${mdLicense.version}</version>
+            <type>zip</type>
+        </dependency>
+        <!-- ##   MDSettings   cz.library -->
+        <dependency>
+            <groupId>com.melissadata</groupId>
+            <artifactId>cz.library</artifactId>
+            <version>${cz.library.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDSettings</artifactId>
+            <version>${mdSettings.version}</version>
+            <type>jar</type>
+        </dependency>
+
+
+        <!-- ##########  MDPersonator  ############ -->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDPersonator</artifactId>
+            <version>${mdPersonator.plugin.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDPersonatorResources</artifactId>
+            <version>${mdPersonator.resources.version}</version>
+            <type>zip</type>
+        </dependency>
+        <!-- ####  MD_Common  ############# -->
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDCommon</artifactId>
+            <version>1.0</version>
+            <type>zip</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Add messages if nessassary -->
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>groovy-maven-plugin</artifactId>
+                <version>2.0</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source>
+                                log.info('Test message: {}', 'message')
+                            </source>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Update the version.xml with current build number -->
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>maven-replacer-plugin</artifactId>
+                <version>1.3.7</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>target\classes\version.xml</include>
+                    </includes>
+                    <regex>false</regex>
+                    <token>version.build</token>
+                    <value>${project.version}</value>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptor>src/assembly/assembly.xml</descriptor>
+                    <finalName>MDPersonator-market-${project.version}</finalName>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

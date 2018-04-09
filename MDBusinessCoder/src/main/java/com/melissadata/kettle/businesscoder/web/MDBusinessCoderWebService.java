@@ -230,7 +230,8 @@ public class MDBusinessCoderWebService{
 			// get maximum requests per batch
 			try {
 				busCoderData.maxRequests = Integer.parseInt(MDProps.getProperty(TAG_BUSINESS_CODER_REQUESTS, "1"));
-				if (busCoderData.maxRequests > 1)
+				//FIXME change max requests
+				if (busCoderData.maxRequests > 100)
 					throw new KettleException("Business Coder batch capable to 1 records.  Please set max requests to 1");
 			} catch (NumberFormatException e) {
 				// Change the description

@@ -14,6 +14,8 @@
 
 
         <module.parent.dir>C:\workspace-cz</module.parent.dir>
+        <!-- DATA DIR -->
+        <md.data.dir>${module.parent.dir}\assemblies\contactzone\src\main\resources\Data</md.data.dir>
 
 
         <!-- InnoSetup -->
