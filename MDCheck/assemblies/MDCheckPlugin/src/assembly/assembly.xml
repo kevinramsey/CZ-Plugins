@@ -15,6 +15,12 @@
             <useDefaultExcludes>true</useDefaultExcludes>
             <outputDirectory>.</outputDirectory>
         </fileSet>
+
+        <fileSet>
+            <directory>C:\workspace-cz\</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <outputDirectory>.</outputDirectory>
+        </fileSet>
     </fileSets>
 
     <dependencySets>
@@ -62,80 +68,22 @@
         </dependencySet>
 
         <!-- PLUGINS -->
-        <!-- MDBusinessCoder -->
-        <dependencySet>
-            <outputDirectory>Windows\plugins\MDBusinessCoder</outputDirectory>
-            <unpack>false</unpack>
-            <includes>
-                <include>com.melissadata.kettle:MDBusinessCoder</include>
-            </includes>
-        </dependencySet>
         <!-- MDCheck -->
         <dependencySet>
-            <outputDirectory>Windows\plugins\MDCheck</outputDirectory>
+            <outputDirectory>.</outputDirectory>
             <unpack>false</unpack>
             <includes>
                 <include>com.melissadata.kettle:MDCheck</include>
             </includes>
         </dependencySet>
 
-        <!-- MDCleanser -->
         <dependencySet>
-            <outputDirectory>Windows\plugins\MDCleanser</outputDirectory>
-            <unpack>false</unpack>
-            <includes>
-                <include>com.melissadata.kettle:MDCleanser</include>
-            </includes>
-        </dependencySet>
-
-        <!-- MDGlobal Verify -->
-        <dependencySet>
-            <outputDirectory>Windows\plugins\MDGlobalVerify</outputDirectory>
-            <unpack>false</unpack>
-            <includes>
-                <include>com.melissadata.kettle:MDGlobalVerify</include>
-            </includes>
-        </dependencySet>
-
-        <!-- Personator -->
-        <dependencySet>
-            <outputDirectory>Windows\plugins\MDPersonator</outputDirectory>
-            <unpack>false</unpack>
-            <includes>
-                <include>com.melissadata.kettle:MDPersonator</include>
-            </includes>
-        </dependencySet>
-        <dependencySet>
-            <outputDirectory>Windows\plugins\MDPersonator</outputDirectory>
+            <outputDirectory>.</outputDirectory>
             <unpack>true</unpack>
             <includes>
-                <include>com.melissadata.kettle:mdPersonatorResources</include>
+                <include>com.melissadata.kettle:MDCommon</include>
             </includes>
         </dependencySet>
-        <!-- Profiler -->
-        <dependencySet>
-            <outputDirectory>Windows\plugins\MDProfiler</outputDirectory>
-            <unpack>false</unpack>
-            <includes>
-                <include>com.melissadata.kettle:MDProfiler</include>
-            </includes>
-        </dependencySet>
-        <!-- Property -->
-        <dependencySet>
-            <outputDirectory>Windows\plugins\MDPropertyService</outputDirectory>
-            <unpack>false</unpack>
-            <includes>
-                <include>com.melissadata.kettle:MDProperty</include>
-            </includes>
-        </dependencySet>
-
-
-
-
-
-
-
-
 
     </dependencySets>
 
