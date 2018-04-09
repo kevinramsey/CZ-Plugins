@@ -3,6 +3,7 @@
           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
     <id>bin</id>
     <formats>
+        <format>dir</format>
         <format>zip</format>
     </formats>
 
@@ -15,5 +16,129 @@
             <outputDirectory>.</outputDirectory>
         </fileSet>
     </fileSets>
+
+    <dependencySets>
+        <!-- md objects -->
+        <dependencySet>
+            <outputDirectory>MD\64_bit</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdLicense</include>
+                <!-- MDCheck -->
+                <include>com.melissadata.kettle:mdAddrDll</include>
+                <include>com.melissadata.kettle:mdEmailDll</include>
+                <include>com.melissadata.kettle:mdGeoDll</include>
+                <include>com.melissadata.kettle:mdNameDll</include>
+                <include>com.melissadata.kettle:mdPhoneDll</include>
+                <include>com.melissadata.kettle:mdIpLocatorDll</include>
+                <include>com.melissadata.kettle:mdMatchUpDll</include>
+              </includes>
+        </dependencySet>
+        <!-- MatchUP -->
+        <dependencySet>
+            <outputDirectory>kettle\matchup\</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdMatchupResources</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>kettle\matchup.global\</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdMatchupGlobalResources</include>
+            </includes>
+        </dependencySet>
+
+
+        <!-- MDsettings, cz.library -->
+        <dependencySet>
+            <outputDirectory>MD\libext\</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata:cz.library</include>
+                <include>com.melissadata.kettle:MDSettings</include>
+            </includes>
+        </dependencySet>
+
+        <!-- PLUGINS -->
+        <!-- MDBusinessCoder -->
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDBusinessCoder</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDBusinessCoder</include>
+            </includes>
+        </dependencySet>
+        <!-- MDCheck -->
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDCheck</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDCheck</include>
+            </includes>
+        </dependencySet>
+
+        <!-- MDCleanser -->
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDCleanser</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDCleanser</include>
+            </includes>
+        </dependencySet>
+
+        <!-- MDGlobal Verify -->
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDGlobalVerify</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDGlobalVerify</include>
+            </includes>
+        </dependencySet>
+
+        <!-- Personator -->
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDPersonator</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDPersonator</include>
+            </includes>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDPersonator</outputDirectory>
+            <unpack>true</unpack>
+            <includes>
+                <include>com.melissadata.kettle:mdPersonatorResources</include>
+            </includes>
+        </dependencySet>
+        <!-- Profiler -->
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDProfiler</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDProfiler</include>
+            </includes>
+        </dependencySet>
+        <!-- Property -->
+        <dependencySet>
+            <outputDirectory>Windows\plugins\MDPropertyService</outputDirectory>
+            <unpack>false</unpack>
+            <includes>
+                <include>com.melissadata.kettle:MDProperty</include>
+            </includes>
+        </dependencySet>
+
+
+
+
+
+
+
+
+
+    </dependencySets>
+
+
 
 </assembly>

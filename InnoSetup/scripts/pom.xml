@@ -17,16 +17,16 @@
     </parent>
 
     <properties>
-      <!--  <InnoSetup.dir>..\</InnoSetup.dir> -->
+        <!--  <InnoSetup.dir>..\</InnoSetup.dir> -->
 
-        <module.parent.dir>C:\Users\Kevin\workspace-kettle\CZPlugins</module.parent.dir>
+        <module.parent.dir>C:\CZ-Plugins</module.parent.dir>
         <output.dir>${module.parent.dir}\assemblies\contactzone\target\CZ\CZ</output.dir>
         <output.cloud.dir>${module.parent.dir}\assemblies\contactzone\target\CZ\Cloud</output.cloud.dir>
 
         <contactzone.build.dir>${module.parent.dir}\assemblies\contactzone\target\CZ\CZ</contactzone.build.dir>
 
         <resources.dir>${module.parent.dir}\InnoSetup\czresources</resources.dir>
-    <!--    <cz.target.dir>..\..\..\assemblies\contactzone\target\ContactZone-${project.version}\ContactZone-${project.version}</cz.target.dir> -->
+        <!--    <cz.target.dir>..\..\..\assemblies\contactzone\target\ContactZone-${project.version}\ContactZone-${project.version}</cz.target.dir> -->
 
         <!--   -->
         <md.cz.property.files.dir>${contactzone.build.dir}\misc\properties</md.cz.property.files.dir>
@@ -35,32 +35,32 @@
 
         <md.cz.application.files>${contactzone.build.dir}\Windows</md.cz.application.files>
 
-      <!--  <md.module.base.dir></md.module.base.dir> -->
+        <!--  <md.module.base.dir></md.module.base.dir> -->
         <md.reports.dir>${contactzone.build.dir}\misc</md.reports.dir>
         <md.cz.dll.dir>${contactzone.build.dir}\misc\DLLs</md.cz.dll.dir>
         <md.cz.data.dir>${contactzone.build.dir}\Data</md.cz.data.dir>
         <md.cz.matchup.files.dir>${contactzone.build.dir}\Matchup</md.cz.matchup.files.dir>
         <md.cz.matchup.global.files.dir>${contactzone.build.dir}\Matchup\Global</md.cz.matchup.global.files.dir>
 
-       <!-- <md.cz.FNTBO.dir></md.cz.FNTBO.dir> -->
+        <!-- <md.cz.FNTBO.dir></md.cz.FNTBO.dir> -->
         <md.cz.documentation.dir>${contactzone.build.dir}\Documentation</md.cz.documentation.dir>
         <md.cz.samples.dir>${contactzone.build.dir}\Samples</md.cz.samples.dir>
-      <!--  <czLib.Dir></czLib.Dir>
-        <mdSettings.Dir></mdSettings.Dir>
-        <mdProfiler.Dir></mdProfiler.Dir>
-        <mdBussinessCoder.Dir></mdBussinessCoder.Dir>
-        <mdCheck.Dir></mdCheck.Dir>
-        <mdCleanser.Dir></mdCleanser.Dir>
-        <mdPresort.Dir></mdPresort.Dir>
-        <mdGlobalVerify.Dir></mdGlobalVerify.Dir>
-        <mdPersonator.Dir></mdPersonator.Dir>
-        <mdPropertyService.Dir></mdPropertyService.Dir>
-        -->
+        <!--  <czLib.Dir></czLib.Dir>
+          <mdSettings.Dir></mdSettings.Dir>
+          <mdProfiler.Dir></mdProfiler.Dir>
+          <mdBussinessCoder.Dir></mdBussinessCoder.Dir>
+          <mdCheck.Dir></mdCheck.Dir>
+          <mdCleanser.Dir></mdCleanser.Dir>
+          <mdPresort.Dir></mdPresort.Dir>
+          <mdGlobalVerify.Dir></mdGlobalVerify.Dir>
+          <mdPersonator.Dir></mdPersonator.Dir>
+          <mdPropertyService.Dir></mdPropertyService.Dir>
+          -->
     </properties>
 
     <modules>
-        <!--            <module>onPremises</module> -->
+        <module>onPremises</module>
         <module>cloud</module>
-               </modules>
+    </modules>
 
-           </project>
+</project>
