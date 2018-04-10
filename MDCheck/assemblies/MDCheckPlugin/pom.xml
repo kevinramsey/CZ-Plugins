@@ -25,6 +25,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 -->
+
+
     <!-- Include the dependencies we will want in the final packaging -->
     <dependencies>
         <!--###    mdLicense ###-->

@@ -22,8 +22,6 @@
             <unpack>true</unpack>
             <includes>
                 <include>com.melissadata.kettle:mdLicense</include>
-                <!-- MDCleanser -->
-                <include>com.melissadata.kettle:mdCleanserDll</include>
             </includes>
         </dependencySet>
         <!-- MDsettings, cz.library -->
@@ -42,7 +40,7 @@
             <outputDirectory>.</outputDirectory>
             <unpack>false</unpack>
             <includes>
-                <include>com.melissadata.kettle:MDCleanser</include>
+                <include>com.melissadata.kettle:MDBusinessCoder</include>
             </includes>
         </dependencySet>
 

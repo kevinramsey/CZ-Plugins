@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.melissadata.kettle</groupId>
-    <artifactId>MDProfiler-assemblies</artifactId>
+    <artifactId>MDProperty-assemblies</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>MDProfiler Assemblies</name>
+    <name>MDProperty Assemblies</name>
 
     <parent>
         <groupId>com.melissadata.kettle</groupId>
@@ -18,6 +18,6 @@
     </parent>
 
     <modules>
-        <module>MDProfilerPlugin</module>
+        <module>MDPropertyPlugin</module>
     </modules>
 </project>
