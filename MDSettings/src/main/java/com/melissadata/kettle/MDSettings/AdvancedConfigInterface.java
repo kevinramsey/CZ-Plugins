@@ -123,6 +123,7 @@ public class AdvancedConfigInterface {
 		if (settingsData.getRequests(id) > settingsData.getRequestLimit(id)) {
 			String errorMsg = getString("AdvancedConfigDialog.MaxRequestsWarning", id, String.valueOf(settingsData.getRequestLimit(id)));
 
+			//FIXME change limit
 			if (id == MDPropTags.MENU_ID_BUSINESS_CODER) {
 				errorMsg = getString("AdvancedConfigDialog.MaxBusCoderRequestsWarning", id, String.valueOf(settingsData.getRequestLimit(id)));
 			}
