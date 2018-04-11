@@ -806,7 +806,7 @@ public class MDProfilerDialog extends BaseStepDialog implements StepDialogInterf
 		WelcomeDialog welcomeDialog = new WelcomeDialog(this, 0);
 		welcomeDialog.open();
 		if (!Const.isEmpty(licString)) {
-			MDProps.setProperty(TAG_PRIMARY_LICENSE, licString);
+			MDProps.setProperty(TAG_PRIMARY_LICENSE, licString.trim());
 			try {
 				MDProps.save();
 			} catch (IOException e) {

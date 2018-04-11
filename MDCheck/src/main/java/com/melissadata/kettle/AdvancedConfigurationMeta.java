@@ -566,7 +566,7 @@ public class AdvancedConfigurationMeta implements Cloneable {
 	 */
 	public String getLicense(String product) {
 
-		return MDProps.getProperty(product, "");
+		return MDProps.getProperty(product, "").trim();
 	}
 
 	// Local object
@@ -663,7 +663,7 @@ public class AdvancedConfigurationMeta implements Cloneable {
 		} else if (isCommunity() && (product != MDPropTags.MDLICENSE_IPLocator) && (product != MDPropTags.MDLICENSE_GeoCode)) {
 			license = MDPropTags.MD_COMMUNITY_LICENSE;
 		}
-		return license;
+		return license.trim();
 	}
 
 	public void getPropVals() {

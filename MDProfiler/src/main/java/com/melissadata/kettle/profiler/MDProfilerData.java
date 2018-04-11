@@ -92,6 +92,6 @@ public class MDProfilerData extends BaseStepData implements StepDataInterface {
 			lic = "DEMO";
 		}
 	//	realLicense = lic;
-		return lic;
+		return lic.trim();
 	}
 }

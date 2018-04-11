@@ -173,8 +173,8 @@ public class MDPersonatorDialog extends BaseStepDialog implements StepDialogInte
 		String nagMessage = null;
 		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
 		retVal |= Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
-		String lic = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "");
-		String trialLic = MDProps.getProperty(MDPropTags.TAG_TRIAL_LICENSE, "");
+		String lic = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "").trim();
+		String trialLic = MDProps.getProperty(MDPropTags.TAG_TRIAL_LICENSE, "").trim();
 		if (Const.isEmpty(lic) && Const.isEmpty(trialLic)) {
 			nagMessage = "SetLicenseWarning";
 		} else if ((retVal & MDPropTags.MDLICENSE_Personator) == 0) {
@@ -871,7 +871,7 @@ public class MDPersonatorDialog extends BaseStepDialog implements StepDialogInte
 		WelcomeDialog welcomeDialog = new WelcomeDialog(this, 0);
 		welcomeDialog.open();
 		if (!Const.isEmpty(licString)) {
-			MDProps.setProperty(TAG_PRIMARY_LICENSE, licString);
+			MDProps.setProperty(TAG_PRIMARY_LICENSE, licString.trim());
 			try {
 				MDProps.save();
 			} catch (IOException e) {

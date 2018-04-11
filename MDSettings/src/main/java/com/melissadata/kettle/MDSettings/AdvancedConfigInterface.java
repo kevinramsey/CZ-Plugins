@@ -165,7 +165,7 @@ public class AdvancedConfigInterface {
 	public void getLicenseValuesFromProperties(String key, License lic) {
 
 		if (key == MDPropTags.TAG_PRIMARY_LICENSE) {
-			lic.licenseString = MDProps.getProperty(key, "");
+			lic.licenseString = MDProps.getProperty(key, "").trim();
 			lic.CustomerID = MDProps.getProperty(MDPropTags.TAG_PRIMARY_ID, "");
 			lic.expiration = MDProps.getProperty(MDPropTags.TAG_PRIMARY_EXPIRATION, "");
 			lic.retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
@@ -693,7 +693,7 @@ public class AdvancedConfigInterface {
 
 	public void setProperties() {
 
-		MDProps.setProperty(MDPropTags.TAG_PRIMARY_LICENSE, settingsData.primeLicense.licenseString);
+		MDProps.setProperty(MDPropTags.TAG_PRIMARY_LICENSE, settingsData.primeLicense.licenseString.trim());
 		//MDProps.setProperty(MDPropTags.TAG_PRIMARY_LICENSE_ENTERPRISE, String.valueOf(settingsData.primeLicense.isEnterprise));
 		MDProps.setProperty(MDPropTags.TAG_PRIMARY_ID, settingsData.primeLicense.CustomerID);
 		MDProps.setProperty(MDPropTags.TAG_PRIMARY_RET_VAL, String.valueOf(settingsData.primeLicense.retVal));

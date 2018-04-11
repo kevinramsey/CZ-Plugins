@@ -133,7 +133,7 @@ public class TestService implements IRunnableWithProgress {
 		} else if ((settingData.primeLicense.retVal & MDPropTags.MDLICENSE_Community) != 0) {
 			license = MDPropTags.MD_COMMUNITY_LICENSE;
 		}
-		return license;
+		return license.trim();
 	}
 
 	private String getMULicense() {
@@ -148,7 +148,7 @@ public class TestService implements IRunnableWithProgress {
 		if ((settingData.trialLicense.retVal & MDPropTags.MDLICENSE_MatchUpLite) != 0)
 			return tmpLic;
 		// must be community
-		return tmpLic;
+		return tmpLic.trim();
 	}
 
 	private String getProfilerLicense() {
@@ -156,7 +156,7 @@ public class TestService implements IRunnableWithProgress {
 		if (Const.isEmpty(license)) {
 			license = "DEMO";
 		}
-		return license;
+		return license.trim();
 	}
 
 	private boolean isLicensed(int nProduct) {
@@ -522,7 +522,7 @@ public class TestService implements IRunnableWithProgress {
 				settingPath = CZUtil.getCZWorkDirectory().getPath() + Const.FILE_SEPARATOR + "presort";
 				File settingsFile = new File(settingPath, SETTING_FILE_NAME);
 				BufferedWriter propFile = new BufferedWriter(new FileWriter(settingsFile));
-				propFile.write("License=" + getLicenseString(MDPropTags.MDLICENSE_Presort));
+				propFile.write("License=" + getLicenseString(MDPropTags.MDLICENSE_Presort).trim());
 				propFile.newLine();
 				propFile.write("DataPath=" + settingData.preSortDataPath);
 				propFile.newLine();

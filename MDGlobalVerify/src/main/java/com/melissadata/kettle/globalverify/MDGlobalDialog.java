@@ -171,8 +171,8 @@ public class MDGlobalDialog extends BaseStepDialog implements StepDialogInterfac
 	}
 
 	private String checkLicense() {
-		String lic = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "");
-		String trialLic = MDProps.getProperty(MDPropTags.TAG_TRIAL_LICENSE, "");
+		String lic = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "").trim();
+		String trialLic = MDProps.getProperty(MDPropTags.TAG_TRIAL_LICENSE, "").trim();
 		String licTestResult = getTestResult();
 		if (Const.isEmpty(lic) && Const.isEmpty(trialLic))
 			return "LicenseNotSet";
@@ -890,7 +890,7 @@ public class MDGlobalDialog extends BaseStepDialog implements StepDialogInterfac
 		WelcomeDialog welcomeDialog = new WelcomeDialog(this, 0);
 		welcomeDialog.open();
 		if (!Const.isEmpty(licString)) {
-			MDProps.setProperty(TAG_PRIMARY_LICENSE, licString);
+			MDProps.setProperty(TAG_PRIMARY_LICENSE, licString.trim());
 			try {
 				MDProps.save();
 			} catch (IOException e) {

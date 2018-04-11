@@ -399,7 +399,7 @@ public /*abstract*/ class MDPropertyWebService /* extends MDPropertyWebServiceSe
 			MDProps.load();
 			// Get the real Customer ids
 			try {
-				serviceData.realLicense = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "");
+				serviceData.realLicense = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "").trim();
 			} catch (NumberFormatException e) {
 				// Change the description
 				throw new KettleException(MDPropertyWebServiceStep.getErrorString("BadCustomerID", ""));

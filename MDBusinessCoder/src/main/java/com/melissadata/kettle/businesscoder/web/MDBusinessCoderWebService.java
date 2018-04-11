@@ -226,7 +226,7 @@ public class MDBusinessCoderWebService{
 		busCoderData.requests = new ArrayList<MDBusinessCoderRequest>();
 		try {
 			MDProps.load();
-			busCoderData.realLicense = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "");
+			busCoderData.realLicense = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "").trim();
 			// get maximum requests per batch
 			try {
 				busCoderData.maxRequests = Integer.parseInt(MDProps.getProperty(TAG_BUSINESS_CODER_REQUESTS, "1"));

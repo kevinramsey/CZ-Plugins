@@ -1,9 +1,13 @@
 package com.melissadata.kettle.personator.ui;
 
+import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.custom.CTabFolder;
 import org.eclipse.swt.custom.CTabItem;
 import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Rectangle;
@@ -11,14 +15,7 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Group;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Listener;
-import org.eclipse.swt.widgets.MessageBox;
+import org.eclipse.swt.widgets.*;
 import org.pentaho.di.core.Const;
 import org.pentaho.di.i18n.BaseMessages;
 import com.melissadata.kettle.personator.MDPersonatorDialog;
@@ -46,6 +43,8 @@ public class PersonatorOptionsTab implements MDTab {
 	private Button                rCheckError;
 	private Button                ckAdvancedAddressCorrection;
 	private Button                ckDemoMask;
+	private Combo                 comboDemoMask;
+	private CCombo                ccDemoMask;
 	private AdvancedOptionsDialog advanceOptionDialog;
 	private MDPersonatorDialog    dialog;
 
@@ -380,6 +379,25 @@ public class PersonatorOptionsTab implements MDTab {
 
 	private Group createDemographiscmaskGroup(Composite parent, Control last) {
 
+		String[] maskingOptions = { PersonatorFields.DEMOGRAPHICS_MASK_OPTION_YES, PersonatorFields.DEMOGRAPHICS_MASK_OPTION_MASK, PersonatorFields.DEMOGRAPHICS_MASK_OPTION_MASKONLY, PersonatorFields.DEMOGRAPHICS_MASK_OPTION_VALUEONLY };
+		Label lDescriptionSpacer;
+		Label lYes;
+		Label lYesDescription;
+		Label lMask;
+		Label lMaskDescription;
+		Label lMaskOnly;
+		Label lMaskOnlyDescription;
+		Label lValueOnly;
+		Label lValueOnlyDescription;
+		Label lCCSpacer;
+
+		ModifyListener changeListener = new ModifyListener() {
+			@Override
+			public void modifyText(ModifyEvent modifyEvent) {
+				dialog.setChanged();
+			}
+		};
+
 		Group demoMaskGroup = new Group(parent, SWT.NONE);
 		demoMaskGroup.setText(getString("DemoMaskGroup.Label"));
 		helper.setLook(demoMaskGroup);
@@ -409,10 +427,87 @@ public class PersonatorOptionsTab implements MDTab {
 
 		last = null;
 		last = helper.addLabel(wMaskComp, last, "OptionsTab.DemoMask.Description");
-		Label spacer1 = helper.addSpacer(wMaskComp, last);
-		last = spacer1;
-		last = ckDemoMask = helper.addCheckBox(wMaskComp, last, "OptionsTab.DemoMask");
+		last = lDescriptionSpacer = helper.addSpacer(wMaskComp, last);
 
+		lYes = new Label(wMaskComp, SWT.None);
+		fd = new FormData();
+		fd.top = new FormAttachment(lDescriptionSpacer, 0);
+		fd.left = new FormAttachment(0, 0);
+		fd.right = new FormAttachment(5, 0);
+		lYes.setLayoutData(fd);
+		helper.setLook(lYes);
+		lYes.setText(getString("DemoMask.Yes.Label"));
+		//lYes.setFont(JFaceResources.getFontRegistry().getBold(JFaceResources.DEFAULT_FONT));
+		lYesDescription = new Label(wMaskComp, SWT.None);
+		fd = new FormData();
+		fd.top = new FormAttachment(lDescriptionSpacer, 0);
+		fd.left = new FormAttachment(lYes, 0);
+		lYesDescription.setLayoutData(fd);
+		helper.setLook(lYesDescription);
+		lYesDescription.setText(getString("DemoMask.Yes.Description.Label"));
+
+		lMask = new Label(wMaskComp, SWT.None);
+		fd = new FormData();
+		fd.top = new FormAttachment(lYes, 0);
+		fd.left = new FormAttachment(0, 0);
+		fd.right = new FormAttachment(5, 0);
+		lMask.setLayoutData(fd);
+		helper.setLook(lMask);
+		lMask.setText(getString("DemoMask.Mask.Label"));
+		//lMask.setFont(JFaceResources.getFontRegistry().getBold(JFaceResources.DEFAULT_FONT));
+		lMaskDescription = new Label(wMaskComp, SWT.None);
+		fd = new FormData();
+		fd.top = new FormAttachment(lYes, 0);
+		fd.left = new FormAttachment(lMask, 0);
+		lMaskDescription.setLayoutData(fd);
+		helper.setLook(lMaskDescription);
+		lMaskDescription.setText(getString("DemoMask.Mask.Description.Label"));
+
+		lMaskOnly = new Label(wMaskComp, SWT.None);
+		fd = new FormData();
+		fd.top = new FormAttachment(lMask, 0);
+		fd.left = new FormAttachment(0, 0);
+		fd.right = new FormAttachment(5, 0);
+		lMaskOnly.setLayoutData(fd);
+		helper.setLook(lMaskOnly);
+		lMaskOnly.setText(getString("DemoMask.MaskOnly.Label"));
+		//lMaskOnly.setFont(JFaceResources.getFontRegistry().getBold(JFaceResources.DEFAULT_FONT));
+		lMaskOnlyDescription = new Label(wMaskComp, SWT.None);
+		fd = new FormData();
+		fd.top = new FormAttachment(lMask, 0);
+		fd.left = new FormAttachment(lMaskOnly, 0);
+		lMaskOnlyDescription.setLayoutData(fd);
+		helper.setLook(lMaskOnlyDescription);
+		lMaskOnlyDescription.setText(getString("DemoMask.MaskOnly.Description.Label"));
+
+		lValueOnly = new Label(wMaskComp, SWT.None);
+		fd = new FormData();
+		fd.top = new FormAttachment(lMaskOnly, 0);
+		fd.left = new FormAttachment(0, 0);
+		fd.right = new FormAttachment(5, 0);
+		lValueOnly.setLayoutData(fd);
+		helper.setLook(lValueOnly);
+		lValueOnly.setText(getString("DemoMask.ValueOnly.Label"));
+		//lValueOnly.setFont(JFaceResources.getFontRegistry().getBold(JFaceResources.DEFAULT_FONT));
+		lValueOnlyDescription = new Label(wMaskComp, SWT.None);
+		fd = new FormData();
+		fd.top = new FormAttachment(lMaskOnly, 0);
+		fd.left = new FormAttachment(lValueOnly, 0);
+		lValueOnlyDescription.setLayoutData(fd);
+		helper.setLook(lValueOnlyDescription);
+		lValueOnlyDescription.setText(getString("DemoMask.ValueOnly.Description.Label"));
+
+		lCCSpacer = helper.addSpacer(wMaskComp, lValueOnlyDescription);
+		ccDemoMask = new CCombo(wMaskComp, SWT.BORDER);
+		fd = new FormData();
+		fd.top = new FormAttachment(lCCSpacer, 0);
+		fd.left = new FormAttachment(0, 0);
+		fd.right = new FormAttachment(10, 0);
+		//fd.bottom = new FormAttachment(100, 0);
+		ccDemoMask.setLayoutData(fd);
+		helper.setLook(ccDemoMask);
+		ccDemoMask.setItems(maskingOptions);
+		ccDemoMask.addModifyListener(changeListener);
 		return demoMaskGroup;
 	}
 
@@ -437,11 +532,7 @@ public class PersonatorOptionsTab implements MDTab {
 
 		if (!Const.isEmpty(metaPersonator.personatorFields.optionFields.get(PersonatorFields.TAG_OPTION_DEMOGRAPHICS).metaValue)) {
 			String masking = metaPersonator.personatorFields.optionFields.get(PersonatorFields.TAG_OPTION_DEMOGRAPHICS).metaValue;
-			if (masking.equals(PersonatorFields.DEMOGRAPHICS_MASK_ON)) {
-				ckDemoMask.setSelection(true);
-			} else {
-				ckDemoMask.setSelection(false);
-			}
+			ccDemoMask.setText(masking);
 		}
 
 		if (!Const.isEmpty(metaPersonator.personatorFields.optionFields.get(PersonatorFields.TAG_OPTION_ADDR_ADVANCED_ADDR_CORRECT).metaValue)) {
@@ -594,7 +685,13 @@ public class PersonatorOptionsTab implements MDTab {
 //		metaPersonator.personatorFields.optionFields.get(PersonatorFields.TAG_OPTION_MOVE_CONFIDENCE).metaValue = getMoveConfidence();
 
 		metaPersonator.personatorFields.optionFields.get(PersonatorFields.TAG_OPTION_ADDR_ADVANCED_ADDR_CORRECT).metaValue = String.valueOf(ckAdvancedAddressCorrection.getSelection());
-		metaPersonator.personatorFields.optionFields.get(PersonatorFields.TAG_OPTION_DEMOGRAPHICS).metaValue = ckDemoMask.getSelection() ? PersonatorFields.DEMOGRAPHICS_MASK_ON : PersonatorFields.DEMOGRAPHICS_MASK_OFF;
+		metaPersonator.personatorFields.optionFields.get(PersonatorFields.TAG_OPTION_DEMOGRAPHICS).metaValue = ccDemoMask.getText();//getMaskingValue();//ckDemoMask.getSelection() ? PersonatorFields.DEMOGRAPHICS_MASK_ON : PersonatorFields.DEMOGRAPHICS_MASK_OFF;
+	}
+
+	private String  getMaskingValue(){
+		String val = "";
+
+		return val;
 	}
 
 	private boolean actionSelected() {

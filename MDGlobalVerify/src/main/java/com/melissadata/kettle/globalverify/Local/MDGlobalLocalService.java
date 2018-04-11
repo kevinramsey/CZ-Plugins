@@ -262,7 +262,7 @@ public class MDGlobalLocalService extends MDGlobalService {
 
 	private String getLicenseString() {
 
-		return MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "");
+		return MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "").trim();
 	}
 
 	private String getDataPath() {

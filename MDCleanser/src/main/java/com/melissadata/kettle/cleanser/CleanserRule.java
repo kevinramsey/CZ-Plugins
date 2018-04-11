@@ -460,6 +460,6 @@ public class CleanserRule implements Cloneable {
 			licString = MDPropTags.MD_COMMUNITY_LICENSE;
 		}
 
-		return licString;
+		return licString.trim();
 	}
 }

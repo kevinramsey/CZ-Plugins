@@ -229,7 +229,7 @@ public class MatchUpMeta implements Cloneable {
 		if (Const.isEmpty(license)) {
 			license = "Z2lz/PlQ0vtEZFXvUycVvi==lj9xZarB6Gd7zQ4xOu9dOO==";
 		}
-		return license;
+		return license.trim();
 	}
 
 	public boolean getListSuppress() {
