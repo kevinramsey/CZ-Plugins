@@ -60,8 +60,10 @@
         <dom4j.version>2.1.0</dom4j.version>
         <json.simple.version>0.4</json.simple.version>
         <commons-httpclient.version>3.1</commons-httpclient.version>
+        <reporting-engine.version>8.1.0.0-SNAPSHOT</reporting-engine.version>
 
-        <!-- Maven plugins -->
+
+         <!-- Maven plugins -->
         <maven.compiler.version>3.7.0</maven.compiler.version>
         <maven.jar.version>3.0.2</maven.jar.version>
 

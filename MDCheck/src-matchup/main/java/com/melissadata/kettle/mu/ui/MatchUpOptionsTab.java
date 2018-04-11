@@ -527,7 +527,7 @@ public class MatchUpOptionsTab implements MDTab {
 	}
 
 	private void moveItemDown(int selected) {
-		if (selected > 2) {
+		if (selected < 0 || selected > 2) {
 			return;
 		}
 		// Index values start at 1 but selected starts at 0
