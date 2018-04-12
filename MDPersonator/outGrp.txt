@@ -15,6 +15,7 @@
 #
 #
 
+
 # Name output returned fields
 Basic;NameFull;Basic(Default);Returns the full name for the record.
 Basic;CompanyName;Basic(Default);Returns the company or business name for the record.
@@ -111,6 +112,9 @@ ParsedPhone;PhoneExtension;Phone Details;Returns the parsed extension for the ph
 ParsedPhone;PhonePrefix;Phone Details;Returns the parsed prefix for the phone number entered in the Phone field.
 ParsedPhone;PhoneSuffix;Phone Details;Returns the parsed suffix for the phone number entered in the Phone field.
 
+ParsedPhone;PhoneCountryCode;Phone Details;Returns the 2 character country code for the phone number entered in the Phone field.
+ParsedPhone;PhoneCountryName;Phone Details;Returns the full country name for the phone number entered in the Phone field.
+
 # Basic output returned for email field
 Basic;EmailAddress;Basic(Default);Returns the email address entered in the Email field.
 ParsedEmail;DomainName;Parsed Email Details;Returns the parsed domain name for the email entered in the Email field.
@@ -127,4 +131,33 @@ DemographicBasic;LengthOfResidence;Demographics; The range of the individual's l
 ---;Occupation;Demographics;The category for the individual's occupation.
 DemographicBasic;MaritalStatus;Demographics;Marital Status.
 DemographicBasic;PresenceOfChildren;Demographics; The presence of children in the household (e.g., "Unknown", "No Children Present", "Children Present").
-DemographicBasic;DemographicsResults;Demographics;Demographic result codes. 
+DemographicBasic;DemographicsResults;Demographics;Demographic result codes.
+
+DemographicBasic;ChildrenAgeRange;Demographics;Returns the age range of children present in the household.(e.g., "Blank", "0-2", "3-5", "6-10", "11-15", "16-17").
+DemographicBasic;CreditCardUser;Demographics;Returns whether the user has a credit card or not.(e.g., "Blank", "Yes", "No").
+DemographicBasic;Education;Demographics;Returns the highest level of education completed by an individual. (e.g., "Blank", "High School", "College", "Graduate School", "Vocational/Technical School").
+DemographicBasic;EthnicCode;Demographics;Returns an individual’s specific ethnicity.(e.g., "Value", "Afghan", "African-American", "Albanian").
+DemographicBasic;EthnicGroup;Demographics;Returns the grouped category for a person’s ethnicity. This is a more generalized grouping compared to Ethnic Codes.(e.g, "Southeast Asian, "Central & Southwest Asian, "Eastern European").
+DemographicBasic;HouseholdSize;Demographics;Returns the number of occupants in the household.
+DemographicBasic;MoveDate;Demographics;Returns the date associated with the move address.
+DemographicBasic;PoliticalParty;Demographics;Returns an individual’s political affiliation.(e.g., "Blank", "No Party", "Republican", "Democrat", "Independent").
+DemographicBasic;PresenceOfSenior;Demographics;Returns the presence of senior/s in the household.(e.g., "Blank", "Yes", "No").
+---;EstimatedHomeValue;No default;The estimated value of the home, given in U.S. Dollars.
+
+GrpIPAddress;DistanceAddressToIP;GrpIPAddress;This is the distance in miles between the latitude and longitude of the physical location of the IP Addressn and the latitude and longitude of the input Address.
+GrpIPAddress;IPAddress;GrpIPAddress;The IP address being looked up.
+GrpIPAddress;IPCity;GrpIPAddress;The city where the IP address is located.
+GrpIPAddress;IPConnectionSpeed;GrpIPAddress;The connection speed associated with this IP address. (e.g., "dialup", "broadband", "ultra broadband").  //(e.g., "").
+GrpIPAddress;IPConnectionType;GrpIPAddress;The type of connection used by this IP address.(e.g., "dialup", "wired", "wifi", "mobile", "satellite").
+GrpIPAddress;IPContinent;GrpIPAddress;The continent where the IP address is located.
+GrpIPAddress;IPCountryAbbreviation;GrpIPAddress;The ISO 3166-1 alpha-2 country code of the country where the IP address is located.
+GrpIPAddress;IPCountryName;GrpIPAddress;The full name of the country where the IP address is located.
+GrpIPAddress;IPDomainName;GrpIPAddress;The domain name associated with this IP address.
+GrpIPAddress;IPISPName;GrpIPAddress;The name of the Internet Service Provider associated with the IP Address.
+GrpIPAddress;IPLatitude;GrpIPAddress;The latitude for the IP address. This usually points to the IP Address's postal code.
+GrpIPAddress;IPLongitude;GrpIPAddress;The longitude for the IP address. This usually points to the IP Address's postal code.
+GrpIPAddress;IPPostalCode;GrpIPAddress;The postal code where the IP Address is located.
+GrpIPAddress;IPProxyDescription;GrpIPAddress;Additional Details for the Proxy Type returned.(e.g., "Tor-exit", "Tor-relay", "AOL", "Cloud", "DNS", "VPN", "Web-Browser").
+GrpIPAddress;IPProxyType;GrpIPAddress;The type of proxy for an IP Address.
+GrpIPAddress;IPRegion;GrpIPAddress;The region where the IP address is located, specific meaning varies from country to country. For IPs in the US this field returns the state that the IP is located within.
+GrpIPAddress;IPUTC;GrpIPAddress;The GMT offset for the area where the IP address is located.

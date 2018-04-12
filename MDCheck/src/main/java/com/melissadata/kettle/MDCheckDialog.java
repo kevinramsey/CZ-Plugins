@@ -795,6 +795,7 @@ public abstract class MDCheckDialog extends BaseStepDialog implements StepDialog
 					isLoad = false;
 				}
 			}
+			//FIXME This is where we check for VCC redistributable
 			String sy32  = System.getenv("WINDIR");
 			File   sys32 = new File(sy32, "system32\\msvcr110.dll");
 			if (!sys32.exists() && Const.isWindows()) {
