@@ -67,6 +67,14 @@ public class PersonatorFields {
 	public static       String TAG_INPUT_COUNTRY                     = "input_country";
 	public static       String TAG_INPUT_PHONE                       = "input_phone";
 	public static       String TAG_INPUT_EMAIL                       = "input_email";
+	// Ip
+	public static       String TAG_INPUT_IP_ADDRESS                  = "input_ip_address";
+	//
+	public static       String TAG_INPUT_DOB_BIRTHDAY             = "input_dob_birthDay";
+	public static       String TAG_INPUT_DOB_BIRTHMONTH           = "input_dob_birthMonth";
+	public static       String TAG_INPUT_DOB_BIRTHYEAR            = "input_dob_birthYear";
+
+	// Free form
 	public static       String TAG_INPUT_FREE_FORM                   = "input_free_form";
 	public static       String TAG_OUTPUT_RESULTS                    = "output_results";
 	public ConcurrentHashMap<String, MetaVal> realOptionFields;
@@ -209,6 +217,12 @@ public class PersonatorFields {
 
 		inputFields.put(TAG_INPUT_PHONE, new MetaVal("", "PhoneNumber", 50));
 		inputFields.put(TAG_INPUT_EMAIL, new MetaVal("", "EmailAddress", 50));
+		//IP
+		inputFields.put(TAG_INPUT_IP_ADDRESS, new MetaVal("", "IPAddress", 50));
+		//DOB
+		inputFields.put(TAG_INPUT_DOB_BIRTHDAY, new MetaVal("", "BirthDay", 50));
+		inputFields.put(TAG_INPUT_DOB_BIRTHMONTH, new MetaVal("", "BirthMonth", 50));
+		inputFields.put(TAG_INPUT_DOB_BIRTHYEAR, new MetaVal("", "BirthYear", 50));
 
 		HashMap<Integer, RowOutput> grpList = MDPersonatorMeta.getOutputgroups();
 		RowOutput                   ro;

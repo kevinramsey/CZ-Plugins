@@ -38,6 +38,8 @@ public class InputPersonatorTab implements MDTab {
 	private Group nameGroup;
 	private Group addressGroup;
 	private Group phoneEmailGroup;
+	private Group ipGroup;
+	private Group dobGroup;
 	
 	private MDInputCombo wCompany;
 	private MDInputCombo wFullName;
@@ -55,6 +57,12 @@ public class InputPersonatorTab implements MDTab {
 	
 	private MDInputCombo wPhone;
 	private MDInputCombo wEmail;
+
+	private MDInputCombo wIPAddress;
+
+	private MDInputCombo wBirthDay;
+	private MDInputCombo wBirthMonth;
+	private MDInputCombo wBirthYear;
 	
 	private Button rFreeForm;
 	private Button rParsedAddr;
@@ -166,9 +174,6 @@ public class InputPersonatorTab implements MDTab {
 		addressGroup.setLayoutData(fd);
 
 		addressGroup.setLayout(fl);
-
-		
-		
 		wAddressLine1 = helper.addInputComboBox(addressGroup, null, "InputTab.AddressLine1","NInAddressLine1");
 		wAddressLine2 = helper.addInputComboBox(addressGroup, wAddressLine1.getComboBox(), "InputTab.AddressLine2","NInAddressLine2");
 		wCity = helper.addInputComboBox(addressGroup, wAddressLine2.getComboBox(), "InputTab.City","NInCity");
@@ -176,24 +181,44 @@ public class InputPersonatorTab implements MDTab {
 		wZip = helper.addInputComboBox(addressGroup, wState.getComboBox(), "InputTab.Zip","NInZip");
 		wCountry = helper.addInputComboBox(addressGroup, wZip.getComboBox(), "InputTab.Country","NInCountry");
 
-		
-		
-		// input address group
+		// input phone Email group
 		phoneEmailGroup = new Group(parsedGroup, SWT.NONE);
 		phoneEmailGroup.setText(getString("InputPhoneEmailGroup.Label"));
 		helper.setLook(phoneEmailGroup);
+		fd = new FormData();
+		fd.left = new FormAttachment(50, helper.margin);
+		fd.top = new FormAttachment(nameGroup, helper.margin);
+		fd.right = new FormAttachment(100, -helper.margin);
+		phoneEmailGroup.setLayoutData(fd);
+		phoneEmailGroup.setLayout(fl);
+		wPhone = helper.addInputComboBox(phoneEmailGroup, null, "InputTab.Phone","NInPhone");
+		wEmail = helper.addInputComboBox(phoneEmailGroup, wPhone.getComboBox(), "InputTab.Email","NInEmail");
 
+		// input IP group
+		ipGroup = new Group(parsedGroup, SWT.NONE);
+		ipGroup.setText(getString("InputIPGroup.Label"));
+		helper.setLook(ipGroup);
+		fd = new FormData();
+		fd.left = new FormAttachment(50, helper.margin);
+		fd.top = new FormAttachment(phoneEmailGroup, helper.margin);
+		fd.right = new FormAttachment(100, -helper.margin);
+		ipGroup.setLayoutData(fd);
+		ipGroup.setLayout(fl);
+		wIPAddress = helper.addInputComboBox(ipGroup, null, "InputTab.IP","NInIP");
+
+		// input DOB group
+		dobGroup = new Group(parsedGroup, SWT.NONE);
+		dobGroup.setText(getString("InputDOBGroup.Label"));
+		helper.setLook(dobGroup);
 		fd = new FormData();
 		fd.left = new FormAttachment(0, helper.margin);
 		fd.top = new FormAttachment(nameGroup, helper.margin);
 		fd.right = new FormAttachment(50, -helper.margin);
-
-		phoneEmailGroup.setLayoutData(fd);
-
-		phoneEmailGroup.setLayout(fl);
-
-		wPhone = helper.addInputComboBox(phoneEmailGroup, null, "InputTab.Phone","NInPhone");
-		wEmail = helper.addInputComboBox(phoneEmailGroup, wPhone.getComboBox(), "InputTab.Email","NInEmail");
+		dobGroup.setLayoutData(fd);
+		dobGroup.setLayout(fl);
+		wBirthDay = helper.addInputComboBox(dobGroup, null, "InputTab.BirthDay","NInBirthDay");
+		wBirthMonth = helper.addInputComboBox(dobGroup, null, "InputTab.BirthMonth","NInBirthMonth");
+		wBirthYear = helper.addInputComboBox(dobGroup, null, "InputTab.BirthYear","NInBirthYear");
 		
 		wCompany.getComboBox().setToolTipText(getString("Company.Tooltip"));
 		wFullName.getComboBox().setToolTipText(getString("FullName.Tooltip"));
@@ -207,7 +232,10 @@ public class InputPersonatorTab implements MDTab {
 		wCountry.getComboBox().setToolTipText(getString("Country.Tooltip"));
 		wPhone.getComboBox().setToolTipText(getString("Phone.Tooltip"));
 		wEmail.getComboBox().setToolTipText(getString("Email.Tooltip"));
-
+		wIPAddress.getComboBox().setToolTipText(getString("IP.Tooltip"));
+		wBirthDay.getComboBox().setToolTipText(getString("BirthDay.Tooltip"));
+		wBirthMonth.getComboBox().setToolTipText(getString("BirthMonth.Tooltip"));
+		wBirthYear.getComboBox().setToolTipText(getString("BirthYear.Tooltip"));
 		// Fit the composite within its container (the scrolled composite)
 		fd = new FormData();
 		fd.left = new FormAttachment(0, 0);
@@ -303,6 +331,9 @@ public class InputPersonatorTab implements MDTab {
 		wPhone.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_PHONE).metaValue);
 		wEmail.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_EMAIL).metaValue);
 
+		wBirthDay.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHDAY).metaValue);
+		wBirthMonth.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHMONTH).metaValue);
+		wBirthYear.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHYEAR).metaValue);
 		// Set initial enable
 		enable();
 
@@ -315,8 +346,6 @@ public class InputPersonatorTab implements MDTab {
 	 */
 	public void getData(MDPersonatorMeta metaPersonator) {
 
-		// Fill it in
-		
 		if(rParsedAddr.getSelection()){
 			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_FREE_FORM).metaValue = null;
 			
@@ -334,6 +363,12 @@ public class InputPersonatorTab implements MDTab {
 	
 			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_PHONE).metaValue = wPhone.getValue();
 			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_EMAIL).metaValue = wEmail.getValue();
+
+			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_IP_ADDRESS).metaValue = wIPAddress.getValue();
+
+			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHDAY).metaValue = wBirthDay.getValue();
+			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHMONTH).metaValue = wBirthMonth.getValue();
+			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHYEAR).metaValue = wBirthYear.getValue();
 		
 		} else {
 			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_FREE_FORM).metaValue = wFreeForm.getValue();
@@ -352,6 +387,12 @@ public class InputPersonatorTab implements MDTab {
 	
 			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_PHONE).metaValue = null;
 			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_EMAIL).metaValue = null;
+
+			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_IP_ADDRESS).metaValue = null;
+
+			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHDAY).metaValue = null;
+			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHMONTH).metaValue = null;
+			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHYEAR).metaValue = null;
 			
 		}
 		metaPersonator.personatorFields.optionFields.get(PersonatorFields.TAG_OPTION_FREE_FORM).metaValue = String.valueOf(rFreeForm.getSelection());
@@ -359,6 +400,7 @@ public class InputPersonatorTab implements MDTab {
 		
 	
 	}
+
 	/*
 	 * (non-Javadoc)
 	 * @see com.melissadata.kettle.MDTab#advancedConfigChanged()
@@ -387,7 +429,9 @@ public class InputPersonatorTab implements MDTab {
 			addressGroup.setEnabled(false);
 			nameGroup.setEnabled(false);
 			phoneEmailGroup.setEnabled(false);
-			
+			ipGroup.setEnabled(false);
+			dobGroup.setEnabled(false);
+
 			wFreeForm.setEnabled(true);
 			
 			wAddressLine1.setEnabled(false);
@@ -403,6 +447,12 @@ public class InputPersonatorTab implements MDTab {
 			wFullName.setEnabled(false);
 			wEmail.setEnabled(false);
 			wPhone.setEnabled(false);
+
+			wIPAddress.setEnabled(false);
+
+			wBirthDay.setEnabled(false);
+			wBirthMonth.setEnabled(false);
+			wBirthYear.setEnabled(false);
 			
 		} else if(rParsedAddr.getSelection()){
 			freeFormGroup.setEnabled(false);
@@ -410,7 +460,8 @@ public class InputPersonatorTab implements MDTab {
 			addressGroup.setEnabled(true);
 			nameGroup.setEnabled(true);
 			phoneEmailGroup.setEnabled(true);
-			
+			ipGroup.setEnabled(true);
+			dobGroup.setEnabled(false);
 			
 			wFreeForm.setEnabled(false);
 			
@@ -427,6 +478,12 @@ public class InputPersonatorTab implements MDTab {
 			wFullName.setEnabled(true);
 			wEmail.setEnabled(true);
 			wPhone.setEnabled(true);
+
+			wIPAddress.setEnabled(true);
+
+			wBirthDay.setEnabled(true);
+			wBirthMonth.setEnabled(true);
+			wBirthYear.setEnabled(true);
 			
 		}
 		
