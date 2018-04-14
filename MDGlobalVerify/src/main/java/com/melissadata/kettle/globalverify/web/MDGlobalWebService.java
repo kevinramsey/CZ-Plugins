@@ -308,7 +308,7 @@ public class MDGlobalWebService extends MDGlobalService {
 
 			if (handler.getServiceName().equals("PHONE")) {
 				JSONObject mainObj = new JSONObject();
-				String     id      = String.valueOf(checkData.realCustomerID);
+				String     id      = String.valueOf(checkData.realLicense);
 				String     tranRef = checkMeta.getTransmissionReference();
 				mainObj.put("CustomerID", id);
 				mainObj.put("TransmissionReference", tranRef);
@@ -317,7 +317,7 @@ public class MDGlobalWebService extends MDGlobalService {
 				xmlRequest = sendRequest ? mainObj.toJSONString() : null;
 			} else {
 				// Add customer id
-				addTextNode(requestDoc, requestDoc.getDocumentElement(), "CustomerID", "" + checkData.realCustomerID);
+				addTextNode(requestDoc, requestDoc.getDocumentElement(), "CustomerID", "" + checkData.realLicense);
 				// Build the request document from the request data
 				sendRequest = handler.buildWebRequest(requestDoc, checkData, requests, testing);
 				// Convert the document object to an XML request string
@@ -370,16 +370,31 @@ public class MDGlobalWebService extends MDGlobalService {
 		}
 	}
 
-	private String getCustomerID() {
+//	private String getCustomerID() {
+//
+//		String id     = "";
+//		int    retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
+//		if ((retVal & MDPropTags.MDLICENSE_GlobalVerify) != 0) {
+//			id = MDProps.getProperty(MDPropTags.TAG_PRIMARY_ID, "");
+//		} else {
+//			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
+//			if ((retVal & MDPropTags.MDLICENSE_GlobalVerify) != 0) {
+//				id = MDProps.getProperty(MDPropTags.TAG_TRIAL_ID, "");
+//			}
+//		}
+//		return id;
+//	}
+
+	private String getCustomerLicense() {
 
 		String id     = "";
 		int    retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
 		if ((retVal & MDPropTags.MDLICENSE_GlobalVerify) != 0) {
-			id = MDProps.getProperty(MDPropTags.TAG_PRIMARY_ID, "");
+			id = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "");
 		} else {
 			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
 			if ((retVal & MDPropTags.MDLICENSE_GlobalVerify) != 0) {
-				id = MDProps.getProperty(MDPropTags.TAG_TRIAL_ID, "");
+				id = MDProps.getProperty(MDPropTags.TAG_TRIAL_LICENSE, "");
 			}
 		}
 		return id;
@@ -421,8 +436,10 @@ public class MDGlobalWebService extends MDGlobalService {
 			saxReader = new SAXReader();
 			// Get the real Customer ids
 			try {
-				String customerID = getCustomerID();
-				checkData.realCustomerID = Integer.parseInt(customerID);
+//				String customerID = getCustomerID();
+//				checkData.realCustomerID = Integer.parseInt(customerID);
+				String lic = getCustomerLicense();
+				checkData.realLicense = lic;
 			} catch (NumberFormatException e) {
 				// Change the description
 				throw new KettleException(MDGlobalVerify.getErrorString("BadCustomerID", ""));

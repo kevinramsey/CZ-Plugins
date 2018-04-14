@@ -298,14 +298,15 @@ public class MDIPLocatorWebService extends MDCheckService {
 	private void doWebRequests(WebRequestHandler handler, List<MDCheckRequest> requests, int product, int queue, int attempts) throws KettleException {
 		try {
 			// Add customer id
-			String customerID = stepData.getAdvancedConfiguration().getCustomerID(product);
+			//String customerID = stepData.getAdvancedConfiguration().getCustomerID(product);
+			String licenseStr = stepData.getAdvancedConfiguration().getProdutLicense(product);
 			boolean sendRequest = false;
 			String jsonRequest = null;
-			if (!Const.isEmpty(customerID)) {
+			if (!Const.isEmpty(licenseStr)) {
 
 				if (product == AdvancedConfigurationMeta.MDLICENSE_IPLocator) {
 					JSONObject mainObj = new JSONObject();
-					mainObj.put("CustomerID", customerID);
+					mainObj.put("CustomerID", licenseStr);
 					mainObj.put("TransmissionReference", "");
 					sendRequest = handler.buildWebRequest(mainObj, checkData, requests);
 

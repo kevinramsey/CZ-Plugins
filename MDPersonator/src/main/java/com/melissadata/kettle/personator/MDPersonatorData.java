@@ -52,7 +52,7 @@ public class MDPersonatorData extends BaseStepData implements StepDataInterface 
 	public OutputPhoneFormat				phoneFormat;
 	public boolean							freeForm;
 	public boolean							parsedAddr;
-	public int								realCustomerID;
+	//public int								realCustomerID;
 	public String							realPAFID;
 	public int								maxRequests;
 	public URL								realWebPersonatorURL;

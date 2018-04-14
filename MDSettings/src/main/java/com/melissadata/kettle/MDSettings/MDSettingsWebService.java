@@ -407,6 +407,7 @@ public class MDSettingsWebService {
 					}
 				}
 				if (nProduct == MDPropTags.MDLICENSE_RBDI) {
+
 					// Call rbdi web service
 					if (processUsingWebService) {
 						statusCode = getWebClient(MDPropTags.MENU_ID_CONTACTVERIFY).call(settingData.realWebRBDIndicatorURL, xmlRequest, xmlResponse);
@@ -708,6 +709,13 @@ public class MDSettingsWebService {
 
 	private String getCustomerID(int nProduct) {
 
+
+		int addr = MDPropTags.MDLICENSE_Address;
+		int ph = MDPropTags.MDLICENSE_Phone;
+		int em = MDPropTags.MDLICENSE_Email;
+		int go = MDPropTags.MDLICENSE_GeoCode;
+		int rb = MDPropTags.MDLICENSE_RBDI;
+
 		int    retVal = settingData.primeLicense.retVal;
 		String id     = "";
 		if (nProduct == MDPropTags.MDLICENSE_BusinessCoder) {
@@ -715,11 +723,21 @@ public class MDSettingsWebService {
 		}
 
 		if ((retVal & nProduct) != 0) {
-			id = settingData.primeLicense.CustomerID;
+			if (nProduct == MDPropTags.MDLICENSE_Address || nProduct == MDPropTags.MDLICENSE_Address || nProduct == MDPropTags.MDLICENSE_Phone || nProduct == MDPropTags.MDLICENSE_Email || nProduct == MDPropTags.MDLICENSE_GeoCode
+			    || nProduct == MDPropTags.MDLICENSE_Name || nProduct == MDPropTags.MDLICENSE_RBDI) {
+				id = settingData.primeLicense.CustomerID;
+			} else	{
+				id = settingData.primeLicense.licenseString;
+			}
 		} else {
 			retVal = settingData.trialLicense.retVal;
 			if ((retVal & nProduct) != 0) {
-				id = settingData.trialLicense.CustomerID;
+				if (nProduct == MDPropTags.MDLICENSE_Address || nProduct == MDPropTags.MDLICENSE_Address || nProduct == MDPropTags.MDLICENSE_Phone || nProduct == MDPropTags.MDLICENSE_Email || nProduct == MDPropTags.MDLICENSE_GeoCode
+				    || nProduct == MDPropTags.MDLICENSE_Name || nProduct == MDPropTags.MDLICENSE_RBDI) {
+					id = settingData.trialLicense.CustomerID;
+				} else	{
+					id = settingData.trialLicense.licenseString;
+				}
 			}
 		}
 

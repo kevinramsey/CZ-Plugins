@@ -19,7 +19,7 @@ public class MDGlobalData extends BaseStepData implements StepDataInterface {
 	public RowMetaInterface				outputMeta;
 	public List<List<MDGlobalRequest>>	requests;
 	// Customer id
-	public int							realCustomerID;
+	//public int							realCustomerID;
 	// PAF id
 	public String						realPAFID;
 	// Maximum requests per batch

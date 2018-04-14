@@ -85,9 +85,12 @@ public class PersonatorWebService extends MDPersonatorCVService {
 
 			// Get the real Customer ids
 			try {
-				String customerID = getCustomerID();
-				
-				checkData.realCustomerID = Integer.parseInt(customerID);
+//				String customerID = getCustomerID();
+//				checkData.realCustomerID = Integer.parseInt(customerID);
+
+				String lic = getCustomerLicense();
+				checkData.realLicense = lic;
+
 			} catch (NumberFormatException e) {
 				// Change the description
 				throw new KettleException(MDPersonator.getErrorString("BadCustomerID", ""));
@@ -150,16 +153,16 @@ public class PersonatorWebService extends MDPersonatorCVService {
 		}
 	}
 
-	private String getCustomerID(){
+	private String getCustomerLicense(){
 		String id = "";
 		int retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PRIMARY_RET_VAL, "0"));
 		
 		if((retVal & MDPropTags.MDLICENSE_Personator) != 0){
-			id = MDProps.getProperty(MDPropTags.TAG_PRIMARY_ID, "");
+			id = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "");
 		}else{
 			retVal = Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_TRIAL_RET_VAL, "0"));
 			if((retVal & MDPropTags.MDLICENSE_Personator) != 0){
-				id = MDProps.getProperty(MDPropTags.TAG_TRIAL_ID, "");
+				id = MDProps.getProperty(MDPropTags.TAG_TRIAL_LICENSE, "");
 			}
 		}
 
@@ -303,7 +306,7 @@ public class PersonatorWebService extends MDPersonatorCVService {
 
 			addTextNode(requestDoc, requestDoc.getDocumentElement(), "TransmissionReference", "" + checkMeta.getTransmissionReference());
 			// Add customer id
-			addTextNode(requestDoc, requestDoc.getDocumentElement(), "CustomerID", "" + checkData.realCustomerID);
+			addTextNode(requestDoc, requestDoc.getDocumentElement(), "CustomerID", "" + checkData.realLicense);
 			
 			// Build the request document from the request data
 			boolean sendRequest = handler.buildWebRequest(requestDoc, checkData, requests, testing);

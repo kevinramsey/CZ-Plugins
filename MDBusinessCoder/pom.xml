@@ -82,6 +82,12 @@
             <version>${external.pentaho.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>pentaho</groupId>
+            <artifactId>pentaho-xul-core</artifactId>
+            <version>${external.pentaho.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
