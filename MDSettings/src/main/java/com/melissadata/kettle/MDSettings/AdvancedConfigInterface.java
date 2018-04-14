@@ -625,7 +625,7 @@ public class AdvancedConfigInterface {
 		settingsData.setRetries(MDPropTags.MENU_ID_PERSONATOR_WORLD, Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_PERSONATOR_WORLD_WEB_RETRIES, "200")));
 		// Business Coder
 		settingsData.setThreads(MDPropTags.MENU_ID_BUSINESS_CODER, Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_BUSINESS_CODER_THREADS, "5")));
-		settingsData.setRequests(MDPropTags.MENU_ID_BUSINESS_CODER, Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_BUSINESS_CODER_REQUESTS, "1")));
+		settingsData.setRequests(MDPropTags.MENU_ID_BUSINESS_CODER, Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_BUSINESS_CODER_REQUESTS, "100")));
 		settingsData.setTimeout(MDPropTags.MENU_ID_BUSINESS_CODER, Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_BUSINESS_CODER_WEB_TIMEOUT, "45")));
 		settingsData.setRetries(MDPropTags.MENU_ID_BUSINESS_CODER, Integer.parseInt(MDProps.getProperty(MDPropTags.TAG_BUSINESS_CODER_WEB_RETRIES, "100")));
 

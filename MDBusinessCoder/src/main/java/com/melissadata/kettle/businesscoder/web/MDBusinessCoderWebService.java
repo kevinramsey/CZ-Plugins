@@ -229,10 +229,9 @@ public class MDBusinessCoderWebService{
 			busCoderData.realLicense = MDProps.getProperty(MDPropTags.TAG_PRIMARY_LICENSE, "").trim();
 			// get maximum requests per batch
 			try {
-				busCoderData.maxRequests = Integer.parseInt(MDProps.getProperty(TAG_BUSINESS_CODER_REQUESTS, "1"));
-				//FIXME change max requests
+				busCoderData.maxRequests = Integer.parseInt(MDProps.getProperty(TAG_BUSINESS_CODER_REQUESTS, "100"));
 				if (busCoderData.maxRequests > 100)
-					throw new KettleException("Business Coder batch capable to 1 records.  Please set max requests to 1");
+					throw new KettleException("Business Coder batch capable to 100 records.  Please set max requests to 100 or less");
 			} catch (NumberFormatException e) {
 				// Change the description
 				throw new KettleException("Problem getting max requests property");
