@@ -82,9 +82,8 @@
         <module>MDPersonator</module>
         <module>MDProfiler</module>
         <module>MDProperty</module>
-
         <module>assemblies\contactzone</module>
-      <!--  <module>InnoSetup\scripts</module> -->
+       <module>InnoSetup\scripts</module>
     </modules>
 
     <build>
