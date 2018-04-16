@@ -100,6 +100,21 @@
             <version>${commons-httpclient.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.melissadata</groupId>
+            <artifactId>cz.library</artifactId>
+            <version>${cz.library.version}</version>
+            <exclusions>
+
+                <exclusion>
+                    <groupId>pentaho-kettle</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+
+            </exclusions>
+            <type>jar</type>
+        </dependency>
+
     </dependencies>
 
     <build>

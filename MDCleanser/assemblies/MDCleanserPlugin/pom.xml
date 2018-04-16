@@ -6,14 +6,14 @@
 
     <groupId>com.melissadata.kettle</groupId>
     <artifactId>MDCleanserPlugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>8.0.0</version>
 
     <name>MDCleanserPlugin</name>
 
     <parent>
         <groupId>com.melissadata.kettle</groupId>
         <artifactId>MDCleanser-assemblies</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>8.0.0</version>
     </parent>
 
 
