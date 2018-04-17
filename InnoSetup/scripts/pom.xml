@@ -19,7 +19,7 @@
     <properties>
         <!--  <InnoSetup.dir>..\</InnoSetup.dir> -->
 
-        <module.parent.dir>C:\CZ-Plugins</module.parent.dir>
+        <module.parent.dir>E:\CZ-Pentaho\CZ-Plugins</module.parent.dir>
         <output.dir>${module.parent.dir}\assemblies\contactzone\target\CZ\CZ</output.dir>
         <output.cloud.dir>${module.parent.dir}\assemblies\contactzone\target\CZ\Cloud</output.cloud.dir>
 
