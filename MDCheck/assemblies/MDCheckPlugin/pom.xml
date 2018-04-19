@@ -6,25 +6,15 @@
 
     <groupId>com.melissadata.kettle</groupId>
     <artifactId>MDCheckPlugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>8.0.0</version>
 
     <name>MDCheckPlugin</name>
 
     <parent>
         <groupId>com.melissadata.kettle</groupId>
         <artifactId>MDCheck-assemblies</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>8.0.0</version>
     </parent>
-<!--
-    <properties>
-        <cz.library.version>1.1-SNAPSHOT</cz.library.version>
-        <mdsettings.version>1.1-SNAPSHOT</mdsettings.version>
-        <mdCheck.version>1.0-SNAPSHOT</mdCheck.version>
-        <mdlicense.version>1.0</mdlicense.version>
-        <mdcommon.version>1.0</mdcommon.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
--->
 
 
     <!-- Include the dependencies we will want in the final packaging -->
