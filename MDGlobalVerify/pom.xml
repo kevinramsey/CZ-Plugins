@@ -6,13 +6,13 @@
 
     <groupId>com.melissadata.kettle</groupId>
     <artifactId>MDGlobalVerify</artifactId>
-    <version>8.0.0</version>
+    <version>8.0.0-SNAPSHOT</version>
 
     <name>MDGlobalVerify</name>
     <parent>
         <groupId>com.melissadata.kettle</groupId>
         <artifactId>cz.plugins</artifactId>
-        <version>8.0.0</version>
+        <version>8.0.0-SNAPSHOT</version>
     </parent>
 
     <dependencies>

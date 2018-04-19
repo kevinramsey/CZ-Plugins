@@ -6,12 +6,12 @@
 
     <groupId>com.melissadata.kettle</groupId>
     <artifactId>MDCleanser</artifactId>
-    <version>8.0.0</version>
+    <version>8.0.0-SNAPSHOT</version>
 
     <parent>
         <groupId>com.melissadata.kettle</groupId>
         <artifactId>cz.plugins</artifactId>
-        <version>8.0.0</version>
+        <version>8.0.0-SNAPSHOT</version>
     </parent>
 
     <dependencies>
