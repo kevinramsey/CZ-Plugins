@@ -14,9 +14,13 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <module.parent.dir>C:\CZ-Plugins</module.parent.dir>
+    <!--    <module.parent.dir>C:\CZ-Plugins</module.parent.dir>  -->
+
+        <main.basedir>${project.basedir}</main.basedir>
+
+
         <!-- DATA DIR -->
-        <md.data.dir>${module.parent.dir}\assemblies\contactzone\src\main\resources\Data</md.data.dir>
+        <md.data.dir>${main.basedir}\assemblies\contactzone\src\main\resources\Data</md.data.dir>
         <!-- InnoSetup -->
         <!-- md files -->
         <cz.library.version>8.0.0</cz.library.version>
@@ -63,31 +67,62 @@
         <reporting-engine.version>8.1.0.0-SNAPSHOT</reporting-engine.version>
 
 
-         <!-- Maven plugins -->
+        <!-- Maven plugins -->
         <maven.compiler.version>3.7.0</maven.compiler.version>
         <maven.jar.version>3.0.2</maven.jar.version>
 
         <java.compile.target>1.7</java.compile.target>
 
+
+
     </properties>
 
 
     <modules>
-        <module>cz.library</module>
+    <module>MDCheck</module>
+        <module>InnoSetup</module>
+  <!--      <module>cz.library</module>
         <module>MDSettings</module>
         <module>MDBusinessCoder</module>
-        <module>MDCheck</module>
+
         <module>MDCleanser</module>
         <module>MDGlobalVerify</module>
         <module>MDPersonator</module>
         <module>MDProfiler</module>
         <module>MDProperty</module>
-
+-->
      <!--   <module>assemblies\contactzone</module> -->
       <!--  <module>InnoSetup\scripts</module> -->
-    </modules>
+   </modules>
 
     <build>
+
+        <plugins>
+
+
+
+            <!-- Add messages if nessassary -->
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>groovy-maven-plugin</artifactId>
+                <version>2.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source>
+                                log.info('Test message: {}', 'ccc')
+                            </source>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
         <!--<finalName>ContactZone-${project.version}</finalName> -->
         <!--
         <pluginManagement>

@@ -35,7 +35,7 @@
                 </execution>
             </executions>
             <configuration>
-                <executable>${module.parent.dir}\InnoSetup\ISCC.exe</executable>
+                <executable>${main.basedir}\InnoSetup\ISCC.exe</executable>
                 <arguments>
                     <argument>/DVERSION_NUM=${project.version}</argument>
                     <argument>/DMyAppVersion=${project.version}</argument>

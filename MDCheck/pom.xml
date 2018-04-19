@@ -15,6 +15,10 @@
         <version>8.0.0</version>
     </parent>
 
+    <properties>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
+
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/org.dom4j/dom4j -->
@@ -54,6 +58,12 @@
         <dependency>
             <groupId>pentaho-kettle</groupId>
             <artifactId>kettle-core</artifactId>
+            <version>${external.pentaho.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pentaho</groupId>
+            <artifactId>pentaho-xul-core</artifactId>
             <version>${external.pentaho.version}</version>
         </dependency>
 
@@ -201,8 +211,12 @@
 
     <build>
         <finalName>MDCheck-${project.version}</finalName>
+
+
+
         <plugins>
-            <!-- We use this plugin to compile as we need to add an additional src directory -->
+
+               <!-- We use this plugin to compile as we need to add an additional src directory -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>

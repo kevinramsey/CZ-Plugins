@@ -247,7 +247,7 @@ public class MDCheckMUService extends MDCheckService {
 			ReadWrite.ClearMappings();
 			for (MatchUpMeta.MapField mapping : sourceMapping) {
 				// Ignore undefined
-				if (Const.isEmpty(mapping.input) || (mapping.type == mdMUMatchcode.MatchcodeMapping.General)) {
+				if (Const.isEmpty(mapping.input) /*|| (mapping.type == mdMUMatchcode.MatchcodeMapping.General)*/) {
 					continue;
 				}
 				// Translate mapping enum between the matchcode object and the readwrite object
