@@ -16,9 +16,6 @@
         <version>8.0.0-SNAPSHOT</version>
     </parent>
 
-    <properties>
-        <main.basedir>${project.parent.parent.parent.basedir}</main.basedir>
-    </properties>
 
     <!-- Include the dependencies we will want in the final packaging -->
     <dependencies>

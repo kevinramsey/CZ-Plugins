@@ -172,7 +172,7 @@
                         </goals>
                         <configuration>
                             <files>
-                                <file>${main.basedir}/buildNumber.properties</file>
+                                <file>buildNumber.properties</file>
                             </files>
                         </configuration>
                     </execution>

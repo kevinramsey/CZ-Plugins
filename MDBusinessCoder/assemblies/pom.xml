@@ -13,13 +13,10 @@
 
     <parent>
         <groupId>com.melissadata.kettle</groupId>
-        <artifactId>MDBusinessCoder</artifactId>
+        <artifactId>cz.plugins</artifactId>
         <version>8.0.0-SNAPSHOT</version>
     </parent>
 
-    <properties>
-        <main.basedir>${project.parent.parent.basedir}</main.basedir>
-    </properties>
 
     <modules>
         <module>MDBusinessCoderPlugin</module>
