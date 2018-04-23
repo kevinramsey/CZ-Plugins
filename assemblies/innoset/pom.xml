@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.melissadata.kettle</groupId>
+    <artifactId>InnoSetup</artifactId>
+    <version>8.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>InnoSet</name>
+
+    <parent>
+        <groupId>com.melissadata.kettle</groupId>
+        <artifactId>contactzone-assemblies</artifactId>
+        <version>8.0.0-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <main.basedir>${project.parent.parent.basedir}</main.basedir>
+        <!--<module.parent.dir>E:\CZ-Pentaho\CZ-Plugins</module.parent.dir> -->
+        <output.dir>${main.basedir}\assemblies\contactzone\target\CZ\CZ</output.dir>
+        <output.cloud.dir>${main.basedir}\assemblies\contactzone\target\CZ\Cloud</output.cloud.dir>
+
+        <contactzone.build.dir>${main.basedir}\assemblies\contactzone\target\CZ\CZ</contactzone.build.dir>
+
+        <resources.dir>${main.basedir}\assemblies\innoset\czresources</resources.dir>
+        <!--    <cz.target.dir>..\..\..\assemblies\contactzone\target\ContactZone-${project.version}\ContactZone-${project.version}</cz.target.dir> -->
+
+        <!--   -->
+        <md.cz.property.files.dir>${contactzone.build.dir}\misc\properties</md.cz.property.files.dir>
+        <md.cz.rules.dir>${contactzone.build.dir}\misc\rules</md.cz.rules.dir>
+
+
+        <md.cz.application.files>${contactzone.build.dir}\Windows</md.cz.application.files>
+
+        <!--  <md.module.base.dir></md.module.base.dir> -->
+        <md.reports.dir>${contactzone.build.dir}\misc</md.reports.dir>
+        <md.cz.dll.dir>${contactzone.build.dir}\misc\DLLs</md.cz.dll.dir>
+        <md.cz.data.dir>${contactzone.build.dir}\Data</md.cz.data.dir>
+        <md.cz.matchup.files.dir>${contactzone.build.dir}\Matchup</md.cz.matchup.files.dir>
+        <md.cz.matchup.global.files.dir>${contactzone.build.dir}\Matchup\Global</md.cz.matchup.global.files.dir>
+
+        <!-- <md.cz.FNTBO.dir></md.cz.FNTBO.dir> -->
+        <md.cz.documentation.dir>${contactzone.build.dir}\Documentation</md.cz.documentation.dir>
+        <md.cz.samples.dir>${contactzone.build.dir}\Samples</md.cz.samples.dir>
+
+    </properties>
+
+    <modules>
+    <!-- <module>onPremises</module> -->
+    <!--  <module>cloud</module> -->
+    </modules>
+
+
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <executions>
+
+                    <execution>
+                        <id>op</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>${main.basedir}\assemblies\innoset\bin\ISCC.exe</executable>
+                            <arguments>
+                                <argument>/DVERSION_NUM=${project.version}</argument>
+                                <argument>/DMyAppVersion=${project.version}</argument>
+                                <argument>/DOUTPUT_DIR=${output.dir}</argument>
+                                <argument>/DRESOURCES_DIR=${resources.dir}</argument>
+                                <!-- <argument>/DISO_DIR=ContactZone-${project.version}</argument> -->
+                                <argument>${main.basedir}\assemblies\innoset\CZ_AntOP_A.iss</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+
+
+                    <execution>
+                        <id>cloud</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+
+                        <configuration>
+                            <executable>${main.basedir}\assemblies\innoset\bin\ISCC.exe</executable>
+                            <arguments>
+                                <argument>/DVERSION_NUM=${project.version}</argument>
+                                <argument>/DMyAppVersion=${project.version}</argument>
+                                <argument>/DOUTPUT_DIR=${output.cloud.dir}</argument>
+
+                                <argument>/DRESOURCES_DIR=${resources.dir}</argument>
+                                <argument>/DPROPERTIES_DIR=${md.cz.property.files.dir}</argument>
+                                <argument>/DRULES_DIR=${md.cz.rules.dir}</argument>
+                                <argument>/DAPP_FILES=${md.cz.application.files}</argument>
+                                <argument>/DREPORTS_DIR=${md.reports.dir}</argument>
+                                <argument>/DDLL_DIR=${md.cz.dll.dir}</argument>
+                                <argument>/DDATA_DIR=${md.cz.data.dir}</argument>
+                                <argument>/DMU_FILES_DIR=${md.cz.matchup.files.dir}</argument>
+                                <argument>/DMUGLOBAL_FILES_DIR=${md.cz.matchup.global.files.dir}</argument>
+                                <argument>/DDOCUMENTATION_DIR=${md.cz.documentation.dir}</argument>
+                                <argument>/DSAMPLES_DIR=${md.cz.samples.dir}</argument>
+                                <argument>${main.basedir}\assemblies\innoset\CZ_Cloud_8.iss</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+
+                </executions>
+
+
+
+
+            </plugin>
+
+
+
+
+
+                <plugin>
+                    <groupId>com.coderplus.maven.plugins</groupId>
+                    <artifactId>copy-rename-maven-plugin</artifactId>
+                    <version>1.0</version>
+                    <executions>
+                        <execution>
+                            <id>copy-file</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>rename</goal>
+
+                            </goals>
+                            <configuration>
+                                <sourceFile>${main.basedir}\assemblies\contactzone\target\CZ\CZ</sourceFile>
+                                <destinationFile>${main.basedir}\assemblies\contactzone\target\CZ\iso-${project.version}_${build.id}.${buildNumber}</destinationFile>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+
+        </plugins>
+
+    </build>
+
+</project>

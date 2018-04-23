@@ -15,6 +15,9 @@
         <version>8.0.0-SNAPSHOT</version>
     </parent>
 
+    <properties>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
 
 
     <!-- Requires CZ build of kettle as it contains the cz.library and MDSettings dependencies -->
@@ -91,7 +94,7 @@
     </dependencies>
 
     <build>
-        <finalName>MDBusinessCoder-${project.version}</finalName>
+        <finalName>${project.artifactId}-${project.version}.${buildNumber}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

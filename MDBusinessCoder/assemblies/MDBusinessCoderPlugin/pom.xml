@@ -17,6 +17,8 @@
     </parent>
 
 
+
+
     <!-- Include the dependencies we will want in the final packaging -->
     <dependencies>
         <!--###    mdLicense ###-->
@@ -56,6 +58,7 @@
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}-market-${project.version}_${build.id}.${buildNumber}</finalName>
         <plugins>
             <!-- Add messages if nessassary -->
             <plugin>
@@ -70,7 +73,7 @@
                         </goals>
                         <configuration>
                             <source>
-                                log.info('Test message: {}', 'message')
+                                log.info('Test message: {}', 'xx')
                             </source>
                         </configuration>
                     </execution>
@@ -100,12 +103,32 @@
             </plugin>
 
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0-alpha-1</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>read-project-properties</goal>
+                        </goals>
+                        <configuration>
+                            <files>
+                                <file>${main.basedir}\buildNumber.properties</file>
+                            </files>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptor>src/assembly/assembly.xml</descriptor>
-                    <finalName>MDBusinessCoder-market-${project.version}</finalName>
+
                 </configuration>
                 <executions>
                     <execution>
@@ -118,6 +141,7 @@
                 </executions>
             </plugin>
         </plugins>
+
     </build>
 
 </project>

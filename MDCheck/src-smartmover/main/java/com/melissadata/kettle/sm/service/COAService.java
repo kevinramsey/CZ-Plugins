@@ -126,7 +126,7 @@ public abstract class COAService extends MDCheckWebService {
 	/**
 	 * Called to output data from the queued results
 	 *
-	 * @param Xrequests
+	 * @param requests
 	 */
 	public void outputData(List<MDCheckRequest> requests) {
 		// Output each request's results

@@ -16,6 +16,9 @@
         <version>8.0.0-SNAPSHOT</version>
     </parent>
 
+    <properties>
+        <main.basedir>${project.parent.parent.parent.basedir}</main.basedir>
+    </properties>
 
     <!-- Include the dependencies we will want in the final packaging -->
     <dependencies>
@@ -65,7 +68,7 @@
 
 
     <build>
-        <finalName>MDProfiler-market-${project.version}</finalName>
+        <finalName>${project.artifactId}-market-${project.version}_${build.id}.${buildNumber}</finalName>
         <plugins>
              <!-- Update the version.xml with current build number -->
             <plugin>

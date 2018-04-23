@@ -5,7 +5,7 @@
 
     <groupId>com.melissadata.kettle</groupId>
     <artifactId>contactzone-assemblies</artifactId>
-    <version>8.0.0-SNAPSHOT.4-CZ.0</version>
+    <version>8.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>ContactZone Assemblies</name>
@@ -16,8 +16,16 @@
     <version>8.0.0-SNAPSHOT</version>
 </parent>
 
+    <properties>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+
+    </properties>
+
     <modules>
         <module>contactzone</module>
+        <module>innoset</module>
     </modules>
+
+
 
 </project>
