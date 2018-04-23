@@ -16,6 +16,7 @@
         <version>8.0.0-SNAPSHOT</version>
     </parent>
 
+
     <properties>
         <main.basedir>${project.parent.parent.basedir}</main.basedir>
         <!--<module.parent.dir>E:\CZ-Pentaho\CZ-Plugins</module.parent.dir> -->

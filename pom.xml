@@ -98,15 +98,15 @@
         <module>MDProfiler</module>
         <module>MDProperty</module>
 
-        <module>assemblies</module>
+     <module>assemblies</module>
 
-        <module>MDBusinessCoder\assemblies</module>
-        <module>MDCheck\assemblies</module>
-        <module>MDCleanser\assemblies</module>
-        <module>MDGlobalVerify\assemblies</module>
-        <module>MDPersonator\assemblies</module>
-        <module>MDProfiler\assemblies</module>
-        <module>MDProperty\assemblies</module>
+        <module>MDBusinessCoderPlugin</module>
+        <module>MDCheckPlugin</module>
+        <module>MDCleanserPlugin</module>
+        <module>MDGlobalVerifyPlugin</module>
+        <module>MDPersonatorPlugin</module>
+        <module>MDProfilerPlugin</module>
+        <module>MDPropertyPlugin</module>
 
     </modules>
 
@@ -172,7 +172,7 @@
                         </goals>
                         <configuration>
                             <files>
-                                <file>buildNumber.properties</file>
+                                <file>${main.basedir}\buildNumber.properties</file>
                             </files>
                         </configuration>
                     </execution>

@@ -5,16 +5,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.melissadata.kettle</groupId>
-    <artifactId>MDGlobalVerifyPlugin</artifactId>
+    <artifactId>MDCleanserPlugin</artifactId>
     <version>8.0.0-SNAPSHOT</version>
 
-    <name>MDGlobalVerifyPlugin</name>
+    <name>MDCleanserPlugin</name>
 
     <parent>
         <groupId>com.melissadata.kettle</groupId>
-        <artifactId>MDGlobalVerify-assemblies</artifactId>
+        <artifactId>cz.plugins</artifactId>
         <version>8.0.0-SNAPSHOT</version>
     </parent>
+
+    <properties>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
 
 
     <!-- Include the dependencies we will want in the final packaging -->
@@ -42,28 +46,16 @@
         <!-- ### MD Objects ####  -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdAddrDll</artifactId>
-            <version>${mdAddr.dll.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdGeoDll</artifactId>
-            <version>${mdGeo.dll.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdGlobalAddrDll</artifactId>
-            <version>${mdGlobal.dll.version}</version>
+            <artifactId>mdCleanserDll</artifactId>
+            <version>${mdCleanser.dll.version}</version>
             <type>zip</type>
         </dependency>
 
-        <!-- ##########  MDGlobalVerify  ############ -->
+        <!-- ##########  MDCleanser  ############ -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
-            <artifactId>MDGlobalVerify</artifactId>
-            <version>${mdGlobalVerify.plugin.version}</version>
+            <artifactId>MDCleanser</artifactId>
+            <version>${mdCleanser.plugin.version}</version>
             <type>jar</type>
         </dependency>
         <!-- ####  MD_Common  ############# -->
@@ -78,7 +70,6 @@
     <build>
         <plugins>
             <!-- Add messages if nessassary -->
-            <!--
             <plugin>
                 <groupId>org.codehaus.gmaven</groupId>
                 <artifactId>groovy-maven-plugin</artifactId>
@@ -97,7 +88,6 @@
                     </execution>
                 </executions>
             </plugin>
-            -->
             <!-- Update the version.xml with current build number -->
             <plugin>
                 <groupId>com.google.code.maven-replacer-plugin</groupId>

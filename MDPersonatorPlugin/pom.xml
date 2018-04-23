@@ -5,21 +5,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.melissadata.kettle</groupId>
-    <artifactId>MDBusinessCoderPlugin</artifactId>
+    <artifactId>MDPersonatorPlugin</artifactId>
     <version>8.0.0-SNAPSHOT</version>
 
-    <name>MDBusinessCoderPlugin</name>
+    <name>MDPersonatorPlugin</name>
 
     <parent>
         <groupId>com.melissadata.kettle</groupId>
-        <artifactId>MDBusinessCoder-assemblies</artifactId>
+        <artifactId>cz.plugins</artifactId>
         <version>8.0.0-SNAPSHOT</version>
     </parent>
-<!--
+
     <properties>
-        <main.basedir>${project.parent.parent.parent.basedir}</main.basedir>
+        <main.basedir>${project.parent.basedir}</main.basedir>
     </properties>
--->
+
 
     <!-- Include the dependencies we will want in the final packaging -->
     <dependencies>
@@ -43,12 +43,20 @@
             <version>${mdSettings.version}</version>
             <type>jar</type>
         </dependency>
-        <!-- ##########  MDCleanser  ############ -->
+
+
+        <!-- ##########  MDPersonator  ############ -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
-            <artifactId>MDBusinessCoder</artifactId>
-            <version>${mdBusinessCoder.plugin.version}</version>
+            <artifactId>MDPersonator</artifactId>
+            <version>${mdPersonator.plugin.version}</version>
             <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.melissadata.kettle</groupId>
+            <artifactId>MDPersonatorResources</artifactId>
+            <version>${mdPersonator.resources.version}</version>
+            <type>zip</type>
         </dependency>
         <!-- ####  MD_Common  ############# -->
         <dependency>
@@ -60,7 +68,6 @@
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}-market-${project.version}_${build.id}.${buildNumber}</finalName>
         <plugins>
             <!-- Add messages if nessassary -->
             <plugin>
@@ -75,7 +82,7 @@
                         </goals>
                         <configuration>
                             <source>
-                                log.info('Test message: {}', 'xx')
+                                log.info('Test message: {}', 'message')
                             </source>
                         </configuration>
                     </execution>
@@ -104,14 +111,13 @@
                 </configuration>
             </plugin>
 
-
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptor>src/assembly/assembly.xml</descriptor>
-
+                    <finalName>${project.artifactId}-market-${project.version}_${build.id}.${buildNumber}</finalName>
                 </configuration>
                 <executions>
                     <execution>
@@ -124,7 +130,6 @@
                 </executions>
             </plugin>
         </plugins>
-
     </build>
 
 </project>

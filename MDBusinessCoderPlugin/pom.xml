@@ -5,16 +5,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.melissadata.kettle</groupId>
-    <artifactId>MDCheckPlugin</artifactId>
+    <artifactId>MDBusinessCoderPlugin</artifactId>
     <version>8.0.0-SNAPSHOT</version>
 
-    <name>MDCheckPlugin</name>
+    <name>MDBusinessCoderPlugin</name>
 
     <parent>
         <groupId>com.melissadata.kettle</groupId>
-        <artifactId>MDCheck-assemblies</artifactId>
+        <artifactId>cz.plugins</artifactId>
         <version>8.0.0-SNAPSHOT</version>
     </parent>
+
+    <properties>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+    </properties>
 
 
     <!-- Include the dependencies we will want in the final packaging -->
@@ -39,68 +43,12 @@
             <version>${mdSettings.version}</version>
             <type>jar</type>
         </dependency>
-        <!-- ### MD Objects ####  -->
+        <!-- ##########  MDCleanser  ############ -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdAddrDll</artifactId>
-            <version>${mdAddr.dll.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdEmailDll</artifactId>
-            <version>${mdEmail.dll.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdGeoDll</artifactId>
-            <version>${mdGeo.dll.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdNameDll</artifactId>
-            <version>${mdName.dll.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdPhoneDll</artifactId>
-            <version>${mdPhone.dll.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdIpLocatorDll</artifactId>
-            <version>${mdIpLocator.dll.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdMatchUpDll</artifactId>
-            <version>${mdMatchUp.dll.version}</version>
-            <type>zip</type>
-        </dependency>
-        <!-- ##########  MDCheck  ############ -->
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>MDCheck</artifactId>
-            <version>${mdCheck.plugin.version}</version>
+            <artifactId>MDBusinessCoder</artifactId>
+            <version>${mdBusinessCoder.plugin.version}</version>
             <type>jar</type>
-        </dependency>
-        <!-- #  Match up  ############-->
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdMatchupResources</artifactId>
-            <version>${mdMatchUp.resources.version}</version>
-            <type>zip</type>
-        </dependency>
-        <dependency>
-            <groupId>com.melissadata.kettle</groupId>
-            <artifactId>mdMatchupGlobalResources</artifactId>
-            <version>${mdMatchUpGlobal.resources.version}</version>
-            <type>zip</type>
         </dependency>
         <!-- ####  MD_Common  ############# -->
         <dependency>
@@ -111,12 +59,10 @@
         </dependency>
     </dependencies>
 
-
     <build>
-        
+        <finalName>${project.artifactId}-market-${project.version}_${build.id}.${buildNumber}</finalName>
         <plugins>
             <!-- Add messages if nessassary -->
-            <!--
             <plugin>
                 <groupId>org.codehaus.gmaven</groupId>
                 <artifactId>groovy-maven-plugin</artifactId>
@@ -129,13 +75,12 @@
                         </goals>
                         <configuration>
                             <source>
-                                log.info('Test message: {}', 'message')
+                                log.info('Test message: {}', 'xx')
                             </source>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
-            -->
             <!-- Update the version.xml with current build number -->
             <plugin>
                 <groupId>com.google.code.maven-replacer-plugin</groupId>
@@ -166,7 +111,7 @@
                 <configuration>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptor>src/assembly/assembly.xml</descriptor>
-                    <finalName>${project.artifactId}-market-${project.version}_${build.id}.${buildNumber}</finalName>
+
                 </configuration>
                 <executions>
                     <execution>
@@ -179,6 +124,7 @@
                 </executions>
             </plugin>
         </plugins>
+
     </build>
 
 </project>
