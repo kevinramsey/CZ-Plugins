@@ -17,7 +17,7 @@
     </parent>
 
     <properties>
-        <main.basedir>${project.parent.parent.parent.basedir}</main.basedir>
+        <main.basedir>${project.parent.parent.basedir}</main.basedir>
     </properties>
 
 
@@ -117,6 +117,7 @@
 
 
     <build>
+        
         <plugins>
             <!-- Add messages if nessassary -->
             <!--

@@ -5,7 +5,7 @@
 
     <groupId>com.melissadata.kettle</groupId>
     <artifactId>InnoSetup</artifactId>
-    <version>8.0.0</version>
+    <version>8.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>InnoSet</name>
@@ -47,10 +47,6 @@
 
     </properties>
 
-    <modules>
-    <!-- <module>onPremises</module> -->
-    <!--  <module>cloud</module> -->
-    </modules>
 
 
     <build>
@@ -69,13 +65,12 @@
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>${main.basedir}\assemblies\innoset\bin\ISCC.exe</executable>
+                            <executable>${main.basedir}\assemblies\innoset\iss-bin\ISCC.exe</executable>
                             <arguments>
-                                <argument>/DVERSION_NUM=${project.version}</argument>
+                                <argument>/DVERSION_NUM=${project.version}.${build.id}.${buildNumber}</argument>
                                 <argument>/DMyAppVersion=${project.version}</argument>
                                 <argument>/DOUTPUT_DIR=${output.dir}</argument>
                                 <argument>/DRESOURCES_DIR=${resources.dir}</argument>
-                                <!-- <argument>/DISO_DIR=ContactZone-${project.version}</argument> -->
                                 <argument>${main.basedir}\assemblies\innoset\CZ_AntOP_A.iss</argument>
                             </arguments>
                         </configuration>
@@ -90,9 +85,9 @@
                         </goals>
 
                         <configuration>
-                            <executable>${main.basedir}\assemblies\innoset\bin\ISCC.exe</executable>
+                            <executable>${main.basedir}\assemblies\innoset\iss-bin\ISCC.exe</executable>
                             <arguments>
-                                <argument>/DVERSION_NUM=${project.version}</argument>
+                                <argument>/DVERSION_NUM=${project.version}.${build.id}.${buildNumber}</argument>
                                 <argument>/DMyAppVersion=${project.version}</argument>
                                 <argument>/DOUTPUT_DIR=${output.cloud.dir}</argument>
 
@@ -115,34 +110,28 @@
                 </executions>
 
 
-
-
             </plugin>
 
 
+            <plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-file</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>rename</goal>
 
-
-
-                <plugin>
-                    <groupId>com.coderplus.maven.plugins</groupId>
-                    <artifactId>copy-rename-maven-plugin</artifactId>
-                    <version>1.0</version>
-                    <executions>
-                        <execution>
-                            <id>copy-file</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>rename</goal>
-
-                            </goals>
-                            <configuration>
-                                <sourceFile>${main.basedir}\assemblies\contactzone\target\CZ\CZ</sourceFile>
-                                <destinationFile>${main.basedir}\assemblies\contactzone\target\CZ\iso-${project.version}_${build.id}.${buildNumber}</destinationFile>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-
+                        </goals>
+                        <configuration>
+                            <sourceFile>${main.basedir}\assemblies\contactzone\target\CZ\CZ</sourceFile>
+                            <destinationFile>${main.basedir}\assemblies\contactzone\target\CZ\iso-${project.version}_${build.id}.${buildNumber}</destinationFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
 
         </plugins>
