@@ -15,7 +15,7 @@ bin
 *.so
 .DS_Store
 routes.yml
-
+buildNumber.properties
 rebel.xml
 
 Data
