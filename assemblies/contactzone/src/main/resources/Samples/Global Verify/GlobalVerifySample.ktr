@@ -6,38 +6,399 @@
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <directory>&#x2f;</directory>
+    <directory>/</directory>
     <parameters>
     </parameters>
     <log>
-<trans-log-table><connection/>
-<schema/>
-<table/>
-<size_limit_lines/>
-<interval/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
-<perf-log-table><connection/>
-<schema/>
-<table/>
-<interval/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
-<channel-log-table><connection/>
-<schema/>
-<table/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
-<step-log-table><connection/>
-<schema/>
-<table/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
-<metrics-log-table><connection/>
-<schema/>
-<table/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+      <trans-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <size_limit_lines/>
+        <interval/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STATUS</id>
+          <enabled>Y</enabled>
+          <name>STATUS</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+          <subject/>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+          <subject/>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>STARTDATE</id>
+          <enabled>Y</enabled>
+          <name>STARTDATE</name>
+        </field>
+        <field>
+          <id>ENDDATE</id>
+          <enabled>Y</enabled>
+          <name>ENDDATE</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>DEPDATE</id>
+          <enabled>Y</enabled>
+          <name>DEPDATE</name>
+        </field>
+        <field>
+          <id>REPLAYDATE</id>
+          <enabled>Y</enabled>
+          <name>REPLAYDATE</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>Y</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+        <field>
+          <id>EXECUTING_SERVER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_SERVER</name>
+        </field>
+        <field>
+          <id>EXECUTING_USER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_USER</name>
+        </field>
+        <field>
+          <id>CLIENT</id>
+          <enabled>N</enabled>
+          <name>CLIENT</name>
+        </field>
+      </trans-log-table>
+      <perf-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <interval/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>SEQ_NR</id>
+          <enabled>Y</enabled>
+          <name>SEQ_NR</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>INPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>INPUT_BUFFER_ROWS</name>
+        </field>
+        <field>
+          <id>OUTPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>OUTPUT_BUFFER_ROWS</name>
+        </field>
+      </perf-log-table>
+      <channel-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>LOGGING_OBJECT_TYPE</id>
+          <enabled>Y</enabled>
+          <name>LOGGING_OBJECT_TYPE</name>
+        </field>
+        <field>
+          <id>OBJECT_NAME</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_NAME</name>
+        </field>
+        <field>
+          <id>OBJECT_COPY</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_COPY</name>
+        </field>
+        <field>
+          <id>REPOSITORY_DIRECTORY</id>
+          <enabled>Y</enabled>
+          <name>REPOSITORY_DIRECTORY</name>
+        </field>
+        <field>
+          <id>FILENAME</id>
+          <enabled>Y</enabled>
+          <name>FILENAME</name>
+        </field>
+        <field>
+          <id>OBJECT_ID</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_ID</name>
+        </field>
+        <field>
+          <id>OBJECT_REVISION</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_REVISION</name>
+        </field>
+        <field>
+          <id>PARENT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>PARENT_CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>ROOT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>ROOT_CHANNEL_ID</name>
+        </field>
+      </channel-log-table>
+      <step-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>N</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+      </step-log-table>
+      <metrics-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_DATE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_CODE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_CODE</name>
+        </field>
+        <field>
+          <id>METRICS_DESCRIPTION</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DESCRIPTION</name>
+        </field>
+        <field>
+          <id>METRICS_SUBJECT</id>
+          <enabled>Y</enabled>
+          <name>METRICS_SUBJECT</name>
+        </field>
+        <field>
+          <id>METRICS_TYPE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_TYPE</name>
+        </field>
+        <field>
+          <id>METRICS_VALUE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_VALUE</name>
+        </field>
+      </metrics-log-table>
     </log>
     <maxdate>
       <connection/>
@@ -65,18 +426,26 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-  <created_user>-</created_user>
-  <created_date>2017&#x2f;10&#x2f;19 12&#x3a;13&#x3a;24.883</created_date>
-  <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;19 12&#x3a;13&#x3a;24.883</modified_date>
-    <key_for_session_key/>
+    <created_user>-</created_user>
+    <created_date>2017/10/19 12:13:24.883</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2017/10/19 12:13:24.883</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <order>
-  <hop> <from> </from><to>Global Verify</to><enabled>Y</enabled> </hop>
-  <hop> <from>Global Verify</from><to>Microsoft Excel Output</to><enabled>Y</enabled> </hop>
+    <hop>
+      <from> </from>
+      <to>Global Verify</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Global Verify</from>
+      <to>Text file output</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name> </name>
@@ -85,16 +454,16 @@
     <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;GVsampleFile.csv</filename>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>${Internal.Transformation.Filename.Directory}/GVsampleFile.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>,</separator>
-    <enclosure>&#x22;</enclosure>
+    <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
     <lazy_conversion>Y</lazy_conversion>
@@ -203,14 +572,19 @@
         <trim_type>none</trim_type>
       </field>
     </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>128</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
-      </GUI>
-    </step>
-
+    </GUI>
+  </step>
   <step>
     <name>Global Verify</name>
     <type>MDGlobalVerifyPlugin</type>
@@ -218,823 +592,1587 @@
     <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <globalname_options>
-        <globalname_correct_misspelling>OFF</globalname_correct_misspelling>
-        <globalname_middle_name_logic>ParseLogic</globalname_middle_name_logic>
-        <globalname_name_order>ProbablyFull</globalname_name_order>
-      </globalname_options>
-      <globalname_input>
-        <globalname_input_company_name>Company</globalname_input_company_name>
-        <globalname_input_fullname>FullName</globalname_input_fullname>
-      </globalname_input>
-      <globalname_output>
-        <globalname_output_name2_first>MD_FirstName2</globalname_output_name2_first>
-        <globalname_output_name1_prefix>MD_Prefix1</globalname_output_name1_prefix>
-        <globalname_output_name1_middle>MD_MiddleName1</globalname_output_name1_middle>
-        <globalname_output_name2_middle>MD_LastMiddle2</globalname_output_name2_middle>
-        <globalname_output_name1_last>MD_LastName1</globalname_output_name1_last>
-        <globalname_output_name2_gender>MD_Gender2</globalname_output_name2_gender>
-        <globalname_output_name1_first>MD_FirstName1</globalname_output_name1_first>
-        <globalname_output_name1_gender>MD_Gender1</globalname_output_name1_gender>
-        <globalname_output_name2_prefix>MD_Prefix2</globalname_output_name2_prefix>
-        <globalname_output_company_name>MD_Company</globalname_output_company_name>
-        <globalname_output_name2_suffix>MD_Suffix2</globalname_output_name2_suffix>
-        <globalname_output_name1_suffix>MD_Suffix1</globalname_output_name1_suffix>
-        <globalname_output_name2_last>MD_LastName2</globalname_output_name2_last>
-      </globalname_output>
-      <globaladdress_options>
-        <opt_delivery_line>OFF</opt_delivery_line>
-        <opt_output_script>NOCHANGE</opt_output_script>
-        <opt_line_separator>SEMICOLON</opt_line_separator>
-        <opt_input_display>Simplified Global</opt_input_display>
-        <opt_country_of_origin>USA</opt_country_of_origin>
-      </globaladdress_options>
-        <globaladdress_processing_option>WEB</globaladdress_processing_option>
-        <globaladdress_add_codes>false</globaladdress_add_codes>
-        <globaladdress_op_countries> </globaladdress_op_countries>
-        <globaladdress_country_field_index>3</globaladdress_country_field_index>
-      <globaladdress_input>
-        <input_sub_national_area> </input_sub_national_area>
-        <input_sub_premises> </input_sub_premises>
-        <input_double_dependent_locality> </input_double_dependent_locality>
-        <input_locality>Locality</input_locality>
-        <input_dependent_locality> </input_dependent_locality>
-        <input_organization>Company</input_organization>
-        <input_administrative_area>Administrative Area</input_administrative_area>
-        <input_address_line8> </input_address_line8>
-        <input_address_line6> </input_address_line6>
-        <input_address_line7> </input_address_line7>
-        <input_address_line4> </input_address_line4>
-        <input_address_line5> </input_address_line5>
-        <input_address_line2> </input_address_line2>
-        <input_address_line3> </input_address_line3>
-        <input_postal_code>Postal Code</input_postal_code>
-        <input_address_line1>Address</input_address_line1>
-        <input_sub_administrative_area> </input_sub_administrative_area>
-        <input_country>Country</input_country>
-        <input_default_country>USA</input_default_country>
-      </globaladdress_input>
-      <globaladdress_output>
-        <output_post_direction>MD_PostDirection</output_post_direction>
-        <output_country_formal_name>MD_CountryFormalName</output_country_formal_name>
-        <output_postbox>MD_PostBox</output_postbox>
-        <output_sub_premises_number>MD_SubPremisesNumber</output_sub_premises_number>
-        <output_dependent_thoroughfare>MD_DepThoroughfare</output_dependent_thoroughfare>
-        <output_double_dependent_locality>MD_DoubleDepLocality</output_double_dependent_locality>
-        <output_county_name>MD_CountyName</output_county_name>
-        <output_sub_premises_level_number>MD_SubPremisesLevelNumber</output_sub_premises_level_number>
-        <output_dependent_thoroughfare_trailing_type>MD_DepThoroughfareTrailingType</output_dependent_thoroughfare_trailing_type>
-        <output_country_utc>MD_CountryUTC</output_country_utc>
-        <output_country_name>MD_CountryName</output_country_name>
-        <output_premises_type>MD_PremisesType</output_premises_type>
-        <output_country_iso3166_1_alpha2>MD_CountryAlphaISO2</output_country_iso3166_1_alpha2>
-        <output_sub_building>MD_SubBuilding</output_sub_building>
-        <output_latitude>MD_Latitude</output_latitude>
-        <output_country_iso3166_1_alpha3>MD_CountryAlphaISO3</output_country_iso3166_1_alpha3>
-        <output_sub_building_type>MD_SubBuildingType</output_sub_building_type>
-        <output_dependent_thoroughfare_post_direction>MD_DepThoroughfarePostDirection</output_dependent_thoroughfare_post_direction>
-        <output_leading_type>MD_LeadingType</output_leading_type>
-        <output_administrative_area>MD_AdminArea</output_administrative_area>
-        <output_delivery_line>MD_DeliveryLine</output_delivery_line>
-        <output_sub_building_number>MD_SubBuildingNumber</output_sub_building_number>
-        <output_organization>MD_Organization</output_organization>
-        <output_building>MD_Building</output_building>
-        <output_dependent_thoroughfare_name>MD_DepThoroughfareName</output_dependent_thoroughfare_name>
-        <output_dependant_thoroughfare_type_attached>MD_DepThoroughfareTypeAttached</output_dependant_thoroughfare_type_attached>
-        <output_address_line3>MD_AddressLine3</output_address_line3>
-        <output_premises_number>MD_PremisesNumber</output_premises_number>
-        <output_address_line4>MD_AddressLine4</output_address_line4>
-        <output_address_line1>MD_AddressLine1</output_address_line1>
-        <output_address_line2>MD_AddressLine2</output_address_line2>
-        <output_thoroughfare>MD_Thoroughfare</output_thoroughfare>
-        <output_address_line7>MD_AddressLine7</output_address_line7>
-        <output_sub_premises>MD_SubPremises</output_sub_premises>
-        <output_address_line8>MD_AddressLine8</output_address_line8>
-        <output_address_line5>MD_AddressLine5</output_address_line5>
-        <output_address_line6>MD_AddressLine6</output_address_line6>
-        <output_dependent_thoroughfare_leading_type>MD_DepThoroughfareLeadingType</output_dependent_thoroughfare_leading_type>
-        <output_sub_premises_type>MD_SubPremisesType</output_sub_premises_type>
-        <output_pre_direction>MD_PreDirection</output_pre_direction>
-        <output_address_key>MD_AddressKey</output_address_key>
-        <output_trailing_type>MD_TrailingType</output_trailing_type>
-        <output_country_timezome>MD_CountryTimeZone</output_country_timezome>
-        <output_country_iso3166_1_numeric>MD_CountryNumericISO</output_country_iso3166_1_numeric>
-        <output_full_address>MD_FormattedAddress</output_full_address>
-        <output_sub_administrative_area>MD_SubAdminArea</output_sub_administrative_area>
-        <output_sub_national_area>MD_SubNationalArea</output_sub_national_area>
-        <output_sub_premises_level>MD_SubPremisesLevel</output_sub_premises_level>
-        <output_premises>MD_Premises</output_premises>
-        <output_address_type>MD_Addr_TypeCodes</output_address_type>
-        <output_sub_premises_level_type>MD_SubPremisesLevelType</output_sub_premises_level_type>
-        <output_personal_id>MD_PersonalID</output_personal_id>
-        <output_postal_code>MD_PostalCode</output_postal_code>
-        <output_country_subdivision_code>MD_CountrySubdivisionCode</output_country_subdivision_code>
-        <output_dependent_thoroughfare_pre_direction>MD_DepThoroughfarePreDirection</output_dependent_thoroughfare_pre_direction>
-        <output_thoroughfare_name>MD_ThoroughfareName</output_thoroughfare_name>
-        <output_dependent_locality>MD_DepLocality</output_dependent_locality>
-        <output_longitude>MD_Longitude</output_longitude>
-        <output_postoffice_location>MD_PostOfficeLocation</output_postoffice_location>
-        <output_country_code>MD_CountryCode</output_country_code>
-        <output_type_attached>MD_TypeAttached</output_type_attached>
-        <output_locality>MD_Locality</output_locality>
-      </globaladdress_output>
-      <globalphone_input>
-        <globalphone_input_phone>Phone</globalphone_input_phone>
-        <globalphone_input_dialing_country>United States</globalphone_input_dialing_country>
-        <globalphone_input_default_country>United States</globalphone_input_default_country>
-        <globalphone_input_country>Country</globalphone_input_country>
-      </globalphone_input>
-      <globalphone_output>
-        <globalphone_output_suggestions>MD_Phone_Suggestions</globalphone_output_suggestions>
-        <globalphone_output_subscriber>MD_Phone_Subscriber_number</globalphone_output_subscriber>
-        <globalphone_output_longitude>MD_Phone_Longitude</globalphone_output_longitude>
-        <globalphone_output_admin_area>MD_Phone_Administrative_Area</globalphone_output_admin_area>
-        <globalphone_output_caller_id>MD_Phone_CallerID</globalphone_output_caller_id>
-        <globalphone_output_country_abbrivation>MD_Phone_Country_Abbreviation</globalphone_output_country_abbrivation>
-        <globalphone_output_language>MD_Phone_Language</globalphone_output_language>
-        <globalphone_output_national_prefix>MD_Phone_National_Prefix</globalphone_output_national_prefix>
-        <globalphone_output_destination_code>MD_Phone_Destination_Code</globalphone_output_destination_code>
-        <globalphone_output_international_prefix>MD_Phone_International_Prefix</globalphone_output_international_prefix>
-        <globalphone_output_locality>MD_Phone_Locality</globalphone_output_locality>
-        <globalphone_output_country>MD_Phone_Country_name</globalphone_output_country>
-        <globalphone_output_country_code>MD_Phone_Country_Dialing_Code</globalphone_output_country_code>
-        <globalphone_output_latitude>MD_Phone_Latitude</globalphone_output_latitude>
-        <globalphone_output_postal_code>MD_Phone_Postal_Code</globalphone_output_postal_code>
-        <globalphone_output_utc>MD_Phone_UTC</globalphone_output_utc>
-        <globalphone_output_dst>MD_Phone_DST</globalphone_output_dst>
-        <globalphone_output_phone>MD_Phone</globalphone_output_phone>
-        <globalphone_output_internationalNumber>MD_Phone_International_Phone</globalphone_output_internationalNumber>
-        <globalphone_output_carrier>MD_Phone_Carrier</globalphone_output_carrier>
-      </globalphone_output>
-      <globalphone_option>
-        <globalphone_option_verify>Express</globalphone_option_verify>
-        <globalphone_option_dialing_code> </globalphone_option_dialing_code>
-      </globalphone_option>
-      <globalemail_options>
-        <globalemail_option_verify_mailbox>Express</globalemail_option_verify_mailbox>
-      </globalemail_options>
-      <globalemail_input>
-        <globalemail_input_email>Email</globalemail_input_email>
-      </globalemail_input>
-      <globalemail_output>
-        <globalemail_output_domain_description>MD_Top_Level_Domain_Name</globalemail_output_domain_description>
-        <globalemail_output_box_name>MD_Mailbox_Name</globalemail_output_box_name>
-        <globalemail_output_email>MD_Email</globalemail_output_email>
-        <globalemail_output_top_level_domain>MD_Top_Level_Domain</globalemail_output_top_level_domain>
-        <globalemail_output_domain>MD_Domain_Name</globalemail_output_domain>
-        <globalemail_output_date_checked>MD_Email_Date_Checked</globalemail_output_date_checked>
-      </globalemail_output>
-      <globaladdress_config>
-        <config_license> </config_license>
-        <config_customerid> </config_customerid>
-      </globaladdress_config>
-      <global_address_filter>
-        <filter_out/>
-        <pass_thru>Address,Administrative Area,Company,Country,Email,FullName,Locality,Phone,Postal Code</pass_thru>
-      </global_address_filter>
-      <output_filter>
-        <filters>          <filter_fields>          <filter_name>Microsoft Excel Output</filter_name>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <globalname_options>
+      <globalname_correct_misspelling>OFF</globalname_correct_misspelling>
+      <globalname_middle_name_logic>ParseLogic</globalname_middle_name_logic>
+      <globalname_name_order>ProbablyFull</globalname_name_order>
+    </globalname_options>
+    <globalname_input>
+      <globalname_input_company_name>Company</globalname_input_company_name>
+      <globalname_input_fullname>FullName</globalname_input_fullname>
+    </globalname_input>
+    <globalname_output>
+      <globalname_output_name2_first>MD_FirstName2</globalname_output_name2_first>
+      <globalname_output_name1_prefix>MD_Prefix1</globalname_output_name1_prefix>
+      <globalname_output_name1_middle>MD_MiddleName1</globalname_output_name1_middle>
+      <globalname_output_name2_middle>MD_LastMiddle2</globalname_output_name2_middle>
+      <globalname_output_name1_last>MD_LastName1</globalname_output_name1_last>
+      <globalname_output_name2_gender>MD_Gender2</globalname_output_name2_gender>
+      <globalname_output_name1_first>MD_FirstName1</globalname_output_name1_first>
+      <globalname_output_name1_gender>MD_Gender1</globalname_output_name1_gender>
+      <globalname_output_name2_prefix>MD_Prefix2</globalname_output_name2_prefix>
+      <globalname_output_company_name>MD_Company</globalname_output_company_name>
+      <globalname_output_name2_suffix>MD_Suffix2</globalname_output_name2_suffix>
+      <globalname_output_name1_suffix>MD_Suffix1</globalname_output_name1_suffix>
+      <globalname_output_name2_last>MD_LastName2</globalname_output_name2_last>
+    </globalname_output>
+    <globaladdress_options>
+      <opt_delivery_line>OFF</opt_delivery_line>
+      <opt_output_script>NOCHANGE</opt_output_script>
+      <opt_line_separator>SEMICOLON</opt_line_separator>
+      <opt_input_display>Simplified Global</opt_input_display>
+      <opt_country_of_origin>USA</opt_country_of_origin>
+    </globaladdress_options>
+    <globaladdress_processing_option>WEB</globaladdress_processing_option>
+    <globaladdress_add_codes>false</globaladdress_add_codes>
+    <globaladdress_op_countries> </globaladdress_op_countries>
+    <globaladdress_country_field_index>3</globaladdress_country_field_index>
+    <globaladdress_input>
+      <input_sub_national_area> </input_sub_national_area>
+      <input_sub_premises> </input_sub_premises>
+      <input_double_dependent_locality> </input_double_dependent_locality>
+      <input_locality>Locality</input_locality>
+      <input_dependent_locality> </input_dependent_locality>
+      <input_organization>Company</input_organization>
+      <input_administrative_area>Administrative Area</input_administrative_area>
+      <input_address_line8> </input_address_line8>
+      <input_address_line6> </input_address_line6>
+      <input_address_line7> </input_address_line7>
+      <input_address_line4> </input_address_line4>
+      <input_address_line5> </input_address_line5>
+      <input_address_line2> </input_address_line2>
+      <input_address_line3> </input_address_line3>
+      <input_postal_code>Postal Code</input_postal_code>
+      <input_address_line1>Address</input_address_line1>
+      <input_sub_administrative_area> </input_sub_administrative_area>
+      <input_country>Country</input_country>
+      <input_default_country>USA</input_default_country>
+    </globaladdress_input>
+    <globaladdress_output>
+      <output_post_direction>MD_PostDirection</output_post_direction>
+      <output_country_formal_name>MD_CountryFormalName</output_country_formal_name>
+      <output_postbox>MD_PostBox</output_postbox>
+      <output_sub_premises_number>MD_SubPremisesNumber</output_sub_premises_number>
+      <output_dependent_thoroughfare>MD_DepThoroughfare</output_dependent_thoroughfare>
+      <output_double_dependent_locality>MD_DoubleDepLocality</output_double_dependent_locality>
+      <output_county_name>MD_CountyName</output_county_name>
+      <output_sub_premises_level_number>MD_SubPremisesLevelNumber</output_sub_premises_level_number>
+      <output_dependent_thoroughfare_trailing_type>MD_DepThoroughfareTrailingType</output_dependent_thoroughfare_trailing_type>
+      <output_country_utc>MD_CountryUTC</output_country_utc>
+      <output_country_name>MD_CountryName</output_country_name>
+      <output_premises_type>MD_PremisesType</output_premises_type>
+      <output_country_iso3166_1_alpha2>MD_CountryAlphaISO2</output_country_iso3166_1_alpha2>
+      <output_sub_building>MD_SubBuilding</output_sub_building>
+      <output_latitude>MD_Latitude</output_latitude>
+      <output_country_iso3166_1_alpha3>MD_CountryAlphaISO3</output_country_iso3166_1_alpha3>
+      <output_sub_building_type>MD_SubBuildingType</output_sub_building_type>
+      <output_dependent_thoroughfare_post_direction>MD_DepThoroughfarePostDirection</output_dependent_thoroughfare_post_direction>
+      <output_leading_type>MD_LeadingType</output_leading_type>
+      <output_administrative_area>MD_AdminArea</output_administrative_area>
+      <output_delivery_line>MD_DeliveryLine</output_delivery_line>
+      <output_sub_building_number>MD_SubBuildingNumber</output_sub_building_number>
+      <output_organization>MD_Organization</output_organization>
+      <output_building>MD_Building</output_building>
+      <output_dependent_thoroughfare_name>MD_DepThoroughfareName</output_dependent_thoroughfare_name>
+      <output_dependant_thoroughfare_type_attached>MD_DepThoroughfareTypeAttached</output_dependant_thoroughfare_type_attached>
+      <output_address_line3>MD_AddressLine3</output_address_line3>
+      <output_premises_number>MD_PremisesNumber</output_premises_number>
+      <output_address_line4>MD_AddressLine4</output_address_line4>
+      <output_address_line1>MD_AddressLine1</output_address_line1>
+      <output_address_line2>MD_AddressLine2</output_address_line2>
+      <output_thoroughfare>MD_Thoroughfare</output_thoroughfare>
+      <output_address_line7>MD_AddressLine7</output_address_line7>
+      <output_sub_premises>MD_SubPremises</output_sub_premises>
+      <output_address_line8>MD_AddressLine8</output_address_line8>
+      <output_address_line5>MD_AddressLine5</output_address_line5>
+      <output_address_line6>MD_AddressLine6</output_address_line6>
+      <output_dependent_thoroughfare_leading_type>MD_DepThoroughfareLeadingType</output_dependent_thoroughfare_leading_type>
+      <output_sub_premises_type>MD_SubPremisesType</output_sub_premises_type>
+      <output_pre_direction>MD_PreDirection</output_pre_direction>
+      <output_address_key>MD_AddressKey</output_address_key>
+      <output_trailing_type>MD_TrailingType</output_trailing_type>
+      <output_country_timezome>MD_CountryTimeZone</output_country_timezome>
+      <output_country_iso3166_1_numeric>MD_CountryNumericISO</output_country_iso3166_1_numeric>
+      <output_full_address>MD_FormattedAddress</output_full_address>
+      <output_sub_administrative_area>MD_SubAdminArea</output_sub_administrative_area>
+      <output_sub_national_area>MD_SubNationalArea</output_sub_national_area>
+      <output_sub_premises_level>MD_SubPremisesLevel</output_sub_premises_level>
+      <output_premises>MD_Premises</output_premises>
+      <output_address_type>MD_Addr_TypeCodes</output_address_type>
+      <output_sub_premises_level_type>MD_SubPremisesLevelType</output_sub_premises_level_type>
+      <output_personal_id>MD_PersonalID</output_personal_id>
+      <output_postal_code>MD_PostalCode</output_postal_code>
+      <output_country_subdivision_code>MD_CountrySubdivisionCode</output_country_subdivision_code>
+      <output_dependent_thoroughfare_pre_direction>MD_DepThoroughfarePreDirection</output_dependent_thoroughfare_pre_direction>
+      <output_thoroughfare_name>MD_ThoroughfareName</output_thoroughfare_name>
+      <output_dependent_locality>MD_DepLocality</output_dependent_locality>
+      <output_longitude>MD_Longitude</output_longitude>
+      <output_postoffice_location>MD_PostOfficeLocation</output_postoffice_location>
+      <output_country_code>MD_CountryCode</output_country_code>
+      <output_type_attached>MD_TypeAttached</output_type_attached>
+      <output_locality>MD_Locality</output_locality>
+    </globaladdress_output>
+    <globalphone_input>
+      <globalphone_input_phone>Phone</globalphone_input_phone>
+      <globalphone_input_dialing_country>United States</globalphone_input_dialing_country>
+      <globalphone_input_default_country>United States</globalphone_input_default_country>
+      <globalphone_input_country>Country</globalphone_input_country>
+    </globalphone_input>
+    <globalphone_output>
+      <globalphone_output_suggestions>MD_Phone_Suggestions</globalphone_output_suggestions>
+      <globalphone_output_subscriber>MD_Phone_Subscriber_number</globalphone_output_subscriber>
+      <globalphone_output_longitude>MD_Phone_Longitude</globalphone_output_longitude>
+      <globalphone_output_admin_area>MD_Phone_Administrative_Area</globalphone_output_admin_area>
+      <globalphone_output_caller_id> </globalphone_output_caller_id>
+      <globalphone_output_country_abbrivation>MD_Phone_Country_Abbreviation</globalphone_output_country_abbrivation>
+      <globalphone_output_language>MD_Phone_Language</globalphone_output_language>
+      <globalphone_output_national_prefix>MD_Phone_National_Prefix</globalphone_output_national_prefix>
+      <globalphone_output_destination_code>MD_Phone_Destination_Code</globalphone_output_destination_code>
+      <globalphone_output_international_prefix>MD_Phone_International_Prefix</globalphone_output_international_prefix>
+      <globalphone_output_locality>MD_Phone_Locality</globalphone_output_locality>
+      <globalphone_output_country>MD_Phone_Country_name</globalphone_output_country>
+      <globalphone_output_country_code>MD_Phone_Country_Dialing_Code</globalphone_output_country_code>
+      <globalphone_output_latitude>MD_Phone_Latitude</globalphone_output_latitude>
+      <globalphone_output_postal_code>MD_Phone_Postal_Code</globalphone_output_postal_code>
+      <globalphone_output_utc>MD_Phone_UTC</globalphone_output_utc>
+      <globalphone_output_dst>MD_Phone_DST</globalphone_output_dst>
+      <globalphone_output_phone>MD_Phone</globalphone_output_phone>
+      <globalphone_output_internationalNumber>MD_Phone_International_Phone</globalphone_output_internationalNumber>
+      <globalphone_output_carrier>MD_Phone_Carrier</globalphone_output_carrier>
+    </globalphone_output>
+    <globalphone_option>
+      <globalphone_option_verify>Express</globalphone_option_verify>
+      <globalphone_option_callerID>False</globalphone_option_callerID>
+      <globalphone_option_dialing_code> </globalphone_option_dialing_code>
+    </globalphone_option>
+    <globalemail_options>
+      <globalemail_option_verify_mailbox>Express</globalemail_option_verify_mailbox>
+    </globalemail_options>
+    <globalemail_input>
+      <globalemail_input_email>Email</globalemail_input_email>
+    </globalemail_input>
+    <globalemail_output>
+      <globalemail_output_domain_description>MD_Top_Level_Domain_Name</globalemail_output_domain_description>
+      <globalemail_output_box_name>MD_Mailbox_Name</globalemail_output_box_name>
+      <globalemail_output_email>MD_Email</globalemail_output_email>
+      <globalemail_output_top_level_domain>MD_Top_Level_Domain</globalemail_output_top_level_domain>
+      <globalemail_output_domain>MD_Domain_Name</globalemail_output_domain>
+      <globalemail_output_date_checked>MD_Email_Date_Checked</globalemail_output_date_checked>
+    </globalemail_output>
+    <globaladdress_config>
+      <config_license> </config_license>
+      <config_customerid> </config_customerid>
+    </globaladdress_config>
+    <global_address_filter>
+      <filter_out/>
+      <pass_thru>Address,Administrative Area,Company,Country,Email,FullName,Locality,Phone,Postal Code</pass_thru>
+    </global_address_filter>
+    <output_filter>
+      <filters>
+        <filter_fields>
+          <filter_name>Text file output</filter_name>
           <filter_rule> </filter_rule>
-          <filter_target>Microsoft Excel Output</filter_target>
-          </filter_fields>        </filters>      </output_filter>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+          <filter_target>Text file output</filter_target>
+        </filter_fields>
+      </filters>
+    </output_filter>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>256</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
-      </GUI>
-    </step>
-
+    </GUI>
+  </step>
   <step>
-    <name>Microsoft Excel Output</name>
-    <type>ExcelOutput</type>
+    <name>Text file output</name>
+    <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator>,</separator>
+    <enclosure>"</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>Y</header>
     <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
     <encoding/>
-    <append>N</append>
-    <add_to_result_filenames>Y</add_to_result_filenames>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Kevin&#x5c;Desktop&#x5c;Global Verify&#x5c;GlobalVerifyOutput.xls</name>
-      <extention/>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
-      <create_parent_folder>N</create_parent_folder>
+      <name>${Internal.Transformation.Filename.Directory}/GVsampleResult</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>csv</extention>
+      <append>N</append>
       <split>N</split>
+      <haspartno>N</haspartno>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format/>
-      <sheetname>Sheet1</sheetname>
-      <autosizecolums>Y</autosizecolums>
-      <nullisblank>N</nullisblank>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
       <splitevery>0</splitevery>
-      <usetempfiles>N</usetempfiles>
-      <tempdirectory/>
-      </file>
-    <template>
-      <enabled>N</enabled>
-      <append>N</append>
-      <filename>template.xls</filename>
-    </template>
+    </file>
     <fields>
       <field>
         <name>Address</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>Administrative Area</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>Company</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>Country</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>Email</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>FullName</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>Locality</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>Phone</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>Postal Code</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_FirstName2</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Prefix1</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_MiddleName1</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_LastMiddle2</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_LastName1</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Gender2</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_FirstName1</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Gender1</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Prefix2</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Company</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Suffix2</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Suffix1</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_LastName2</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_PostDirection</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_CountryFormalName</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_PostBox</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubPremisesNumber</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_DepThoroughfare</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_DoubleDepLocality</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_CountyName</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubPremisesLevelNumber</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_DepThoroughfareTrailingType</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_CountryUTC</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>25</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_CountryName</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_PremisesType</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_CountryAlphaISO2</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubBuilding</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Latitude</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_CountryAlphaISO3</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubBuildingType</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_DepThoroughfarePostDirection</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_LeadingType</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_AdminArea</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>15</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_DeliveryLine</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubBuildingNumber</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Organization</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Building</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_DepThoroughfareName</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>40</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_DepThoroughfareTypeAttached</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_AddressLine3</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_PremisesNumber</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_AddressLine4</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_AddressLine1</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_AddressLine2</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Thoroughfare</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>40</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_AddressLine7</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubPremises</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>20</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_AddressLine8</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_AddressLine5</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_AddressLine6</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_DepThoroughfareLeadingType</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubPremisesType</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_PreDirection</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_AddressKey</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>11</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_TrailingType</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_CountryTimeZone</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>25</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_CountryNumericISO</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_FormattedAddress</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubAdminArea</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>25</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubNationalArea</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubPremisesLevel</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Premises</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Addr_TypeCodes</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_SubPremisesLevelType</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_PersonalID</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>15</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_PostalCode</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_CountrySubdivisionCode</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_DepThoroughfarePreDirection</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_ThoroughfareName</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>40</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_DepLocality</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Longitude</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_PostOfficeLocation</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_CountryCode</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_TypeAttached</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Locality</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>35</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Suggestions</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Subscriber_number</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Longitude</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Administrative_Area</name>
         <type>String</type>
         <format/>
-      </field>
-      <field>
-        <name>MD_Phone_CallerID</name>
-        <type>String</type>
-        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Country_Abbreviation</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Language</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_National_Prefix</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Destination_Code</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_International_Prefix</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Locality</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Country_name</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Country_Dialing_Code</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Latitude</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Postal_Code</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_UTC</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_DST</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_International_Phone</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Phone_Carrier</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Top_Level_Domain_Name</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Mailbox_Name</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Email</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Top_Level_Domain</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Domain_Name</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Email_Date_Checked</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>25</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>MD_Results</name>
         <type>String</type>
         <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>100</length>
+        <precision>-1</precision>
       </field>
     </fields>
-    <custom>
-    <header_font_name>arial</header_font_name>
-    <header_font_size>10</header_font_size>
-    <header_font_bold>N</header_font_bold>
-    <header_font_italic>N</header_font_italic>
-    <header_font_underline>no</header_font_underline>
-    <header_font_orientation>horizontal</header_font_orientation>
-    <header_font_color>black</header_font_color>
-    <header_background_color>none</header_background_color>
-    <header_row_height>255</header_row_height>
-    <header_alignment>left</header_alignment>
-    <header_image/>
-    <row_font_name>arial</row_font_name>
-    <row_font_size>10</row_font_size>
-    <row_font_color>black</row_font_color>
-    <row_background_color>none</row_background_color>
-      </custom>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>416</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
-      </GUI>
-    </step>
-
+    </GUI>
+  </step>
   <step_error_handling>
   </step_error_handling>
-   <slave-step-copy-partition-distribution>
-</slave-step-copy-partition-distribution>
-   <slave_transformation>N</slave_transformation>
-
+  <slave-step-copy-partition-distribution>
+  </slave-step-copy-partition-distribution>
+  <slave_transformation>N</slave_transformation>
 </transformation>

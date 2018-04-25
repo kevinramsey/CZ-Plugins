@@ -30,7 +30,8 @@
 
         <!-- DATA DIR -->
         <md.data.dir>${main.basedir}\assemblies\contactzone\src\main\resources\Data</md.data.dir>
-        <!-- InnoSetup -->
+        <!-- MDCommon -->
+        <mdcommon.version>1.1</mdcommon.version>
         <!-- md files -->
         <cz.library.version>8.0.0-SNAPSHOT</cz.library.version>
         <mdLicense.version>1.0</mdLicense.version>
@@ -56,7 +57,7 @@
         <mdGlobal.dll.version>1.0.0.3030</mdGlobal.dll.version>
         <!-- MDPersonator -->
         <mdPersonator.plugin.version>8.0.0-SNAPSHOT</mdPersonator.plugin.version>
-        <mdPersonator.resources.version>1.1</mdPersonator.resources.version>
+        <mdPersonator.resources.version>1.2</mdPersonator.resources.version>
         <!-- MDProfiler -->
         <mdProfiler.plugin.version>8.0.0-SNAPSHOT</mdProfiler.plugin.version>
         <mdProfiler.dll.version>4.0.1.3036</mdProfiler.dll.version>

@@ -61,7 +61,7 @@
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>MDCommon</artifactId>
-            <version>1.0</version>
+            <version>${mdcommon.version}</version>
             <type>zip</type>
         </dependency>
     </dependencies>
