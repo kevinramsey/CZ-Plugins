@@ -116,7 +116,7 @@ Source: "{#DATA_DIR}\Profiler\*.*"; DestDir: "{app}\Data"; Flags: ignoreversion;
 ;Source: "{#DATA_DIR}\Presort\*.*"; DestDir: "{app}\Data"; Flags: ignoreversion; Permissions: users-modify
 
 ; MatchUp Files
-Source: "{#MU_FILES_DIR}\*.*"; Excludes:"*.mc, *.cfg "; DestDir:"{app}\ContactZone\mdKettle\matchup"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
+Source: "{#MU_FILES_DIR}\*.*"; Excludes:"*.mc, *.cfg, Global "; DestDir:"{app}\ContactZone\mdKettle\matchup"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
 Source: "{#MUGLOBAL_FILES_DIR}\*.*"; Excludes:"*.mc, *.cfg "; DestDir:"{app}\ContactZone\mdKettle\matchup.global"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
 Source: "{#DLL_DIR}\64_bit\mdMatchUp.dll"; DestDir:"{app}\ContactZone\mdKettle\matchup"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify
 Source: "{#DLL_DIR}\64_bit\mdMatchUp.dll"; DestDir:"{app}\ContactZone\mdKettle\matchup.global"; Flags: ignoreversion recursesubdirs createallsubdirs; Permissions: users-modify

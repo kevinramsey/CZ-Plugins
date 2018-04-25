@@ -528,34 +528,23 @@ public class MDCheckWebService extends MDCheckService {
 				}
 			}
 
-			
 			// Add customer id
 			String customerID = stepData.getAdvancedConfiguration().getCustomerID(product);
 			String transmissionRef = stepData.getAdvancedConfiguration().getTransmissionReference();
 			boolean sendRequest = false;
 			String xmlRequest = null;
 			if (!Const.isEmpty(customerID)) {
-
-				if(product == AdvancedConfigurationMeta.MDLICENSE_IPLocator){
-					JSONObject mainObj = new JSONObject();
-					mainObj.put("CustomerID", customerID);
-					mainObj.put("TransmissionReference", transmissionRef);
-					sendRequest = handler.buildWebRequest(mainObj, checkData, requests);
-
-					// Convert the document object to an XML request string
-					xmlRequest = sendRequest ? mainObj.toJSONString() : null;
-					
+				//TrasmissionReference
+				if (product == AdvancedConfigurationMeta.MDLICENSE_SmartMover) {
+					addTextNode(requestDoc, requestDoc.getDocumentElement(), "CustomerID", "" + stepData.getAdvancedConfiguration().getProdutLicense(product));
 				} else {
-					//TrasmissionReference
 					addTextNode(requestDoc, requestDoc.getDocumentElement(), "CustomerID", "" + customerID);
-					addTextNode(requestDoc, requestDoc.getDocumentElement(), "TrasmissionReference", "" + transmissionRef);
-					// Build the request document from the request data
-					sendRequest = handler.buildWebRequest(requestDoc, checkData, requests, testing);
-					// Convert the document object to an XML request string
-					xmlRequest = sendRequest ? convertToXML(requestDoc) : null;
-					
-					
 				}
+				addTextNode(requestDoc, requestDoc.getDocumentElement(), "TrasmissionReference", "" + transmissionRef);
+				// Build the request document from the request data
+				sendRequest = handler.buildWebRequest(requestDoc, checkData, requests, testing);
+				// Convert the document object to an XML request string
+				xmlRequest = sendRequest ? convertToXML(requestDoc) : null;
 			} else {
 				throw new KettleException(BaseMessages.getString(MDCheck.class, "MDCheckDialog.WarningDialog.CustomerIDGE05"));
 			}

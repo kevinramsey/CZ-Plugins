@@ -331,6 +331,8 @@ public class InputPersonatorTab implements MDTab {
 		wPhone.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_PHONE).metaValue);
 		wEmail.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_EMAIL).metaValue);
 
+		wIPAddress.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_IP_ADDRESS).metaValue);
+
 		wBirthDay.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHDAY).metaValue);
 		wBirthMonth.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHMONTH).metaValue);
 		wBirthYear.setValue(metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHYEAR).metaValue);
@@ -364,7 +366,7 @@ public class InputPersonatorTab implements MDTab {
 			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_PHONE).metaValue = wPhone.getValue();
 			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_EMAIL).metaValue = wEmail.getValue();
 
-			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_IP_ADDRESS).metaValue = wIPAddress.getValue();
+			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_IP_ADDRESS).metaValue = "";//wIPAddress.getValue();
 
 			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHDAY).metaValue = wBirthDay.getValue();
 			metaPersonator.personatorFields.inputFields.get(PersonatorFields.TAG_INPUT_DOB_BIRTHMONTH).metaValue = wBirthMonth.getValue();
