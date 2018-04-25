@@ -56,6 +56,12 @@
             <artifactId>kettle-core</artifactId>
             <version>${external.pentaho.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>pentaho</groupId>
+            <artifactId>pentaho-xul-core</artifactId>
+            <version>${external.pentaho.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.eclipse/jface -->
         <dependency>
             <groupId>org.eclipse</groupId>

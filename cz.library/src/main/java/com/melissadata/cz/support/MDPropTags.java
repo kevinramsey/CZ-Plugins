@@ -204,7 +204,7 @@ public class MDPropTags {
 	public static final String TAG_BUSINESS_CODER_WEB_TIMEOUT          = "business_coder_timeout";
 	public static final String TAG_BUSINESS_CODER_WEB_RETRIES          = "business_coder_retries";
 	public static final int    BUSINESS_CODER_THREAD_LIMIT             = 10;
-	public static final int    BUSINESS_CODER_REQUEST_LIMIT            = 1;
+	public static final int    BUSINESS_CODER_REQUEST_LIMIT            = 100;
 	public static final String TAG_WEB_OPT_ABORT                       = "opt_abort";
 	// Local appliance tags
 	public static final String TAG_CVS_SERVER_URL                      = "cvs_server_url";
