@@ -4,7 +4,7 @@
 
     <groupId>com.melissadata.kettle</groupId>
     <artifactId>cz.plugins</artifactId>
-    <version>8.0.0-SNAPSHOT</version>
+    <version>8.0.0.4</version>
     <packaging>pom</packaging>
 
     <name>czplugins</name>
@@ -33,13 +33,13 @@
         <!-- MDCommon -->
         <mdcommon.version>1.1</mdcommon.version>
         <!-- md files -->
-        <cz.library.version>8.0.0-SNAPSHOT</cz.library.version>
+        <cz.library.version>8.0.0.4</cz.library.version>
         <mdLicense.version>1.0</mdLicense.version>
-        <mdSettings.version>8.0.0-SNAPSHOT</mdSettings.version>
+        <mdSettings.version>8.0.0.4</mdSettings.version>
         <!-- MDBusinessCoder -->
-        <mdBusinessCoder.plugin.version>8.0.0-SNAPSHOT</mdBusinessCoder.plugin.version>
+        <mdBusinessCoder.plugin.version>8.0.0.4</mdBusinessCoder.plugin.version>
         <!-- MDCheck -->
-        <mdCheck.plugin.version>8.0.0-SNAPSHOT</mdCheck.plugin.version>
+        <mdCheck.plugin.version>8.0.0.4</mdCheck.plugin.version>
         <mdAddr.dll.version>4.0.1.3067</mdAddr.dll.version>
         <mdEmail.dll.version>4.0.1.3067</mdEmail.dll.version>
         <mdGeo.dll.version>4.0.1.3116</mdGeo.dll.version>
@@ -50,19 +50,19 @@
         <mdMatchUp.resources.version>1.0</mdMatchUp.resources.version>
         <mdMatchUpGlobal.resources.version>1.0</mdMatchUpGlobal.resources.version>
         <!-- MDCleanser -->
-        <mdCleanser.plugin.version>8.0.0-SNAPSHOT</mdCleanser.plugin.version>
+        <mdCleanser.plugin.version>8.0.0.4</mdCleanser.plugin.version>
         <mdCleanser.dll.version>1.0.0.2967</mdCleanser.dll.version>
         <!-- MDGlobal Verify -->
-        <mdGlobalVerify.plugin.version>8.0.0-SNAPSHOT</mdGlobalVerify.plugin.version>
+        <mdGlobalVerify.plugin.version>8.0.0.4</mdGlobalVerify.plugin.version>
         <mdGlobal.dll.version>1.0.0.3030</mdGlobal.dll.version>
         <!-- MDPersonator -->
-        <mdPersonator.plugin.version>8.0.0-SNAPSHOT</mdPersonator.plugin.version>
+        <mdPersonator.plugin.version>8.0.0.4</mdPersonator.plugin.version>
         <mdPersonator.resources.version>1.2</mdPersonator.resources.version>
         <!-- MDProfiler -->
-        <mdProfiler.plugin.version>8.0.0-SNAPSHOT</mdProfiler.plugin.version>
+        <mdProfiler.plugin.version>8.0.0.4</mdProfiler.plugin.version>
         <mdProfiler.dll.version>4.0.1.3036</mdProfiler.dll.version>
         <!-- MDProperty -->
-        <mdProperty.plugin.version>8.0.0-SNAPSHOT</mdProperty.plugin.version>
+        <mdProperty.plugin.version>8.0.0.4</mdProperty.plugin.version>
         <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 

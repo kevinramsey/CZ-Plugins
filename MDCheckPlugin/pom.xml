@@ -6,14 +6,14 @@
 
     <groupId>com.melissadata.kettle</groupId>
     <artifactId>MDCheckPlugin</artifactId>
-    <version>8.0.0-SNAPSHOT</version>
+    <version>8.0.0.4</version>
 
     <name>MDCheckPlugin</name>
 
     <parent>
         <groupId>com.melissadata.kettle</groupId>
         <artifactId>cz.plugins</artifactId>
-        <version>8.0.0-SNAPSHOT</version>
+        <version>8.0.0.4</version>
     </parent>
 
     <properties>
