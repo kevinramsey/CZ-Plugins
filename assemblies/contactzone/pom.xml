@@ -5,7 +5,7 @@
 
     <groupId>com.melissadata.kettle</groupId>
     <artifactId>contactzone</artifactId>
-    <version>8.0.0-SNAPSHOT</version>
+    <version>8.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>ContactZone</name>
@@ -199,7 +199,12 @@
                                     <artifactId>pdi-ce</artifactId>
                                     <version>8.0.0.4-CZ.0</version>
                                     <type>zip</type>
-                                    <excludes>**\cz.library*.jar, **\MDSettings*.jar</excludes>
+                                    <excludes>**\cz.library*.jar, **\MDSettings*.jar, classes/kettle-*.xml, lib\pdi-engine-api-*.jar, lib\pdi-engine-spark-*.jar, lib\pdi-osgi-bridge-core-*.jar, lib\pdi-spark-driver-*.jar,
+                                        lib\pentaho-capability-manager-*.jar, lib\pentaho-connections-*.jar, lib\pentaho-cwm-1.5.4.jar, lib\pentaho-database-model-*.jar, lib\pentaho-hadoop-shims-api-80.2017.10.00-28.jar,
+                                        lib\pentaho-metaverse-api-*.jar, lib\pentaho-osgi-utils-api-*.jar, lib\pentaho-platform-api-*.jar, lib\pentaho-platform-core-*.jar, lib\pentaho-platform-extensions-*.jar, lib\pentaho-platform-repository-*.jar,
+                                        lib\pentaho-registry-*.jar, lib\pentaho-service-coordinator-*.jar, plugins\kettle5-log4j-plugin\, plugins\pdi-xml-plugin\, plugins\pentaho-big-data-plugin\, system\karaf\, system\mondrian\,
+                                        system\osgi\
+                                    </excludes>
                                     <overWrite>false</overWrite>
                                     <outputDirectory>${contactzone.build.dir}\Windows</outputDirectory>
                                 </artifactItem>

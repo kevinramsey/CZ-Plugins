@@ -24,6 +24,7 @@
     <modules>
         <module>contactzone</module>
         <module>innoset</module>
+        <module>big-data-resources</module>
     </modules>
 
 
