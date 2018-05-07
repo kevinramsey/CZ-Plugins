@@ -25,6 +25,7 @@
         <module>contactzone</module>
         <module>innoset</module>
         <module>big-data-resources</module>
+        <module>plugin-assemblies</module>
     </modules>
 
 
