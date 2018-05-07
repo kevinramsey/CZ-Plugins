@@ -219,7 +219,7 @@ public class InputPersonatorTab implements MDTab {
 		wBirthDay = helper.addInputComboBox(dobGroup, null, "InputTab.BirthDay","NInBirthDay");
 		wBirthMonth = helper.addInputComboBox(dobGroup, null, "InputTab.BirthMonth","NInBirthMonth");
 		wBirthYear = helper.addInputComboBox(dobGroup, null, "InputTab.BirthYear","NInBirthYear");
-		
+
 		wCompany.getComboBox().setToolTipText(getString("Company.Tooltip"));
 		wFullName.getComboBox().setToolTipText(getString("FullName.Tooltip"));
 		wFirstName.getComboBox().setToolTipText(getString("FirstName.Tooltip"));
