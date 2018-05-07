@@ -16,15 +16,7 @@
             <outputDirectory>.</outputDirectory>
         </fileSet>
         <!--  Profiler Data  -->
-        <fileSet>
-            <directory>${md.data.dir}\Profiler\</directory>
-            <useDefaultExcludes>true</useDefaultExcludes>
-            <includes>
-                <include>mdProfiler.cfg</include>
-                <include>mdProfiler.mc</include>
-            </includes>
-            <outputDirectory>MDdata</outputDirectory>
-        </fileSet>
+
     </fileSets>
 
     <dependencySets>
@@ -34,8 +26,7 @@
             <unpack>true</unpack>
             <includes>
                 <include>com.melissadata.kettle:mdLicense</include>
-                <!-- MDCleanser -->
-                <include>com.melissadata.kettle:mdProfilerDll</include>
+
             </includes>
         </dependencySet>
         <!-- MDsettings, cz.library -->
@@ -54,7 +45,7 @@
             <outputDirectory>.</outputDirectory>
             <unpack>false</unpack>
             <includes>
-                <include>com.melissadata.kettle:MDProfiler</include>
+                <include>com.melissadata.kettle:MDProperty</include>
             </includes>
         </dependencySet>
 
