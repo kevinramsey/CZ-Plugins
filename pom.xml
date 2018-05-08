@@ -109,6 +109,8 @@
         <module>MDProfilerPlugin</module>
         <module>MDPropertyPlugin</module>
 
+        <module>assemblies/plugin-assemblies</module>
+
     </modules>
 
     <build>
