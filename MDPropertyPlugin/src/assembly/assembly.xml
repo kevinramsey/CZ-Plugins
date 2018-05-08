@@ -7,7 +7,7 @@
         <format>dir</format>
     </formats>
 
-    <baseDirectory>MDProfilerPlugin</baseDirectory>
+    <baseDirectory>MDPropertyPlugin</baseDirectory>
 
     <fileSets>
         <fileSet>
