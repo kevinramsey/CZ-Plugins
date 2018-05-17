@@ -139,7 +139,7 @@ public class EvalItem implements Cloneable{
 	public EvalItem(Date dtVal, String dateFormat) {
 		this.type = eTypes.Constant;
 		this.value = dtVal;
-		this.dateFormat = new SimpleDateFormat(dateFormat);
+		this.dateFormat = new SimpleDateFormat(dateFormat.replaceAll("\"",""));
 		this.dataType = eDataType.DT_DATE;
 	}
 

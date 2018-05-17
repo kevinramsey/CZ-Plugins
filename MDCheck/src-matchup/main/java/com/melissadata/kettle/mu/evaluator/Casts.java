@@ -7,6 +7,7 @@ import java.net.Inet4Address;
 import java.net.UnknownHostException;
 import java.sql.Timestamp;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -128,28 +129,34 @@ public class Casts {
 				Date date = new Date();;
 				try {
 					String rr = param1.getString();
-				//	System.out.println(" -- PARSE : " + rr);
-				//	System.out.println(" -- Format : " + param2.dateFormat.toPattern());
-					 if(!Const.isEmpty(rr))
-						 date = param2.dateFormat.parse(rr/*param1.getString()*/);
+//					System.out.println(" -- PARSE : " + rr);
+//					System.out.println(" -- Format : " + param2.dateFormat.toPattern());
+//					System.out.println(new SimpleDateFormat("MM/dd/yyyy").parse("08/16/2011"));
+					 if(!Const.isEmpty(rr)) {
+						date = new SimpleDateFormat(param2.dateFormat.toPattern().replaceAll("\"","")).parse(rr);
+					 }
 
 				} catch (ParseException e) {
 					throw new EvaluatorException("Unable to parse Date " + e.toString());
 				}
 
-				return new EvalItem(date, param2.dateFormat.toPattern());
+				return new EvalItem(date, param2.dateFormat.toPattern().replaceAll("\"",""));
 
 			} else if (param1.dataType == EvalItem.eDataType.DT_INT) {
 
+
 				Date date;
 				try {
+					String dt = String.valueOf(param1.getInt());
+					String pat = param2.dateFormat.toPattern().replaceAll("\"","");
 
-					date = param2.dateFormat.parse(String.valueOf(param1.getInt()));
+					date = new SimpleDateFormat(pat).parse(dt);
+
 				} catch (ParseException e) {
 					throw new EvaluatorException("Unable to parse Date " + e.getMessage());
 				}
 
-				return new EvalItem(date, param2.dateFormat.toPattern());
+				return new EvalItem(date, param2.dateFormat.toPattern().replaceAll("\"",""));
 			} else {
 				throw new EvaluatorException(" Cant cast " + param1.dataType + " to Date");
 			}
