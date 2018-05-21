@@ -84,6 +84,20 @@ public class RequestManager implements IRequestManager {
 					String message = "MD Personator\n" + "After numerous attempts we were still unable to connect to the service." + "\nAdditional Information can be found in the log files";
 					showSleepMsg(message);
 				}
+				if(exception != null){
+					String rc = exception.getMessage().trim();
+					if(rc.startsWith("GE20") ||
+					   rc.startsWith("GE21") ||
+					   rc.startsWith("GE22") ||
+					   rc.startsWith("GE23") ||
+					   rc.startsWith("GE24") ||
+						rc.startsWith("GE27") ||
+                       rc.startsWith("GE28")){
+						// Dont continue to retry  if not licensed
+						retries = 0;
+					}
+				}
+
 			} while ((retries-- > 0) && (exception != null) && !stopped);
 		}
 	}

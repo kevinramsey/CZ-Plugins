@@ -379,7 +379,7 @@ public class PersonatorOptionsTab implements MDTab {
 
 	private Group createDemographiscmaskGroup(Composite parent, Control last) {
 
-		String[] maskingOptions = { PersonatorFields.DEMOGRAPHICS_MASK_OPTION_YES, PersonatorFields.DEMOGRAPHICS_MASK_OPTION_MASK, PersonatorFields.DEMOGRAPHICS_MASK_OPTION_MASKONLY, PersonatorFields.DEMOGRAPHICS_MASK_OPTION_VALUEONLY };
+		String[] maskingOptions = { PersonatorFields.DEMOGRAPHICS_MASK_OPTION_NONE, PersonatorFields.DEMOGRAPHICS_MASK_OPTION_YES, PersonatorFields.DEMOGRAPHICS_MASK_OPTION_MASK, PersonatorFields.DEMOGRAPHICS_MASK_OPTION_MASKONLY, PersonatorFields.DEMOGRAPHICS_MASK_OPTION_VALUEONLY };
 		Label lDescriptionSpacer;
 		Label lYes;
 		Label lYesDescription;
@@ -754,23 +754,8 @@ public class PersonatorOptionsTab implements MDTab {
 			rCheckError.setEnabled(false);
 		}
 
-//		if(ckMove.getSelection()){
-//
-//
-//			rLoose.setEnabled(true);
-//			rStrict.setEnabled(true);
-//
-//			if(!rLoose.getSelection() && !rStrict.getSelection()){
-//				rStrict.setSelection(true);
-//			}
-//		} else {
-//			rLoose.setEnabled(false);
-//			rStrict.setEnabled(false);
-//			rLoose.setSelection(false);
-//			rStrict.setSelection(false);
-//		}
 
-		actionSelected();
+		//actionSelected();
 	}
 
 	/**

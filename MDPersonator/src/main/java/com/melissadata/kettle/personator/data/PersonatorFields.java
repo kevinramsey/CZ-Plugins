@@ -25,6 +25,7 @@ public class PersonatorFields {
 	//
 	public static final String MOOVE_STRICT                          = "Strict";
 	//
+	public static final String DEMOGRAPHICS_MASK_OPTION_NONE         = "None";
 	public static final String DEMOGRAPHICS_MASK_OPTION_YES          = "Yes";
 	public static final String DEMOGRAPHICS_MASK_OPTION_MASK         = "Mask";
 	public static final String DEMOGRAPHICS_MASK_OPTION_MASKONLY     = "MaskOnly";
@@ -84,6 +85,8 @@ public class PersonatorFields {
 	public String webVersion = "";
 	public int fieldsAdded;
 
+	public boolean DemographicsLicensed = false;
+
 	/**
 	 * checks to see if the minimum requirements to run are met
 	 *
@@ -132,11 +135,15 @@ public class PersonatorFields {
 		}
 		realOptionFields.put(TAG_OPTION_COLUMNS, new MetaVal(value, TAG_OPTION_COLUMNS, 0));
 
+
 		value = "";
 		// now create a delimited String for the options
 		String sOnOff = "";
 		String name   = "";
 		for (String key : optionFields.keySet()) {
+			if(key.equals(TAG_OPTION_DEMOGRAPHICS) && (optionFields.get(key).metaValue.equals(DEMOGRAPHICS_MASK_OPTION_NONE))){
+				continue;
+			}
 			if (key.contains(":")) {
 				name = optionFields.get(key).webTag;
 				sOnOff = optionFields.get(key).metaValue;
@@ -185,7 +192,7 @@ public class PersonatorFields {
 		optionFields.put(TAG_OPTION_NAME_SALUTATION, new MetaVal("Formal", TAG_OPTION_NAME_SALUTATION, 0));
 		optionFields.put(TAG_OPTION_NAME_CORRECT_FIRST, new MetaVal("true", TAG_OPTION_NAME_CORRECT_FIRST, 0));
 		optionFields.put(TAG_OPTION_NAME_STANDARD_COMPANY, new MetaVal("true", TAG_OPTION_NAME_STANDARD_COMPANY, 0));
-		optionFields.put(TAG_OPTION_DEMOGRAPHICS, new MetaVal(DEMOGRAPHICS_MASK_OPTION_YES, TAG_OPTION_DEMOGRAPHICS, 0));
+		optionFields.put(TAG_OPTION_DEMOGRAPHICS, new MetaVal(DEMOGRAPHICS_MASK_OPTION_NONE, TAG_OPTION_DEMOGRAPHICS, 0));
 
 		optionFields.put(TAG_OPTION_ADDR_PREFERRED_CITY, new MetaVal("false", TAG_OPTION_ADDR_PREFERRED_CITY, 0));
 		optionFields.put(TAG_OPTION_ADDR_DIACRITICS, new MetaVal("Auto", TAG_OPTION_ADDR_DIACRITICS, 0));

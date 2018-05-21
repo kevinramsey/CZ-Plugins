@@ -249,7 +249,8 @@ public class MDSettingsWebService {
 		// Address
 		if (nProduct == MDPropTags.MDLICENSE_Personator) {
 			// Create new record object
-			addTextNode(xmlDoc, root, "Actions", "Check;Verify;Append");
+			addTextNode(xmlDoc, root, "Actions", "Check");
+			//addTextNode(xmlDoc, root, "Actions", "Check;Verify;Append");
 			addTextNode(xmlDoc, root, "Options", "");
 			addTextNode(xmlDoc, root, "Columns", "");
 			Element records = xmlDoc.createElement("Records");
