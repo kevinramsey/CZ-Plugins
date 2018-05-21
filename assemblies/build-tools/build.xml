@@ -1,0 +1,1165 @@
+<project name="CZ-DQT" default="default" basedir="." xmlns:ivy="antlib:org.apache.ivy.ant">
+
+    <description>
+        Toll for updating data and object files
+    </description>
+
+    <tstamp prefix="start"/>
+
+    <tstamp>
+        <format property="compile.timestamp" pattern="yyyy-MM-dd HH.mm.ss"/>
+    </tstamp>
+
+
+
+    <!-- Look for user-override properties file first -->
+    <property file="override.properties"/>
+    <!-- set global properties for this build -->
+    <property file="build.properties"/>
+
+
+
+    <target name="build" depends="">
+        <echo message="In the beginning"/>
+    </target>
+
+
+    <!--=======================================================================
+    install-antcontrib
+
+    (Fetches and) installs ant-contrib tasks.
+    ====================================================================-->
+    <!--=======================================================================
+     antcontrib.download
+
+     Fetches ant-contrib from sourceforge
+     ====================================================================-->
+    <target name="antcontrib.download" unless="antcontrib.available">
+        <mkdir dir="${subfloor.tmp.dir}"/>
+        <get src="http://downloads.sourceforge.net/ant-contrib/ant-contrib-1.0b3-bin.zip"
+             dest="${subfloor.tmp.dir}/antcontrib.zip"
+             usetimestamp="true"/>
+
+        <unzip src="${subfloor.tmp.dir}/antcontrib.zip" dest="${subfloor.tmp.dir}">
+            <patternset>
+                <include name="**/*.jar"/>
+            </patternset>
+        </unzip>
+        <copy todir="${antcontrib.build.cache.dir}">
+            <fileset dir="${subfloor.tmp.dir}/ant-contrib">
+                <include name="**/*.jar"/>
+            </fileset>
+        </copy>
+    </target>
+
+
+    <property name="subfloor.resources.dir"
+              value="${user.home}/.subfloor"
+              description="Base dir for runtime jars that are required exclusively by the build process"/>
+
+    <property name="antcontrib.build.cache.dir"
+              value="${subfloor.resources.dir}/ant-contrib"
+              description="Directory where the Ant-Contrib jar (and dependencies) is placed after it is auto-downloaded by the build"/>
+
+
+
+    <target name="install-antcontrib" depends="antcontrib.download-check">
+        <taskdef resource="net/sf/antcontrib/antlib.xml">
+            <classpath>
+                <fileset dir="${antcontrib.build.cache.dir}">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </taskdef>
+    </target>
+
+    <!--=======================================================================
+     antcontrib.download-check
+
+     Fetches ant-contrib from sourceforge if it is not already present
+     ====================================================================-->
+    <target name="antcontrib.download-check">
+        <condition property="antcontrib.available">
+            <and>
+                <available file="${antcontrib.build.cache.dir}"/>
+                <available classname="net.sf.antcontrib.logic.IfTask">
+                    <classpath>
+                        <fileset dir="${antcontrib.build.cache.dir}">
+                            <include name="*.jar"/>
+                        </fileset>
+                    </classpath>
+                </available>
+            </and>
+        </condition>
+        <antcall target="antcontrib.download"/>
+    </target>
+
+
+
+    <!-- #################################################
+
+        Melissadata specific settings and build targets
+
+      ####################################################-->
+
+
+    <target name="move-to-tan1" depends="install-antcontrib">
+<!--
+        <if>
+            <equals arg1="${move.cz.oppremise}" arg2="true"/>
+            <then>
+                <echo>Moving ${md.cz.iso} to ${nightly.onpremise.location}</echo>
+                <copy todir="${nightly.onpremise.location}">
+                    <fileset dir="${md.cz.onpremise.output.dir}" includes="iso-*/**"/>
+                </copy>
+            </then>
+        </if>
+
+        <if>
+            <equals arg1="${move.cz.marketplace}" arg2="true"/>
+            <then>
+                <mkdir dir="${nightly.marketplace.location}/marketplace_${md.cz.version}_build_${md.cz.build.number}"/>
+                <echo>Moving Marketplace zip files to ${nightly.marketplace.location}/marketplace_${md.cz.version}_build_${md.cz.build.number}</echo>
+                <copy todir="${nightly.marketplace.location}/marketplace_${md.cz.version}_build_${md.cz.build.number}">
+                    <fileset dir="${md.cz.marketplace.dir}/ZippedFiles" includes="*.zip"/>
+                </copy>
+            </then>
+        </if>
+
+        <if>
+            <equals arg1="${move.cz.cloud}" arg2="true"/>
+            <then>
+                <echo>Moving ContactZone-cloud-${md.cz.version}_build_${md.cz.build.number} to ${nightly.cloud.location}</echo>
+                <copy todir="${nightly.cloud.location}">
+                    <fileset dir="${md.cz.cloud.output.dir}" includes="ContactZone*.exe"/>
+                </copy>
+            </then>
+        </if>
+
+        <if>
+            <equals arg1="${move.cz.linux}" arg2="true"/>
+            <then>
+                <echo>Moving ContactZone-linux-${md.cz.version}_build_${md.cz.build.number} to ${nightly.linux.location}</echo>
+                <copy todir="${nightly.linux.location}">
+                    <fileset dir="${md.cz.linux.output.dir}" includes="ContactZone-linux*.zip"/>
+                </copy>
+            </then>
+        </if>
+-->
+
+    </target>
+
+
+
+    <!--   TARGETS FOR UPDATING DATA AND OBJECT FILES   -->
+
+    <target name="get-md-data.files" depends="install-antcontrib">
+
+        <antcall target="check-ip-loc.data"/>
+        <antcall target="check-matchup.data"/>
+        <antcall target="check-matchupGlobal.data"/>
+        <antcall target="check-profiler.data"/>
+        <antcall target="check-dqt.data"/>
+        <antcall target="check-geo.data"/>
+        <antcall target="check-cleanser.data"/>
+
+
+    </target>
+
+    <target name="get-md-object.files" depends="install-antcontrib">
+
+        <antcall target="check-iploc.objects"/>
+        <antcall target="check-matchup.objects"/>
+        <antcall target="check-profiler.objects"/>
+        <antcall target="check-dqt.objects"/>
+        <antcall target="check-geo.objects"/>
+        <antcall target="check-cleanser.objects"/>
+
+
+    </target>
+
+    <!--   DQT Addr, Name, Phone, Email   -->
+
+    <target name="check-dqt.data">
+        <if>
+            <equals arg1="${dqt.dqt.zip.update}" arg2="true"/>
+            <then>
+                <echo>Updating DQT Data from zip file</echo>
+
+                <antcall target="get-md-name.zip.data"></antcall>
+                <antcall target="get-md-phone.zip.data"></antcall>
+                <antcall target="get-md-email.zip.data"></antcall>
+                <antcall target="get-md-addr.zip.data"></antcall>
+
+                <!-- set back to false in property file -->
+                <propertyfile file="override.properties">
+                    <entry key="dqt.dqt.zip.update" value="false"/>
+                </propertyfile>
+            </then>
+            <elseif>
+                <equals arg1="${dqt.dqt.file.update}" arg2="true"/>
+                <then>
+                    <echo>Updating DQT Data from file location</echo>
+                    <antcall target="get-md-addr.file.data"></antcall>
+                    <antcall target="get-md-name.file.data"></antcall>
+                    <antcall target="get-md-phone.file.data"></antcall>
+                    <antcall target="get-md-email.file.data"></antcall>
+
+                    <!-- set back to false in property file -->
+                    <propertyfile file="override.properties">
+                        <entry key="dqt.dqt.file.update" value="false"/>
+                    </propertyfile>
+                </then>
+            </elseif>
+            <else>
+                <echo>DQT data is current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="check-dqt.objects">
+        <if>
+            <equals arg1="${dqt.dqt.object.update}" arg2="true"/>
+            <then>
+                <echo>Updating DQT objects from zip file</echo>
+
+
+                <antcall target="get-md-name.object.file"></antcall>
+                <antcall target="get-md-phone.object.file"></antcall>
+                <antcall target="get-md-email.object.file"></antcall>
+                <antcall target="get-md-addr.object.file"></antcall>
+
+
+                <!-- set back to false in property file -->
+                <propertyfile file="override.properties">
+                    <entry key="dqt.dqt.object.update" value="false"/>
+                </propertyfile>
+            </then>
+            <else>
+                <echo>DQT objects are current</echo>
+            </else>
+        </if>
+    </target>
+
+    <!-- DQT ADDR -->
+
+    <target name="clean-md-addr.data">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.data.dir}\Address" includes="**/*"/>
+        </delete>
+    </target>
+
+    <target name="get-md-addr.zip.data" depends="clean-md-addr.data">
+
+        <copy todir="${md.cz.data.dir}\Address">
+            <zipfileset src="${dqt-dqt.zip}">
+                <patternset>
+                    <include name="address/data/*.*"/>
+                    <include name="address/data/DPV/*.*"/>
+                    <include name="address/data/DPV/lcd*"/>
+                    <include name="address/data/mdAddrKey/*.*"/>
+                    <include name="address/data/mdCanada/*.*"/>
+                    <include name="address/data/mdLACS/*.*"/>
+                    <include name="address/data/mdSteLink/*.*"/>
+                    <include name="address/data/mdSuiteFinder/*.*"/>
+                    <include name="address/data/RBDI/*.*"/>
+
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.data.dir}\Address">
+            <fileset dir="${md.cz.data.dir}\Address\address\data" includes="*.*" excludes="md5.txt"/>
+            <fileset dir="${md.cz.data.dir}\Address\address\data\DPV" includes="*.*, lcd*"/>
+            <fileset dir="${md.cz.data.dir}\Address\address\data\mdAddrKey" includes="*.*"/>
+            <fileset dir="${md.cz.data.dir}\Address\address\data\mdCanada" includes="*.*"/>
+            <fileset dir="${md.cz.data.dir}\Address\address\data\mdLACS" includes="*.*"/>
+            <fileset dir="${md.cz.data.dir}\Address\address\data\mdSteLink" includes="*.*"/>
+            <fileset dir="${md.cz.data.dir}\Address\address\data\mdSuiteFinder" includes="*.*"/>
+            <fileset dir="${md.cz.data.dir}\Address\address\data\RBDI" includes="*.*"/>
+        </copy>
+
+        <delete dir="${md.cz.data.dir}\Address\address"/>
+
+    </target>
+
+    <target name="get-md-addr.file.data" depends="clean-md-addr.data">
+
+        <copy todir="${md.cz.data.dir}\Address">
+            <fileset dir="${dqt-addr-base.files}" includes="*.*" excludes="md5.txt"/>
+            <fileset dir="${dqt-addr-DPV.files}" includes="*.*, lcd*"/>
+            <fileset dir="${dqt-addr-mdAddrKey.files}" includes="*.*"/>
+            <fileset dir="${dqt-addr-mdCanada.files}" includes="*.*"/>
+            <fileset dir="${dqt-addr-mdLACS.files}" includes="*.*"/>
+            <fileset dir="${dqt-addr-mdSteLink.files}" includes="*.*"/>
+            <fileset dir="${dqt-addr-mdSuiteFinder.files}" includes="*.*"/>
+            <fileset dir="${dqt-addr-RBDI.files}" includes="*.*"/>
+        </copy>
+
+    </target>
+
+    <target name="clean-md-addr.objects">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.dll.dir}/64_bit" includes="mdAddr*.dll"/>
+         <!--   <fileset dir="${md.cz.so.dir}/64_bit" includes="libmdAddr*.so"/>  -->
+        </delete>
+    </target>
+
+    <target name="get-md-addr.object.file" depends="clean-md-addr.objects">
+
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <zipfileset src="${dqt-dqt.zip}">
+                <patternset>
+                    <include name="address\windows\dll_64bit\mdAddr.dll"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.cz.dll.dir}/64_bit/address/windows/dll_64bit" includes="mdName.dll"/>
+        </copy>
+
+        <delete dir="${md.cz.dll.dir}\64_bit\address"/>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.dqt.wrappers}" includes="mdAddrJavaWrapper.dll"/>
+        </copy>
+
+
+    </target>
+
+    <!-- DQT NAME -->
+
+    <target name="clean-md-name.data">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.data.dir}\Name" includes="**/*"/>
+        </delete>
+    </target>
+
+    <target name="get-md-name.zip.data" depends="clean-md-name.data">
+
+        <copy todir="${md.cz.data.dir}\Name">
+            <zipfileset src="${dqt-dqt.zip}">
+                <patternset>
+                    <include name="name/data/mdName.cfg"/>
+                    <include name="name/data/mdName.dat"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.data.dir}\Name">
+            <fileset dir="${md.cz.data.dir}\Name\name\data" includes="mdName.dat"/>
+        </copy>
+
+        <copy todir="${md.cz.data.dir}\Name">
+            <fileset dir="${md.cz.data.dir}\Name\name\data" includes="mdName.cfg"/>
+        </copy>
+
+        <delete dir="${md.cz.data.dir}\Name\name"/>
+
+    </target>
+
+    <target name="get-md-name.file.data" depends="clean-md-name.data">
+
+        <copy todir="${md.cz.data.dir}\Name">
+            <fileset dir="${dqt-name-dat.file}" includes="mdName.dat"/>
+        </copy>
+
+    </target>
+
+    <target name="clean-md-name.objects">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.dll.dir}/64_bit" includes="mdName*.dll"/>
+    <!--        <fileset dir="${md.cz.so.dir}/64_bit" includes="libmdName*.so"/> -->
+        </delete>
+    </target>
+
+    <target name="get-md-name.object.file" depends="clean-md-name.objects">
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <zipfileset src="${dqt-dqt.zip}">
+                <patternset>
+                    <include name="name\windows\dll_64bit\mdName.dll"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.cz.dll.dir}/64_bit/name/windows/dll_64bit" includes="mdName.dll"/>
+        </copy>
+
+        <delete dir="${md.cz.dll.dir}\64_bit\name"/>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.dqt.wrappers}" includes="mdNameJavaWrapper.dll"/>
+        </copy>
+
+    </target>
+
+    <!-- DQT PHONE -->
+
+    <target name="clean-md-phone.data">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.data.dir}\Phone" includes="**/*"/>
+        </delete>
+    </target>
+
+    <target name="get-md-phone.zip.data" depends="clean-md-phone.data">
+
+        <copy todir="${md.cz.data.dir}\Phone">
+            <zipfileset src="${dqt-dqt.zip}">
+                <patternset>
+                    <include name="phone/data/*.*"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.data.dir}\Phone">
+            <fileset dir="${md.cz.data.dir}\Phone\phone\data" includes="*.*" excludes="md5.txt"/>
+        </copy>
+
+        <delete dir="${md.cz.data.dir}\Phone\phone"/>
+
+    </target>
+
+    <target name="get-md-phone.file.data" depends="clean-md-phone.data">
+
+        <copy todir="${md.cz.data.dir}\Phone">
+            <fileset dir="${dqt-phone-dat.file}" includes="*.*" excludes="md5.txt"/>
+        </copy>
+
+    </target>
+
+    <target name="clean-md-phone.objects">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.dll.dir}/64_bit" includes="mdPhone*.dll"/>
+        <!--    <fileset dir="${md.cz.so.dir}/64_bit" includes="libmdPhone*.so"/> -->
+        </delete>
+    </target>
+
+    <target name="get-md-phone.object.file" depends="clean-md-phone.objects">
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <zipfileset src="${dqt-dqt.zip}">
+                <patternset>
+                    <include name="phone\windows\dll_64bit\mdPhone.dll"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.cz.dll.dir}/64_bit/phone/windows/dll_64bit" includes="mdPhone.dll"/>
+        </copy>
+
+        <delete dir="${md.cz.dll.dir}\64_bit\phone"/>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.dqt.wrappers}" includes="mdPhoneJavaWrapper.dll"/>
+        </copy>
+
+    </target>
+
+    <!--  DQT EMAIL -->
+
+    <target name="clean-md-email.data">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.data.dir}\Email" includes="**/*"/>
+        </delete>
+    </target>
+
+    <target name="get-md-email.zip.data" depends="clean-md-email.data">
+
+        <copy todir="${md.cz.data.dir}\Email">
+            <zipfileset src="${dqt-dqt.zip}">
+                <patternset>
+                    <include name="email/data/*.*"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.data.dir}\Email">
+            <fileset dir="${md.cz.data.dir}\Email\email\data" includes="*.*" excludes="md5.txt"/>
+        </copy>
+
+        <delete dir="${md.cz.data.dir}\Email\email"/>
+
+    </target>
+
+    <target name="get-md-email.file.data" depends="clean-md-email.data">
+
+        <copy todir="${md.cz.data.dir}\Email">
+            <fileset dir="${dqt-email-dat.file}" includes="*.*" excludes="md5.txt"/>
+        </copy>
+
+    </target>
+
+    <target name="clean-md-email.objects">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.dll.dir}/64_bit" includes="mdEmail*.dll"/>
+           <!-- <fileset dir="${md.cz.so.dir}/64_bit" includes="libmdEmail*.so"/> -->
+        </delete>
+    </target>
+
+    <target name="get-md-email.object.file" depends="clean-md-email.objects">
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <zipfileset src="${dqt-dqt.zip}">
+                <patternset>
+                    <include name="email\windows\dll_64bit\mdEmail.dll"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.cz.dll.dir}/64_bit/email/windows/dll_64bit" includes="mdEmail.dll"/>
+        </copy>
+
+        <delete dir="${md.cz.dll.dir}\64_bit\email"/>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.dqt.wrappers}" includes="mdEmailJavaWrapper.dll"/>
+        </copy>
+
+
+    </target>
+
+    <!--  PROFILER DATA -->
+
+    <target name="check-profiler.data" depends="">
+        <if>
+            <equals arg1="${dqt.profiler.zip.update}" arg2="true"/>
+            <then>
+                <echo>Updating Profiler Zip Data</echo>
+                <antcall target="get-md-profiler.zip.data"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.profiler.zip.update" value="false"/>
+                </propertyfile>
+            </then>
+            <elseif>
+                <equals arg1="${dqt.profiler.file.update}" arg2="true"/>
+                <then>
+                    <antcall target="get-md-profiler.file.data"></antcall>
+                    <propertyfile file="override.properties">
+                        <entry key="dqt.profiler.file.update" value="false"/>
+                    </propertyfile>
+                </then>
+            </elseif>
+            <else>
+                <echo>Profiler data is current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-md-profiler.data">
+        <delete>
+            <fileset dir="${md.cz.data.dir}\Profiler" includes="**/*"/>
+        </delete>
+    </target>
+
+    <target name="get-md-profiler.zip.data" depends="clean-md-profiler.data">
+
+        <copy todir="${md.cz.data.dir}\Profiler">
+            <zipfileset src="${dqt-profiler.zip}">
+                <patternset>
+                    <include name="data/*.*"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.data.dir}\Profiler">
+            <fileset dir="${md.cz.data.dir}\Profiler\data" includes="*.*"/>
+        </copy>
+
+        <delete dir="${md.cz.data.dir}\Profiler\data"/>
+
+    </target>
+
+    <target name="get-md-profiler.file.data" depends="clean-md-profiler.data">
+
+        <copy todir="${md.cz.data.dir}\Profiler">
+            <fileset dir="${dqt-profiler.file.dir}" includes="mdProfiler.dat,mdProfiler.cfg,mdProfiler.mc"/>
+        </copy>
+
+    </target>
+
+    <target name="check-profiler.objects" depends="">
+        <if>
+            <equals arg1="${dqt.profiler.object.update}" arg2="true"/>
+            <then>
+                <echo>Updating Profiler objects</echo>
+                <antcall target="get-md-profiler.object.file"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.profiler.object.update" value="false"/>
+                </propertyfile>
+            </then>
+            <else>
+                <echo>Profiler object current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-md-profiler.objects">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.dll.dir}/64_bit" includes="mdProfiler*.dll"/>
+          <!--  <fileset dir="${md.cz.so.dir}/64_bit" includes="libmdProfiler*.so"/> -->
+        </delete>
+    </target>
+
+    <target name="get-md-profiler.object.file" depends="clean-md-profiler.objects">
+
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <zipfileset src="${dqt-profiler.zip}">
+                <patternset>
+                    <include name="windows\dll_64bit\mdProfiler.dll"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.cz.dll.dir}/64_bit/windows/dll_64bit" includes="mdProfiler.dll"/>
+        </copy>
+
+        <delete dir="${md.cz.dll.dir}\64_bit\windows"/>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.dqt.wrappers}" includes="mdProfilerJavaWrapper.dll"/>
+        </copy>
+
+
+
+
+    </target>
+
+    <!--   MATCH UP DATA  -->
+
+    <target name="check-matchup.data" depends="install-antcontrib">
+        <if>
+            <equals arg1="${dqt.matchup.zip.update}" arg2="true"/>
+            <then>
+                <echo>Updating MatchUp zip</echo>
+                <antcall target="get-md-matchup.zip.data"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.matchup.zip.update" value="false"/>
+                </propertyfile>
+            </then>
+            <elseif>
+                <equals arg1="${dqt.matchup.file.update}" arg2="true"/>
+                <then>
+                    <echo>Updating MatchUp zip</echo>
+                    <antcall target="get-md-matchup.file.data"></antcall>
+                    <propertyfile file="override.properties">
+                        <entry key="dqt.matchup.file.update" value="false"/>
+                    </propertyfile>
+                </then>
+            </elseif>
+            <else>
+                <echo>MatchUp is current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-md-matchup.data">
+
+        <delete>
+            <fileset dir="${md.cz.matchup.files.dir}" excludes="Global"/>
+        </delete>
+
+    </target>
+
+    <target name="get-md-matchup.zip.data" depends="clean-md-matchup.data">
+
+        <copy todir="${md.cz.matchup.files.dir}">
+            <zipfileset src="${dqt-matchup.zip}">
+                <patternset>
+                    <include name="matchup_domestic_RC1\data\*.dat"/>
+                    <include name="matchup_domestic_RC1\data\*.cfg"/>
+                    <include name="matchup_domestic_RC1\data\*.mc"/>
+                    <include name="matchup_domestic_RC1\mc_editor\*.exe"/>
+                    <include name="matchup_domestic_RC1\windows\dll_64bit\mdMatchUp.dll"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.matchup.files.dir}" failonerror="false">
+            <fileset dir="${md.cz.matchup.files.dir}\matchup_domestic_RC1\data" includes="*.*"/>
+            <fileset dir="${md.cz.matchup.files.dir}\matchup_domestic_RC1\mc_editor" includes="*.exe"/>
+            <fileset dir="${md.cz.matchup.files.dir}\matchup_domestic_RC1\windows\dll_64bit" includes="mdMatchUp.dll"/>
+        </copy>
+
+        <copy todir="${md.cz.matchup.files.dir}">
+            <fileset dir="${md.dqt.wrappers}" includes="mdMatchupLite.mc"/>
+        </copy>
+
+        <delete dir="${md.cz.matchup.files.dir}\matchup_domestic_RC1\data"/>
+        <delete dir="${md.cz.matchup.files.dir}\matchup_domestic_RC1\mc_editor"/>
+        <delete dir="${md.cz.matchup.files.dir}\matchup_domestic_RC1\windows\dll_64bit"/>
+        <delete dir="${md.cz.matchup.files.dir}\matchup_domestic_RC1\windows"/>
+        <delete dir="${md.cz.matchup.files.dir}\matchup_domestic_RC1"/>
+
+    </target>
+
+    <target name="get-md-matchup.file.data" depends="clean-md-matchup.data">
+<!--
+        <copy todir="${md.cz.matchup.files.dir}">
+            <fileset dir="${dqt-matchup.file.dir}" includes="*.dat" excludes="mdMatchup.mc,mdMatchup.cfg"/>
+            <fileset dir="${dqt-matchup.file.editorexe.dir}" includes="MatchUpEditor.exe"/>
+        </copy>
+-->
+    </target>
+
+    <target name="check-matchup.objects" depends="">
+        <if>
+            <equals arg1="${dqt.matchup.object.update}" arg2="true"/>
+            <then>
+                <echo>Updating MatchUp objects</echo>
+                <antcall target="get-md-matchup.object.file"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.matchup.object.update" value="false"/>
+                </propertyfile>
+            </then>
+            <else>
+                <echo>MatchUp object current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-md-matchup.objects">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.dll.dir}/64_bit" includes="mdMatchUp*.dll"/>
+          <!--  <fileset dir="${md.cz.so.dir}/64_bit" includes="libmdMatch*.so"/> -->
+        </delete>
+    </target>
+
+    <target name="get-md-matchup.object.file" depends="clean-md-matchup.objects">
+
+        <copy todir="${md.cz.dll.dir}\64_bit">
+            <zipfileset src="${dqt-matchup.zip}">
+                <patternset>
+                    <include name="matchup_domestic_RC1\windows\dll_64bit\mdMatchUp.dll"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.dll.dir}/64_bit" failonerror="true">
+            <fileset dir="${md.cz.dll.dir}/64_bit/matchup_domestic_RC1\windows\dll_64bit" includes="mdMatchUp.dll"/>
+        </copy>
+
+
+        <delete dir="${md.cz.dll.dir}/64_bit\matchup_domestic_RC1\windows\dll_64bit"/>
+        <delete dir="${md.cz.dll.dir}/64_bit\matchup_domestic_RC1\windows"/>
+        <delete dir="${md.cz.dll.dir}/64_bit\matchup_domestic_RC1"/>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.dqt.wrappers}" includes="mdMatchUpJavaWrapper.dll"/>
+        </copy>
+
+
+    </target>
+
+    <!--   MATCH UP Global DATA  -->
+
+    <target name="check-matchupGlobal.data">
+        <if>
+            <equals arg1="${dqt.matchupGlobal.zip.update}" arg2="true"/>
+            <then>
+                <echo>Updating MatchUp Global zip</echo>
+                <antcall target="get-md-matchupGlobal.zip.data"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.matchupGlobal.zip.update" value="false"/>
+                </propertyfile>
+            </then>
+            <elseif>
+                <equals arg1="${dqt.matchupGlobal.file.update}" arg2="true"/>
+                <then>
+                    <echo>Updating MatchUp zip</echo>
+                    <antcall target="get-md-matchupGlobal.file.data"></antcall>
+                    <propertyfile file="override.properties">
+                        <entry key="dqt.matchupGlobal.file.update" value="false"/>
+                    </propertyfile>
+                </then>
+            </elseif>
+            <else>
+                <echo>MatchUpGlobal is current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-md-matchupGlobal.data">
+
+
+        <delete>
+            <fileset dir="${md.cz.matchup.files.dir}\Global" includes="*.*"/>
+        </delete>
+
+
+    </target>
+
+    <target name="get-md-matchupGlobal.zip.data" depends="clean-md-matchupGlobal.data">
+
+        <copy todir="${md.cz.matchup.files.dir}\Global">
+            <zipfileset src="${dqt-matchupGlobal.zip}">
+                <patternset>
+                    <include name="matchup_global_RC1/data/*.dat"/>
+                    <include name="matchup_global_RC1/data/*.3db"/>
+                    <include name="matchup_global_RC1/data/*.hto"/>
+                    <include name="matchup_global_RC1/data/*.kof"/>
+                    <include name="matchup_global_RC1/data/*.tths"/>
+                    <include name="matchup_global_RC1/data/*.vof"/>
+                    <include name="matchup_global_RC1/data/mdMatchup.*"/>
+                    <include name="matchup_global_RC1/mc_editor/*.exe"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.matchup.files.dir}\Global" failonerror="false">
+            <fileset dir="${md.cz.matchup.files.dir}\Global\matchup_global_RC1\data" includes="*.*"/>
+            <fileset dir="${md.cz.matchup.files.dir}\Global\matchup_global_RC1\mc_editor" includes="*.exe"/>
+        </copy>
+
+        <delete dir="${md.cz.matchup.files.dir}\Global\matchup_global_RC1\data"/>
+        <delete dir="${md.cz.matchup.files.dir}\Global\matchup_global_RC1\mc_editor"/>
+
+    </target>
+
+    <target name="get-md-matchupGlobal.file.data" depends="clean-md-matchupGlobal.data">
+<!--
+        <copy todir="${md.cz.matchup.global.files.dir}">
+            <fileset dir="${dqt-matchupGlobal.file.dir}" includes="*.dat,*.3db,*.hto, *.kof, *.tths, *.vof" excludes="mdMatchup.mc,mdMatchup.cfg"/>
+            <fileset dir="${dqt-matchupGlobal.file.editorexe.dir}" includes="MatchUpEditor.exe"/>
+        </copy>
+-->
+    </target>
+
+    <!--    IP LOCATOR DATA  -->
+
+    <target name="check-ip-loc.data">
+        <if>
+            <equals arg1="${dqt.iploc.zip.update}" arg2="true"/>
+            <then>
+                <echo>Updating Ip Locator Zip</echo>
+                <antcall target="get-md-iploc.zip.data"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.iploc.zip.update" value="false"/>
+                </propertyfile>
+            </then>
+            <elseif>
+                <equals arg1="${dqt.iploc.file.update}" arg2="true"/>
+                <then>
+                    <echo>Updating Ip Locator File</echo>
+                    <antcall target="get-md-iploc.file.data"></antcall>
+                    <propertyfile file="override.properties">
+                        <entry key="dqt.iploc.file.update" value="false"/>
+                    </propertyfile>
+                </then>
+            </elseif>
+            <else>
+                <echo>Ip Locator is current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-md-iploc.data">
+        <delete>
+            <fileset dir="${md.cz.data.dir}\IpLocator" includes="**/*"/>
+        </delete>
+    </target>
+
+    <target name="get-md-iploc.zip.data" depends="clean-md-iploc.data">
+
+        <copy todir="${md.cz.data.dir}\IpLocator">
+            <zipfileset src="${dqt-iploc.zip}">
+                <patternset>
+                    <include name="data/*.*"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.data.dir}\IpLocator" failonerror="false">
+            <fileset dir="${md.cz.data.dir}\IpLocator\data" includes="*.*"/>
+        </copy>
+
+        <delete dir="${md.cz.data.dir}\IpLocator\data"/>
+
+    </target>
+
+    <target name="get-md-iploc.file.data" depends="clean-md-iploc.data">
+
+        <copy todir="${md.cz.data.dir}\IpLocator">
+            <fileset dir="${dqt-iploc.file.dir}" includes="mdIpLocator.dat"/>
+        </copy>
+
+    </target>
+
+    <target name="check-iploc.objects" depends="">
+        <if>
+            <equals arg1="${dqt.iploc.object.update}" arg2="true"/>
+            <then>
+                <echo>Updating IpLocator objects</echo>
+                <antcall target="get-md-iploc.object.file"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.iploc.object.update" value="false"/>
+                </propertyfile>
+            </then>
+            <else>
+                <echo>IpLocator object current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-md-iploc.objects">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.dll.dir}/64_bit" includes="mdIpLocator*.dll"/>
+          <!--  <fileset dir="${md.cz.so.dir}/64_bit" includes="libmdIpLocator*.so"/> -->
+        </delete>
+    </target>
+
+    <target name="get-md-iploc.object.file" depends="clean-md-iploc.objects">
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <zipfileset src="${dqt-iploc.zip}">
+                <patternset>
+                    <include name="windows/dll_64bit/mdIpLocator.dll"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.dll.dir}/64_bit" failonerror="false">
+            <fileset dir="${md.cz.dll.dir}/64_bit/windows/dll_64bit" includes="mdIpLocator.dll"/>
+        </copy>
+
+
+        <delete dir="${md.cz.dll.dir}/64_bit/windows/dll_64bit"/>
+        <delete dir="${md.cz.dll.dir}/64_bit/windows"/>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.dqt.wrappers}" includes="mdIpLocatorJavaWrapper.dll"/>
+        </copy>
+
+    </target>
+
+    <!--   GEOCODER DATA -->
+
+    <target name="check-geo.data">
+        <if>
+            <equals arg1="${dqt.geo.zip.update}" arg2="true"/>
+            <then>
+                <echo>Updating Geocoder ZIP Data</echo>
+                <antcall target="get-md-geo.zip.data"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.geo.zip.update" value="false"/>
+                </propertyfile>
+            </then>
+            <elseif>
+                <equals arg1="${dqt.geo.file.update}" arg2="true"/>
+                <then>
+                    <echo>Updating Geocoder File Data</echo>
+                    <antcall target="get-md-geo.file.data"></antcall>
+                    <propertyfile file="override.properties">
+                        <entry key="dqt.geo.file.update" value="false"/>
+                    </propertyfile>
+                </then>
+            </elseif>
+            <else>
+                <echo>Geocoder Data is current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-md-geo.data">
+        <delete>
+            <fileset dir="${md.cz.data.dir}\Geocode" includes="**/*"/>
+        </delete>
+    </target>
+
+    <target name="get-md-geo.zip.data" depends="clean-md-geo.data">
+
+        <copy todir="${md.cz.data.dir}\Geocode">
+            <zipfileset src="${dqt-geo.zip}">
+                <patternset>
+                    <include name="data/*.*"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.data.dir}\Geocode" failonerror="false">
+            <fileset dir="${md.cz.data.dir}\Geocode\data" includes="*.*"/>
+        </copy>
+
+        <delete dir="${md.cz.data.dir}\Geocode\data"/>
+
+    </target>
+
+    <target name="get-md-geo.file.data" depends="clean-md-geo.data">
+
+        <copy todir="${md.cz.data.dir}\Geocode">
+            <fileset dir="${dqt-geo.file.dir}" excludes="*.md5"/>
+            <fileset dir="${dqt-geo.canada.file.dir}" includes="mdGeoCanada.db"/>
+        </copy>
+
+    </target>
+
+    <target name="check-geo.objects" depends="">
+        <if>
+            <equals arg1="${dqt.geo.object.update}" arg2="true"/>
+            <then>
+                <echo>Updating Geo objects</echo>
+                <antcall target="get-md-geo.object.file"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.geo.object.update" value="false"/>
+                </propertyfile>
+            </then>
+            <else>
+                <echo>Geo object current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-md-geo.objects">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.dll.dir}/64_bit" includes="mdGeo*.dll"/>
+          <!--  <fileset dir="${md.cz.so.dir}/64_bit" includes="libmdGeo*.so"/> -->
+        </delete>
+    </target>
+
+    <target name="get-md-geo.object.file" depends="clean-md-geo.objects">
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <zipfileset src="${dqt-geo.zip}">
+                <patternset>
+                    <include name="windows/dll_64bit/mdGeo.dll"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.dll.dir}/64_bit" failonerror="false">
+            <fileset dir="${md.cz.dll.dir}/64_bit/windows/dll_64bit" includes="mdGeo.dll"/>
+        </copy>
+
+
+        <delete dir="${md.cz.dll.dir}/64_bit/windows/dll_64bit"/>
+        <delete dir="${md.cz.dll.dir}/64_bit/windows"/>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.dqt.wrappers}" includes="mdGeoJavaWrapper.dll"/>
+        </copy>
+
+
+    </target>
+
+    <!--   CLEANSER  DATA -->
+
+    <target name="check-cleanser.data">
+        <if>
+            <equals arg1="${dqt.cleanser.zip.update}" arg2="true"/>
+            <then>
+                <echo>Updating Cleanser Zip</echo>
+                <antcall target="get-cleanser.zip.data"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.cleanser.zip.update" value="false"/>
+                </propertyfile>
+            </then>
+            <elseif>
+                <equals arg1="${dqt.cleanser.file.update}" arg2="true"/>
+                <then>
+                    <echo>Updating Cleanser File</echo>
+                    <antcall target="get-cleanser.file.data"></antcall>
+                    <propertyfile file="override.properties">
+                        <entry key="dqt.cleanser.file.update" value="false"/>
+                    </propertyfile>
+                </then>
+            </elseif>
+            <else>
+                <echo>Cleanser data is current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-cleanser.data">
+        <delete>
+            <fileset dir="${md.cz.data.dir}\Cleanser" includes="**/*"/>
+        </delete>
+    </target>
+
+    <target name="get-cleanser.zip.data" depends="clean-cleanser.data">
+
+        <copy todir="${md.cz.data.dir}\Cleanser">
+            <zipfileset src="${dqt-cleanser-zip}">
+                <patternset>
+                    <include name="cleanser_RC1\data\mdCleanser.*"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.data.dir}\Cleanser">
+            <fileset dir="${md.cz.data.dir}\Cleanser\cleanser_RC1\data" includes="mdCleanser.*"/>
+        </copy>
+
+        <delete dir="${md.cz.data.dir}\Cleanser\cleanser_RC1\data"/>
+        <delete dir="${md.cz.data.dir}\Cleanser\cleanser_RC1"/>
+
+    </target>
+
+    <target name="get-cleanser.file.data" depends="clean-cleanser.data">
+
+        <copy todir="${md.cz.data.dir}\Cleanser">
+            <fileset dir="${dqt-cleanser-file.dir}" includes="mdCleanser.dat"/>
+        </copy>
+
+    </target>
+
+    <target name="check-cleanser.objects" depends="">
+        <if>
+            <equals arg1="${dqt.cleanser.object.update}" arg2="true"/>
+            <then>
+                <echo>Updating Cleanser objects</echo>
+                <antcall target="get-cleanser.object.file"></antcall>
+                <propertyfile file="override.properties">
+                    <entry key="dqt.cleanser.object.update" value="false"/>
+                </propertyfile>
+            </then>
+            <else>
+                <echo>Cleanser object current</echo>
+            </else>
+        </if>
+    </target>
+
+    <target name="clean-cleanser.objects">
+        <delete includeEmptyDirs="true">
+            <fileset dir="${md.cz.dll.dir}/64_bit" includes="mdCleanser*.dll"/>
+          <!--  <fileset dir="${md.cz.so.dir}/64_bit" includes="libmdCleanser*.so"/>  -->
+        </delete>
+    </target>
+
+    <target name="get-cleanser.object.file" depends="clean-cleanser.objects">
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <zipfileset src="${dqt-cleanser-zip}">
+                <patternset>
+                    <include name="cleanser_RC1\windows\dll_64bit\mdCleanser.dll"/>
+                </patternset>
+            </zipfileset>
+        </copy>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.cz.data.dir}\Cleanser\cleanser_RC1\windows\dll_64bit" includes="mdCleanser.dll"/>
+        </copy>
+
+        <delete dir="${md.cz.data.dir}\Cleanser\cleanser_RC1\windows\dll_64bit"/>
+        <delete dir="${md.cz.data.dir}\Cleanser\cleanser_RC1\windows"/>
+        <delete dir="${md.cz.data.dir}\Cleanser\cleanser_RC1"/>
+
+        <copy todir="${md.cz.dll.dir}/64_bit">
+            <fileset dir="${md.dqt.wrappers}" includes="mdCleanserJavaWrapper.dll"/>
+        </copy>
+
+    </target>
+
+    <!--
+
+          ##   END MD Specific
+
+    -->
+
+</project>
