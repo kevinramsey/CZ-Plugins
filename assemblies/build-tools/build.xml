@@ -1143,7 +1143,7 @@
         </copy>
 
         <copy todir="${md.cz.dll.dir}/64_bit">
-            <fileset dir="${md.cz.data.dir}\Cleanser\cleanser_RC1\windows\dll_64bit" includes="mdCleanser.dll"/>
+            <fileset dir="${md.cz.dll.dir}/64_bit\cleanser_RC1\windows\dll_64bit" includes="mdCleanser.dll"/>
         </copy>
 
         <delete dir="${md.cz.data.dir}\Cleanser\cleanser_RC1\windows\dll_64bit"/>
