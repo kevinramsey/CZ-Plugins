@@ -26,8 +26,9 @@
             <includes>
                 <include>com.melissadata.kettle:mdLicense</include>
                 <!-- profiler -->
-                <include>com.melissadata.kettle:MDProfilerDll</include>
+              <!--  <include>com.melissadata.kettle:MDProfilerDll</include>  -->
                 <!-- MDCheck -->
+                <!--
                 <include>com.melissadata.kettle:mdAddrDll</include>
                 <include>com.melissadata.kettle:mdEmailDll</include>
                 <include>com.melissadata.kettle:mdGeoDll</include>
@@ -35,12 +36,13 @@
                 <include>com.melissadata.kettle:mdPhoneDll</include>
                 <include>com.melissadata.kettle:mdIpLocatorDll</include>
                 <include>com.melissadata.kettle:mdMatchUpDll</include>
-                <!-- MDCleanser -->
+                -->
+                <!-- MDCleanser
                 <include>com.melissadata.kettle:mdCleanserDll</include>
-
-                <!-- MDGlobal Verify -->
+                -->
+                <!-- MDGlobal Verify
                 <include>com.melissadata.kettle:mdGlobalAddrDll</include>
-
+                -->
             </includes>
         </dependencySet>
         <!-- MatchUP -->

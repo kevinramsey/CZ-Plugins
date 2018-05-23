@@ -58,6 +58,7 @@
             <version>${mdCheck.plugin.version}</version>
             <type>jar</type>
         </dependency>
+        <!--
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>mdAddrDll</artifactId>
@@ -112,6 +113,7 @@
             <version>${mdMatchUpGlobal.resources.version}</version>
             <type>zip</type>
         </dependency>
+        -->
         <!-- ############### MDCleanser  ###### -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
@@ -119,12 +121,14 @@
             <version>${mdCleanser.plugin.version}</version>
             <type>jar</type>
         </dependency>
+        <!--
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>mdCleanserDll</artifactId>
             <version>${mdCleanser.dll.version}</version>
             <type>zip</type>
         </dependency>
+        -->
         <!-- ############### MDGlobalVerify  ###### -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
@@ -132,12 +136,14 @@
             <version>${mdGlobalVerify.plugin.version}</version>
             <type>jar</type>
         </dependency>
+        <!--
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>mdGlobalAddrDll</artifactId>
             <version>${mdGlobal.dll.version}</version>
             <type>zip</type>
         </dependency>
+        -->
         <!-- ############### MDPersonator  ###### -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
@@ -158,12 +164,14 @@
             <version>${mdProfiler.plugin.version}</version>
             <type>jar</type>
         </dependency>
+        <!--
         <dependency>
             <groupId>com.melissadata.kettle</groupId>
             <artifactId>MDProfilerDll</artifactId>
             <version>${mdProfiler.dll.version}</version>
             <type>zip</type>
         </dependency>
+        -->
         <!-- ############### MDProperty  ###### -->
         <dependency>
             <groupId>com.melissadata.kettle</groupId>

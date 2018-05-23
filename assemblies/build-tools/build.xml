@@ -317,7 +317,7 @@
         </copy>
 
         <copy todir="${md.cz.dll.dir}/64_bit">
-            <fileset dir="${md.cz.dll.dir}/64_bit/address/windows/dll_64bit" includes="mdName.dll"/>
+            <fileset dir="${md.cz.dll.dir}/64_bit/address/windows/dll_64bit" includes="mdAddr.dll"/>
         </copy>
 
         <delete dir="${md.cz.dll.dir}\64_bit\address"/>
